@@ -19,8 +19,29 @@ The AWS console has **200+ services**. The official docs are exhaustive but frag
 
 If a category here is empty or thin, [contributions are welcome](CONTRIBUTING.md).
 
+## How to use this guide
+
+**Pick your entry point:**
+
+- **New to AWS?** Start at [Foundations](#foundations), then read the [Architecture Deep Reading](#foundations) sub-list, then pick a service section.
+- **Picking a service?** Jump to [Decision Guides — X vs Y](#decision-guides--x-vs-y). Every common "should I use X or Y" question has a comparison link.
+- **Hunting a surprise bill?** Start with [Cost Management & FinOps](#cost-management--finops) → Bill Teardowns. The most expensive surprises (NAT Gateway, data transfer, Lambda runaway) are first.
+- **Building with AI?** [Artificial Intelligence & Machine Learning](#artificial-intelligence--machine-learning) for services, [AI Coding Agents, MCP & Skills](#ai-coding-agents-mcp--skills) for AI-assisted development.
+- **Staying current?** [Community, Social & Continuous Learning](#community-social--continuous-learning) → Minimal curated stack.
+
+**Convention used in every service section:**
+
+- **Official** — AWS's own docs, pricing, and announcements. Authoritative but not opinionated.
+- **Production Guides** — third-party deep-dives. Use when official docs leave you with "yes but how at scale?".
+- **OSS Tools** / **Tools** — open-source utilities, listed by usefulness in production (not alphabetical).
+- **⚠️ Gotchas** — limits, bill traps, and surprise behaviour that the brochure won't mention.
+- **Decision Guides** — links to "X vs Y" comparisons for that service.
+
+> **Quick decisions:** if you already know the workload and just need to pick the AWS service, skip to [Decision Guides — X vs Y](#decision-guides--x-vs-y).
+
 ## Table of Contents
 
+- [How to use this guide](#how-to-use-this-guide)
 - [Foundations](#foundations)
 - [Compute](#compute)
 - [Containers](#containers)
@@ -73,6 +94,7 @@ Start here if you're new to AWS or evaluating whether to build on it.
 - [AWS Free Tier](https://aws.amazon.com/free/)
 
 **Foundational Guides:**
+- [AWS Cloud Adoption Framework (CAF)](https://aws.amazon.com/cloud-adoption-framework/) — official six-perspective enterprise migration framework
 - [AWS Well-Architected Framework — 6 pillars explained](https://www.factualminds.com/blog/aws-well-architected-framework-6-pillars-explained/)
 - [AWS Shared Responsibility Model](https://www.factualminds.com/glossary/aws-shared-responsibility-model/) — what AWS secures vs what you secure
 - [Microservices vs monolith on AWS — architecture decision guide](https://www.factualminds.com/blog/microservices-vs-monolith-on-aws-architecture-decision-guide/)
@@ -119,7 +141,7 @@ Virtual servers, containers' substrate, and specialized chips.
 
 **OSS Tools:**
 - [99designs/aws-vault](https://github.com/99designs/aws-vault) — secure storage of AWS credentials on developer laptops
-- [cristim/autospotting](https://github.com/AutoSpotting/AutoSpotting) — automatically replace on-demand EC2 in ASGs with spot instances
+- [AutoSpotting/AutoSpotting](https://github.com/AutoSpotting/AutoSpotting) — automatically replace on-demand EC2 in ASGs with spot instances
 
 ### AWS Graviton — Arm-based processors
 
@@ -152,6 +174,20 @@ Virtual servers, containers' substrate, and specialized chips.
 ### Amazon Elastic VMware Service (EVS)
 
 - [EVS deep dive](https://www.factualminds.com/blog/amazon-elastic-vmware-service-evs/) — VMware workloads on AWS
+
+### AWS Outposts
+
+> AWS-managed hardware in your own data centre. Use for low-latency, data-residency, or hybrid workloads that must stay on-prem.
+
+- [Outposts](https://aws.amazon.com/outposts/)
+- [Outposts FAQs](https://aws.amazon.com/outposts/faqs/)
+
+### AWS ParallelCluster
+
+> Open-source HPC cluster orchestrator on EC2 — Slurm scheduling, EFA networking, FSx for Lustre.
+
+- [ParallelCluster](https://aws.amazon.com/parallelcluster/)
+- [aws/aws-parallelcluster](https://github.com/aws/aws-parallelcluster) — official OSS repo
 
 **Need help?** [AWS application modernization services](https://www.factualminds.com/services/aws-application-modernization/) · [Hire a dedicated AWS expert](https://www.factualminds.com/services/hire-a-dedicated-aws-expert/)
 
@@ -203,6 +239,13 @@ Container orchestration and registry.
 
 > Private Docker/OCI registry, integrated with IAM and image scanning.
 - [ECR Documentation](https://docs.aws.amazon.com/ecr/)
+
+### Finch — open-source container client
+
+> AWS-built local Docker alternative — `nerdctl` + `containerd` + `Lima` packaged for macOS/Linux/Windows. Drop-in replacement for `docker build/run/push`.
+
+- [Finch](https://runfinch.com/)
+- [runfinch/finch](https://github.com/runfinch/finch) — open-source repo
 
 ### Decision
 
@@ -260,10 +303,16 @@ Run code without managing servers.
 ### OSS Lambda Frameworks (community)
 
 - [aws/chalice](https://github.com/aws/chalice) — Python serverless microframework (official AWS, Flask-style)
-- [Miserlou/Zappa](https://github.com/zappa/Zappa) — serverless WSGI Python on Lambda + API Gateway (Django, Flask)
+- [zappa/Zappa](https://github.com/zappa/Zappa) — serverless WSGI Python on Lambda + API Gateway (Django, Flask)
 - [claudiajs/claudia](https://github.com/claudiajs/claudia) — deploy Node.js projects to Lambda + API Gateway with one command
 - [jeremydaly/lambda-api](https://github.com/jeremydaly/lambda-api) — lightweight web framework for serverless Node.js
+- [awslabs/aws-lambda-web-adapter](https://github.com/awslabs/aws-lambda-web-adapter) — run any HTTP web app (Express, Flask, FastAPI, Next.js) on Lambda unmodified
 - [getmoto/moto](https://github.com/getmoto/moto) — mock AWS services for unit/integration tests (also useful beyond Lambda)
+
+### Local Lambda Dev
+
+- [AWS SAM CLI — `sam local`](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-local.html) — invoke Lambda + API Gateway locally
+- [aws/aws-lambda-runtime-interface-emulator](https://github.com/aws/aws-lambda-runtime-interface-emulator) — `aws-lambda-rie` — run Lambda container images locally with `docker run`
 
 **Other Serverless Patterns:**
 - [Scaling EdTech platforms on AWS serverless architecture](https://www.factualminds.com/blog/scaling-edtech-platforms-on-aws-serverless-architecture/)
@@ -376,7 +425,7 @@ Run code without managing servers.
 
 **OSS Tools:**
 - [sensedeep/dynamodb-onetable](https://github.com/sensedeep/dynamodb-onetable) — Node.js library for single-table designs
-- [aws-amplify/dynamodb-toolbox](https://github.com/jeremydaly/dynamodb-toolbox) — Jeremy Daly's TypeScript library for single-table modeling
+- [jeremydaly/dynamodb-toolbox](https://github.com/jeremydaly/dynamodb-toolbox) — Jeremy Daly's TypeScript library for single-table modeling
 
 ### Amazon Redshift
 
@@ -723,6 +772,16 @@ Run code without managing servers.
 
 **Need help?** [Amazon Bedrock Consulting](https://www.factualminds.com/services/aws-bedrock/) · [Generative AI on AWS](https://www.factualminds.com/services/generative-ai-on-aws/) · [GenAI Readiness Assessment](https://www.factualminds.com/tools/genai-readiness-assessment/)
 
+### Amazon Bedrock AgentCore
+
+> Managed runtime for production AI agents — sessions, memory, tool gateways, identity, and observability. The "everything around the agent" layer that Bedrock Agents alone doesn't give you.
+
+- [Bedrock AgentCore](https://aws.amazon.com/bedrock/agentcore/)
+- [AgentCore documentation](https://docs.aws.amazon.com/bedrock-agentcore/)
+- [AgentCore production patterns](https://www.factualminds.com/blog/amazon-bedrock-agentcore-production/)
+- [awslabs/agentcore-samples](https://github.com/awslabs/agentcore-samples) — official sample patterns
+- [Amazon Bedrock AgentCore MCP Server](https://awslabs.github.io/mcp/servers/amazon-bedrock-agentcore-mcp-server) — build/deploy/manage agents from a coding agent
+
 ### Amazon Nova
 
 > Amazon's foundation model family — text, multimodal (Canvas, Reel).
@@ -787,6 +846,11 @@ Run code without managing servers.
 - [Construct Hub](https://constructs.dev/) — community CDK constructs
 - [Terraform vs AWS CDK — IaC decision guide](https://www.factualminds.com/blog/terraform-vs-aws-cdk-infrastructure-as-code-decision-guide/)
 
+**OSS Tools:**
+- [cdklabs/cdk-nag](https://github.com/cdklabs/cdk-nag) — checks CDK apps against AWS Solutions, HIPAA, NIST, PCI rule packs at synth time
+- [projen/projen](https://github.com/projen/projen) — define and synthesise project configuration as code (CDK-style for repos)
+- [aws-samples/aws-cdk-examples](https://github.com/aws-samples/aws-cdk-examples) — official patterns in TS, Python, Java, Go, .NET
+
 ### Terraform on AWS
 
 - [HashiCorp AWS Provider](https://registry.terraform.io/providers/hashicorp/aws/latest)
@@ -833,7 +897,7 @@ Run code without managing servers.
 
 ### CloudFormation OSS Tools
 
-- [cfn-lint](https://github.com/aws-cloudformation/cfn-lint) — official CloudFormation template linter (also installed via cfn-python-lint)
+- [cfn-lint](https://github.com/aws-cloudformation/cfn-lint) — official CloudFormation template linter — catches schema, resource, and intrinsic-function errors before deploy
 - [Stelligent/cfn_nag](https://github.com/stelligent/cfn_nag) — CFN security linting (insecure IAM, S3 public, etc.)
 - [cloudtools/troposphere](https://github.com/cloudtools/troposphere) — Python library for generating CloudFormation templates
 - [cloudreach/sceptre](https://github.com/Sceptre/sceptre) — CLI-driven CloudFormation orchestration
@@ -898,6 +962,7 @@ Run code without managing servers.
 - [AWS Cost Anomaly Detection](https://aws.amazon.com/aws-cost-management/aws-cost-anomaly-detection/)
 - [AWS Trusted Advisor](https://aws.amazon.com/premiumsupport/technology/trusted-advisor/)
 - [AWS Billing and Cost Management — official user guide](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/) — accounts, invoices, allocation tags
+- [AWS Customer Carbon Footprint Tool](https://aws.amazon.com/aws-cost-management/aws-customer-carbon-footprint-tool/) — estimated emissions by service + region (free, in Billing console)
 
 ### Strategy & Playbooks
 
@@ -1335,8 +1400,51 @@ Plain-language definitions of common AWS terms:
 
 ## Architecture Patterns
 
-- [Multi-tenant SaaS on AWS](https://www.factualminds.com/patterns/multi-tenant-saas-on-aws/)
+Reference patterns for the workloads that show up most often. Each links into the relevant service sections for depth.
+
+### Multi-tenant SaaS
+
+- [Multi-tenant SaaS on AWS — pattern](https://www.factualminds.com/patterns/multi-tenant-saas-on-aws/)
+- [SaaS multi-tenancy — silo vs pool vs bridge](https://www.factualminds.com/blog/saas-multi-tenancy-on-aws-silo-vs-pool-vs-bridge-model/)
 - [Multi-tenant architecture — glossary](https://www.factualminds.com/glossary/multi-tenant-architecture/)
+- See also: [Cognito for SaaS auth](#amazon-cognito) · [DynamoDB single-table for SaaS](#amazon-dynamodb)
+
+### Event-driven & async
+
+- [EventBridge event-driven architecture patterns](https://www.factualminds.com/blog/aws-eventbridge-event-driven-architecture-patterns/)
+- [AWS Event-Driven Architecture (official)](https://aws.amazon.com/event-driven-architecture/)
+- [Building Event-Driven Systems on AWS (Architecture Blog)](https://aws.amazon.com/blogs/architecture/category/event-driven/)
+- [Step Functions workflow orchestration patterns](https://www.factualminds.com/blog/aws-step-functions-workflow-orchestration-patterns/)
+- See also: [SQS reliable messaging patterns](#amazon-sqs) · [EventBridge](#amazon-eventbridge)
+
+### Multi-region & resilience
+
+- [Multi-Region Active-Active (Architecture Blog)](https://aws.amazon.com/blogs/architecture/category/multi-region/)
+- [Static Stability Using Availability Zones (Builders Library)](https://aws.amazon.com/builders-library/static-stability-using-availability-zones/)
+- [Designing for Failure on AWS (Builders Library)](https://aws.amazon.com/builders-library/designing-for-failure/)
+- [Reliability Pillar (whitepaper)](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/)
+- [DR strategies — pilot light / warm standby / multi-site](https://www.factualminds.com/blog/aws-disaster-recovery-strategies-pilot-light-warm-standby-multi-site/)
+- [Multi-region AWS without doubling costs](https://www.factualminds.com/blog/multi-region-aws-without-doubling-costs/)
+
+### Data lake & analytics
+
+- [Building a data lake on S3 + Glue + Athena](https://www.factualminds.com/blog/building-a-data-lake-on-aws-s3-glue-athena-architecture/)
+- [Build a serverless data pipeline — Glue + Athena](https://www.factualminds.com/blog/how-to-build-serverless-data-pipeline-glue-athena/)
+- [Real-time pipeline — Kinesis + Lambda + DynamoDB](https://www.factualminds.com/blog/real-time-data-pipeline-kinesis-lambda-dynamodb/)
+- [Glue 5 + Apache Iceberg — modern ETL](https://www.factualminds.com/blog/aws-glue-5-apache-iceberg-modern-etl/)
+
+### GenAI & RAG
+
+- [Build a RAG pipeline with Bedrock Knowledge Bases](https://www.factualminds.com/blog/how-to-build-rag-pipeline-amazon-bedrock-knowledge-bases/)
+- [Bedrock multi-agent supervisor pattern](https://www.factualminds.com/blog/aws-bedrock-multi-agent-supervisor-pattern/)
+- [Multi-tenant GenAI on Bedrock](https://www.factualminds.com/blog/multi-tenant-genai-bedrock/)
+- [Fine-tuning vs RAG on Bedrock](https://www.factualminds.com/blog/fine-tuning-vs-rag-bedrock-when-to-use/)
+
+### Migration
+
+- [Refactor / replatform / rearchitect](https://www.factualminds.com/blog/aws-application-modernization-refactor-replatform-rearchitect/)
+- [Migrate a monolith to ECS Fargate with zero downtime](https://www.factualminds.com/blog/how-to-migrate-monolith-ecs-fargate-zero-downtime/)
+- [Migrate without cost surprises](https://www.factualminds.com/blog/aws-migration-without-cost-surprises/)
 
 ---
 
@@ -1460,11 +1568,13 @@ How real companies run on AWS — production architectures, postmortems, and at-
 
 ### AWS official postmortems & resilience reading
 
-- [Amazon S3 Outage Postmortem (Feb 2017)](https://aws.amazon.com/message/41926/) — the classic teardown; required reading for designing resilient architectures
+- [Amazon S3 Outage Postmortem (Feb 2017, us-east-1)](https://aws.amazon.com/message/41926/) — the classic teardown; required reading for designing resilient architectures
+- [Kinesis Data Streams Outage (Nov 2020, us-east-1)](https://aws.amazon.com/message/11201/) — thread-limit cascade that took down Cognito, CloudWatch, and dozens of dependents
+- [Lambda / API Gateway / EventBridge Disruption (Jun 2023, us-east-1)](https://aws.amazon.com/message/061323/) — control-plane failure mode; lessons on regional blast radius
 - [AWS Builders Library — Resilience & Failures](https://aws.amazon.com/builders-library/) — operations essays from AWS principal engineers (also linked from [Foundations](#foundations))
 - [Designing for Failure on AWS](https://aws.amazon.com/builders-library/designing-for-failure/) — Builders Library essay
 
-> Pair these with the [Reliability Pillar](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/) and [Static Stability Using AZs](https://aws.amazon.com/builders-library/static-stability-using-availability-zones/) for the full failure-design picture.
+> Pair these with the [Reliability Pillar](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/) and [Static Stability Using AZs](https://aws.amazon.com/builders-library/static-stability-using-availability-zones/) for the full failure-design picture. The recurring lesson: **us-east-1 is not a single region for outage purposes — global control planes live there.**
 
 ---
 
