@@ -48,6 +48,7 @@ If a category here is empty or thin, [contributions are welcome](CONTRIBUTING.md
 - [AWS Glossary](#aws-glossary)
 - [AWS Certifications & Learning Paths](#aws-certifications--learning-paths)
 - [Architecture Patterns](#architecture-patterns)
+- [Engineering Blogs & Case Studies](#engineering-blogs--case-studies)
 - [Community, Social & Continuous Learning](#community-social--continuous-learning)
 - [Third-Party Integrations](#third-party-integrations)
 - [Books, Courses & Newsletters](#books-courses--newsletters)
@@ -79,6 +80,14 @@ Start here if you're new to AWS or evaluating whether to build on it.
 **Recent AWS Service Announcements (changelog-style):**
 - [March 2026 announcements](https://www.factualminds.com/blog/aws-service-announcements-march-2026/)
 - [May 2026 announcements](https://www.factualminds.com/blog/aws-service-announcements-may-2026/)
+
+**Architecture Deep Reading (essential AWS canon):**
+- [A Primer on AWS Cloud Architecture](https://aws.amazon.com/blogs/architecture/a-primer-on-aws-cloud-architecture/) — start here for high-level mental model
+- [AWS Builders Library](https://aws.amazon.com/builders-library/) — operations + resilience essays from AWS principal engineers
+- [Designing for Failure on AWS](https://aws.amazon.com/builders-library/designing-for-failure/) — Builders Library
+- [Static Stability Using Availability Zones](https://aws.amazon.com/builders-library/static-stability-using-availability-zones/) — Builders Library
+- [Multi-Tier Architectures on AWS (whitepaper)](https://docs.aws.amazon.com/whitepapers/latest/overview-deployment-options/multi-tier-architectures.html)
+- [Multi-Region Active-Active architectures (blog category)](https://aws.amazon.com/blogs/architecture/category/multi-region/)
 
 ---
 
@@ -209,11 +218,14 @@ Run code without managing servers.
 - [Lambda Documentation](https://docs.aws.amazon.com/lambda/)
 - [Lambda Pricing](https://aws.amazon.com/lambda/pricing/)
 - [Lambda Powertools (Python/TypeScript/Java)](https://docs.powertools.aws.dev/)
+- [Lambda invocation, scaling and concurrency (official docs)](https://docs.aws.amazon.com/lambda/latest/dg/invocation-scaling.html)
+- [AWS Lambda blog category (Compute Blog)](https://aws.amazon.com/blogs/compute/category/aws-lambda/) — patterns, deep dives, releases
 
 **Production Guides:**
 - [Lambda cost optimization — pay-per-request vs provisioned](https://www.factualminds.com/blog/aws-lambda-cost-optimization-pay-per-request-vs-provisioned/)
 - [Lambda S3 files vs EFS — cost and limits](https://www.factualminds.com/blog/aws-lambda-s3-files-vs-efs-cost-and-limits/)
 - [AWS Lambda — glossary entry](https://www.factualminds.com/glossary/aws-lambda/)
+- [Going Serverless at Scale — Adrian Cockcroft (re:Invent talk)](https://www.youtube.com/watch?v=EBSdyoO3goc)
 
 **Comparisons:**
 - [Lambda vs container cost calculator](https://www.factualminds.com/tools/aws-lambda-vs-container-cost-calculator/)
@@ -232,6 +244,8 @@ Run code without managing servers.
 > Serverless event bus for SaaS, AWS services, and custom events.
 - [EventBridge Documentation](https://docs.aws.amazon.com/eventbridge/)
 - [EventBridge event-driven architecture patterns](https://www.factualminds.com/blog/aws-eventbridge-event-driven-architecture-patterns/)
+- [AWS Event-Driven Architecture (overview)](https://aws.amazon.com/event-driven-architecture/) — official intro, services, patterns
+- [Building Event-Driven Systems on AWS (Architecture Blog)](https://aws.amazon.com/blogs/architecture/category/event-driven/) — production case studies
 
 ### AWS SAM & Serverless Framework
 
@@ -335,6 +349,9 @@ Run code without managing servers.
 > Single-digit millisecond NoSQL key-value + document store.
 
 - [DynamoDB Documentation](https://docs.aws.amazon.com/dynamodb/)
+- [DynamoDB best practices (official)](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/best-practices.html) — partition keys, indexes, scaling
+- [DynamoDB single-table design — Alex DeBrie](https://www.alexdebrie.com/posts/dynamodb-single-table/) — canonical reading
+- [Advanced design patterns for DynamoDB — Rick Houlihan (re:Invent talk)](https://www.youtube.com/watch?v=HaEPXoXVf2k)
 - [DynamoDB single-table design patterns for SaaS](https://www.factualminds.com/blog/dynamodb-single-table-design-patterns-for-saas/)
 - [Amazon DynamoDB — glossary entry](https://www.factualminds.com/glossary/amazon-dynamodb/)
 - [DynamoDB vs RDS](https://www.factualminds.com/compare/dynamodb-vs-rds/)
@@ -840,6 +857,7 @@ Run code without managing servers.
 - [AWS Compute Optimizer](https://aws.amazon.com/compute-optimizer/)
 - [AWS Cost Anomaly Detection](https://aws.amazon.com/aws-cost-management/aws-cost-anomaly-detection/)
 - [AWS Trusted Advisor](https://aws.amazon.com/premiumsupport/technology/trusted-advisor/)
+- [AWS Billing and Cost Management — official user guide](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/) — accounts, invoices, allocation tags
 
 ### Strategy & Playbooks
 
@@ -1054,6 +1072,8 @@ Run code without managing servers.
 - [Well-Architected Framework — official](https://aws.amazon.com/architecture/well-architected/)
 - [WAF Tool (free review)](https://aws.amazon.com/well-architected-tool/)
 - [WAF lenses (Serverless, SaaS, GenAI, ...)](https://aws.amazon.com/architecture/well-architected/?ref=wellarchitected-wp&wa-lens-whitepapers.sort-by=item.additionalFields.sortDate&wa-lens-whitepapers.sort-order=desc)
+- [Reliability Pillar (official whitepaper)](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/) — failure isolation, recovery, multi-AZ
+- [Cost Optimization Pillar (official whitepaper)](https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/) — practices for spend efficiency
 - [WAF 6 pillars explained](https://www.factualminds.com/blog/aws-well-architected-framework-6-pillars-explained/)
 - [Well-Architected Framework — glossary](https://www.factualminds.com/glossary/well-architected-framework/)
 - [AWS Well-Architected Review service](https://www.factualminds.com/services/aws-architecture-review/)
@@ -1278,6 +1298,30 @@ Plain-language definitions of common AWS terms:
 
 ---
 
+## Engineering Blogs & Case Studies
+
+How real companies run on AWS — production architectures, postmortems, and at-scale lessons. The "official docs" tell you what's possible; these tell you what actually broke.
+
+### Engineering blogs from companies on AWS
+
+- [Netflix Tech Blog](https://netflixtechblog.com/) — large-scale streaming, microservices, resilience
+- [Netflix Simian Army (origin of chaos engineering)](https://netflixtechblog.com/the-netflix-simian-army-16e57fbab116) — the canonical "break things on purpose" essay
+- [Netflix Chaos Engineering tag](https://netflixtechblog.com/tagged/chaos-engineering) — ongoing chaos posts
+- [Airbnb Engineering](https://medium.com/airbnb-engineering) — search & infra at hospitality scale
+- [Dropbox Tech — Infrastructure](https://dropbox.tech/infrastructure) — famous AWS-→-bare-metal exit + return-to-cloud insights
+- [Pinterest Engineering](https://medium.com/@Pinterest_Engineering) — high-RPS feed + storage architecture
+- [Capital One Tech — Cloud](https://www.capitalone.com/tech/cloud/) — regulated-finance cloud-native transformation
+
+### AWS official postmortems & resilience reading
+
+- [Amazon S3 Outage Postmortem (Feb 2017)](https://aws.amazon.com/message/41926/) — the classic teardown; required reading for designing resilient architectures
+- [AWS Builders Library — Resilience & Failures](https://aws.amazon.com/builders-library/) — operations essays from AWS principal engineers (also linked from [Foundations](#foundations))
+- [Designing for Failure on AWS](https://aws.amazon.com/builders-library/designing-for-failure/) — Builders Library essay
+
+> Pair these with the [Reliability Pillar](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/) and [Static Stability Using AZs](https://aws.amazon.com/builders-library/static-stability-using-availability-zones/) for the full failure-design picture.
+
+---
+
 ## Community, Social & Continuous Learning
 
 How to plug into the AWS conversation, follow signal-rich voices, and stay current as services ship weekly.
@@ -1430,8 +1474,6 @@ Common SaaS / OSS integrations on AWS:
 ---
 
 ## Need Implementation Help?
-
-This guide is curated by [FactualMinds](https://www.factualminds.com/), an AWS Select Tier Consulting Partner. We help teams ship and operate on AWS:
 
 - [Free AWS Cost Audit](https://www.factualminds.com/aws-cost-audit/)
 - [AWS Migration Services](https://www.factualminds.com/services/aws-migration/)
