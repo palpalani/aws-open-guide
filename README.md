@@ -48,6 +48,7 @@ If a category here is empty or thin, [contributions are welcome](CONTRIBUTING.md
 - [AWS Glossary](#aws-glossary)
 - [AWS Certifications & Learning Paths](#aws-certifications--learning-paths)
 - [Architecture Patterns](#architecture-patterns)
+- [Community, Social & Continuous Learning](#community-social--continuous-learning)
 - [Third-Party Integrations](#third-party-integrations)
 - [Books, Courses & Newsletters](#books-courses--newsletters)
 - [Conferences & Events](#conferences--events)
@@ -1274,6 +1275,87 @@ Plain-language definitions of common AWS terms:
 
 - [Multi-tenant SaaS on AWS](https://www.factualminds.com/patterns/multi-tenant-saas-on-aws/)
 - [Multi-tenant architecture — glossary](https://www.factualminds.com/glossary/multi-tenant-architecture/)
+
+---
+
+## Community, Social & Continuous Learning
+
+How to plug into the AWS conversation, follow signal-rich voices, and stay current as services ship weekly.
+
+### Official AWS learning & Q&A portals
+
+- [AWS re:Post](https://repost.aws/) — official Q&A staffed by AWS engineers + community
+- [AWS Skill Builder](https://skillbuilder.aws/) — official free training (also in [Certifications](#aws-certifications--learning-paths))
+- [AWS Workshops](https://workshops.aws/) — guided, step-by-step builds (also in [Certifications](#aws-certifications--learning-paths))
+- [AWS re:Invent session catalog](https://reinvent.awsevents.com/) — annual deep architecture + announcements
+
+### Independent blogs (high signal-to-noise)
+
+- [Jeremy Daly](https://www.jeremydaly.com/) — serverless deep dives
+- [Alex DeBrie](https://www.alexdebrie.com/) — DynamoDB, NoSQL data modeling
+- [Last Week in AWS](https://www.lastweekinaws.com/blog/) — Corey Quinn's weekly curated updates
+- [Jayendra's Blog](https://jayendrapatil.com/) — structured AWS cert + service learning
+
+### X / Twitter accounts worth following
+
+- [@AWSOpen](https://twitter.com/AWSOpen) — AWS open-source + cloud-native updates
+- [@QuinnyPig](https://twitter.com/QuinnyPig) — Corey Quinn, cost commentary + critique
+- [@adriancantrill](https://twitter.com/adriancantrill) — deep architecture
+- [@forrestbrazeal](https://twitter.com/forrestbrazeal) — learning paths, Cloud Resume Challenge
+- [@theburningmonk](https://twitter.com/theburningmonk) — Yan Cui, Lambda + serverless patterns
+- [@jeffbarr](https://twitter.com/jeffbarr) — official AWS announcements
+
+### Reddit (real-world issues, troubleshooting)
+
+- [r/aws](https://www.reddit.com/r/aws/) — news, troubleshooting, ops issues
+- [r/cloud](https://www.reddit.com/r/Cloud/) — multi-cloud discussions
+- [r/devops](https://www.reddit.com/r/devops/) — infra patterns
+- [r/AWSCertifications](https://www.reddit.com/r/AWSCertifications/) — exam + learning
+
+> Community insight: **understanding real architectures beats memorizing services.**
+
+### Hacker News (trends, debates, postmortems)
+
+- [Hacker News](https://news.ycombinator.com/) — search for `AWS architecture`, `serverless vs containers`, `AWS outage postmortem`
+- Strongest for: design tradeoffs, vendor lock-in debates, production failure analysis
+
+### Q&A and community programs
+
+- [Stack Overflow AWS Collective](https://stackoverflow.com/collectives/aws) — curated AWS answers
+- [AWS Community Builders](https://aws.amazon.com/developer/community/community-builders/) — recognized community experts
+- [AWS Heroes](https://aws.amazon.com/developer/community/heroes/) — top community contributors
+- AWS-focused Slack / Discord communities — high signal for live ops issues
+
+### Learning platforms (free + paid)
+
+- [freeCodeCamp AWS courses](https://www.freecodecamp.org/news/tag/aws/) — free long-form video courses
+- [Tutorials Dojo](https://tutorialsdojo.com/) — cert prep + practice exams
+- [A Cloud Guru](https://acloudguru.com/) — structured cert paths (also in [Books, Courses & Newsletters](#books-courses--newsletters))
+- [Adrian Cantrill](https://learn.cantrill.io/) — deep-dive cert courses (also in [Books, Courses & Newsletters](#books-courses--newsletters))
+
+### YouTube (practical demos)
+
+- [Andrew Brown / ExamPro](https://www.youtube.com/@ExamProChannel) — full-length cert courses
+- [Tech With Lucy](https://www.youtube.com/@TechWithLucy) — beginner → intermediate AWS
+- [Be A Better Dev](https://www.youtube.com/@BeABetterDev) — AWS tutorials (also in [Books, Courses & Newsletters](#books-courses--newsletters))
+- [AWS Events](https://www.youtube.com/@AWSEventsChannel) — re:Invent + Summit recordings
+
+### How to actually learn AWS (community-derived strategy)
+
+1. Learn via **architectures**, not isolated services — start from a real workload, then pick services.
+2. Use **hands-on labs early** — AWS Workshops + Skill Builder + a sandbox account beat reading docs.
+3. **Follow release streams continuously** — AWS ships weekly; What's New RSS + Last Week in AWS keep you current.
+4. **Combine official + community sources** — official docs for accuracy, community for tradeoffs and gotchas.
+
+### Minimal curated stack (best signal-to-noise)
+
+If you only follow a handful of sources:
+
+- **Blogs**: AWS Blog + Last Week in AWS
+- **X**: @AWSOpen, Corey Quinn, Yan Cui
+- **Community**: r/aws + AWS re:Post
+- **Learning**: AWS Skill Builder + AWS Workshops
+- **Deep learning**: re:Invent talks on YouTube
 
 ---
 
