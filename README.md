@@ -1,83 +1,122 @@
-# AWS Open Guide
+<div align="center">
 
-> A curated, opinionated guide to Amazon Web Services — services, tools, official docs, deep-dive guides, and battle-tested references. Organized by AWS's own service taxonomy.
+# ☁️ AWS Open Guide
 
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Awesome](https://awesome.re/badge.svg)](https://github.com/sindresorhus/awesome)
+### A curated, opinionated map of Amazon Web Services
 
-Maintained by [Palaniappan P](https://github.com/palpalani).
+**Services · official docs · production deep-dives · OSS tools · battle-tested references — organized by AWS's own service taxonomy.**
+
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg?style=flat-square)](https://creativecommons.org/licenses/by/4.0/)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
+[![Awesome](https://awesome.re/badge.svg?style=flat-square)](https://github.com/sindresorhus/awesome)
+[![GitHub stars](https://img.shields.io/github/stars/palpalani/aws-open-guide?style=flat-square&logo=github)](https://github.com/palpalani/aws-open-guide/stargazers)
+[![GitHub last commit](https://img.shields.io/github/last-commit/palpalani/aws-open-guide?style=flat-square&logo=github)](https://github.com/palpalani/aws-open-guide/commits)
+[![GitHub issues](https://img.shields.io/github/issues/palpalani/aws-open-guide?style=flat-square&logo=github)](https://github.com/palpalani/aws-open-guide/issues)
+
+[**🚀 Get Started**](#how-to-use-this-guide) ·
+[**🧭 Browse Services**](#table-of-contents) ·
+[**⚖️ Decision Guides**](#decision-guides--x-vs-y) ·
+[**💰 Cost & FinOps**](#cost-management--finops) ·
+[**🤖 AI & MCP**](#ai-coding-agents-mcp--skills) ·
+[**🤝 Contribute**](CONTRIBUTING.md)
+
+<sub>Maintained by <a href="https://github.com/palpalani">Palaniappan P</a> · Updated continuously</sub>
+
+</div>
+
+---
 
 ## Why this guide?
 
 The AWS console has **200+ services**. The official docs are exhaustive but fragmented across hundreds of microsites. This guide cuts through the noise:
 
-- **Canonical taxonomy** — organized the way AWS thinks (Compute, Storage, Database, Networking, ...), not by tool category.
-- **Three-tier resources per service** — official docs, in-depth production guides, OSS tools.
-- **Real cost & gotcha callouts** — limits, surprise-bill traps, and migration pain points the brochure won't mention.
-- **Decision-first** — every "X vs Y" question gets a comparison link.
+| | |
+|---|---|
+| 🗂️ **Canonical taxonomy** | Organized the way AWS thinks — Compute, Storage, Database, Networking — not by tool category. |
+| 📚 **Three-tier resources per service** | Official docs first, then in-depth production guides, then OSS tools. |
+| ⚠️ **Real cost & gotcha callouts** | Limits, surprise-bill traps, and migration pain points the brochure won't mention. |
+| ⚖️ **Decision-first** | Every "X vs Y" question gets a comparison link. |
+| 🤖 **AI-native** | First-class coverage of MCP servers, agent plugins, and Claude Code skills for AWS. |
 
-If a category here is empty or thin, [contributions are welcome](CONTRIBUTING.md).
+> [!TIP]
+> If a category here is empty or thin, [contributions are warmly welcomed](CONTRIBUTING.md). One link per line, em-dash separator — see [CONTRIBUTING.md](CONTRIBUTING.md) for the full format.
 
 ## How to use this guide
 
-**Pick your entry point:**
+### 🧭 Pick your entry point
 
-- **New to AWS?** Start at [Foundations](#foundations), then read the [Architecture Deep Reading](#foundations) sub-list, then pick a service section.
-- **Picking a service?** Jump to [Decision Guides — X vs Y](#decision-guides--x-vs-y). Every common "should I use X or Y" question has a comparison link.
-- **Hunting a surprise bill?** Start with [Cost Management & FinOps](#cost-management--finops) → Bill Teardowns. The most expensive surprises (NAT Gateway, data transfer, Lambda runaway) are first.
-- **Building with AI?** [Artificial Intelligence & Machine Learning](#artificial-intelligence--machine-learning) for services, [AI Coding Agents, MCP & Skills](#ai-coding-agents-mcp--skills) for AI-assisted development.
-- **Staying current?** [Community, Social & Continuous Learning](#community-social--continuous-learning) → Minimal curated stack.
+| You are... | Start here |
+|---|---|
+| 🌱 **New to AWS** | [Foundations](#foundations) → Architecture Deep Reading → pick a service section |
+| 🎯 **Picking a service** | [Decision Guides — X vs Y](#decision-guides--x-vs-y) — every common "should I use X or Y" question |
+| 💸 **Hunting a surprise bill** | [Cost Management & FinOps](#cost-management--finops) → Bill Teardowns (NAT Gateway, data transfer, Lambda runaway) |
+| 🤖 **Building with AI** | [AI/ML services](#artificial-intelligence--machine-learning) for services · [AI Coding Agents, MCP & Skills](#ai-coding-agents-mcp--skills) for AI-assisted dev |
+| 📰 **Staying current** | [Community, Social & Continuous Learning](#community-social--continuous-learning) → Minimal curated stack |
+| 🛠️ **Migrating from another platform** | [Migration Guides — From Other Platforms](#migration-guides--from-other-platforms) |
 
-**Convention used in every service section:**
+### 📐 Convention used in every service section
 
-- **Official** — AWS's own docs, pricing, and announcements. Authoritative but not opinionated.
-- **Production Guides** — third-party deep-dives. Use when official docs leave you with "yes but how at scale?".
-- **OSS Tools** / **Tools** — open-source utilities, listed by usefulness in production (not alphabetical).
-- **⚠️ Gotchas** — limits, bill traps, and surprise behaviour that the brochure won't mention.
-- **Decision Guides** — links to "X vs Y" comparisons for that service.
+| Tier | What you'll find | When to read |
+|---|---|---|
+| **Official** | AWS's own docs, pricing, announcements | Authoritative facts |
+| **Production Guides** | Third-party deep-dives | When official docs leave you with "yes but how at scale?" |
+| **OSS Tools** / **Tools** | Open-source utilities | Day-to-day workflow upgrades |
+| **⚠️ Gotchas** | Limits, bill traps, surprise behaviour | Before you ship to production |
+| **Decision Guides** | "X vs Y" comparisons | When picking between similar services |
 
+> [!NOTE]
 > **Quick decisions:** if you already know the workload and just need to pick the AWS service, skip to [Decision Guides — X vs Y](#decision-guides--x-vs-y).
 
-## Table of Contents
+<details>
+<summary><strong>📑 Table of Contents</strong> — click to expand</summary>
 
-- [How to use this guide](#how-to-use-this-guide)
-- [Foundations](#foundations)
-- [Compute](#compute)
-- [Containers](#containers)
-- [Serverless](#serverless)
-- [Storage](#storage)
-- [Databases](#databases)
-- [Networking & Content Delivery](#networking--content-delivery)
-- [Security & Identity](#security--identity)
-- [Compliance](#compliance)
-- [Analytics & Big Data](#analytics--big-data)
-- [Artificial Intelligence & Machine Learning](#artificial-intelligence--machine-learning)
-- [Developer Tools, DevOps & CI/CD](#developer-tools-devops--cicd)
-- [Observability & Monitoring](#observability--monitoring)
-- [Cost Management & FinOps](#cost-management--finops)
-- [Migration & Transfer](#migration--transfer)
-- [Internet of Things (IoT)](#internet-of-things-iot)
-- [Application Integration](#application-integration)
-- [Email & Communication](#email--communication)
-- [Management & Governance](#management--governance)
-- [Well-Architected Framework](#well-architected-framework)
-- [Industry Architectures](#industry-architectures)
-- [Decision Guides — X vs Y](#decision-guides--x-vs-y)
-- [Migration Guides — From Other Platforms](#migration-guides--from-other-platforms)
-- [Free Tools & Calculators](#free-tools--calculators)
-- [AWS Glossary](#aws-glossary)
-- [AWS Certifications & Learning Paths](#aws-certifications--learning-paths)
-- [Architecture Patterns](#architecture-patterns)
-- [AI Coding Agents, MCP & Skills](#ai-coding-agents-mcp--skills)
-- [Engineering Blogs & Case Studies](#engineering-blogs--case-studies)
-- [Community, Social & Continuous Learning](#community-social--continuous-learning)
-- [Third-Party Integrations](#third-party-integrations)
-- [Books, Courses & Newsletters](#books-courses--newsletters)
-- [Conferences & Events](#conferences--events)
-- [Other Awesome AWS Lists](#other-awesome-aws-lists)
-- [Contributing](#contributing)
-- [License](#license)
+### 🟧 Core AWS services
+
+- [📖 How to use this guide](#how-to-use-this-guide)
+- [🏛️ Foundations](#foundations)
+- [💻 Compute](#compute)
+- [📦 Containers](#containers)
+- [⚡ Serverless](#serverless)
+- [💾 Storage](#storage)
+- [🗄️ Databases](#databases)
+- [🌐 Networking & Content Delivery](#networking--content-delivery)
+- [🔐 Security & Identity](#security--identity)
+- [📋 Compliance](#compliance)
+- [📊 Analytics & Big Data](#analytics--big-data)
+- [🤖 Artificial Intelligence & Machine Learning](#artificial-intelligence--machine-learning)
+- [🛠️ Developer Tools, DevOps & CI/CD](#developer-tools-devops--cicd)
+- [🔭 Observability & Monitoring](#observability--monitoring)
+- [💰 Cost Management & FinOps](#cost-management--finops)
+- [🚚 Migration & Transfer](#migration--transfer)
+- [📡 Internet of Things (IoT)](#internet-of-things-iot)
+- [🔄 Application Integration](#application-integration)
+- [✉️ Email & Communication](#email--communication)
+- [🏢 Management & Governance](#management--governance)
+
+### 🟦 Frameworks & guidance
+
+- [🏗️ Well-Architected Framework](#well-architected-framework)
+- [🏭 Industry Architectures](#industry-architectures)
+- [⚖️ Decision Guides — X vs Y](#decision-guides--x-vs-y)
+- [🔁 Migration Guides — From Other Platforms](#migration-guides--from-other-platforms)
+- [🧮 Free Tools & Calculators](#free-tools--calculators)
+- [📓 AWS Glossary](#aws-glossary)
+- [🎓 AWS Certifications & Learning Paths](#aws-certifications--learning-paths)
+- [🧩 Architecture Patterns](#architecture-patterns)
+
+### 🟪 Community, AI tooling & resources
+
+- [🧠 AI Coding Agents, MCP & Skills](#ai-coding-agents-mcp--skills)
+- [📰 Engineering Blogs & Case Studies](#engineering-blogs--case-studies)
+- [🌐 Community, Social & Continuous Learning](#community-social--continuous-learning)
+- [🔌 Third-Party Integrations](#third-party-integrations)
+- [📚 Books, Courses & Newsletters](#books-courses--newsletters)
+- [🎤 Conferences & Events](#conferences--events)
+- [🔖 Other Awesome AWS Lists](#other-awesome-aws-lists)
+- [🤝 Contributing](#contributing)
+- [📄 License](#license)
+
+</details>
 
 ---
 
@@ -348,10 +387,11 @@ Run code without managing servers.
 - [MinIO `mc` client](https://github.com/minio/mc) — S3-compatible CLI (works with S3 + MinIO)
 - [rclone](https://github.com/rclone/rclone) — rsync for S3 + 70+ other cloud storage backends
 
-**⚠️ Gotchas:**
-- Bucket names are globally unique across all AWS accounts.
-- Default encryption (SSE-S3) is now ON for all new buckets — was opt-in pre-2023.
-- Cross-region replication does NOT replicate delete markers by default.
+> [!WARNING]
+> **Gotchas:**
+> - Bucket names are globally unique across all AWS accounts.
+> - Default encryption (SSE-S3) is now ON for all new buckets — was opt-in pre-2023.
+> - Cross-region replication does NOT replicate delete markers by default.
 
 ### Amazon S3 Vectors
 
@@ -1454,6 +1494,7 @@ AI-assisted development on AWS — Model Context Protocol (MCP) servers, Claude 
 
 ### AWS MCP Servers — `awslabs/mcp`
 
+> [!NOTE]
 > AWS publishes 50+ official open-source MCP servers. They give AI assistants live access to AWS docs, APIs, and service operations — no more stale model knowledge.
 
 **Hub & docs:**
@@ -1574,6 +1615,7 @@ How real companies run on AWS — production architectures, postmortems, and at-
 - [AWS Builders Library — Resilience & Failures](https://aws.amazon.com/builders-library/) — operations essays from AWS principal engineers (also linked from [Foundations](#foundations))
 - [Designing for Failure on AWS](https://aws.amazon.com/builders-library/designing-for-failure/) — Builders Library essay
 
+> [!IMPORTANT]
 > Pair these with the [Reliability Pillar](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/) and [Static Stability Using AZs](https://aws.amazon.com/builders-library/static-stability-using-availability-zones/) for the full failure-design picture. The recurring lesson: **us-east-1 is not a single region for outage purposes — global control planes live there.**
 
 ---
@@ -1612,7 +1654,8 @@ How to plug into the AWS conversation, follow signal-rich voices, and stay curre
 - [r/devops](https://www.reddit.com/r/devops/) — infra patterns
 - [r/AWSCertifications](https://www.reddit.com/r/AWSCertifications/) — exam + learning
 
-> Community insight: **understanding real architectures beats memorizing services.**
+> [!TIP]
+> **Community insight:** understanding real architectures beats memorizing services.
 
 ### Hacker News (trends, debates, postmortems)
 
@@ -1792,13 +1835,26 @@ Contributions are warmly welcomed. See [CONTRIBUTING.md](CONTRIBUTING.md) for th
 3. New top-level categories require an issue first — let's discuss.
 4. Self-promotion is fine if the resource is genuinely useful, but disclose any affiliation in the PR description.
 
-To suggest a resource: [open a "New Resource" issue](https://github.com/palpalani/aws-open-guide/issues/new?template=new-resource.yml).
-To report a broken link: [open a "Broken Link" issue](https://github.com/palpalani/aws-open-guide/issues/new?template=broken-link.yml).
+| Action | Link |
+|---|---|
+| 💡 Suggest a resource | [Open a "New Resource" issue](https://github.com/palpalani/aws-open-guide/issues/new?template=new-resource.yml) |
+| 🔗 Report a broken link | [Open a "Broken Link" issue](https://github.com/palpalani/aws-open-guide/issues/new?template=broken-link.yml) |
+| ⭐ Show appreciation | [Star the repo](https://github.com/palpalani/aws-open-guide) — helps others discover it |
 
 ---
 
 ## License
 
-This work is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+<div align="center">
+
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg?style=for-the-badge)](https://creativecommons.org/licenses/by/4.0/)
+
+This work is licensed under **[Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)**.
 
 You're free to share and adapt the material for any purpose, even commercially, as long as you give appropriate credit.
+
+---
+
+<sub>Built with care by <a href="https://github.com/palpalani">Palaniappan P</a> · If this guide saved you time, <a href="https://github.com/palpalani/aws-open-guide">⭐ star the repo</a></sub>
+
+</div>
