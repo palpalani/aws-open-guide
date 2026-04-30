@@ -48,6 +48,7 @@ If a category here is empty or thin, [contributions are welcome](CONTRIBUTING.md
 - [AWS Glossary](#aws-glossary)
 - [AWS Certifications & Learning Paths](#aws-certifications--learning-paths)
 - [Architecture Patterns](#architecture-patterns)
+- [AI Coding Agents, MCP & Skills](#ai-coding-agents-mcp--skills)
 - [Engineering Blogs & Case Studies](#engineering-blogs--case-studies)
 - [Community, Social & Continuous Learning](#community-social--continuous-learning)
 - [Third-Party Integrations](#third-party-integrations)
@@ -1298,6 +1299,104 @@ Plain-language definitions of common AWS terms:
 
 ---
 
+## AI Coding Agents, MCP & Skills
+
+AI-assisted development on AWS — Model Context Protocol (MCP) servers, Claude Code agent plugins, and skill bundles that let coding agents (Claude Code, Cursor, Cline, Windsurf, Kiro, Q Developer) architect, deploy, and operate AWS systems with real-time service knowledge.
+
+### AWS MCP Servers — `awslabs/mcp`
+
+> AWS publishes 50+ official open-source MCP servers. They give AI assistants live access to AWS docs, APIs, and service operations — no more stale model knowledge.
+
+**Hub & docs:**
+- [awslabs/mcp](https://github.com/awslabs/mcp) — canonical repository
+- [Open Source MCP Servers for AWS — catalog](https://awslabs.github.io/mcp/) — full list with usage docs
+- [Introducing AWS MCP Servers (AWS ML Blog)](https://aws.amazon.com/blogs/machine-learning/introducing-aws-mcp-servers-for-code-assistants-part-1/)
+- [Unlocking the power of MCP on AWS (AWS ML Blog)](https://aws.amazon.com/blogs/machine-learning/unlocking-the-power-of-model-context-protocol-mcp-on-aws/)
+- [AWS MCP Server (managed, in preview — re:Invent 2025)](https://docs.aws.amazon.com/aws-mcp/latest/userguide/what-is-mcp-server.html) — fully-managed remote server with Agent SOPs + CloudTrail logging
+
+**Essential / Core (start here):**
+- [AWS API MCP Server](https://awslabs.github.io/mcp/servers/aws-api-mcp-server) — interact with all AWS services via CLI commands
+- [AWS Knowledge MCP Server](https://awslabs.github.io/mcp/servers/aws-knowledge-mcp-server) — official docs, code samples, best practices
+- [AWS Documentation MCP Server](https://awslabs.github.io/mcp/servers/aws-documentation-mcp-server) — latest AWS docs and API references
+
+**Infrastructure & Deployment:**
+- [AWS Cloud Control API MCP Server](https://awslabs.github.io/mcp/servers/ccapi-mcp-server) — full CRUDL on any AWS resource + integrated security scanning
+- [Amazon EKS MCP Server](https://awslabs.github.io/mcp/servers/eks-mcp-server) — Kubernetes cluster + app deployment
+- [Amazon ECS MCP Server](https://awslabs.github.io/mcp/servers/ecs-mcp-server) — container orchestration + ECS deployment
+- [AWS Serverless MCP Server](https://awslabs.github.io/mcp/servers/aws-serverless-mcp-server) — full SAM-CLI serverless lifecycle
+- [AWS Lambda Tool MCP Server](https://awslabs.github.io/mcp/servers/lambda-tool-mcp-server) — execute Lambda functions as AI tools (private resource access)
+- [Finch MCP Server](https://awslabs.github.io/mcp/servers/finch-mcp-server) — local container builds with ECR integration
+- [AWS Systems Manager for SAP MCP Server](https://awslabs.github.io/mcp/servers/aws-for-sap-management-mcp-server)
+- [AWS Support MCP Server](https://awslabs.github.io/mcp/servers/aws-support-mcp-server) — manage AWS Support cases
+
+**AI & Machine Learning:**
+- [Amazon Bedrock Knowledge Bases Retrieval MCP Server](https://awslabs.github.io/mcp/servers/bedrock-kb-retrieval-mcp-server) — query enterprise KBs with citations
+- [Amazon Bedrock AgentCore MCP Server](https://awslabs.github.io/mcp/servers/amazon-bedrock-agentcore-mcp-server) — build, deploy, manage Bedrock agents
+- [Amazon Bedrock Custom Model Import MCP Server](https://awslabs.github.io/mcp/servers/aws-bedrock-custom-model-import-mcp-server)
+- [Amazon SageMaker AI MCP Server](https://awslabs.github.io/mcp/servers/sagemaker-ai-mcp-server)
+- [Amazon Kendra Index MCP Server](https://awslabs.github.io/mcp/servers/amazon-kendra-index-mcp-server)
+- [Amazon Q Index MCP Server](https://awslabs.github.io/mcp/servers/amazon-qindex-mcp-server) · [Q Business anonymous](https://awslabs.github.io/mcp/servers/amazon-qbusiness-anonymous-mcp-server)
+
+**Data & Analytics:**
+- [Amazon DynamoDB MCP Server](https://awslabs.github.io/mcp/servers/dynamodb-mcp-server)
+- [Amazon Aurora PostgreSQL MCP Server](https://awslabs.github.io/mcp/servers/postgres-mcp-server) · [MySQL](https://awslabs.github.io/mcp/servers/mysql-mcp-server) · [DSQL](https://awslabs.github.io/mcp/servers/aurora-dsql-mcp-server)
+- [Amazon DocumentDB MCP Server](https://awslabs.github.io/mcp/servers/documentdb-mcp-server)
+- [Amazon Neptune MCP Server](https://awslabs.github.io/mcp/servers/amazon-neptune-mcp-server) — graph queries (openCypher + Gremlin)
+- [Amazon Redshift MCP Server](https://awslabs.github.io/mcp/servers/redshift-mcp-server)
+- [Amazon ElastiCache MCP Server](https://awslabs.github.io/mcp/servers/elasticache-mcp-server) · [Valkey](https://awslabs.github.io/mcp/servers/valkey-mcp-server) · [Memcached](https://awslabs.github.io/mcp/servers/memcached-mcp-server)
+- [AWS S3 Tables MCP Server](https://awslabs.github.io/mcp/servers/s3-tables-mcp-server) — SQL on S3-based tables
+- [Amazon Data Processing MCP Server](https://awslabs.github.io/mcp/servers/aws-dataprocessing-mcp-server) — AWS Glue + EMR + Athena
+
+**Integration & Messaging:**
+- [Amazon SNS / SQS MCP Server](https://awslabs.github.io/mcp/servers/amazon-sns-sqs-mcp-server)
+- [Amazon MQ MCP Server](https://awslabs.github.io/mcp/servers/amazon-mq-mcp-server) — RabbitMQ + ActiveMQ
+- [AWS Step Functions MCP Server](https://awslabs.github.io/mcp/servers/stepfunctions-tool-mcp-server)
+- [AWS AppSync MCP Server](https://awslabs.github.io/mcp/servers/aws-appsync-mcp-server)
+- [Amazon Location Service MCP Server](https://awslabs.github.io/mcp/servers/aws-location-mcp-server)
+- [OpenAPI MCP Server](https://awslabs.github.io/mcp/servers/openapi-mcp-server) — dynamic API integration via OpenAPI specs
+
+**Cost & Operations:**
+- [AWS Billing and Cost Management MCP Server](https://awslabs.github.io/mcp/servers/billing-cost-management-mcp-server)
+- [AWS Pricing MCP Server](https://awslabs.github.io/mcp/servers/aws-pricing-mcp-server) — pre-deployment cost estimation
+- [Amazon CloudWatch MCP Server](https://awslabs.github.io/mcp/servers/cloudwatch-mcp-server) — metrics, alarms, logs analysis
+- [Amazon CloudWatch Application Signals MCP Server](https://awslabs.github.io/mcp/servers/cloudwatch-applicationsignals-mcp-server)
+- [AWS CloudTrail MCP Server](https://awslabs.github.io/mcp/servers/cloudtrail-mcp-server)
+- [AWS Managed Prometheus MCP Server](https://awslabs.github.io/mcp/servers/prometheus-mcp-server)
+- [AWS Well-Architected Security Assessment MCP Server](https://awslabs.github.io/mcp/servers/well-architected-security-mcp-server)
+
+**Developer Tools:**
+- [AWS IAM MCP Server](https://awslabs.github.io/mcp/servers/iam-mcp-server) — user, role, group, policy management with security best practices
+- [AWS IoT SiteWise MCP Server](https://awslabs.github.io/mcp/servers/aws-iot-sitewise-mcp-server)
+
+**Healthcare & Life Sciences:**
+- [AWS HealthOmics MCP Server](https://awslabs.github.io/mcp/servers/aws-healthomics-mcp-server) — lifescience workflows
+- [HealthImaging MCP Server](https://awslabs.github.io/mcp/servers/healthimaging-mcp-server) — DICOM operations
+- [HealthLake MCP Server](https://awslabs.github.io/mcp/servers/healthlake-mcp-server) — FHIR datastores
+
+### Claude Code Agent Plugins & Skills for AWS
+
+**Official (awslabs):**
+- [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) — official plugins that equip Claude Code, Cursor, and Q Developer with deploy/architect/operate skills
+- [Introducing Agent Plugins for AWS (Developer Tools Blog, Feb 2026)](https://aws.amazon.com/blogs/developer/introducing-agent-plugins-for-aws/)
+- [`deploy-on-aws` plugin](https://github.com/awslabs/agent-plugins/tree/main/plugins/deploy-on-aws) — generates architecture recommendations, cost estimates, and infrastructure-as-code
+- [Agent Plugin for AWS Serverless (Mar 2026)](https://aws.amazon.com/about-aws/whats-new/2026/03/agent-plugin-aws-serverless/) — Lambda, EventBridge, Step Functions, SAM/CDK
+- [Getting Started with Agent Plugins for AWS + Claude Code (Builder Center)](https://builder.aws.com/content/39tWkKMGjPSXv4HOVoSm5C47ijN/from-deploy-to-aws-to-live-in-minutes-getting-started-with-agent-plugins-for-aws-and-claude-code)
+
+**Community plugin bundles:**
+- [zxkane/aws-skills](https://github.com/zxkane/aws-skills) — AWS CDK (with `cdk-nag`), Cost & Operations, Serverless & EDA, Bedrock AgentCore plugins
+- [Build on AWS Faster with Claude Code and AWS Skills (Kane.mx)](https://kane.mx/posts/2025/aws-skills-claude-code/)
+
+**Anthropic + Bedrock:**
+- [Claude in Amazon Bedrock](https://aws.amazon.com/bedrock/anthropic/) — Anthropic models on Bedrock (incl. Claude Code workflows)
+- [Claude with Amazon Bedrock — Anthropic Academy](https://anthropic.skilljar.com/claude-in-amazon-bedrock)
+
+**Protocol & ecosystem:**
+- [Model Context Protocol — official spec](https://modelcontextprotocol.io/) — Anthropic-led open protocol
+- [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) — community catalog of all MCP servers (cross-vendor)
+- [PulseMCP — AWS MCP servers directory](https://www.pulsemcp.com/servers?q=aws) — searchable index
+
+---
+
 ## Engineering Blogs & Case Studies
 
 How real companies run on AWS — production architectures, postmortems, and at-scale lessons. The "official docs" tell you what's possible; these tell you what actually broke.
@@ -1464,12 +1563,49 @@ Common SaaS / OSS integrations on AWS:
 
 ## Other Awesome AWS Lists
 
+### Official AWS GitHub organizations
+
+- [aws](https://github.com/aws) — primary AWS org: SDKs, CLI, core infrastructure tools (s2n-tls, aws-cli, aws-sdk-*)
+- [awslabs](https://github.com/awslabs) — experimental + high-performance AWS-built tooling (mountpoint-s3, llrt, mcp, aws-sdk-rust, agent-plugins)
+- [aws-samples](https://github.com/aws-samples) — reference architectures + sample code (educational; harden before production)
+- [aws-actions](https://github.com/aws-actions) — official GitHub Actions for AWS CI/CD (configure-aws-credentials, ecs-deploy-task-definition, ecr-login)
+- [aws-solutions](https://github.com/aws-solutions) — vetted AWS Solutions reference implementations
+- [aws-controllers-k8s](https://github.com/aws-controllers-k8s) — ACK: native AWS service operators for Kubernetes
+- [aws-cloudformation](https://github.com/aws-cloudformation) — CloudFormation hooks, registry, custom resource samples
+- [amzn](https://github.com/amzn) — broader Amazon-wide projects (some AWS-relevant)
+
+### Notable AWS-built repos worth bookmarking
+
+**Performance & runtimes:**
+- [awslabs/llrt](https://github.com/awslabs/llrt) — low-latency JavaScript runtime for Lambda
+- [awslabs/mountpoint-s3](https://github.com/awslabs/mountpoint-s3) — high-throughput FUSE client for S3
+- [awslabs/aws-sdk-rust](https://github.com/awslabs/aws-sdk-rust) — official Rust SDK
+- [aws/karpenter-provider-aws](https://github.com/aws/karpenter-provider-aws) — node autoscaling for EKS
+
+**AI / agents / MCP:**
+- [awslabs/mcp](https://github.com/awslabs/mcp) — official MCP servers (50+)
+- [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) — Claude Code / Cursor / Q Developer plugins
+- [awslabs/agentcore-samples](https://github.com/awslabs/agentcore-samples) — production patterns for Bedrock AgentCore
+- [awslabs/generative-ai-atlas](https://github.com/awslabs/generative-ai-atlas) — GenAI architecture catalog
+
+**Best-practice references:**
+- [aws/aws-eks-best-practices](https://github.com/aws/aws-eks-best-practices) — published EKS guide
+- [aws-samples/aws-cdk-examples](https://github.com/aws-samples/aws-cdk-examples) — CDK patterns in TS, Python, Java, Go, .NET
+- [aws-samples/aws-secure-environment-accelerator](https://github.com/aws-samples/aws-secure-environment-accelerator) — multi-account landing zone
+- [awslabs/aws-cost-and-usage-report-tools](https://github.com/awslabs/aws-cost-and-usage-report-tools) — CUR analytics
+
+**Developer tooling:**
+- [aws/aws-cli](https://github.com/aws/aws-cli) — official CLI
+- [aws-actions/configure-aws-credentials](https://github.com/aws-actions/configure-aws-credentials) — OIDC auth from GitHub Actions to AWS
+- [awslabs/nx-plugin-for-aws](https://github.com/awslabs/nx-plugin-for-aws) — Nx monorepo plugin for AWS
+
+### Curated awesome lists & community indexes
+
 - [donnemartin/awesome-aws](https://github.com/donnemartin/awesome-aws) — the original, encyclopedic
 - [open-guides/og-aws](https://github.com/open-guides/og-aws) — opinionated practitioner's guide (huge inspiration for this repo)
 - [dabit3/awesome-aws-amplify](https://github.com/dabit3/awesome-aws-amplify) — Amplify-focused
 - [iann0036/AWSConsoleRecorder](https://github.com/iann0036/AWSConsoleRecorder) — record console actions as IaC
-- [aws-samples](https://github.com/aws-samples) — official AWS reference architectures + sample code
-- [awslabs](https://github.com/awslabs) — official AWS labs (Mountpoint S3, etc.)
+- [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) — cross-vendor MCP catalog (incl. AWS)
 
 ---
 
