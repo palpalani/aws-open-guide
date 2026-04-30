@@ -6,7 +6,7 @@
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Awesome](https://awesome.re/badge.svg)](https://github.com/sindresorhus/awesome)
 
-Maintained by [Palaniappan P](https://github.com/palpalani) — AWS Cloud Architect & founder of [FactualMinds](https://www.factualminds.com/) (AWS Select Tier Consulting Partner).
+Maintained by [Palaniappan P](https://github.com/palpalani).
 
 ## Why this guide?
 
