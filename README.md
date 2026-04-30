@@ -117,6 +117,10 @@ Virtual servers, containers' substrate, and specialized chips.
 - [Which AWS compute should I use?](https://www.factualminds.com/decide/which-aws-compute/)
 - [EC2 vs Lambda — when to use which](https://www.factualminds.com/compare/aws-ec2-vs-lambda/)
 
+**OSS Tools:**
+- [99designs/aws-vault](https://github.com/99designs/aws-vault) — secure storage of AWS credentials on developer laptops
+- [cristim/autospotting](https://github.com/AutoSpotting/AutoSpotting) — automatically replace on-demand EC2 in ASGs with spot instances
+
 ### AWS Graviton — Arm-based processors
 
 > Custom Arm chips with 40% better price/performance than x86 on most workloads.
@@ -253,6 +257,14 @@ Run code without managing servers.
 - [AWS SAM (Serverless Application Model)](https://aws.amazon.com/serverless/sam/)
 - [Serverless Framework](https://www.serverless.com/)
 
+### OSS Lambda Frameworks (community)
+
+- [aws/chalice](https://github.com/aws/chalice) — Python serverless microframework (official AWS, Flask-style)
+- [Miserlou/Zappa](https://github.com/zappa/Zappa) — serverless WSGI Python on Lambda + API Gateway (Django, Flask)
+- [claudiajs/claudia](https://github.com/claudiajs/claudia) — deploy Node.js projects to Lambda + API Gateway with one command
+- [jeremydaly/lambda-api](https://github.com/jeremydaly/lambda-api) — lightweight web framework for serverless Node.js
+- [getmoto/moto](https://github.com/getmoto/moto) — mock AWS services for unit/integration tests (also useful beyond Lambda)
+
 **Other Serverless Patterns:**
 - [Scaling EdTech platforms on AWS serverless architecture](https://www.factualminds.com/blog/scaling-edtech-platforms-on-aws-serverless-architecture/)
 
@@ -281,6 +293,11 @@ Run code without managing servers.
 - [s3cmd](https://github.com/s3tools/s3cmd) — full-featured CLI
 - [Mountpoint for Amazon S3](https://github.com/awslabs/mountpoint-s3) — official FUSE mount
 - [s5cmd](https://github.com/peak/s5cmd) — fastest S3 CLI
+- [s3fs-fuse](https://github.com/s3fs-fuse/s3fs-fuse) — community FUSE-based S3 mount (Linux + macOS)
+- [goofys](https://github.com/kahing/goofys) — S3 file system in Go, optimized for read throughput
+- [MinIO](https://github.com/minio/minio) — self-hosted S3-compatible object storage (good for hybrid + dev/test)
+- [MinIO `mc` client](https://github.com/minio/mc) — S3-compatible CLI (works with S3 + MinIO)
+- [rclone](https://github.com/rclone/rclone) — rsync for S3 + 70+ other cloud storage backends
 
 **⚠️ Gotchas:**
 - Bucket names are globally unique across all AWS accounts.
@@ -356,6 +373,10 @@ Run code without managing servers.
 - [DynamoDB single-table design patterns for SaaS](https://www.factualminds.com/blog/dynamodb-single-table-design-patterns-for-saas/)
 - [Amazon DynamoDB — glossary entry](https://www.factualminds.com/glossary/amazon-dynamodb/)
 - [DynamoDB vs RDS](https://www.factualminds.com/compare/dynamodb-vs-rds/)
+
+**OSS Tools:**
+- [sensedeep/dynamodb-onetable](https://github.com/sensedeep/dynamodb-onetable) — Node.js library for single-table designs
+- [aws-amplify/dynamodb-toolbox](https://github.com/jeremydaly/dynamodb-toolbox) — Jeremy Daly's TypeScript library for single-table modeling
 
 ### Amazon Redshift
 
@@ -540,6 +561,9 @@ Run code without managing servers.
 - [CloudSploit](https://github.com/aquasecurity/cloudsploit) — AWS account misconfig scanner
 - [Pacu](https://github.com/RhinoSecurityLabs/pacu) — AWS exploitation framework (offensive)
 - [aws-nuke](https://github.com/rebuy-de/aws-nuke) — wipe an AWS account clean
+- [Checkov](https://github.com/bridgecrewio/checkov) — static analysis for Terraform, CloudFormation, CDK, Kubernetes, ARM, Bicep
+- [policy_sentry](https://github.com/salesforce/policy_sentry) — Salesforce IAM least-privilege policy generator
+- [algo](https://github.com/trailofbits/algo) — Trail of Bits one-click personal IPSEC VPN on EC2 (and other clouds)
 
 **Need help?** [AWS Cloud Security](https://www.factualminds.com/services/aws-cloud-security/) · [Managed SOC & MDR](https://www.factualminds.com/services/aws-managed-soc-mdr/) · [Penetration Testing](https://www.factualminds.com/services/aws-penetration-testing/) · [Cyber-Led AI Security Readiness](https://www.factualminds.com/services/cyber-led-ai/)
 
@@ -797,7 +821,22 @@ Run code without managing servers.
 
 - [LocalStack](https://localstack.cloud/) — AWS-in-a-box for local dev
 - [Ministack — free LocalStack alternative](https://www.factualminds.com/blog/ministack-free-localstack-alternative-aws-emulator/)
+- [getmoto/moto](https://github.com/getmoto/moto) — mock AWS services for Python tests (boto3 stub library)
 - [AWS CLI chmod /dev/null streaming bug — 2026](https://www.factualminds.com/blog/aws-cli-chmod-dev-null-streaming-bug-2026/) — gotcha alert
+
+### CLI & Productivity OSS
+
+- [awslogs](https://github.com/jorgebastida/awslogs) — query CloudWatch Logs from the terminal (the everyday-driver tool)
+- [aws-shell](https://github.com/awslabs/aws-shell) — interactive shell with autocomplete for the AWS CLI
+- [awless](https://github.com/wallix/awless) — opinionated Go-based CLI for EC2, IAM, S3 (declarative templates)
+- [saws](https://github.com/donnemartin/saws) — supercharged AWS CLI with autocomplete + syntax highlighting
+
+### CloudFormation OSS Tools
+
+- [cfn-lint](https://github.com/aws-cloudformation/cfn-lint) — official CloudFormation template linter (also installed via cfn-python-lint)
+- [Stelligent/cfn_nag](https://github.com/stelligent/cfn_nag) — CFN security linting (insecure IAM, S3 public, etc.)
+- [cloudtools/troposphere](https://github.com/cloudtools/troposphere) — Python library for generating CloudFormation templates
+- [cloudreach/sceptre](https://github.com/Sceptre/sceptre) — CLI-driven CloudFormation orchestration
 
 ### AWS CLI / SDKs / Cloud9
 
@@ -907,6 +946,8 @@ Run code without managing servers.
 - [Komiser](https://github.com/tailwarden/komiser) — multi-cloud cost + resource viewer
 - [aws-nuke](https://github.com/rebuy-de/aws-nuke) — wipe orphaned dev accounts
 - [cur-tools](https://github.com/awslabs/aws-cost-and-usage-report-tools)
+- [cloud-custodian/cloud-custodian](https://github.com/cloud-custodian/cloud-custodian) — YAML rules engine for resource governance, cost, and compliance enforcement
+- [Similarweb/finala](https://github.com/similarweb/finala) — scans AWS for wasteful and unused resources to cut spend
 
 **Need help?** [AWS Cost Optimization & FinOps services](https://www.factualminds.com/services/aws-cloud-cost-optimization-services/) · [FinOps Consulting](https://www.factualminds.com/services/finops-consulting/) · [Free AWS Cost Audit](https://www.factualminds.com/aws-cost-audit/)
 
@@ -1410,6 +1451,12 @@ How real companies run on AWS — production architectures, postmortems, and at-
 - [Dropbox Tech — Infrastructure](https://dropbox.tech/infrastructure) — famous AWS-→-bare-metal exit + return-to-cloud insights
 - [Pinterest Engineering](https://medium.com/@Pinterest_Engineering) — high-RPS feed + storage architecture
 - [Capital One Tech — Cloud](https://www.capitalone.com/tech/cloud/) — regulated-finance cloud-native transformation
+
+### AWS leadership blogs
+
+- [All Things Distributed](https://www.allthingsdistributed.com/) — Werner Vogels (AWS CTO); architecture philosophy, eventual consistency, "you build it, you run it"
+- [Jeff Barr — Things I Like](https://jeff-barr.com/) — AWS Chief Evangelist; release commentary and historical context
+- [AWS Geek (Jerry Hargrove)](https://www.awsgeek.com/) — illustrated AWS service diagrams + cheat sheets
 
 ### AWS official postmortems & resilience reading
 
