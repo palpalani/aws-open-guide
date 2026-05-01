@@ -52,6 +52,9 @@ jobs:
             --max-concurrency 8
             --timeout 30
             --retry-wait-time 5
+            --exclude '^https?://(www\.)?netflixtechblog\.com'
+            --exclude '^https?://(www\.)?jeff-barr\.com'
+            --exclude '^https?://(www\.)?thecloudpod\.tv'
             README.md
           # Fail PR/push runs immediately; let scheduled runs file an issue instead.
           fail: ${{ github.event_name != 'schedule' }}

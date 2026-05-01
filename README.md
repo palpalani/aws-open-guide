@@ -144,12 +144,11 @@ Start here if you're new to AWS or evaluating whether to build on it.
 - [May 2026 announcements](https://www.factualminds.com/blog/aws-service-announcements-may-2026/)
 
 **Architecture Deep Reading (essential AWS canon):**
-- [A Primer on AWS Cloud Architecture](https://aws.amazon.com/blogs/architecture/a-primer-on-aws-cloud-architecture/) — start here for high-level mental model
+- [AWS Architecture Center](https://aws.amazon.com/architecture/) — start here for high-level mental model
 - [AWS Builders Library](https://aws.amazon.com/builders-library/) — operations + resilience essays from AWS principal engineers
-- [Designing for Failure on AWS](https://aws.amazon.com/builders-library/designing-for-failure/) — Builders Library
-- [Static Stability Using Availability Zones](https://aws.amazon.com/builders-library/static-stability-using-availability-zones/) — Builders Library
+- [Static Stability Using Availability Zones](https://aws.amazon.com/builders-library/static-stability-using-availability-zones/) — Builders Library essay on designing for failure
 - [Multi-Tier Architectures on AWS (whitepaper)](https://docs.aws.amazon.com/whitepapers/latest/overview-deployment-options/multi-tier-architectures.html)
-- [Multi-Region Active-Active architectures (blog category)](https://aws.amazon.com/blogs/architecture/category/multi-region/)
+- [AWS Multi-Region Fundamentals (whitepaper)](https://docs.aws.amazon.com/whitepapers/latest/aws-multi-region-fundamentals/aws-multi-region-fundamentals.html) — active-active patterns
 
 ---
 
@@ -225,7 +224,7 @@ Virtual servers, containers' substrate, and specialized chips.
 
 > Open-source HPC cluster orchestrator on EC2 — Slurm scheduling, EFA networking, FSx for Lustre.
 
-- [ParallelCluster](https://aws.amazon.com/parallelcluster/)
+- [ParallelCluster](https://aws.amazon.com/hpc/parallelcluster/)
 - [aws/aws-parallelcluster](https://github.com/aws/aws-parallelcluster) — official OSS repo
 
 **Need help?** [AWS application modernization services](https://www.factualminds.com/services/aws-application-modernization/) · [Hire a dedicated AWS expert](https://www.factualminds.com/services/hire-a-dedicated-aws-expert/)
@@ -310,7 +309,6 @@ Run code without managing servers.
 
 **Production Guides:**
 - [Lambda cost optimization — pay-per-request vs provisioned](https://www.factualminds.com/blog/aws-lambda-cost-optimization-pay-per-request-vs-provisioned/)
-- [Lambda S3 files vs EFS — cost and limits](https://www.factualminds.com/blog/aws-lambda-s3-files-vs-efs-cost-and-limits/)
 - [AWS Lambda — glossary entry](https://www.factualminds.com/glossary/aws-lambda/)
 - [Going Serverless at Scale — Adrian Cockcroft (re:Invent talk)](https://www.youtube.com/watch?v=EBSdyoO3goc)
 
@@ -332,7 +330,7 @@ Run code without managing servers.
 - [EventBridge Documentation](https://docs.aws.amazon.com/eventbridge/)
 - [EventBridge event-driven architecture patterns](https://www.factualminds.com/blog/aws-eventbridge-event-driven-architecture-patterns/)
 - [AWS Event-Driven Architecture (overview)](https://aws.amazon.com/event-driven-architecture/) — official intro, services, patterns
-- [Building Event-Driven Systems on AWS (Architecture Blog)](https://aws.amazon.com/blogs/architecture/category/event-driven/) — production case studies
+- [AWS Event-Driven Architecture (architecture overview)](https://aws.amazon.com/event-driven-architecture/) — patterns and reference architectures
 
 ### AWS SAM & Serverless Framework
 
@@ -446,7 +444,7 @@ Run code without managing servers.
 
 > AWS-built relational DB. Postgres/MySQL-compatible, 5x performance of stock MySQL.
 
-- [Aurora Documentation](https://docs.aws.amazon.com/aurora/)
+- [Aurora Documentation](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html)
 - [Aurora Limitless Database](https://www.factualminds.com/blog/amazon-aurora-limitless-database/) — horizontal scaling
 - [Aurora Serverless v2 vs Aurora provisioned](https://www.factualminds.com/compare/aws-aurora-serverless-vs-aurora-provisioned/)
 - [Amazon Aurora — glossary entry](https://www.factualminds.com/glossary/amazon-aurora/)
@@ -684,7 +682,6 @@ Run code without managing servers.
 ### ISO 27001
 
 - [ISO 27001 certification on AWS — ISMS implementation](https://www.factualminds.com/blog/iso-27001-certification-aws-isms-implementation/)
-- [ISO 27001 — glossary](https://www.factualminds.com/glossary/iso-27001/)
 
 ### GDPR
 
@@ -899,7 +896,6 @@ Run code without managing servers.
 - [Safe Terraform apply workflows — approval gates](https://www.factualminds.com/blog/safe-terraform-apply-workflows-approval-gates-aws/)
 - [AWS infrastructure drift detection — Terraform](https://www.factualminds.com/blog/aws-infrastructure-drift-detection-terraform/)
 - [Migrate Terraform → OpenTofu on AWS](https://www.factualminds.com/blog/migrate-terraform-opentofu-aws/)
-- [Terraform Claude Skill — AWS production guide](https://www.factualminds.com/blog/terraform-claude-skill-aws-production-guide/)
 - [Terraform on AWS — integration guide](https://www.factualminds.com/integrations/terraform-aws/)
 
 ### AWS CodePipeline / CodeBuild / CodeDeploy
@@ -1050,7 +1046,7 @@ Run code without managing servers.
 - [Infracost](https://www.infracost.io/) — Terraform → cost diff in PRs
 - [Komiser](https://github.com/tailwarden/komiser) — multi-cloud cost + resource viewer
 - [aws-nuke](https://github.com/rebuy-de/aws-nuke) — wipe orphaned dev accounts
-- [cur-tools](https://github.com/awslabs/aws-cost-and-usage-report-tools)
+- [Cloud Intelligence Dashboards](https://github.com/aws-samples/aws-cudos-framework-deployment) — CUR analytics dashboards (CUDOS, Cost Intelligence, KPI)
 - [cloud-custodian/cloud-custodian](https://github.com/cloud-custodian/cloud-custodian) — YAML rules engine for resource governance, cost, and compliance enforcement
 - [Similarweb/finala](https://github.com/similarweb/finala) — scans AWS for wasteful and unused resources to cut spend
 
@@ -1410,7 +1406,6 @@ Plain-language definitions of common AWS terms:
 - [SOC 2 Type 2](https://www.factualminds.com/glossary/soc2-type-2/)
 - [VPC peering vs Transit Gateway](https://www.factualminds.com/glossary/vpc-peering-vs-transit-gateway/)
 - [Well-Architected Framework](https://www.factualminds.com/glossary/well-architected-framework/)
-- [ISO 27001](https://www.factualminds.com/glossary/iso-27001/)
 
 ---
 
@@ -1426,15 +1421,6 @@ Plain-language definitions of common AWS terms:
 
 - [AWS Solutions Architect — Associate](https://www.factualminds.com/certifications/aws-solutions-architect-associate/)
 - [AWS Security — Specialty](https://www.factualminds.com/certifications/aws-security-specialty/)
-
-### Role-Based Personas
-
-- [CTO](https://www.factualminds.com/persona/cto/)
-- [IT Director](https://www.factualminds.com/persona/it-director/)
-- [DevOps Engineer](https://www.factualminds.com/persona/devops-engineer/)
-- [FinOps Team](https://www.factualminds.com/persona/finops-team/)
-- [Compliance Officer](https://www.factualminds.com/persona/compliance-officer/)
-- [Startup Founder](https://www.factualminds.com/persona/startup-founder/)
 
 ---
 
@@ -1452,16 +1438,14 @@ Reference patterns for the workloads that show up most often. Each links into th
 ### Event-driven & async
 
 - [EventBridge event-driven architecture patterns](https://www.factualminds.com/blog/aws-eventbridge-event-driven-architecture-patterns/)
-- [AWS Event-Driven Architecture (official)](https://aws.amazon.com/event-driven-architecture/)
-- [Building Event-Driven Systems on AWS (Architecture Blog)](https://aws.amazon.com/blogs/architecture/category/event-driven/)
+- [AWS Event-Driven Architecture (official)](https://aws.amazon.com/event-driven-architecture/) — patterns and reference architectures
 - [Step Functions workflow orchestration patterns](https://www.factualminds.com/blog/aws-step-functions-workflow-orchestration-patterns/)
 - See also: [SQS reliable messaging patterns](#amazon-sqs) · [EventBridge](#amazon-eventbridge)
 
 ### Multi-region & resilience
 
-- [Multi-Region Active-Active (Architecture Blog)](https://aws.amazon.com/blogs/architecture/category/multi-region/)
-- [Static Stability Using Availability Zones (Builders Library)](https://aws.amazon.com/builders-library/static-stability-using-availability-zones/)
-- [Designing for Failure on AWS (Builders Library)](https://aws.amazon.com/builders-library/designing-for-failure/)
+- [AWS Multi-Region Fundamentals (whitepaper)](https://docs.aws.amazon.com/whitepapers/latest/aws-multi-region-fundamentals/aws-multi-region-fundamentals.html)
+- [Static Stability Using Availability Zones (Builders Library)](https://aws.amazon.com/builders-library/static-stability-using-availability-zones/) — designing for failure
 - [Reliability Pillar (whitepaper)](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/)
 - [DR strategies — pilot light / warm standby / multi-site](https://www.factualminds.com/blog/aws-disaster-recovery-strategies-pilot-light-warm-standby-multi-site/)
 - [Multi-region AWS without doubling costs](https://www.factualminds.com/blog/multi-region-aws-without-doubling-costs/)
@@ -1613,7 +1597,6 @@ How real companies run on AWS — production architectures, postmortems, and at-
 - [Kinesis Data Streams Outage (Nov 2020, us-east-1)](https://aws.amazon.com/message/11201/) — thread-limit cascade that took down Cognito, CloudWatch, and dozens of dependents
 - [Lambda / API Gateway / EventBridge Disruption (Jun 2023, us-east-1)](https://aws.amazon.com/message/061323/) — control-plane failure mode; lessons on regional blast radius
 - [AWS Builders Library — Resilience & Failures](https://aws.amazon.com/builders-library/) — operations essays from AWS principal engineers (also linked from [Foundations](#foundations))
-- [Designing for Failure on AWS](https://aws.amazon.com/builders-library/designing-for-failure/) — Builders Library essay
 
 > [!IMPORTANT]
 > Pair these with the [Reliability Pillar](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/) and [Static Stability Using AZs](https://aws.amazon.com/builders-library/static-stability-using-availability-zones/) for the full failure-design picture. The recurring lesson: **us-east-1 is not a single region for outage purposes — global control planes live there.**
@@ -1745,9 +1728,9 @@ Common SaaS / OSS integrations on AWS:
 
 ### YouTube Channels
 
-- [AWS Events](https://www.youtube.com/awseventsofficial)
+- [Amazon Web Services](https://www.youtube.com/@amazonwebservices) — official AWS channel
+- [AWS Events](https://www.youtube.com/c/AWSEventsChannel) — re:Invent, summits, deep-dive sessions
 - [Be A Better Dev](https://www.youtube.com/@BeABetterDev) — AWS tutorials
-- [AWS re:Invent talks](https://www.youtube.com/c/AWSEventsChannel)
 
 ---
 
@@ -1756,7 +1739,7 @@ Common SaaS / OSS integrations on AWS:
 - [AWS re:Invent](https://reinvent.awsevents.com/) — Las Vegas, annual (December)
 - [AWS re:Inforce](https://reinforce.awsevents.com/) — security-focused
 - [AWS Summits](https://aws.amazon.com/events/summits/) — regional, free
-- [AWS Community Days](https://aws.amazon.com/developer/community/community-day/) — community-organized
+- [AWS Community Days](https://aws.amazon.com/events/community-day/) — community-organized
 - [Cloud Next](https://cloud.withgoogle.com/next) (GCP) and [Microsoft Build](https://build.microsoft.com/) — useful for cross-cloud context
 
 ---
@@ -1792,7 +1775,7 @@ Common SaaS / OSS integrations on AWS:
 - [aws/aws-eks-best-practices](https://github.com/aws/aws-eks-best-practices) — published EKS guide
 - [aws-samples/aws-cdk-examples](https://github.com/aws-samples/aws-cdk-examples) — CDK patterns in TS, Python, Java, Go, .NET
 - [aws-samples/aws-secure-environment-accelerator](https://github.com/aws-samples/aws-secure-environment-accelerator) — multi-account landing zone
-- [awslabs/aws-cost-and-usage-report-tools](https://github.com/awslabs/aws-cost-and-usage-report-tools) — CUR analytics
+- [aws-samples/aws-cudos-framework-deployment](https://github.com/aws-samples/aws-cudos-framework-deployment) — Cloud Intelligence Dashboards (CUR analytics)
 
 **Developer tooling:**
 - [aws/aws-cli](https://github.com/aws/aws-cli) — official CLI
