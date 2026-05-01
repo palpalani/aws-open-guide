@@ -64,6 +64,25 @@ Self-promotion is allowed if the resource is genuinely useful and the descriptio
 - Use HTTPS URLs.
 - Trailing slash on URLs that have them canonically (most do).
 
+## Status Tags
+
+Some entries carry an inline tag at the end of the description signalling the AWS service's lifecycle state. Stable, generally-available services get **no tag** (the default). Use these four — and only these four:
+
+- `[shutdown]` — fully removed from the AWS portfolio; no access.
+- `[sunset]` — end-of-support announced; AWS published a migration path.
+- `[maintenance]` — no new customers, no major features (existing customers retain access).
+- `[preview]` — preview release; not yet generally available.
+
+Example:
+
+```markdown
+- [AWS X-Ray](https://aws.amazon.com/xray/) — distributed tracing; in maintenance per AWS lifecycle docs [maintenance]
+```
+
+**Sourcing rule:** any tag added in a PR must cite an official AWS source in the PR description — the [Service Lifecycle docs](https://docs.aws.amazon.com/general/latest/gr/service-lifecycle.html), the [Full Shutdown roster](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html), or an [AWS service changes announcement](https://aws.amazon.com/about-aws/whats-new/). Don't tag a service from secondary commentary alone.
+
+Resist proposing tags beyond these four (e.g., `[recommended]`, `[beta]`, `[high-cost-risk]`). Subjective tags rot fast.
+
 ## Broken Links
 
 Found a dead link? [Open a Broken Link issue](https://github.com/palpalani/aws-open-guide/issues/new?template=broken-link.yml) or open a PR removing or updating it.

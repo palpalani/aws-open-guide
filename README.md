@@ -36,6 +36,7 @@ The AWS console has **200+ services**. The official docs are exhaustive but frag
 | 📚 **Three-tier resources per service** | Official docs first, then in-depth production guides, then OSS tools. |
 | ⚠️ **Real cost & gotcha callouts** | Limits, surprise-bill traps, and migration pain points the brochure won't mention. |
 | ⚖️ **Decision-first** | Every "X vs Y" question gets a comparison link. |
+| ⏳ **Lifecycle-aware** | Flags services in maintenance, sunset, or full shutdown so you don't anchor on dead AWS products. |
 | 🤖 **AI-native** | First-class coverage of MCP servers, agent plugins, and Claude Code skills for AWS. |
 
 > [!TIP]
@@ -99,6 +100,7 @@ The AWS console has **200+ services**. The official docs are exhaustive but frag
 - [🏭 Industry Architectures](#industry-architectures)
 - [⚖️ Decision Guides — X vs Y](#decision-guides--x-vs-y)
 - [🔁 Migration Guides — From Other Platforms](#migration-guides--from-other-platforms)
+- [⏳ AWS Service Lifecycle & Deprecations](#aws-service-lifecycle--deprecations)
 - [🧮 Free Tools & Calculators](#free-tools--calculators)
 - [📓 AWS Glossary](#aws-glossary)
 - [🎓 AWS Certifications & Learning Paths](#aws-certifications--learning-paths)
@@ -498,7 +500,7 @@ Run code without managing servers.
 
 ### Amazon Timestream
 
-- [Timestream](https://aws.amazon.com/timestream/) — time-series
+- [Timestream](https://aws.amazon.com/timestream/) — time-series; LiveAnalytics closed to new customers June 20, 2025
 
 ### Decision Guides
 
@@ -641,6 +643,12 @@ Run code without managing servers.
 - [AWS vulnerability management program — CVSS + KEV prioritization](https://www.factualminds.com/blog/aws-vulnerability-management-program-cvss-kev-prioritization/)
 - [Protect AWS infrastructure from cost-based attacks](https://www.factualminds.com/blog/protect-aws-infrastructure-cost-based-attacks/)
 - [Security & Compliance hub](https://www.factualminds.com/security-compliance/)
+
+### Data Perimeter
+
+- [Data perimeters on AWS](https://aws.amazon.com/identity/data-perimeters-on-aws/) — official identity, network, and resource perimeter model
+- [Establishing a data perimeter on AWS — whitepaper](https://docs.aws.amazon.com/whitepapers/latest/establishing-data-perimeter-on-aws/establishing-data-perimeter-on-aws.html) — full implementation guidance
+- [aws-samples/data-perimeter-policy-examples](https://github.com/aws-samples/data-perimeter-policy-examples) — official SCP and resource policy templates
 
 **OSS Security Tools:**
 - [Prowler](https://github.com/prowler-cloud/prowler) — AWS security audit + CIS benchmarks
@@ -813,36 +821,53 @@ Run code without managing servers.
 
 > Managed runtime for production AI agents — sessions, memory, tool gateways, identity, and observability. The "everything around the agent" layer that Bedrock Agents alone doesn't give you.
 
+**Official:**
 - [Bedrock AgentCore](https://aws.amazon.com/bedrock/agentcore/)
 - [AgentCore documentation](https://docs.aws.amazon.com/bedrock-agentcore/)
+
+**Production Guides:**
 - [AgentCore production patterns](https://www.factualminds.com/blog/amazon-bedrock-agentcore-production/)
+
+**OSS Tools:**
 - [awslabs/agentcore-samples](https://github.com/awslabs/agentcore-samples) — official sample patterns
 - [Amazon Bedrock AgentCore MCP Server](https://awslabs.github.io/mcp/servers/amazon-bedrock-agentcore-mcp-server) — build/deploy/manage agents from a coding agent
 
 ### Amazon Nova
 
 > Amazon's foundation model family — text, multimodal (Canvas, Reel).
+
 - [Nova Canvas + Reel — multimodal](https://www.factualminds.com/blog/amazon-nova-canvas-reel-multimodal/)
 
 ### Amazon SageMaker
 
 > Build, train, deploy ML models at any scale.
+
+**Official:**
 - [SageMaker Documentation](https://docs.aws.amazon.com/sagemaker/)
+
+**Production Guides:**
 - [SageMaker Unified Studio](https://www.factualminds.com/blog/amazon-sagemaker-unified-studio/)
 - [Run SageMaker training jobs cost-efficiently](https://www.factualminds.com/blog/how-to-run-sagemaker-training-jobs-cost-efficiently/)
+
+**Decision Guides:**
 - [Bedrock vs SageMaker](https://www.factualminds.com/compare/aws-bedrock-vs-sagemaker/)
-- [AWS SageMaker ML Solutions service](https://www.factualminds.com/services/aws-sagemaker/)
+
+**Need help?** [AWS SageMaker ML Solutions service](https://www.factualminds.com/services/aws-sagemaker/)
 
 ### Amazon Q
 
 > AI assistant family for developers, business users, and analytics.
 
+**Official:**
 - [Amazon Q for Business](https://aws.amazon.com/q/business/)
+
+**Production Guides:**
 - [Q for Business vs ChatGPT Enterprise — CTO guide](https://www.factualminds.com/blog/amazon-q-for-business-vs-chatgpt-enterprise-cto-guide/) · [Compare](https://www.factualminds.com/compare/amazon-q-vs-chatgpt-enterprise/)
 - [Set up Q for Business with SharePoint + S3](https://www.factualminds.com/blog/how-to-set-up-amazon-q-for-business-sharepoint-s3/)
 - [Q vs GitHub Copilot — 2026](https://www.factualminds.com/blog/amazon-q-vs-github-copilot-2026/)
 - [Q for Business case study](https://www.factualminds.com/case-study/amazonq/)
-- [Amazon Q for Business service](https://www.factualminds.com/services/amazon-q-for-business/) · [Q for Developers](https://www.factualminds.com/services/amazon-q-for-developers/) · [Q for QuickSight](https://www.factualminds.com/services/amazon-q-for-quicksight/)
+
+**Need help?** [Amazon Q for Business service](https://www.factualminds.com/services/amazon-q-for-business/) · [Q for Developers](https://www.factualminds.com/services/amazon-q-for-developers/) · [Q for QuickSight](https://www.factualminds.com/services/amazon-q-for-quicksight/)
 
 ### Kiro IDE
 
@@ -897,6 +922,23 @@ Run code without managing servers.
 - [AWS infrastructure drift detection — Terraform](https://www.factualminds.com/blog/aws-infrastructure-drift-detection-terraform/)
 - [Migrate Terraform → OpenTofu on AWS](https://www.factualminds.com/blog/migrate-terraform-opentofu-aws/)
 - [Terraform on AWS — integration guide](https://www.factualminds.com/integrations/terraform-aws/)
+
+### Pulumi on AWS
+
+> Imperative IaC in TypeScript / Python / Go / .NET / Java with real programming-language constructs.
+
+- [Pulumi AWS provider](https://www.pulumi.com/registry/packages/aws/) — official provider docs
+- [Pulumi AWS Native](https://www.pulumi.com/registry/packages/aws-native/) — generated from CloudFormation schema for full coverage
+- [Pulumi vs Terraform](https://www.pulumi.com/docs/iac/concepts/vs/terraform/) — official comparison
+- [Pulumi vs CDK](https://www.pulumi.com/docs/iac/concepts/vs/cloud-development-kit/) — official comparison
+
+### SST
+
+> TypeScript-native IaC purpose-built for serverless on AWS.
+
+- [SST](https://sst.dev/) — full-stack framework on AWS
+- [SST Documentation](https://sst.dev/docs/) — Ion (v3) is AWS-only with Pulumi/Terraform under the hood
+- [SST Components](https://sst.dev/docs/components/) — high-level constructs for common AWS patterns
 
 ### AWS CodePipeline / CodeBuild / CodeDeploy
 
@@ -959,18 +1001,28 @@ Run code without managing servers.
 
 ### Amazon CloudWatch
 
+**Official:**
 - [CloudWatch Documentation](https://docs.aws.amazon.com/cloudwatch/)
+- [CloudWatch Application Signals](https://aws.amazon.com/cloudwatch/features/application-signals/) — auto-instrumented APM with SLO tracking
+- [CloudWatch Logs Insights](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html) — query language for log analytics
+
+**Production Guides:**
 - [CloudWatch observability — metrics, logs, alarms best practices](https://www.factualminds.com/blog/aws-cloudwatch-observability-metrics-logs-alarms-best-practices/)
 - [CloudWatch logging costs](https://www.factualminds.com/blog/aws-cloudwatch-logging-costs-observability/)
 - [Amazon CloudWatch — glossary entry](https://www.factualminds.com/glossary/amazon-cloudwatch/)
 
 ### AWS X-Ray
 
-- [X-Ray](https://aws.amazon.com/xray/) — distributed tracing
+- [X-Ray](https://aws.amazon.com/xray/) — distributed tracing; in maintenance per AWS lifecycle docs [maintenance]
 
 ### OpenTelemetry on AWS
 
-- [AWS Distro for OpenTelemetry](https://aws-otel.github.io/)
+**Official:**
+- [AWS Distro for OpenTelemetry (ADOT)](https://aws-otel.github.io/) — recommended successor to X-Ray for new tracing
+- [ADOT Documentation](https://aws-otel.github.io/docs/introduction)
+- [ADOT Lambda layer](https://aws-otel.github.io/docs/getting-started/lambda) — auto-instrumentation for Lambda
+
+**Production Guides:**
 - [OpenTelemetry demo game — AWS observability + chaos engineering](https://www.factualminds.com/blog/otel-demo-game-aws-observability-chaos-engineering/)
 
 ### Amazon Managed Service for Prometheus / Grafana
@@ -981,6 +1033,12 @@ Run code without managing servers.
 
 - [The real cost of no 24/7 AWS monitoring](https://www.factualminds.com/blog/real-cost-of-no-24-7-aws-monitoring/)
 - [AWS 24/7 managed support + monitoring](https://www.factualminds.com/blog/aws-24-7-managed-support-monitoring/)
+
+### Log Pipelines
+
+- [Stream CloudWatch Logs to S3 via Firehose](https://docs.aws.amazon.com/firehose/latest/dev/writing-with-cloudwatch-logs.html) — official log pipeline pattern
+- [Querying CloudWatch logs in S3 with Athena](https://docs.aws.amazon.com/athena/latest/ug/cloudwatch-logs.html) — long-term log analytics on cold storage
+- [Centralized Logging on AWS (Solutions)](https://aws.amazon.com/solutions/implementations/centralized-logging-on-aws/) — official deployable reference
 
 ### Third-party
 
@@ -1184,6 +1242,19 @@ Run code without managing servers.
 - [AWS Config](https://aws.amazon.com/config/) — resource inventory + compliance
 - [AWS Config Rules — glossary](https://www.factualminds.com/glossary/aws-config-rules/)
 
+### Service Limits, Quotas & Throttling
+
+> Hard vs soft limits, retry strategy, and the throttling behaviour that bites at scale.
+
+**Official:**
+- [Service Quotas console](https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html) — view and request increases for soft limits
+- [AWS service quotas reference](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html) — per-service hard and soft limits
+- [Error retries and exponential backoff (SDK guidance)](https://docs.aws.amazon.com/general/latest/gr/api-retries.html) — official retry behaviour
+- [Timeouts, retries, and backoff with jitter (Builders Library)](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/) — first-principles guidance
+- [API Gateway throttling](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-request-throttling.html) — account-, stage-, and key-level limits
+- [Lambda concurrency and throttling](https://docs.aws.amazon.com/lambda/latest/dg/lambda-concurrency.html) — reserved vs provisioned concurrency
+- [DynamoDB throttling and adaptive capacity](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html) — partition-level throttling
+
 ### AWS Support & MSP
 
 - [AWS Support Plans](https://aws.amazon.com/premiumsupport/plans/)
@@ -1304,6 +1375,9 @@ When you know what you need but not which AWS service to use:
 ### CI/CD
 
 - [CodePipeline vs GitHub Actions](https://www.factualminds.com/compare/aws-codepipeline-vs-github-actions/)
+- [Terraform vs CDK — IaC decision guide](https://www.factualminds.com/blog/terraform-vs-aws-cdk-infrastructure-as-code-decision-guide/)
+- [Pulumi vs Terraform](https://www.pulumi.com/docs/iac/concepts/vs/terraform/) — official comparison
+- [Pulumi vs CDK](https://www.pulumi.com/docs/iac/concepts/vs/cloud-development-kit/) — official comparison
 
 ### AI/ML
 
@@ -1335,6 +1409,66 @@ When you know what you need but not which AWS service to use:
 - [Resend → SES](https://www.factualminds.com/compare/resend-to-aws-ses/)
 - [SparkPost → SES](https://www.factualminds.com/compare/sparkpost-to-aws-ses/)
 - [Elastic Email → SES](https://www.factualminds.com/compare/elastic-email-to-aws-ses/)
+
+---
+
+## AWS Service Lifecycle & Deprecations
+
+> What state is each service in? AWS publishes explicit lifecycle states — Maintenance, Sunset, Full Shutdown — and the roster changes faster than most curated lists track. This section flags the services that affect new architectural decisions and points at official replacements.
+
+### Lifecycle reference
+
+- [AWS Service Lifecycle](https://docs.aws.amazon.com/general/latest/gr/service-lifecycle.html) — official definitions of Maintenance, Sunset, Full Shutdown
+- [Services in Full Shutdown](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html) — official roster of shut-down services with dates
+- [AWS service changes — May 2025](https://aws.amazon.com/about-aws/whats-new/2025/05/aws-service-changes/) — most recent batch of lifecycle announcements
+- [AWS Product Lifecycle blog post](https://aws.amazon.com/blogs/aws/introducing-the-aws-product-lifecycle-page-and-aws-service-availability-updates/) — context behind the lifecycle page
+
+### Full shutdown — already removed
+
+Highlights from the [official roster](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html); see that page for the complete list and exact dates.
+
+- [Amazon QLDB](https://aws.amazon.com/qldb/) — ledger database; shut down July 31, 2025 [shutdown]
+- [Amazon Kinesis Data Analytics for SQL](https://aws.amazon.com/kinesis/data-analytics/) — replacement → Managed Service for Apache Flink [shutdown]
+- [Amazon CloudWatch Evidently](https://aws.amazon.com/cloudwatch/) — feature flags and A/B; shut down October 17, 2025 [shutdown]
+- [AWS DataSync Discovery](https://aws.amazon.com/datasync/) — on-prem storage assessment; shut down May 20, 2025 [shutdown]
+- [AWS Private 5G](https://aws.amazon.com/private5g/) — managed cellular networks; shut down May 20, 2025 [shutdown]
+- [AWS BugBust](https://aws.amazon.com/bugbust/) — code-fix gamification; shut down August 13, 2025 [shutdown]
+- [AWS OpsWorks (Stacks, Chef, Puppet)](https://aws.amazon.com/opsworks/) — config management; shut down May 1, 2024 [shutdown]
+- [AWS CodeStar](https://aws.amazon.com/codestar/) — project templates; shut down July 25, 2024 [shutdown]
+- [AWS RoboMaker](https://aws.amazon.com/robomaker/) — robotics simulation; shut down September 10, 2025 [shutdown]
+- [Amazon Lookout for Metrics](https://aws.amazon.com/lookout-for-metrics/) — anomaly detection; shut down October 10, 2025 [shutdown]
+- [Amazon Lookout for Vision](https://aws.amazon.com/lookout-for-vision/) — defect detection; shut down October 31, 2025 [shutdown]
+- [Amazon WorkDocs](https://aws.amazon.com/workdocs/) — file storage and sharing; shut down April 25, 2025 [shutdown]
+
+### End-of-support announced — avoid for new projects
+
+Per the [May 2025 AWS service changes announcement](https://aws.amazon.com/about-aws/whats-new/2025/05/aws-service-changes/). AWS has not yet published exact end-of-support dates for most.
+
+- [Amazon Pinpoint](https://aws.amazon.com/pinpoint/) — multi-channel messaging; replacement → SES, SNS, EventBridge [sunset]
+- [AWS IoT Analytics](https://aws.amazon.com/iot-analytics/) — replacement → IoT Core + Kinesis or EventBridge [sunset]
+- [AWS IoT Events](https://aws.amazon.com/iot-events/) — event detection; replacement → EventBridge + Lambda [sunset]
+- [AWS Panorama](https://aws.amazon.com/panorama/) — appliance-based computer vision at the edge [sunset]
+- [AWS SimSpace Weaver](https://aws.amazon.com/simspaceweaver/) — large-scale spatial simulations; ends March 31, 2026 [sunset]
+- [Amazon Inspector Classic](https://docs.aws.amazon.com/inspector/v1/userguide/inspector_introduction.html) — replacement → Amazon Inspector v2 [sunset]
+- [AWS IQ](https://aws.amazon.com/iq/) — freelance AWS experts marketplace [sunset]
+- [AWS DMS Fleet Advisor](https://docs.aws.amazon.com/dms/latest/userguide/fleet-advisor.html) — replacement → AWS DMS [sunset]
+- [Amazon Connect Voice ID](https://docs.aws.amazon.com/connect/latest/adminguide/voice-id.html) — caller authentication; end-of-support announced [sunset]
+
+### Maintenance — closed to new customers
+
+Per AWS lifecycle docs: existing customers retain access; no new features, no onboarding.
+
+- [AWS X-Ray](https://aws.amazon.com/xray/) — distributed tracing; in maintenance per AWS lifecycle docs [maintenance]
+- [Amazon Timestream for LiveAnalytics](https://aws.amazon.com/timestream/) — closed to new customers June 20, 2025 [maintenance]
+
+### Status tags used in this guide
+
+- `[shutdown]` — fully removed from AWS; no access
+- `[sunset]` — end-of-support announced; plan migration now
+- `[maintenance]` — no new customers, no major features
+- `[preview]` — preview release; not yet generally available
+
+See [CONTRIBUTING.md](CONTRIBUTING.md#status-tags) for sourcing rules.
 
 ---
 
@@ -1433,7 +1567,13 @@ Reference patterns for the workloads that show up most often. Each links into th
 - [Multi-tenant SaaS on AWS — pattern](https://www.factualminds.com/patterns/multi-tenant-saas-on-aws/)
 - [SaaS multi-tenancy — silo vs pool vs bridge](https://www.factualminds.com/blog/saas-multi-tenancy-on-aws-silo-vs-pool-vs-bridge-model/)
 - [Multi-tenant architecture — glossary](https://www.factualminds.com/glossary/multi-tenant-architecture/)
-- See also: [Cognito for SaaS auth](#amazon-cognito) · [DynamoDB single-table for SaaS](#amazon-dynamodb)
+
+**Reference implementations:**
+- [aws-samples/aws-saas-factory-ref-solution-serverless-saas](https://github.com/aws-samples/aws-saas-factory-ref-solution-serverless-saas) — production serverless multi-tenant reference
+- [aws-samples/saas-microservices-reference-architecture-eks](https://github.com/aws-samples/saas-microservices-reference-architecture-eks) — EKS multi-tenant reference
+- [AWS SaaS Factory](https://aws.amazon.com/partners/saas-factory/) — AWS programme with reference architectures and tooling
+
+See also: [Cognito for SaaS auth](#amazon-cognito) · [DynamoDB single-table for SaaS](#amazon-dynamodb)
 
 ### Event-driven & async
 
@@ -1449,6 +1589,10 @@ Reference patterns for the workloads that show up most often. Each links into th
 - [Reliability Pillar (whitepaper)](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/)
 - [DR strategies — pilot light / warm standby / multi-site](https://www.factualminds.com/blog/aws-disaster-recovery-strategies-pilot-light-warm-standby-multi-site/)
 - [Multi-region AWS without doubling costs](https://www.factualminds.com/blog/multi-region-aws-without-doubling-costs/)
+
+**Reference implementations:**
+- [Route 53 Application Recovery Controller (ARC)](https://aws.amazon.com/route53/application-recovery-controller/) — readiness checks and zonal shift
+- [Multi-region failover with Route 53 ARC — AWS blog walkthrough](https://aws.amazon.com/blogs/networking-and-content-delivery/creating-disaster-recovery-mechanisms-using-amazon-route-53/) — official end-to-end pattern
 
 ### Data lake & analytics
 
@@ -1469,6 +1613,17 @@ Reference patterns for the workloads that show up most often. Each links into th
 - [Refactor / replatform / rearchitect](https://www.factualminds.com/blog/aws-application-modernization-refactor-replatform-rearchitect/)
 - [Migrate a monolith to ECS Fargate with zero downtime](https://www.factualminds.com/blog/how-to-migrate-monolith-ecs-fargate-zero-downtime/)
 - [Migrate without cost surprises](https://www.factualminds.com/blog/aws-migration-without-cost-surprises/)
+
+### Anti-patterns & common mistakes
+
+> What teams get wrong on AWS — drawn from postmortems, bill-shock case studies, and scaling war stories.
+
+- [The Amazon Builders' Library](https://aws.amazon.com/builders-library/) — first-person engineering writeups including how AWS itself avoids common mistakes
+- [Avoiding insurmountable queue backlogs (Builders Library)](https://aws.amazon.com/builders-library/avoiding-insurmountable-queue-backlogs/) — the classic queue anti-pattern
+- [Caching challenges and strategies (Builders Library)](https://aws.amazon.com/builders-library/caching-challenges-and-strategies/) — when caches make things worse
+- [Avoiding overload in distributed systems by putting the smaller service in charge (Builders Library)](https://aws.amazon.com/builders-library/avoiding-overload-in-distributed-systems-by-putting-the-smaller-service-in-charge/) — load shedding done right
+- [Bill teardowns — NAT Gateway, data transfer, Lambda runaway](#bill-teardowns-real-customer-incidents) — see Cost Management section for real customer incidents
+- [Protect AWS infrastructure from cost-based attacks](https://www.factualminds.com/blog/protect-aws-infrastructure-cost-based-attacks/) — denial-of-wallet patterns
 
 ---
 
