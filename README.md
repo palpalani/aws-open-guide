@@ -2002,8 +2002,6 @@ Common SaaS / OSS integrations on AWS:
 - [Hire a Dedicated AWS Expert](https://www.factualminds.com/services/hire-a-dedicated-aws-expert/)
 - [Browse all 25+ services →](https://www.factualminds.com/services/)
 
-[Contact us](https://www.factualminds.com/contact-us/) · [About FactualMinds](https://www.factualminds.com/about-us/)
-
 ---
 
 ## Contributing
