@@ -700,7 +700,7 @@ Run code without managing servers.
 ### Data Perimeter
 
 - [Data perimeters on AWS](https://aws.amazon.com/identity/data-perimeters-on-aws/) — official identity, network, and resource perimeter model
-- [Establishing a data perimeter on AWS — whitepaper](https://docs.aws.amazon.com/whitepapers/latest/establishing-data-perimeter-on-aws/establishing-data-perimeter-on-aws.html) — full implementation guidance
+- [Building a data perimeter on AWS — whitepaper](https://docs.aws.amazon.com/whitepapers/latest/building-a-data-perimeter-on-aws/building-a-data-perimeter-on-aws.html) — full implementation guidance
 - [aws-samples/data-perimeter-policy-examples](https://github.com/aws-samples/data-perimeter-policy-examples) — official SCP and resource policy templates
 
 **OSS Security Tools:**
@@ -989,7 +989,7 @@ Run code without managing servers.
 - [Pulumi AWS provider](https://www.pulumi.com/registry/packages/aws/) — official provider docs
 - [Pulumi AWS Native](https://www.pulumi.com/registry/packages/aws-native/) — generated from CloudFormation schema for full coverage
 - [Pulumi vs Terraform](https://www.pulumi.com/docs/iac/concepts/vs/terraform/) — official comparison
-- [Pulumi vs CDK](https://www.pulumi.com/docs/iac/concepts/vs/cloud-development-kit/) — official comparison
+- [Pulumi vs CDK](https://www.pulumi.com/docs/iac/comparisons/cloud-template-transpilers/aws-cdk/) — official comparison
 
 ### SST
 
@@ -1064,7 +1064,7 @@ Run code without managing servers.
 
 **Official:**
 - [CloudWatch Documentation](https://docs.aws.amazon.com/cloudwatch/)
-- [CloudWatch Application Signals](https://aws.amazon.com/cloudwatch/features/application-signals/) — auto-instrumented APM with SLO tracking
+- [CloudWatch Application Signals](https://aws.amazon.com/cloudwatch/features/application-observability-apm/) — auto-instrumented APM with SLO tracking
 - [CloudWatch Logs Insights](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html) — query language for log analytics
 
 **Production Guides:**
@@ -1099,7 +1099,7 @@ Run code without managing servers.
 
 - [Stream CloudWatch Logs to S3 via Firehose](https://docs.aws.amazon.com/firehose/latest/dev/writing-with-cloudwatch-logs.html) — official log pipeline pattern
 - [Querying CloudWatch logs in S3 with Athena](https://docs.aws.amazon.com/athena/latest/ug/cloudwatch-logs.html) — long-term log analytics on cold storage
-- [Centralized Logging on AWS (Solutions)](https://aws.amazon.com/solutions/implementations/centralized-logging-on-aws/) — official deployable reference
+- [Centralized Logging with OpenSearch (Solutions)](https://aws.amazon.com/solutions/implementations/centralized-logging-with-opensearch/) — official deployable reference
 
 ### Third-party
 
@@ -1442,7 +1442,7 @@ When you know what you need but not which AWS service to use:
 - [CodePipeline vs GitHub Actions](https://www.factualminds.com/compare/aws-codepipeline-vs-github-actions/)
 - [Terraform vs CDK — IaC decision guide](https://www.factualminds.com/blog/terraform-vs-aws-cdk-infrastructure-as-code-decision-guide/)
 - [Pulumi vs Terraform](https://www.pulumi.com/docs/iac/concepts/vs/terraform/) — official comparison
-- [Pulumi vs CDK](https://www.pulumi.com/docs/iac/concepts/vs/cloud-development-kit/) — official comparison
+- [Pulumi vs CDK](https://www.pulumi.com/docs/iac/comparisons/cloud-template-transpilers/aws-cdk/) — official comparison
 
 ### AI/ML
 
@@ -1637,7 +1637,7 @@ Reference patterns for the workloads that show up most often. Each links into th
 
 **Reference implementations:**
 - [aws-samples/aws-saas-factory-ref-solution-serverless-saas](https://github.com/aws-samples/aws-saas-factory-ref-solution-serverless-saas) — production serverless multi-tenant reference
-- [aws-samples/saas-microservices-reference-architecture-eks](https://github.com/aws-samples/saas-microservices-reference-architecture-eks) — EKS multi-tenant reference
+- [aws-samples/aws-saas-factory-eks-reference-architecture](https://github.com/aws-samples/aws-saas-factory-eks-reference-architecture) — EKS multi-tenant reference
 - [AWS SaaS Factory](https://aws.amazon.com/partners/saas-factory/) — AWS programme with reference architectures and tooling
 
 See also: [Cognito for SaaS auth](#amazon-cognito) · [DynamoDB single-table for SaaS](#amazon-dynamodb) · [Multi-tenant SaaS playbook](use-cases/multi-tenant-saas.md)
@@ -1688,7 +1688,7 @@ See also: [Cognito for SaaS auth](#amazon-cognito) · [DynamoDB single-table for
 - [The Amazon Builders' Library](https://aws.amazon.com/builders-library/) — first-person engineering writeups including how AWS itself avoids common mistakes
 - [Avoiding insurmountable queue backlogs (Builders Library)](https://aws.amazon.com/builders-library/avoiding-insurmountable-queue-backlogs/) — the classic queue anti-pattern
 - [Caching challenges and strategies (Builders Library)](https://aws.amazon.com/builders-library/caching-challenges-and-strategies/) — when caches make things worse
-- [Avoiding overload in distributed systems by putting the smaller service in charge (Builders Library)](https://aws.amazon.com/builders-library/avoiding-overload-in-distributed-systems-by-putting-the-smaller-service-in-charge/) — load shedding done right
+- [Avoiding overload in distributed systems by putting the smaller service in control (Builders Library)](https://aws.amazon.com/builders-library/avoiding-overload-in-distributed-systems-by-putting-the-smaller-service-in-control/) — load shedding done right
 - [Bill teardowns — NAT Gateway, data transfer, Lambda runaway](#bill-teardowns-real-customer-incidents) — see Cost Management section for real customer incidents
 - [Protect AWS infrastructure from cost-based attacks](https://www.factualminds.com/blog/protect-aws-infrastructure-cost-based-attacks/) — denial-of-wallet patterns
 

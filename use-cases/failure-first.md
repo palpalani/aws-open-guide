@@ -196,7 +196,7 @@ When a playbook says "exponential backoff with jitter" or "use a DLQ," it's poin
 - Lambda reserved concurrency throttles at the function
 - ALB has no native load shedding; do it in your app
 
-**Reference:** [Avoiding overload by putting the smaller service in charge (Builders Library)](https://aws.amazon.com/builders-library/avoiding-overload-in-distributed-systems-by-putting-the-smaller-service-in-charge/).
+**Reference:** [Avoiding overload by putting the smaller service in control (Builders Library)](https://aws.amazon.com/builders-library/avoiding-overload-in-distributed-systems-by-putting-the-smaller-service-in-control/).
 
 ## 11. Health checks that mean something
 
