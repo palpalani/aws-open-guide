@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Contributing guide
+    url: https://github.com/palpalani/aws-open-guide/blob/main/CONTRIBUTING.md
+    about: Read the entry format, inclusion criteria, and status-tag rules before opening an issue.
+  - name: Propose a new top-level category
+    url: https://github.com/palpalani/aws-open-guide/issues/new
+    about: Top-level taxonomy changes need a discussion-style blank issue, not a form.

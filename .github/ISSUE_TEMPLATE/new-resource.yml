@@ -1,0 +1,69 @@
+name: Suggest a new resource
+description: Propose a link to add to the guide.
+title: "[New resource]: "
+labels: ["new-resource"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a resource. Please skim [CONTRIBUTING.md](https://github.com/palpalani/aws-open-guide/blob/main/CONTRIBUTING.md) first — it covers the entry format, inclusion criteria, and self-promotion rules.
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: HTTPS URL of the resource. Keep the trailing slash if it is canonical.
+      placeholder: https://example.com/aws-guide/
+    validations:
+      required: true
+
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: The name to display in the link, e.g. the bracketed text in `[Name](URL)`.
+      placeholder: Karpenter
+    validations:
+      required: true
+
+  - type: input
+    id: description
+    attributes:
+      label: Description
+      description: Under 100 characters. State what it is, not why it is great. No emojis. Sentence case.
+      placeholder: node autoscaling for EKS
+    validations:
+      required: true
+
+  - type: input
+    id: section
+    attributes:
+      label: Suggested section
+      description: Where in the README this should live. Use the existing taxonomy.
+      placeholder: Compute > EKS
+    validations:
+      required: true
+
+  - type: textarea
+    id: qualifies
+    attributes:
+      label: Why it qualifies
+      description: |
+        Briefly map this resource to the inclusion criteria from CONTRIBUTING.md:
+        useful, maintained (updated within 12 months), AWS-specific, free or has a free tier.
+      placeholder: |
+        - Useful: solves <problem>
+        - Maintained: last commit / last updated <date>
+        - AWS-specific: <how>
+        - Free / free tier: <yes / details>
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: disclosure
+    attributes:
+      label: Affiliation disclosure
+      description: Self-promotion is allowed if disclosed. Tick the box that applies.
+      options:
+        - label: I have no affiliation with this resource, OR I have disclosed my affiliation above (per CONTRIBUTING.md).
+          required: true

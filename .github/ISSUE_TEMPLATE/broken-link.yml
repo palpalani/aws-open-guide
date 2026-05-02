@@ -1,0 +1,50 @@
+name: Report a broken link
+description: A link in README or a use-case playbook is dead, redirected, or out of date.
+title: "[Broken link]: "
+labels: ["broken-link"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. If you have time, a PR removing or replacing the link is even more helpful than an issue.
+
+  - type: input
+    id: url
+    attributes:
+      label: Broken URL
+      description: The exact URL that no longer works.
+      placeholder: https://example.com/page-that-404s
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Where it appears
+      description: File and section, so it is easy to find.
+      placeholder: README.md > Compute > EC2
+    validations:
+      required: true
+
+  - type: dropdown
+    id: problem
+    attributes:
+      label: What's wrong
+      options:
+        - 404 / dead
+        - Redirects to unrelated content
+        - Paywalled now
+        - Repo archived
+        - Content removed or outdated
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: replacement
+    attributes:
+      label: Suggested replacement
+      description: Optional. A better URL that covers the same ground, if you know one.
+      placeholder: https://example.com/replacement
+    validations:
+      required: false
