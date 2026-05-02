@@ -1189,7 +1189,7 @@ Run code without managing servers.
 - [AWS FinOps gap — engineering cost ownership](https://www.factualminds.com/blog/aws-finops-gap-engineering-cost-ownership/)
 - [FinOps — glossary entry](https://www.factualminds.com/glossary/finops/)
 - [FinOps Foundation](https://www.finops.org/) — global community
-- [FinOps Foundation Blog](https://www.finops.org/blog/) — foundation articles on FinOps practice and cloud financial operations
+- [FinOps Foundation Insights](https://www.finops.org/insights/) — foundation articles and updates on FinOps practice and cloud financial operations
 
 ### Bill Teardowns (real customer incidents)
 
