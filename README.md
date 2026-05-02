@@ -76,10 +76,18 @@ The AWS console has **200+ services**. The official docs are exhaustive but frag
 
 The service taxonomy below is the **reference layer** ("what links exist about S3"). Playbooks are the **building layer** ("how do I build X on AWS in production"). Each playbook follows a strict 11-section template — see [`use-cases/_template.md`](use-cases/_template.md).
 
-**Available:**
+**Workload playbooks:**
 
 - 🏗️ [Email delivery](use-cases/email-delivery.md) — transactional email at scale on SES with bounce/complaint handling and deliverability tracking
 - 🏗️ [Multi-tenant SaaS](use-cases/multi-tenant-saas.md) — silo / pool / bridge isolation with per-tenant cost attribution
+- 🏗️ [Async job processing](use-cases/async-jobs.md) — API → queue → worker → result store with idempotency, DLQ, and webhooks
+- 🏗️ [Event-driven processing](use-cases/event-driven.md) — EventBridge with schemas, replay, and per-target DLQs
+- 🏗️ [File upload and processing](use-cases/file-upload.md) — pre-signed S3 uploads with malware scan and async transform
+- 🏗️ [High-scale API backend](use-cases/high-scale-api.md) — CloudFront + WAF + API Gateway + cache with rate limits and graceful degradation
+- 🏗️ [Real-time analytics pipeline](use-cases/real-time-analytics.md) — Kinesis hot path + Firehose cold path → S3 + Athena
+- 🏗️ [Observability pipeline](use-cases/observability-pipeline.md) — hot CloudWatch + cold S3-Athena with EMF metrics and trace sampling
+- 🏗️ [GenAI / RAG application](use-cases/genai-rag.md) — Bedrock + vector store + retrieval + Guardrails with evals
+- 🏗️ [CI/CD for AWS workloads](use-cases/ci-cd.md) — GitHub Actions + OIDC + per-environment accounts with canary and rollback
 
 **Cross-cutting frameworks** (referenced by every playbook):
 
@@ -87,8 +95,6 @@ The service taxonomy below is the **reference layer** ("what links exist about S
 - 🛡️ [Failure-first patterns](use-cases/failure-first.md) — retries, idempotency, DLQs, regional failover, backpressure, circuit breakers
 - 🚫 [Anti-patterns](use-cases/anti-patterns.md) — the mistakes that show up across every workload, with the better pattern
 - 💸 [Cost pitfalls](use-cases/cost-pitfalls.md) — line items that surprise teams (NAT Gateway, cross-AZ, CloudWatch Logs, egress)
-
-**Planned** (next PRs): event-driven processing · real-time analytics · GenAI/RAG · async jobs · file upload + processing · high-scale API backend · observability pipeline · CI/CD.
 
 > [!TIP]
 > Browse all playbooks at [`use-cases/`](use-cases/). Want to add one? Copy [`_template.md`](use-cases/_template.md) and follow the [contribution guide](CONTRIBUTING.md#adding-a-use-case-playbook).
@@ -101,6 +107,14 @@ The service taxonomy below is the **reference layer** ("what links exist about S
 - [Use-Case Playbooks (overview)](#use-case-playbooks)
 - [Email delivery](use-cases/email-delivery.md)
 - [Multi-tenant SaaS](use-cases/multi-tenant-saas.md)
+- [Async job processing](use-cases/async-jobs.md)
+- [Event-driven processing](use-cases/event-driven.md)
+- [File upload and processing](use-cases/file-upload.md)
+- [High-scale API backend](use-cases/high-scale-api.md)
+- [Real-time analytics pipeline](use-cases/real-time-analytics.md)
+- [Observability pipeline](use-cases/observability-pipeline.md)
+- [GenAI / RAG application](use-cases/genai-rag.md)
+- [CI/CD for AWS workloads](use-cases/ci-cd.md)
 - [Decision trees](use-cases/decision-trees.md)
 - [Failure-first patterns](use-cases/failure-first.md)
 - [Anti-patterns](use-cases/anti-patterns.md)
@@ -337,6 +351,8 @@ Run code without managing servers.
 
 > Event-driven function-as-a-service. The default for sporadic, async, glue-code workloads.
 
+> 🎯 **Building with Lambda in production?** See [Async job processing](use-cases/async-jobs.md) (queue + worker), [High-scale API backend](use-cases/high-scale-api.md) (caching + rate limits), and [Event-driven processing](use-cases/event-driven.md) (EventBridge + DLQs).
+
 **Official:**
 - [Lambda Documentation](https://docs.aws.amazon.com/lambda/)
 - [Lambda Pricing](https://aws.amazon.com/lambda/pricing/)
@@ -400,6 +416,8 @@ Run code without managing servers.
 ### Amazon S3 — Simple Storage Service
 
 > Object storage. 11 9's durability. The default landing pad for files in AWS.
+
+> 🎯 **Handling user file uploads?** See the [File upload and processing playbook](use-cases/file-upload.md) — pre-signed URLs, malware scan, MIME sniffing, async transform pipeline, lifecycle policies.
 
 **Official:**
 - [S3 Documentation](https://docs.aws.amazon.com/s3/)
@@ -752,6 +770,8 @@ Run code without managing servers.
 
 ## Analytics & Big Data
 
+> 🎯 **Building a real-time analytics pipeline?** See the [Real-time analytics playbook](use-cases/real-time-analytics.md) — Kinesis hot path + Firehose cold path → S3 + Athena, with cost model and partitioning patterns.
+
 ### Amazon Athena
 
 > Serverless SQL on S3.
@@ -815,6 +835,8 @@ Run code without managing servers.
 ---
 
 ## Artificial Intelligence & Machine Learning
+
+> 🎯 **Building a RAG application?** See the [GenAI / RAG playbook](use-cases/genai-rag.md) — Bedrock + vector store + retrieval + Guardrails, with evaluation harness and per-tenant cost attribution.
 
 ### Amazon Bedrock
 
@@ -929,6 +951,8 @@ Run code without managing servers.
 
 ## Developer Tools, DevOps & CI/CD
 
+> 🎯 **Setting up CI/CD?** See the [CI/CD playbook](use-cases/ci-cd.md) — GitHub Actions + OIDC + per-environment accounts, with canary deploys, drift detection, and rollback runbook.
+
 ### AWS CloudFormation
 
 > Native infrastructure-as-code in YAML/JSON.
@@ -1033,6 +1057,8 @@ Run code without managing servers.
 ---
 
 ## Observability & Monitoring
+
+> 🎯 **Building an observability pipeline at scale?** See the [Observability pipeline playbook](use-cases/observability-pipeline.md) — hot CloudWatch + cold S3-Athena, EMF metrics, trace sampling, PII redaction, and cost discipline.
 
 ### Amazon CloudWatch
 
@@ -1210,6 +1236,8 @@ Run code without managing servers.
 ---
 
 ## Application Integration
+
+> 🎯 **Building async/event-driven systems?** See [Async job processing](use-cases/async-jobs.md) (queue + worker + DLQ) and [Event-driven processing](use-cases/event-driven.md) (EventBridge with schemas, replay, per-target DLQs).
 
 ### Amazon SQS
 
