@@ -4,7 +4,7 @@ name: Link Check
 
 on:
   push:
-    branches: [main, master]
+    branches: [main]
     paths:
       - 'README.md'
       - 'use-cases/**.md'
