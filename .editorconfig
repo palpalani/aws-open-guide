@@ -1,0 +1,22 @@
+# EditorConfig — https://editorconfig.org
+# Content-only repo: Markdown reference + use-case playbooks, plus YAML workflows.
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+# Markdown — preserve trailing whitespace because two trailing spaces
+# mean "hard line break" in CommonMark. Stripping them silently changes
+# rendering of any playbook that uses them.
+[*.md]
+trim_trailing_whitespace = false
+indent_size = 2
+
+# GitHub Actions workflows + Dependabot config
+[*.{yml,yaml}]
+indent_size = 2
