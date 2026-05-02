@@ -195,8 +195,19 @@ Start here if you're new to AWS or evaluating whether to build on it.
 
 **Architecture Deep Reading (essential AWS canon):**
 - [AWS Architecture Center](https://aws.amazon.com/architecture/) — start here for high-level mental model
+- [AWS Architecture Blog](https://aws.amazon.com/blogs/architecture/) — reference architectures and AWS engineering posts
 - [AWS Builders Library](https://aws.amazon.com/builders-library/) — operations + resilience essays from AWS principal engineers
 - [Static Stability Using Availability Zones](https://aws.amazon.com/builders-library/static-stability-using-availability-zones/) — Builders Library essay on designing for failure
+- [Workload isolation using shuffle-sharding (Builders Library)](https://aws.amazon.com/builders-library/workload-isolation-using-shuffle-sharding/) — fault isolation beyond naive sharding
+- [Automating safe hands-off deployments (Builders Library)](https://aws.amazon.com/builders-library/automating-safe-hands-off-deployments/) — cells, waves, and limiting deployment blast radius
+- [Avoiding fallback in distributed systems (Builders Library)](https://aws.amazon.com/builders-library/avoiding-fallback-in-distributed-systems/) — why distributed fallback often widens outages
+- [Making retries safe with idempotent APIs (Builders Library)](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-apis/) — idempotency for safe retries under UNKNOWN outcomes
+- [Using load shedding to avoid overload (Builders Library)](https://aws.amazon.com/builders-library/using-load-shedding-to-avoid-overload/) — overload feedback loops and shedding layers
+- [Leader election in distributed systems (Builders Library)](https://aws.amazon.com/builders-library/leader-election-in-distributed-systems/) — leases, partitions, and consistency trade-offs
+- [Using dependency isolation / circuit breakers (Builders Library)](https://aws.amazon.com/builders-library/dependency-isolation/) — bulkheads and concurrency overload containment
+- [Implementing health checks (Builders Library)](https://aws.amazon.com/builders-library/implementing-health-checks/) — health checks and correlated fleet automation risks
+- [Instrumenting distributed systems for operational visibility (Builders Library)](https://aws.amazon.com/builders-library/instrumenting-distributed-systems-for-operational-visibility/) — structured logs, metrics, trace propagation
+- [Challenges with distributed systems (Builders Library)](https://aws.amazon.com/builders-library/challenges-with-distributed-systems/) — independent failures, nondeterminism, and testing permutations
 - [Multi-Tier Architectures on AWS (whitepaper)](https://docs.aws.amazon.com/whitepapers/latest/overview-deployment-options/multi-tier-architectures.html)
 - [AWS Multi-Region Fundamentals (whitepaper)](https://docs.aws.amazon.com/whitepapers/latest/aws-multi-region-fundamentals/aws-multi-region-fundamentals.html) — active-active patterns
 
@@ -215,6 +226,7 @@ Virtual servers, containers' substrate, and specialized chips.
 - [EC2 Instance Types](https://aws.amazon.com/ec2/instance-types/)
 - [EC2 Pricing](https://aws.amazon.com/ec2/pricing/)
 - [Spot Instance Advisor](https://aws.amazon.com/ec2/spot/instance-advisor/)
+- [AWS Compute Blog](https://aws.amazon.com/blogs/compute/) — EC2, Lambda, Batch, and Step Functions posts
 
 **Production Guides:**
 - [EC2 high-performance API optimization](https://www.factualminds.com/blog/ec2-high-performance-api-optimization/)
@@ -290,6 +302,7 @@ Container orchestration and registry.
 **Official:**
 - [ECS Documentation](https://docs.aws.amazon.com/ecs/)
 - [ECS Pricing](https://aws.amazon.com/ecs/pricing/)
+- [AWS Containers Blog](https://aws.amazon.com/blogs/containers/) — ECS, EKS, Fargate, and ECR architecture posts
 
 **Production Guides:**
 - [Production Laravel/Django/Node on ECS](https://www.factualminds.com/blog/production-laravel-django-node-on-ecs-2026/)
@@ -370,9 +383,16 @@ Run code without managing servers.
 ### AWS Step Functions
 
 > Visual workflow orchestrator for distributed apps.
+
+**Official:**
 - [Step Functions Documentation](https://docs.aws.amazon.com/step-functions/)
+- [AWS Step Functions blog category (Compute Blog)](https://aws.amazon.com/blogs/compute/category/aws-step-functions/) — workflow patterns and launches
+
+**Production Guides:**
 - [Step Functions workflow orchestration patterns](https://www.factualminds.com/blog/aws-step-functions-workflow-orchestration-patterns/)
 - [AWS Step Functions — glossary entry](https://www.factualminds.com/glossary/aws-step-functions/)
+
+**Comparisons:**
 - [Step Functions vs EventBridge](https://www.factualminds.com/compare/aws-step-functions-vs-eventbridge/)
 - [Bedrock Agents vs Step Functions](https://www.factualminds.com/compare/aws-bedrock-agents-vs-step-functions/)
 
@@ -482,6 +502,7 @@ Run code without managing servers.
 **Official:**
 - [RDS Documentation](https://docs.aws.amazon.com/rds/)
 - [RDS Pricing](https://aws.amazon.com/rds/pricing/)
+- [AWS Database Blog](https://aws.amazon.com/blogs/database/) — RDS, Aurora, DynamoDB, and purpose-built DB posts
 
 **Production Guides:**
 - [RDS database performance best practices](https://www.factualminds.com/blog/aws-rds-database-performance-best-practices/)
@@ -561,8 +582,13 @@ Run code without managing servers.
 
 ### Amazon VPC — Virtual Private Cloud
 
+**Official:**
 - [VPC Documentation](https://docs.aws.amazon.com/vpc/)
+- [Networking & Content Delivery Blog](https://aws.amazon.com/blogs/networking-and-content-delivery/) — VPC, CDN, and hybrid connectivity posts
+
+**Production Guides:**
 - [VPC networking best practices for production](https://www.factualminds.com/blog/aws-vpc-networking-best-practices-for-production/)
+
 - [VPC peering vs Transit Gateway](https://www.factualminds.com/glossary/vpc-peering-vs-transit-gateway/)
 - [Amazon VPC — glossary entry](https://www.factualminds.com/glossary/amazon-vpc/)
 
@@ -580,7 +606,10 @@ Run code without managing servers.
 
 > Global CDN with 600+ edge locations.
 
+**Official:**
 - [CloudFront Documentation](https://docs.aws.amazon.com/cloudfront/)
+
+**Production Guides:**
 - [CloudFront vs Cloudflare — which CDN for your enterprise](https://www.factualminds.com/blog/aws-cloudfront-vs-cloudflare-which-cdn-for-your-enterprise/) · [Compare](https://www.factualminds.com/compare/aws-cloudfront-vs-cloudflare/)
 - [Image optimization + CloudFront — case study](https://www.factualminds.com/case-study/image-optimization-cloudfront/)
 - [Automated image pipeline + CloudFront — 30% cost reduction](https://www.factualminds.com/case-study/cloudfront/)
@@ -607,7 +636,11 @@ Run code without managing servers.
 
 ### AWS IAM — Identity & Access Management
 
+**Official:**
 - [IAM Documentation](https://docs.aws.amazon.com/iam/)
+- [AWS Security Blog](https://aws.amazon.com/blogs/security/) — IAM, encryption, and detective controls posts
+
+**Production Guides:**
 - [IAM best practices — least-privilege access control](https://www.factualminds.com/blog/aws-iam-best-practices-least-privilege-access-control/)
 - [AWS IAM — glossary entry](https://www.factualminds.com/glossary/aws-iam/)
 
@@ -765,6 +798,9 @@ Run code without managing servers.
 
 > 🎯 **Building a real-time analytics pipeline?** See the [Real-time analytics playbook](use-cases/real-time-analytics.md) — Kinesis hot path + Firehose cold path → S3 + Athena, with cost model and partitioning patterns.
 
+**Official:**
+- [AWS Big Data Blog](https://aws.amazon.com/blogs/big-data/) — data lakes, streaming, OpenSearch, and analytics posts
+
 ### Amazon Athena
 
 > Serverless SQL on S3.
@@ -790,7 +826,11 @@ Run code without managing servers.
 
 ### Amazon OpenSearch Service
 
+**Official:**
 - [OpenSearch Documentation](https://docs.aws.amazon.com/opensearch-service/)
+- [Unified observability in OpenSearch Service (Big Data Blog)](https://aws.amazon.com/blogs/big-data/unified-observability-in-amazon-opensearch-service-metrics-traces-and-ai-agent-debugging-in-a-single-interface/) — metrics, traces, and AI agent debugging together
+
+**Production Guides:**
 - [OpenSearch architecture patterns + cost optimization](https://www.factualminds.com/blog/amazon-opensearch-service-architecture-patterns-cost-optimization/)
 
 ### Amazon EMR
@@ -890,6 +930,7 @@ Run code without managing servers.
 
 **Official:**
 - [SageMaker Documentation](https://docs.aws.amazon.com/sagemaker/)
+- [AWS Machine Learning Blog](https://aws.amazon.com/blogs/machine-learning/) — training, inference, and MLOps posts
 
 **Production Guides:**
 - [SageMaker Unified Studio](https://www.factualminds.com/blog/amazon-sagemaker-unified-studio/)
@@ -937,6 +978,9 @@ Run code without managing servers.
 ## Developer Tools, DevOps & CI/CD
 
 > 🎯 **Setting up CI/CD?** See the [CI/CD playbook](use-cases/ci-cd.md) — GitHub Actions + OIDC + per-environment accounts, with canary deploys, drift detection, and rollback runbook.
+
+**Official:**
+- [AWS DevOps & Developer Productivity Blog](https://aws.amazon.com/blogs/devops/) — CI/CD, CDK, and platform engineering posts
 
 ### AWS CloudFormation
 
@@ -1192,7 +1236,11 @@ Run code without managing servers.
 
 ### AWS IoT Core
 
+**Official:**
 - [IoT Core Documentation](https://docs.aws.amazon.com/iot/)
+- [AWS IoT Blog](https://aws.amazon.com/blogs/iot/) — device connectivity, Greengrass, and industrial IoT posts
+
+**Production Guides:**
 - [IoT Core MQTT for industrial workloads](https://www.factualminds.com/blog/aws-iot-core-mqtt-industrial-workloads/)
 - [IoT solutions architecture guide](https://www.factualminds.com/blog/aws-iot-solutions-architecture-guide/)
 
@@ -1222,7 +1270,11 @@ Run code without managing servers.
 
 ### Amazon SQS
 
+**Official:**
 - [SQS Documentation](https://docs.aws.amazon.com/sqs/)
+- [Application Integration category (AWS News Blog)](https://aws.amazon.com/blogs/aws/category/application-integration/) — EventBridge, Step Functions, and messaging launches
+
+**Production Guides:**
 - [SQS reliable messaging patterns for production](https://www.factualminds.com/blog/aws-sqs-reliable-messaging-patterns-for-production/)
 - [Reliable queue systems on AWS — SQS, Kafka, Redis](https://www.factualminds.com/blog/reliable-queue-systems-aws-sqs-kafka-redis/)
 
@@ -1346,6 +1398,7 @@ End-to-end reference architectures for verticals.
 - [SaaS multi-tenancy on AWS — silo vs pool vs bridge](https://www.factualminds.com/blog/saas-multi-tenancy-on-aws-silo-vs-pool-vs-bridge-model/)
 - [Multi-tenant SaaS on AWS — architecture pattern](https://www.factualminds.com/patterns/multi-tenant-saas-on-aws/)
 - [SaaS industry hub](https://www.factualminds.com/industries/saas/)
+- [How UNiDAYS achieved AWS Region expansion in three weeks](https://aws.amazon.com/blogs/architecture/how-unidays-achieved-aws-region-expansion-in-3-weeks/) — multi-Region SaaS rollout case study
 
 ### Startups
 
@@ -1359,6 +1412,7 @@ End-to-end reference architectures for verticals.
 ### Healthcare
 
 - [Healthcare industry hub](https://www.factualminds.com/industries/aws-healthcare/)
+- [How Artera enhances prostate cancer diagnostics using AWS](https://aws.amazon.com/blogs/architecture/how-artera-enhances-prostate-cancer-diagnostics-using-aws/) — imaging diagnostics workload architecture
 
 ### Retail & eCommerce
 
@@ -1413,6 +1467,7 @@ When you know what you need but not which AWS service to use:
 
 - [Step Functions vs EventBridge](https://www.factualminds.com/compare/aws-step-functions-vs-eventbridge/)
 - [Bedrock Agents vs Step Functions](https://www.factualminds.com/compare/aws-bedrock-agents-vs-step-functions/)
+- [Event-based processing for asynchronous communication (AWS Architecture Blog)](https://aws.amazon.com/blogs/architecture/event-based-processing-for-asynchronous-communication/) — choosing EventBridge vs SNS vs SQS and related characteristics
 
 ### CI/CD
 
@@ -1617,6 +1672,11 @@ Reference patterns for the workloads that show up most often. Each links into th
 - [aws-samples/aws-saas-factory-eks-reference-architecture](https://github.com/aws-samples/aws-saas-factory-eks-reference-architecture) — EKS multi-tenant reference
 - [AWS SaaS Factory](https://aws.amazon.com/partners/saas-factory/) — AWS programme with reference architectures and tooling
 
+**Official (AWS Architecture Blog):**
+- [Build a multi-tenant configuration system with tagged storage](https://aws.amazon.com/blogs/architecture/build-a-multi-tenant-configuration-system-with-tagged-storage-patterns/) — tenant-scoped configuration and tagging patterns
+- [6,000 AWS accounts, three people, one platform — lessons learned](https://aws.amazon.com/blogs/architecture/6000-aws-accounts-three-people-one-platform-lessons-learned/) — multi-account SaaS control-plane lessons
+- [Let’s Architect! Building multi-tenant SaaS systems](https://aws.amazon.com/blogs/architecture/lets-architect-building-multi-tenant-saas-systems/) — pooled vs silo models and isolation basics
+
 See also: [Cognito for SaaS auth](#amazon-cognito) · [DynamoDB single-table for SaaS](#amazon-dynamodb) · [Multi-tenant SaaS playbook](use-cases/multi-tenant-saas.md)
 
 ### Event-driven & async
@@ -1626,6 +1686,10 @@ See also: [Cognito for SaaS auth](#amazon-cognito) · [DynamoDB single-table for
 - [Step Functions workflow orchestration patterns](https://www.factualminds.com/blog/aws-step-functions-workflow-orchestration-patterns/)
 - See also: [SQS reliable messaging patterns](#amazon-sqs) · [EventBridge](#amazon-eventbridge)
 
+**Official (AWS Architecture Blog):**
+- [Mastering millisecond latency and millions of events — Amazon Key Suite](https://aws.amazon.com/blogs/architecture/mastering-millisecond-latency-and-millions-of-events-the-event-driven-architecture-behind-the-amazon-key-suite/) — EventBridge modernization and schema governance case study
+- [Recursive scaling with Amazon SQS](https://aws.amazon.com/blogs/architecture/design-pattern-for-highly-parallel-compute-recursive-scaling-with-amazon-sqs/) — parallel compute fan-out using queues
+
 ### Multi-region & resilience
 
 - [AWS Multi-Region Fundamentals (whitepaper)](https://docs.aws.amazon.com/whitepapers/latest/aws-multi-region-fundamentals/aws-multi-region-fundamentals.html)
@@ -1633,6 +1697,11 @@ See also: [Cognito for SaaS auth](#amazon-cognito) · [DynamoDB single-table for
 - [Reliability Pillar (whitepaper)](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/)
 - [DR strategies — pilot light / warm standby / multi-site](https://www.factualminds.com/blog/aws-disaster-recovery-strategies-pilot-light-warm-standby-multi-site/)
 - [Multi-region AWS without doubling costs](https://www.factualminds.com/blog/multi-region-aws-without-doubling-costs/)
+
+**Official:**
+- [Plan for Disaster Recovery — Well-Architected Reliability Pillar](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/plan-for-disaster-recovery-dr.html) — RTO/RPO objectives and DR strategies
+- [Shuffle sharding — massive and magical fault isolation](https://aws.amazon.com/blogs/architecture/shuffle-sharding-massive-and-magical-fault-isolation/) — Architecture Blog companion to shuffle-sharding essay
+- [Journey to cloud-native architecture — resilience and observability (series 3)](https://aws.amazon.com/blogs/architecture/journey-to-adopt-cloud-native-architecture-series-3-improved-resilience-and-standardized-observability/) — standardized telemetry and resilience adoption
 
 **Reference implementations:**
 - [Route 53 Application Recovery Controller (ARC)](https://aws.amazon.com/route53/application-recovery-controller/) — readiness checks and zonal shift
@@ -1645,6 +1714,10 @@ See also: [Cognito for SaaS auth](#amazon-cognito) · [DynamoDB single-table for
 - [Real-time pipeline — Kinesis + Lambda + DynamoDB](https://www.factualminds.com/blog/real-time-data-pipeline-kinesis-lambda-dynamodb/)
 - [Glue 5 + Apache Iceberg — modern ETL](https://www.factualminds.com/blog/aws-glue-5-apache-iceberg-modern-etl/)
 
+**Official:**
+- [AWS Big Data Blog](https://aws.amazon.com/blogs/big-data/) — analytics, streaming, and data-platform posts
+- [AWS Database Blog](https://aws.amazon.com/blogs/database/) — relational and NoSQL operational patterns
+
 ### GenAI & RAG
 
 - [Build a RAG pipeline with Bedrock Knowledge Bases](https://www.factualminds.com/blog/how-to-build-rag-pipeline-amazon-bedrock-knowledge-bases/)
@@ -1652,11 +1725,23 @@ See also: [Cognito for SaaS auth](#amazon-cognito) · [DynamoDB single-table for
 - [Multi-tenant GenAI on Bedrock](https://www.factualminds.com/blog/multi-tenant-genai-bedrock/)
 - [Fine-tuning vs RAG on Bedrock](https://www.factualminds.com/blog/fine-tuning-vs-rag-bedrock-when-to-use/)
 
+**Official (AWS blogs):**
+- [Serverless generative AI architectural patterns (Compute Blog)](https://aws.amazon.com/blogs/compute/serverless-generative-ai-architectural-patterns/) — Lambda-centric GenAI workload shapes
+- [Architect a mature generative AI foundation on AWS (ML Blog)](https://aws.amazon.com/blogs/machine-learning/architect-a-mature-generative-ai-foundation-on-aws/) — platform layers for production GenAI
+- [Architecting for agentic AI development on AWS (Architecture Blog)](https://aws.amazon.com/blogs/architecture/architecting-for-agentic-ai-development-on-aws/) — agentic AI reference architecture framing
+- [Automate safety monitoring with computer vision and generative AI](https://aws.amazon.com/blogs/architecture/automate-safety-monitoring-with-computer-vision-and-generative-ai/) — CV + GenAI operational monitoring pattern
+
 ### Migration
 
 - [Refactor / replatform / rearchitect](https://www.factualminds.com/blog/aws-application-modernization-refactor-replatform-rearchitect/)
 - [Migrate a monolith to ECS Fargate with zero downtime](https://www.factualminds.com/blog/how-to-migrate-monolith-ecs-fargate-zero-downtime/)
 - [Migrate without cost surprises](https://www.factualminds.com/blog/aws-migration-without-cost-surprises/)
+
+**Official (AWS Architecture Blog):**
+- [Building a three-tier architecture on a budget](https://aws.amazon.com/blogs/architecture/building-a-three-tier-architecture-on-a-budget/) — cost-conscious web/API/data layering
+- [Let’s Architect! Designing microservices architectures](https://aws.amazon.com/blogs/architecture/lets-architect-designing-microservices-architectures/) — VPC Lattice, async integration, serverless microservices patterns
+- [A multidimensional approach helps you proactively prepare for failures — part 1](https://aws.amazon.com/blogs/architecture/a-multi-dimensional-approach-helps-you-proactively-prepare-for-failures-part-1-application-layer/) — application-layer resilience checklist framing
+- [Let’s Architect! Migrating to the cloud with AWS](https://aws.amazon.com/blogs/architecture/lets-architect-migrating-to-the-cloud-with-aws/) — migration patterns and modernization lens
 
 ### Anti-patterns & common mistakes
 
@@ -1777,6 +1862,11 @@ AI-assisted development on AWS — Model Context Protocol (MCP) servers, Claude 
 ## Engineering Blogs & Case Studies
 
 How real companies run on AWS — production architectures, postmortems, and at-scale lessons. The "official docs" tell you what's possible; these tell you what actually broke.
+
+### AWS Architecture Blog — customer stories
+
+- [How Generali Malaysia optimizes operations with Amazon EKS](https://aws.amazon.com/blogs/architecture/how-generali-malaysia-optimizes-operations-with-amazon-eks/) — enterprise Kubernetes operations on AWS
+- [Architecting conversational observability for cloud applications](https://aws.amazon.com/blogs/architecture/architecting-conversational-observability-for-cloud-applications/) — AI-assisted ops UX patterns on AWS
 
 ### Engineering blogs from companies on AWS
 
