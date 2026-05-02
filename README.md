@@ -8,7 +8,6 @@
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg?style=flat-square)](https://creativecommons.org/licenses/by/4.0/)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
-[![Awesome](https://awesome.re/badge.svg?style=flat-square)](https://github.com/sindresorhus/awesome)
 [![GitHub stars](https://img.shields.io/github/stars/palpalani/aws-open-guide?style=flat-square&logo=github)](https://github.com/palpalani/aws-open-guide/stargazers)
 [![GitHub last commit](https://img.shields.io/github/last-commit/palpalani/aws-open-guide?style=flat-square&logo=github)](https://github.com/palpalani/aws-open-guide/commits)
 [![GitHub issues](https://img.shields.io/github/issues/palpalani/aws-open-guide?style=flat-square&logo=github)](https://github.com/palpalani/aws-open-guide/issues)
@@ -188,7 +187,7 @@ Start here if you're new to AWS or evaluating whether to build on it.
 - [AWS Well-Architected Framework — 6 pillars explained](https://www.factualminds.com/blog/aws-well-architected-framework-6-pillars-explained/)
 - [AWS Shared Responsibility Model](https://www.factualminds.com/glossary/aws-shared-responsibility-model/) — what AWS secures vs what you secure
 - [Microservices vs monolith on AWS — architecture decision guide](https://www.factualminds.com/blog/microservices-vs-monolith-on-aws-architecture-decision-guide/)
-- [Top 20 modern AWS AI services for 2026](https://www.factualminds.com/blog/top-20-aws-ai-modern-services-2026/)
+- [Top 20 modern AWS AI services — overview](https://www.factualminds.com/blog/top-20-aws-ai-modern-services-2026/)
 
 **Recent AWS Service Announcements (changelog-style):**
 - [March 2026 announcements](https://www.factualminds.com/blog/aws-service-announcements-march-2026/)
@@ -278,8 +277,6 @@ Virtual servers, containers' substrate, and specialized chips.
 - [ParallelCluster](https://aws.amazon.com/hpc/parallelcluster/)
 - [aws/aws-parallelcluster](https://github.com/aws/aws-parallelcluster) — official OSS repo
 
-**Need help?** [AWS application modernization services](https://www.factualminds.com/services/aws-application-modernization/) · [Hire a dedicated AWS expert](https://www.factualminds.com/services/hire-a-dedicated-aws-expert/)
-
 ---
 
 ## Containers
@@ -295,7 +292,7 @@ Container orchestration and registry.
 - [ECS Pricing](https://aws.amazon.com/ecs/pricing/)
 
 **Production Guides:**
-- [Production Laravel/Django/Node on ECS — 2026](https://www.factualminds.com/blog/production-laravel-django-node-on-ecs-2026/)
+- [Production Laravel/Django/Node on ECS](https://www.factualminds.com/blog/production-laravel-django-node-on-ecs-2026/)
 - [How to migrate a monolith to ECS Fargate with zero downtime](https://www.factualminds.com/blog/how-to-migrate-monolith-ecs-fargate-zero-downtime/)
 - [Blue-green deployments with ECS + CodeDeploy](https://www.factualminds.com/blog/how-to-implement-blue-green-deployments-ecs-codedeploy/)
 - [Modernizing monolithic APIs with Amazon ECS — case study](https://www.factualminds.com/case-study/microservices-on-amazon-ecs/)
@@ -303,6 +300,8 @@ Container orchestration and registry.
 ### Amazon EKS — Elastic Kubernetes Service
 
 > Managed Kubernetes. Use when you need K8s portability or have existing K8s expertise.
+
+> 🎯 **Building multi-tenant SaaS on EKS?** See the [Multi-tenant SaaS playbook](use-cases/multi-tenant-saas.md) — silo / pool / bridge isolation models with per-tenant cost attribution and noisy-neighbour controls.
 
 **Official:**
 - [EKS Documentation](https://docs.aws.amazon.com/eks/)
@@ -407,8 +406,6 @@ Run code without managing servers.
 **Other Serverless Patterns:**
 - [Scaling EdTech platforms on AWS serverless architecture](https://www.factualminds.com/blog/scaling-edtech-platforms-on-aws-serverless-architecture/)
 
-**Need help?** [AWS Serverless Architecture services](https://www.factualminds.com/services/aws-serverless/)
-
 ---
 
 ## Storage
@@ -492,8 +489,6 @@ Run code without managing servers.
 - [RDS max connection calculator](https://www.factualminds.com/tools/aws-rds-max-connection-calculator/)
 - [High-scale Postgres on AWS — cost optimization](https://www.factualminds.com/blog/high-scale-postgres-aws-cost-optimization/)
 - [Amazon RDS — glossary entry](https://www.factualminds.com/glossary/amazon-rds/)
-
-**Need help?** [AWS RDS Consulting](https://www.factualminds.com/services/aws-rds-consulting/)
 
 ### Amazon Aurora
 
@@ -592,6 +587,8 @@ Run code without managing servers.
 - [AWS CloudFront Consulting](https://www.factualminds.com/services/aws-cloudfront-consultant/)
 
 ### Amazon API Gateway
+
+> 🎯 **Building a high-traffic API?** See the [High-scale API backend playbook](use-cases/high-scale-api.md) — CloudFront + WAF + API Gateway with caching, rate limits, and graceful degradation under load.
 
 - [API Gateway Documentation](https://docs.aws.amazon.com/apigateway/)
 - [API Gateway patterns — REST, HTTP, WebSocket](https://www.factualminds.com/blog/aws-api-gateway-patterns-rest-http-websocket/)
@@ -713,8 +710,6 @@ Run code without managing servers.
 - [policy_sentry](https://github.com/salesforce/policy_sentry) — Salesforce IAM least-privilege policy generator
 - [algo](https://github.com/trailofbits/algo) — Trail of Bits one-click personal IPSEC VPN on EC2 (and other clouds)
 
-**Need help?** [AWS Cloud Security](https://www.factualminds.com/services/aws-cloud-security/) · [Managed SOC & MDR](https://www.factualminds.com/services/aws-managed-soc-mdr/) · [Penetration Testing](https://www.factualminds.com/services/aws-penetration-testing/) · [Cyber-Led AI Security Readiness](https://www.factualminds.com/services/cyber-led-ai/)
-
 ---
 
 ## Compliance
@@ -737,7 +732,7 @@ Run code without managing servers.
 
 ### SOC 2
 
-- [SOC 2 compliance on AWS — 2026 guide](https://www.factualminds.com/blog/how-to-achieve-soc2-compliance-aws-2026/)
+- [SOC 2 compliance on AWS — implementation guide](https://www.factualminds.com/blog/how-to-achieve-soc2-compliance-aws-2026/)
 - [SOC 2 Type 2 — glossary](https://www.factualminds.com/glossary/soc2-type-2/)
 
 ### ISO 27001
@@ -763,8 +758,6 @@ Run code without managing servers.
 ### EU AI Act
 
 - [EU AI Act compliance — AWS Bedrock + SageMaker](https://www.factualminds.com/blog/eu-ai-act-compliance-aws-bedrock-sagemaker/)
-
-**Need help?** [Cloud Compliance Services](https://www.factualminds.com/services/cloud-compliance-services/)
 
 ---
 
@@ -830,8 +823,6 @@ Run code without managing servers.
 - [AWS virtual data modeling guide](https://www.factualminds.com/blog/aws-virtual-data-modeling-guide/)
 - [Snowflake on AWS — integration](https://www.factualminds.com/integrations/snowflake-aws/)
 
-**Need help?** [AWS Data Analytics services](https://www.factualminds.com/services/aws-data-analytics/)
-
 ---
 
 ## Artificial Intelligence & Machine Learning
@@ -852,9 +843,9 @@ Run code without managing servers.
 **Production Guides:**
 - [Why Bedrock is the fastest path to enterprise GenAI](https://www.factualminds.com/blog/why-aws-bedrock-is-the-fastest-path-to-enterprise-genai/)
 - [Bedrock cost optimization — token budgets + model selection](https://www.factualminds.com/blog/aws-bedrock-cost-optimization-token-budgets-model-selection/)
-- [Bedrock Provisioned Throughput vs On-Demand — break-even 2026](https://www.factualminds.com/blog/aws-bedrock-provisioned-throughput-vs-on-demand-break-even-2026/)
+- [Bedrock Provisioned Throughput vs On-Demand — break-even analysis](https://www.factualminds.com/blog/aws-bedrock-provisioned-throughput-vs-on-demand-break-even-2026/)
 - [Bedrock vs OpenAI API — enterprise comparison](https://www.factualminds.com/blog/aws-bedrock-vs-openai-api-enterprise/)
-- [Build a Bedrock Agent with tool use — 2026](https://www.factualminds.com/blog/how-to-build-amazon-bedrock-agent-tool-use-2026/)
+- [Build a Bedrock Agent with tool use](https://www.factualminds.com/blog/how-to-build-amazon-bedrock-agent-tool-use-2026/)
 - [Build a RAG pipeline with Bedrock Knowledge Bases](https://www.factualminds.com/blog/how-to-build-rag-pipeline-amazon-bedrock-knowledge-bases/)
 - [Set up Bedrock Guardrails in production](https://www.factualminds.com/blog/how-to-set-up-amazon-bedrock-guardrails-production/)
 - [Implementing GenAI guardrails — secure AI governance](https://www.factualminds.com/blog/implementing-genai-guardrails-secure-ai-governance-aws/)
@@ -871,8 +862,6 @@ Run code without managing servers.
 - [Bedrock Nova models guide](https://www.factualminds.com/blog/aws-bedrock-nova-models-guide/)
 - [Amazon Bedrock — glossary entry](https://www.factualminds.com/glossary/amazon-bedrock/)
 - [RAG pipeline — glossary entry](https://www.factualminds.com/glossary/rag-pipeline/)
-
-**Need help?** [Amazon Bedrock Consulting](https://www.factualminds.com/services/aws-bedrock/) · [Generative AI on AWS](https://www.factualminds.com/services/generative-ai-on-aws/) · [GenAI Readiness Assessment](https://www.factualminds.com/tools/genai-readiness-assessment/)
 
 ### Amazon Bedrock AgentCore
 
@@ -909,8 +898,6 @@ Run code without managing servers.
 **Decision Guides:**
 - [Bedrock vs SageMaker](https://www.factualminds.com/compare/aws-bedrock-vs-sagemaker/)
 
-**Need help?** [AWS SageMaker ML Solutions service](https://www.factualminds.com/services/aws-sagemaker/)
-
 ### Amazon Q
 
 > AI assistant family for developers, business users, and analytics.
@@ -921,10 +908,8 @@ Run code without managing servers.
 **Production Guides:**
 - [Q for Business vs ChatGPT Enterprise — CTO guide](https://www.factualminds.com/blog/amazon-q-for-business-vs-chatgpt-enterprise-cto-guide/) · [Compare](https://www.factualminds.com/compare/amazon-q-vs-chatgpt-enterprise/)
 - [Set up Q for Business with SharePoint + S3](https://www.factualminds.com/blog/how-to-set-up-amazon-q-for-business-sharepoint-s3/)
-- [Q vs GitHub Copilot — 2026](https://www.factualminds.com/blog/amazon-q-vs-github-copilot-2026/)
+- [Q vs GitHub Copilot](https://www.factualminds.com/blog/amazon-q-vs-github-copilot-2026/)
 - [Q for Business case study](https://www.factualminds.com/case-study/amazonq/)
-
-**Need help?** [Amazon Q for Business service](https://www.factualminds.com/services/amazon-q-for-business/) · [Q for Developers](https://www.factualminds.com/services/amazon-q-for-developers/) · [Q for QuickSight](https://www.factualminds.com/services/amazon-q-for-quicksight/)
 
 ### Kiro IDE
 
@@ -945,7 +930,7 @@ Run code without managing servers.
 
 ### Roundup
 
-- [Top 20 modern AWS AI services for 2026](https://www.factualminds.com/blog/top-20-aws-ai-modern-services-2026/)
+- [Top 20 modern AWS AI services — overview](https://www.factualminds.com/blog/top-20-aws-ai-modern-services-2026/)
 
 ---
 
@@ -1012,7 +997,7 @@ Run code without managing servers.
 
 ### General DevOps Practice
 
-- [10 AWS DevOps practices for production — 2026](https://www.factualminds.com/blog/10-aws-devops-practices-production-2026/)
+- [10 AWS DevOps practices for production](https://www.factualminds.com/blog/10-aws-devops-practices-production-2026/)
 - [DevOps Exercises on AWS — production reality](https://www.factualminds.com/blog/devops-exercises-aws-production-reality/)
 - [AWS environment parity — dev / staging / production](https://www.factualminds.com/blog/aws-environment-parity-dev-staging-production/)
 - [Cost-aware CI/CD pipelines on AWS](https://www.factualminds.com/blog/cost-aware-cicd-pipelines-aws/)
@@ -1023,7 +1008,7 @@ Run code without managing servers.
 - [LocalStack](https://localstack.cloud/) — AWS-in-a-box for local dev
 - [Ministack — free LocalStack alternative](https://www.factualminds.com/blog/ministack-free-localstack-alternative-aws-emulator/)
 - [getmoto/moto](https://github.com/getmoto/moto) — mock AWS services for Python tests (boto3 stub library)
-- [AWS CLI chmod /dev/null streaming bug — 2026](https://www.factualminds.com/blog/aws-cli-chmod-dev-null-streaming-bug-2026/) — gotcha alert
+- [AWS CLI chmod /dev/null streaming bug](https://www.factualminds.com/blog/aws-cli-chmod-dev-null-streaming-bug-2026/) — gotcha alert
 
 ### CLI & Productivity OSS
 
@@ -1051,8 +1036,6 @@ Run code without managing servers.
 - [Tune PHP / Node / Python / Go for high concurrency](https://www.factualminds.com/blog/tune-php-node-python-go-high-concurrency/)
 - [Ultra-fast asset pipelines — Bun + Vite + Rust](https://www.factualminds.com/blog/ultra-fast-asset-pipelines-bun-vite-rust/)
 - [Nginx vs FrankenPHP — modern runtimes comparison](https://www.factualminds.com/blog/nginx-frankenphp-modern-runtimes-comparison/)
-
-**Need help?** [AWS DevOps Consulting](https://www.factualminds.com/services/devops-pipeline-setup/)
 
 ---
 
@@ -1109,6 +1092,8 @@ Run code without managing servers.
 
 ## Cost Management & FinOps
 
+> 🎯 **Hunting a surprise bill?** See the [Cost pitfalls playbook](use-cases/cost-pitfalls.md) — NAT Gateway egress, cross-AZ traffic, CloudWatch Logs ingestion, and the other line items that surprise teams.
+
 ### Cost Tools (Native)
 
 - [AWS Cost Explorer](https://aws.amazon.com/aws-cost-management/aws-cost-explorer/)
@@ -1125,8 +1110,8 @@ Run code without managing servers.
 - [Cost Optimization Hub guide](https://www.factualminds.com/blog/aws-cost-optimization-hub-guide/)
 - [Use Cost Anomaly Detection to catch surprise bills](https://www.factualminds.com/blog/how-to-use-aws-cost-anomaly-detection-catch-surprise-bills/)
 - [5 cost optimization strategies most teams overlook](https://www.factualminds.com/blog/5-aws-cost-optimization-strategies-most-teams-overlook/)
-- [Cloud cost optimization — modern strategies (2026)](https://www.factualminds.com/blog/cloud-cost-optimization-2026-modern-strategies/)
-- [AWS cost prediction 2026 playbook](https://www.factualminds.com/blog/aws-cost-prediction-2026-playbook/)
+- [Cloud cost optimization — modern strategies](https://www.factualminds.com/blog/cloud-cost-optimization-2026-modern-strategies/)
+- [AWS cost prediction playbook](https://www.factualminds.com/blog/aws-cost-prediction-2026-playbook/)
 - [AWS cost control architecture optimization playbook](https://www.factualminds.com/blog/aws-cost-control-architecture-optimization-playbook/)
 - [Designing cost-stable AWS architectures](https://www.factualminds.com/blog/aws-cost-stable-architecture-design/)
 - [Eliminate surprise bills with autoscaling](https://www.factualminds.com/blog/aws-eliminate-surprise-bills-autoscaling/)
@@ -1169,8 +1154,6 @@ Run code without managing servers.
 - [cloud-custodian/cloud-custodian](https://github.com/cloud-custodian/cloud-custodian) — YAML rules engine for resource governance, cost, and compliance enforcement
 - [Similarweb/finala](https://github.com/similarweb/finala) — scans AWS for wasteful and unused resources to cut spend
 
-**Need help?** [AWS Cost Optimization & FinOps services](https://www.factualminds.com/services/aws-cloud-cost-optimization-services/) · [FinOps Consulting](https://www.factualminds.com/services/finops-consulting/) · [Free AWS Cost Audit](https://www.factualminds.com/aws-cost-audit/)
-
 ---
 
 ## Migration & Transfer
@@ -1202,8 +1185,6 @@ Run code without managing servers.
 ### VMware → AWS
 
 - [Amazon Elastic VMware Service (EVS)](https://www.factualminds.com/blog/amazon-elastic-vmware-service-evs/)
-
-**Need help?** [AWS Cloud Migration Services](https://www.factualminds.com/services/aws-migration/) · [AWS Application Modernization](https://www.factualminds.com/services/aws-application-modernization/)
 
 ---
 
@@ -1283,8 +1264,6 @@ Run code without managing servers.
 - [SparkPost → SES](https://www.factualminds.com/compare/sparkpost-to-aws-ses/)
 - [Elastic Email → SES](https://www.factualminds.com/compare/elastic-email-to-aws-ses/)
 
-**Need help?** [Amazon SES Deliverability service](https://www.factualminds.com/services/aws-ses/) · [SES Migration & Email Delivery](https://www.factualminds.com/services/aws-ses-migration/)
-
 ---
 
 ## Management & Governance
@@ -1339,8 +1318,6 @@ Run code without managing servers.
 
 - [AWS Partner Network (APN)](https://aws.amazon.com/partners/)
 - [AWS Retail Competency — what it means for your business](https://www.factualminds.com/blog/aws-retail-competency-what-it-means-for-your-business/)
-
-**Need help?** [AWS Managed Services](https://www.factualminds.com/services/aws-managed-services/)
 
 ---
 
