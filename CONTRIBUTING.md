@@ -83,6 +83,51 @@ Example:
 
 Resist proposing tags beyond these four (e.g., `[recommended]`, `[beta]`, `[high-cost-risk]`). Subjective tags rot fast.
 
+## Adding a Use-Case Playbook
+
+Use-case playbooks live in [`/use-cases/`](use-cases/) and answer **"how to build X on AWS in production,"** not "links about X." They're the building layer; the service taxonomy in `README.md` is the reference layer.
+
+**Required structure** — every playbook follows the strict 11-section template at [`use-cases/_template.md`](use-cases/_template.md), in this order:
+
+1. Problem
+2. Constraints
+3. Reference architecture (with ASCII diagram)
+4. Architecture variants
+5. Failure modes
+6. Cost model
+7. When NOT to use this
+8. Alternatives
+9. Anti-patterns
+10. Production checklist
+11. References
+
+Skipping §5 (Failure modes), §7 (When NOT to use), or §9 (Anti-patterns) defeats the purpose of the format — those are the differentiators from a links list.
+
+**Tags** (pick from this vocabulary, listed at the top of every playbook):
+
+- `production-ready` — battle-tested architecture, used at scale
+- `high-scale` — designed for high throughput / concurrency
+- `low-cost` — optimised for cost efficiency
+- `complex` — non-trivial architecture; not a starter project
+- `deprecated-pattern` — historically common but no longer recommended
+
+**Status badges** for tables:
+
+- ✅ Available — published and maintained
+- 🚧 Draft — in progress, not yet ready
+- ⚠️ Needs update — published but stale; flag for refresh
+
+**Steps to add a playbook:**
+
+1. Copy `use-cases/_template.md` to `use-cases/<your-use-case-slug>.md`.
+2. Fill in all 11 sections. Be specific — numbers beat adjectives.
+3. The References section follows the same entry-format rules as the rest of the guide: em-dash separator, descriptions under 100 characters, sentence case, HTTPS URLs.
+4. Update the table in [`use-cases/README.md`](use-cases/README.md).
+5. Add an entry to the Use-Case Playbooks section near the top of the root [`README.md`](README.md) and in its Table of Contents.
+6. Open a PR. The link checker validates every URL in `use-cases/*.md` automatically.
+
+**When NOT to add a playbook:** if the use case is fully covered by an existing service section in `README.md` and there's no architectural variation, failure-mode catalog, or cost model worth writing up. Prefer expanding the existing section.
+
 ## Broken Links
 
 Found a dead link? [Open a Broken Link issue](https://github.com/palpalani/aws-open-guide/issues/new?template=broken-link.yml) or open a PR removing or updating it.

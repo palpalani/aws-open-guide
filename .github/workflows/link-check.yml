@@ -1,17 +1,18 @@
 name: Link Check
 
-# Weekly link audit + on-PR safety net for README.md.
-# This repo's product is README.md (per CLAUDE.md). We don't scan other markdown.
+# Weekly link audit + on-PR safety net for README.md and use-case playbooks.
 
 on:
   push:
     branches: [main, master]
     paths:
       - 'README.md'
+      - 'use-cases/**.md'
       - '.github/workflows/link-check.yml'
   pull_request:
     paths:
       - 'README.md'
+      - 'use-cases/**.md'
   schedule:
     # Mondays 08:00 UTC — catches links that rot between releases
     - cron: '0 8 * * 1'
@@ -56,6 +57,7 @@ jobs:
             --exclude '^https?://(www\.)?jeff-barr\.com'
             --exclude '^https?://(www\.)?thecloudpod\.tv'
             README.md
+            'use-cases/**/*.md'
           # Fail PR/push runs immediately; let scheduled runs file an issue instead.
           fail: ${{ github.event_name != 'schedule' }}
           token: ${{ secrets.GITHUB_TOKEN }}

@@ -14,6 +14,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/palpalani/aws-open-guide?style=flat-square&logo=github)](https://github.com/palpalani/aws-open-guide/issues)
 
 [**🚀 Get Started**](#how-to-use-this-guide) ·
+[**🎯 Use-Case Playbooks**](#use-case-playbooks) ·
 [**🧭 Browse Services**](#table-of-contents) ·
 [**⚖️ Decision Guides**](#decision-guides--x-vs-y) ·
 [**💰 Cost & FinOps**](#cost-management--finops) ·
@@ -48,9 +49,10 @@ The AWS console has **200+ services**. The official docs are exhaustive but frag
 
 | You are... | Start here |
 |---|---|
+| 🏗️ **Building a workload** (email at scale, multi-tenant SaaS, …) | [Use-Case Playbooks](#use-case-playbooks) — problem, architecture, failure modes, cost, anti-patterns |
 | 🌱 **New to AWS** | [Foundations](#foundations) → Architecture Deep Reading → pick a service section |
 | 🎯 **Picking a service** | [Decision Guides — X vs Y](#decision-guides--x-vs-y) — every common "should I use X or Y" question |
-| 💸 **Hunting a surprise bill** | [Cost Management & FinOps](#cost-management--finops) → Bill Teardowns (NAT Gateway, data transfer, Lambda runaway) |
+| 💸 **Hunting a surprise bill** | [Cost Management & FinOps](#cost-management--finops) → Bill Teardowns · [Cost pitfalls playbook](use-cases/cost-pitfalls.md) |
 | 🤖 **Building with AI** | [AI/ML services](#artificial-intelligence--machine-learning) for services · [AI Coding Agents, MCP & Skills](#ai-coding-agents-mcp--skills) for AI-assisted dev |
 | 📰 **Staying current** | [Community, Social & Continuous Learning](#community-social--continuous-learning) → Minimal curated stack |
 | 🛠️ **Migrating from another platform** | [Migration Guides — From Other Platforms](#migration-guides--from-other-platforms) |
@@ -68,8 +70,41 @@ The AWS console has **200+ services**. The official docs are exhaustive but frag
 > [!NOTE]
 > **Quick decisions:** if you already know the workload and just need to pick the AWS service, skip to [Decision Guides — X vs Y](#decision-guides--x-vs-y).
 
+## Use-Case Playbooks
+
+> How to build common workloads on AWS in production — problem, architecture, failure modes, cost, anti-patterns. Not a links list; a playbook.
+
+The service taxonomy below is the **reference layer** ("what links exist about S3"). Playbooks are the **building layer** ("how do I build X on AWS in production"). Each playbook follows a strict 11-section template — see [`use-cases/_template.md`](use-cases/_template.md).
+
+**Available:**
+
+- 🏗️ [Email delivery](use-cases/email-delivery.md) — transactional email at scale on SES with bounce/complaint handling and deliverability tracking
+- 🏗️ [Multi-tenant SaaS](use-cases/multi-tenant-saas.md) — silo / pool / bridge isolation with per-tenant cost attribution
+
+**Cross-cutting frameworks** (referenced by every playbook):
+
+- 🌳 [Decision trees](use-cases/decision-trees.md) — which AWS service for event processing, database, compute, async work, file processing
+- 🛡️ [Failure-first patterns](use-cases/failure-first.md) — retries, idempotency, DLQs, regional failover, backpressure, circuit breakers
+- 🚫 [Anti-patterns](use-cases/anti-patterns.md) — the mistakes that show up across every workload, with the better pattern
+- 💸 [Cost pitfalls](use-cases/cost-pitfalls.md) — line items that surprise teams (NAT Gateway, cross-AZ, CloudWatch Logs, egress)
+
+**Planned** (next PRs): event-driven processing · real-time analytics · GenAI/RAG · async jobs · file upload + processing · high-scale API backend · observability pipeline · CI/CD.
+
+> [!TIP]
+> Browse all playbooks at [`use-cases/`](use-cases/). Want to add one? Copy [`_template.md`](use-cases/_template.md) and follow the [contribution guide](CONTRIBUTING.md#adding-a-use-case-playbook).
+
 <details>
 <summary><strong>📑 Table of Contents</strong> — click to expand</summary>
+
+### 🎯 Use-Case Playbooks
+
+- [Use-Case Playbooks (overview)](#use-case-playbooks)
+- [Email delivery](use-cases/email-delivery.md)
+- [Multi-tenant SaaS](use-cases/multi-tenant-saas.md)
+- [Decision trees](use-cases/decision-trees.md)
+- [Failure-first patterns](use-cases/failure-first.md)
+- [Anti-patterns](use-cases/anti-patterns.md)
+- [Cost pitfalls](use-cases/cost-pitfalls.md)
 
 ### 🟧 Core AWS services
 
@@ -1204,6 +1239,8 @@ Run code without managing servers.
 
 ### Amazon SES — Simple Email Service
 
+> 🎯 **Building transactional email at scale?** Start with the [Email delivery playbook](use-cases/email-delivery.md) — full architecture (SES → SNS → Firehose → S3 → Athena), bounce/complaint handling, IP warming, cost model, and 18-item production checklist.
+
 - [SES Documentation](https://docs.aws.amazon.com/ses/)
 - [SES e-commerce email marketing](https://www.factualminds.com/blog/aws-ses-ecommerce-email-marketing/)
 - [Migrate from SendGrid to SES](https://www.factualminds.com/blog/how-to-migrate-from-sendgrid-to-amazon-ses/)
@@ -1564,6 +1601,8 @@ Reference patterns for the workloads that show up most often. Each links into th
 
 ### Multi-tenant SaaS
 
+> 🎯 **Building a multi-tenant SaaS?** Start with the [Multi-tenant SaaS playbook](use-cases/multi-tenant-saas.md) — full architecture, failure modes, cost model, anti-patterns, and production checklist.
+
 - [Multi-tenant SaaS on AWS — pattern](https://www.factualminds.com/patterns/multi-tenant-saas-on-aws/)
 - [SaaS multi-tenancy — silo vs pool vs bridge](https://www.factualminds.com/blog/saas-multi-tenancy-on-aws-silo-vs-pool-vs-bridge-model/)
 - [Multi-tenant architecture — glossary](https://www.factualminds.com/glossary/multi-tenant-architecture/)
@@ -1573,7 +1612,7 @@ Reference patterns for the workloads that show up most often. Each links into th
 - [aws-samples/saas-microservices-reference-architecture-eks](https://github.com/aws-samples/saas-microservices-reference-architecture-eks) — EKS multi-tenant reference
 - [AWS SaaS Factory](https://aws.amazon.com/partners/saas-factory/) — AWS programme with reference architectures and tooling
 
-See also: [Cognito for SaaS auth](#amazon-cognito) · [DynamoDB single-table for SaaS](#amazon-dynamodb)
+See also: [Cognito for SaaS auth](#amazon-cognito) · [DynamoDB single-table for SaaS](#amazon-dynamodb) · [Multi-tenant SaaS playbook](use-cases/multi-tenant-saas.md)
 
 ### Event-driven & async
 
