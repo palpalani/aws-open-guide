@@ -230,7 +230,7 @@ Pre-ship gate for an SES integration. If any of these is missing, don't ship.
 - [SES event types reference](https://docs.aws.amazon.com/ses/latest/dg/monitor-using-event-publishing.html) — bounce/complaint/delivery payloads
 - [SES suppression list](https://docs.aws.amazon.com/ses/latest/dg/sending-email-suppression-list.html) — account-level and configuration-set scopes
 - [Email authentication — SPF, DKIM, DMARC](https://docs.aws.amazon.com/ses/latest/dg/email-authentication.html) — official SES auth guide
-- [SES Mail Manager](https://aws.amazon.com/ses/mail-manager/) — inbound and outbound email pipelines
+- [SES Mail Manager](https://docs.aws.amazon.com/ses/latest/dg/eb.html) — inbound and outbound email pipelines
 
 **Production guides:**
 - [SES e-commerce email marketing](https://www.factualminds.com/blog/aws-ses-ecommerce-email-marketing/) — patterns for retail transactional + marketing
@@ -247,7 +247,7 @@ Pre-ship gate for an SES integration. If any of these is missing, don't ship.
 
 **OSS tools:**
 - [aws-lambda-ses-forwarder](https://github.com/arithmetric/aws-lambda-ses-forwarder) — forward inbound SES email to a different mailbox
-- [serverless-ses-template](https://github.com/innovate-technologies/serverless-ses-template) — manage SES templates as code
+- [serverless-ses-template](https://github.com/Enase/serverless-ses-template) — manage SES templates as code
 - [dmarc-report-converter](https://github.com/tierpod/dmarc-report-converter) — parse DMARC aggregate reports to JSON/CSV
 - [parsedmarc](https://github.com/domainaware/parsedmarc) — DMARC report parser with Elasticsearch ingestion
 

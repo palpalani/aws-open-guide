@@ -251,10 +251,6 @@ For cross-cutting AWS anti-patterns, see [`anti-patterns.md`](anti-patterns.md).
 - [RDS Proxy Documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html) — connection pooling
 - [Caching challenges and strategies (Builders Library)](https://aws.amazon.com/builders-library/caching-challenges-and-strategies/) — when caches make things worse
 
-**Production guides:**
-- [API Gateway throttling and quota patterns](https://www.factualminds.com/glossary/aws-api-gateway/) — usage plans context
-- [CloudFront caching strategies](https://www.factualminds.com/glossary/amazon-cloudfront/) — cache key design
-
 **Decision guides:**
 - [CloudFront vs Cloudflare](https://www.factualminds.com/compare/aws-cloudfront-vs-cloudflare/) — edge platform choice
 - [WAF vs Network Firewall](https://www.factualminds.com/compare/aws-waf-vs-network-firewall/) — L7 vs L3/L4 filtering

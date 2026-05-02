@@ -228,7 +228,7 @@ For cross-cutting AWS anti-patterns, see [`anti-patterns.md`](anti-patterns.md).
 - [AWS SaaS Lens (Well-Architected)](https://docs.aws.amazon.com/wellarchitected/latest/saas-lens/saas-lens.html) — official guidance for SaaS architecture decisions
 - [AWS SaaS Factory program](https://aws.amazon.com/partners/saas-factory/) — reference architectures, tooling, advisory
 - [Tenant isolation strategies (whitepaper)](https://docs.aws.amazon.com/whitepapers/latest/saas-tenant-isolation-strategies/saas-tenant-isolation-strategies.html) — silo / pool / bridge from the source
-- [AWS Application Cost Profiler](https://docs.aws.amazon.com/application-cost-profiler/latest/userguide/introduction.html) — per-tenant cost attribution for shared resources
+- [Split cost allocation data](https://docs.aws.amazon.com/cur/latest/userguide/split-cost-allocation-data.html) — per-pod cost attribution for shared EKS / ECS
 - [AWS Cost Categories](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html) — tag-based rollup for per-tenant reports
 - [Cognito multi-tenant patterns](https://docs.aws.amazon.com/cognito/latest/developerguide/multi-tenant-application-best-practices.html) — official auth multi-tenancy guidance
 - [DynamoDB multi-tenant data partitioning](https://docs.aws.amazon.com/prescriptive-guidance/latest/saas-multitenant-api-access-authorization/multi-tenant-data-partitioning.html) — partition key design for SaaS
@@ -242,7 +242,6 @@ For cross-cutting AWS anti-patterns, see [`anti-patterns.md`](anti-patterns.md).
 
 **Reference implementations:**
 - [aws-samples/aws-saas-factory-ref-solution-serverless-saas](https://github.com/aws-samples/aws-saas-factory-ref-solution-serverless-saas) — production serverless multi-tenant reference
-- [aws-samples/saas-microservices-reference-architecture-eks](https://github.com/aws-samples/saas-microservices-reference-architecture-eks) — EKS multi-tenant reference
 - [aws-samples/aws-saas-factory-eks-reference-architecture](https://github.com/aws-samples/aws-saas-factory-eks-reference-architecture) — EKS-based SaaS sample
 - [aws-saas-boost](https://github.com/awslabs/aws-saas-boost) — open-source SaaS environment from AWS Labs
 

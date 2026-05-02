@@ -263,7 +263,7 @@ For cross-cutting AWS anti-patterns, see [`anti-patterns.md`](anti-patterns.md).
 - [CodePipeline vs GitHub Actions](https://www.factualminds.com/compare/aws-codepipeline-vs-github-actions/) — CI choice
 - [Terraform vs CDK — IaC decision guide](https://www.factualminds.com/blog/terraform-vs-aws-cdk-infrastructure-as-code-decision-guide/) — IaC choice
 - [Pulumi vs Terraform](https://www.pulumi.com/docs/iac/concepts/vs/terraform/) — official comparison
-- [Pulumi vs CDK](https://www.pulumi.com/docs/iac/concepts/vs/cloud-development-kit/) — official comparison
+- [Pulumi vs CDK](https://www.pulumi.com/docs/iac/comparisons/cloud-template-transpilers/aws-cdk/) — official comparison
 
 **OSS tools:**
 - [terraform](https://github.com/hashicorp/terraform) — IaC
