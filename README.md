@@ -1746,6 +1746,10 @@ AI-assisted development on AWS — Model Context Protocol (MCP) servers, Claude 
 - [HealthImaging MCP Server](https://awslabs.github.io/mcp/servers/healthimaging-mcp-server) — DICOM operations
 - [HealthLake MCP Server](https://awslabs.github.io/mcp/servers/healthlake-mcp-server) — FHIR datastores
 
+### Autonomous coding agents on AWS
+
+- [aws-samples/remote-swe-agents](https://github.com/aws-samples/remote-swe-agents) — Official sample deploying an autonomous coding agent on AWS with Bedrock, CDK, web UI, Slack, and MCP.
+
 ### Claude Code Agent Plugins & Skills for AWS
 
 **Official (awslabs):**
@@ -1968,6 +1972,7 @@ Common SaaS / OSS integrations on AWS:
 - [awslabs/mcp](https://github.com/awslabs/mcp) — official MCP servers (50+)
 - [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) — Claude Code / Cursor / Q Developer plugins
 - [awslabs/agentcore-samples](https://github.com/awslabs/agentcore-samples) — production patterns for Bedrock AgentCore
+- [aws-samples/remote-swe-agents](https://github.com/aws-samples/remote-swe-agents) — autonomous Bedrock-powered coding agent (CDK, Slack, MCP)
 - [awslabs/generative-ai-atlas](https://github.com/awslabs/generative-ai-atlas) — GenAI architecture catalog
 
 **Best-practice references:**
