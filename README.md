@@ -330,6 +330,9 @@ Container orchestration and registry.
 - [Karpenter](https://karpenter.sh/) — node autoscaling for EKS
 - [eksctl](https://eksctl.io/) — official CLI for EKS
 
+**Kubernetes cost & ops (vendor blogs):**
+- [Cast AI Blog](https://cast.ai/blog) — Kubernetes cost optimization and autoscaler guidance for cloud workloads
+
 ### AWS Fargate
 
 > Serverless compute for containers. Pay per task, not per VM.
@@ -510,6 +513,7 @@ Run code without managing servers.
 - [RDS max connection calculator](https://www.factualminds.com/tools/aws-rds-max-connection-calculator/)
 - [High-scale Postgres on AWS — cost optimization](https://www.factualminds.com/blog/high-scale-postgres-aws-cost-optimization/)
 - [Amazon RDS — glossary entry](https://www.factualminds.com/glossary/amazon-rds/)
+- [Citus Data Blog](https://www.citusdata.com/blog) — Postgres horizontal scaling patterns relevant to RDS PostgreSQL fleets
 
 ### Amazon Aurora
 
@@ -969,6 +973,11 @@ Run code without managing servers.
 - [AWS autoscaling for AI workloads — avoid budget overrun](https://www.factualminds.com/blog/aws-autoscaling-ai-workloads-budget-overrun/)
 - [Bedrock token cost calculator](https://www.factualminds.com/tools/aws-bedrock-token-cost-calculator/)
 
+### External references (vectors & RAG concepts)
+
+- [Pinecone Learning Center](https://www.pinecone.io/learn) — vector retrieval and RAG concept guides complementary to Bedrock RAG
+- [Weaviate Blog](https://weaviate.io/blog) — vector database architecture and retrieval engineering articles
+
 ### Roundup
 
 - [Top 20 modern AWS AI services — overview](https://www.factualminds.com/blog/top-20-aws-ai-modern-services-2026/)
@@ -1027,6 +1036,7 @@ Run code without managing servers.
 - [SST](https://sst.dev/) — full-stack framework on AWS
 - [SST Documentation](https://sst.dev/docs/) — Ion (v3) is AWS-only with Pulumi/Terraform under the hood
 - [SST Components](https://sst.dev/docs/components/) — high-level constructs for common AWS patterns
+- [SST Blog](https://sst.dev/blog/) — SST team posts on serverless patterns on AWS
 
 ### AWS CodePipeline / CodeBuild / CodeDeploy
 
@@ -1038,6 +1048,11 @@ Run code without managing servers.
 
 - [GitHub Actions AWS CI/CD security best practices](https://www.factualminds.com/blog/github-actions-aws-cicd-security-best-practices/)
 - [GitHub Actions on AWS — integration guide](https://www.factualminds.com/integrations/github-actions-aws/)
+
+### CI/CD vendor engineering blogs
+
+- [CircleCI Blog](https://circleci.com/blog/) — CI/CD pipeline engineering posts useful for AWS-deployed apps
+- [Spinnaker Community](https://spinnaker.io/community/) — continuous delivery platform community hub
 
 ### General DevOps Practice
 
@@ -1131,6 +1146,9 @@ Run code without managing servers.
 ### Third-party
 
 - [Datadog on AWS — integration](https://www.factualminds.com/integrations/datadog-aws/)
+- [Honeycomb Blog](https://www.honeycomb.io/blog) — distributed systems observability engineering posts
+- [Datadog Engineering — Kubernetes topic](https://www.datadoghq.com/blog/tag/kubernetes/) — Kubernetes reliability and operations articles
+- [Lumigo Blog](https://lumigo.io/blog) — serverless observability and Lambda troubleshooting articles
 
 ---
 
@@ -1171,6 +1189,7 @@ Run code without managing servers.
 - [AWS FinOps gap — engineering cost ownership](https://www.factualminds.com/blog/aws-finops-gap-engineering-cost-ownership/)
 - [FinOps — glossary entry](https://www.factualminds.com/glossary/finops/)
 - [FinOps Foundation](https://www.finops.org/) — global community
+- [FinOps Foundation Blog](https://www.finops.org/blog/) — foundation articles on FinOps practice and cloud financial operations
 
 ### Bill Teardowns (real customer incidents)
 
@@ -1333,6 +1352,13 @@ Run code without managing servers.
 - [AWS Control Tower — glossary](https://www.factualminds.com/glossary/aws-control-tower/)
 - [AWS Landing Zone — glossary](https://www.factualminds.com/glossary/aws-landing-zone/)
 
+**Third-party narratives:**
+- [Monzo Bank (AWS customer story)](https://aws.amazon.com/solutions/case-studies/monzo-bank-case-study/) — digital bank on AWS; scale and account-boundary themes
+- [AWS infrastructure at Segment](https://segment.com/blog/aws-infrastructure-at-segment) — many AWS accounts and environment scaling practices
+- [Shopify Engineering](https://shopify.engineering/) — backend engineering posts including AWS-scale commerce infrastructure
+- [Revamping with Landing Zone — multi-account rebuild (WealthPark)](https://medium.com/wealthpark-engineering/revamping-with-landing-zone-exploring-multi-account-aws-architecture-in-our-infrastructure-rebuild-6b1f2da9327) — Landing Zone–oriented infrastructure rebuild walkthrough
+- [Enterprise Landing Zone decisions — lessons learned, Part 1](https://medium.com/@malavaln/dive-deep-on-our-aws-landing-zone-architecture-decisions-made-lessons-learnt-part-1-898604d7aaaf) — large-org LZ architecture decisions and tradeoffs
+
 ### AWS Config
 
 - [AWS Config](https://aws.amazon.com/config/) — resource inventory + compliance
@@ -1408,6 +1434,7 @@ End-to-end reference architectures for verticals.
 
 - [Fintech architecture patterns on AWS](https://www.factualminds.com/blog/building-fintech-applications-on-aws-architecture-patterns/)
 - [Fintech industry hub](https://www.factualminds.com/industries/aws-fintech/)
+- [BFS health finance transformation on AWS — PCG DACH (Medium)](https://pcg-dach.medium.com/bfs-health-finance-a-journey-of-transformation-into-the-aws-cloud-11c44aa2af8b) — regulated workload migration with ECS and IaC themes
 
 ### Healthcare
 
@@ -1424,6 +1451,7 @@ End-to-end reference architectures for verticals.
 ### Manufacturing & Industrial IoT
 
 - [Manufacturing industry hub](https://www.factualminds.com/industries/aws-manufacturing/)
+- [AI on AWS for predictive maintenance — case study (Medium)](https://medium.com/@andreas.braun.2011/ai-on-aws-architecture-interface-and-resilience-a-case-study-on-leveraging-cloud-computing-in-47cdeba62e20) — industrial AI architecture, interfaces, and resilience framing on AWS
 
 ### Education / EdTech
 
@@ -1690,6 +1718,14 @@ See also: [Cognito for SaaS auth](#amazon-cognito) · [DynamoDB single-table for
 - [Mastering millisecond latency and millions of events — Amazon Key Suite](https://aws.amazon.com/blogs/architecture/mastering-millisecond-latency-and-millions-of-events-the-event-driven-architecture-behind-the-amazon-key-suite/) — EventBridge modernization and schema governance case study
 - [Recursive scaling with Amazon SQS](https://aws.amazon.com/blogs/architecture/design-pattern-for-highly-parallel-compute-recursive-scaling-with-amazon-sqs/) — parallel compute fan-out using queues
 
+**Additional guides:**
+- [Build event-driven architectures with MSK and EventBridge (Big Data Blog)](https://aws.amazon.com/blogs/big-data/build-event-driven-architectures-with-amazon-msk-and-amazon-eventbridge/) — official Kafka stream and event-bus integration patterns
+- [Apache Kafka vs RabbitMQ (CloudAMQP)](https://www.cloudamqp.com/blog/apachekafka-vs-rabbitmq.html) — broker comparison for MSK versus RabbitMQ-class workloads on AWS
+- [Confluent Blog](https://www.confluent.io/blog/) — Kafka ecosystem articles relevant to MSK streaming architectures
+- [microservices.io](https://microservices.io/) — microservices and event-driven architecture patterns catalog
+- [Modernizing APIs with serverless on AWS (Medium)](https://medium.com/@shriyashetal7/modernising-apis-and-serverless-architecture-with-aws-f10aeda50a17) — API modernization walkthrough using AWS serverless services
+- [Case study: SaaS API integration with serverless on AWS (Medium)](https://medium.com/@nitin_26346/case-study-integrate-apis-serverless-aws-architecture-37e297724a76) — multi-API sync architecture using AWS serverless components
+
 ### Multi-region & resilience
 
 - [AWS Multi-Region Fundamentals (whitepaper)](https://docs.aws.amazon.com/whitepapers/latest/aws-multi-region-fundamentals/aws-multi-region-fundamentals.html)
@@ -1706,6 +1742,9 @@ See also: [Cognito for SaaS auth](#amazon-cognito) · [DynamoDB single-table for
 **Reference implementations:**
 - [Route 53 Application Recovery Controller (ARC)](https://aws.amazon.com/route53/application-recovery-controller/) — readiness checks and zonal shift
 - [Multi-region failover with Route 53 ARC — AWS blog walkthrough](https://aws.amazon.com/blogs/networking-and-content-delivery/creating-disaster-recovery-mechanisms-using-amazon-route-53/) — official end-to-end pattern
+
+**Community walkthroughs:**
+- [Automated multi-region DR with Lambda and Route 53 (Medium)](https://ammarsuhail155.medium.com/building-an-automated-multi-region-disaster-recovery-system-on-aws-using-lambda-route53-f02e0e7befab) — DR automation walkthrough using AWS primitives
 
 ### Data lake & analytics
 
@@ -1731,6 +1770,9 @@ See also: [Cognito for SaaS auth](#amazon-cognito) · [DynamoDB single-table for
 - [Architecting for agentic AI development on AWS (Architecture Blog)](https://aws.amazon.com/blogs/architecture/architecting-for-agentic-ai-development-on-aws/) — agentic AI reference architecture framing
 - [Automate safety monitoring with computer vision and generative AI](https://aws.amazon.com/blogs/architecture/automate-safety-monitoring-with-computer-vision-and-generative-ai/) — CV + GenAI operational monitoring pattern
 
+**Community walkthroughs:**
+- [AI-powered media processing pipeline — serverless and Bedrock (Medium)](https://ammarsuhail155.medium.com/building-an-ai-powered-media-processing-pipeline-on-aws-serverless-architecture-70333e202de8) — serverless media pipeline walkthrough using Bedrock on AWS
+
 ### Migration
 
 - [Refactor / replatform / rearchitect](https://www.factualminds.com/blog/aws-application-modernization-refactor-replatform-rearchitect/)
@@ -1742,6 +1784,10 @@ See also: [Cognito for SaaS auth](#amazon-cognito) · [DynamoDB single-table for
 - [Let’s Architect! Designing microservices architectures](https://aws.amazon.com/blogs/architecture/lets-architect-designing-microservices-architectures/) — VPC Lattice, async integration, serverless microservices patterns
 - [A multidimensional approach helps you proactively prepare for failures — part 1](https://aws.amazon.com/blogs/architecture/a-multi-dimensional-approach-helps-you-proactively-prepare-for-failures-part-1-application-layer/) — application-layer resilience checklist framing
 - [Let’s Architect! Migrating to the cloud with AWS](https://aws.amazon.com/blogs/architecture/lets-architect-migrating-to-the-cloud-with-aws/) — migration patterns and modernization lens
+
+**Community walkthroughs:**
+- [Secure globally accelerated three-tier web architecture on AWS (Medium)](https://medium.com/@ayotomiwavictor1/building-a-secure-globally-accelerated-3-tier-web-architecture-on-aws-49b23c180173) — layered security with Global Accelerator on AWS
+- [Production-ready isolated three-tier app on AWS (Medium)](https://medium.com/@mary-ogbonna/how-i-built-and-deployed-a-production-ready-three-tier-book-review-app-on-aws-b4f7bc9c714e) — VPC-tier isolation with an example workload deployment narrative
 
 ### Anti-patterns & common mistakes
 
@@ -1877,6 +1923,7 @@ How real companies run on AWS — production architectures, postmortems, and at-
 - [Dropbox Tech — Infrastructure](https://dropbox.tech/infrastructure) — famous AWS-→-bare-metal exit + return-to-cloud insights
 - [Pinterest Engineering](https://medium.com/@Pinterest_Engineering) — high-RPS feed + storage architecture
 - [Capital One Tech — Cloud](https://www.capitalone.com/tech/cloud/) — regulated-finance cloud-native transformation
+- [Slack Engineering](https://slack.engineering/) — Slack infrastructure and backend engineering articles
 
 ### AWS leadership blogs
 
