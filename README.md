@@ -20,8 +20,6 @@
 [**🤖 AI & MCP**](#ai-coding-agents-mcp--skills) ·
 [**🤝 Contribute**](CONTRIBUTING.md)
 
-<sub>41 sections · 950+ curated links · 14 production playbooks · curated for AWS as of May 2026 · link health checked weekly</sub>
-
 </div>
 
 ---
