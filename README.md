@@ -1060,7 +1060,8 @@ Run code without managing servers.
 ### Local Dev / Emulators
 
 - [LocalStack](https://localstack.cloud/) — AWS-in-a-box for local dev
-- [Ministack — free LocalStack alternative](https://www.factualminds.com/blog/ministack-free-localstack-alternative-aws-emulator/)
+- [ministackorg/ministack](https://github.com/ministackorg/ministack) — MIT local AWS emulator; 40+ services; Terraform and SDK compatible
+- [floci-io/floci](https://github.com/floci-io/floci) — MIT local AWS emulator; Docker Compose; broad AWS API coverage
 - [getmoto/moto](#oss-lambda-frameworks-community) — mock AWS services for Python tests (boto3 stub library)
 - [AWS CLI chmod /dev/null streaming bug](https://www.factualminds.com/blog/aws-cli-chmod-dev-null-streaming-bug-2026/) — gotcha alert
 
