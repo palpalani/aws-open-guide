@@ -20,6 +20,8 @@
 [**🤖 AI & MCP**](#ai-coding-agents-mcp--skills) ·
 [**🤝 Contribute**](CONTRIBUTING.md)
 
+<sub>41 sections · 950+ curated links · 14 production playbooks · curated for AWS as of May 2026 · link health checked weekly</sub>
+
 </div>
 
 ---
@@ -99,6 +101,8 @@ The service taxonomy below is the **reference layer** ("what links exist about S
 <details>
 <summary><strong>📑 Table of Contents</strong> — click to expand</summary>
 
+- [📖 How to use this guide](#how-to-use-this-guide)
+
 ### 🎯 Use-Case Playbooks
 
 - [Use-Case Playbooks (overview)](#use-case-playbooks)
@@ -119,7 +123,6 @@ The service taxonomy below is the **reference layer** ("what links exist about S
 
 ### 🟧 Core AWS services
 
-- [📖 How to use this guide](#how-to-use-this-guide)
 - [🏛️ Foundations](#foundations)
 - [💻 Compute](#compute)
 - [📦 Containers](#containers)
@@ -187,12 +190,7 @@ Start here if you're new to AWS or evaluating whether to build on it.
 - [Microservices vs monolith on AWS — architecture decision guide](https://www.factualminds.com/blog/microservices-vs-monolith-on-aws-architecture-decision-guide/)
 - [Top 20 modern AWS AI services — overview](https://www.factualminds.com/blog/top-20-aws-ai-modern-services-2026/)
 
-**Recent AWS Service Announcements (changelog-style):**
-- [March 2026 announcements](https://www.factualminds.com/blog/aws-service-announcements-march-2026/)
-- [May 2026 announcements](https://www.factualminds.com/blog/aws-service-announcements-may-2026/)
-
 **Architecture Deep Reading (essential AWS canon):**
-- [AWS Architecture Center](#foundations) — start here for high-level mental model
 - [AWS Architecture Blog](https://aws.amazon.com/blogs/architecture/) — reference architectures and AWS engineering posts
 - [AWS Builders Library](https://aws.amazon.com/builders-library/) — operations + resilience essays from AWS principal engineers
 - [Static Stability Using Availability Zones](https://aws.amazon.com/builders-library/static-stability-using-availability-zones/) — Builders Library essay on designing for failure
@@ -2052,10 +2050,6 @@ Common SaaS / OSS integrations on AWS:
 ### Books
 
 - [AWS Well-Architected Framework whitepaper](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html) (free)
-- *AWS in Action* — Manning
-- *AWS Cookbook* — Fitch & Mishra (O'Reilly)
-- *Architecting for Scale* — Lee Atchison
-- *Building Microservices* — Sam Newman (cloud-agnostic but AWS-applicable)
 
 ### Courses (paid)
 
@@ -2130,19 +2124,6 @@ Common SaaS / OSS integrations on AWS:
 
 ---
 
-## Need Implementation Help?
-
-- [Free AWS Cost Audit](https://www.factualminds.com/aws-cost-audit/)
-- [AWS Migration Services](https://www.factualminds.com/services/aws-migration/)
-- [AWS Cost Optimization & FinOps](https://www.factualminds.com/services/aws-cloud-cost-optimization-services/)
-- [AWS Cloud Security](https://www.factualminds.com/services/aws-cloud-security/)
-- [Generative AI on AWS](https://www.factualminds.com/services/generative-ai-on-aws/)
-- [AWS Managed Services](https://www.factualminds.com/services/aws-managed-services/)
-- [Hire a Dedicated AWS Expert](https://www.factualminds.com/services/hire-a-dedicated-aws-expert/)
-- [Browse all 25+ services →](https://www.factualminds.com/services/)
-
----
-
 ## Contributing
 
 Contributions are warmly welcomed. See [CONTRIBUTING.md](CONTRIBUTING.md) for the format.
@@ -2159,6 +2140,19 @@ Contributions are warmly welcomed. See [CONTRIBUTING.md](CONTRIBUTING.md) for th
 | 💡 Suggest a resource | [Open a "New Resource" issue](https://github.com/palpalani/aws-open-guide/issues/new?template=new-resource.yml) |
 | 🔗 Report a broken link | [Open a "Broken Link" issue](https://github.com/palpalani/aws-open-guide/issues/new?template=broken-link.yml) |
 | ⭐ Show appreciation | [Star the repo](https://github.com/palpalani/aws-open-guide) — helps others discover it |
+
+---
+
+## Need Implementation Help?
+
+- [Free AWS Cost Audit](https://www.factualminds.com/aws-cost-audit/)
+- [AWS Migration Services](https://www.factualminds.com/services/aws-migration/)
+- [AWS Cost Optimization & FinOps](https://www.factualminds.com/services/aws-cloud-cost-optimization-services/)
+- [AWS Cloud Security](https://www.factualminds.com/services/aws-cloud-security/)
+- [Generative AI on AWS](https://www.factualminds.com/services/generative-ai-on-aws/)
+- [AWS Managed Services](https://www.factualminds.com/services/aws-managed-services/)
+- [Hire a Dedicated AWS Expert](https://www.factualminds.com/services/hire-a-dedicated-aws-expert/)
+- [Browse all 25+ services →](https://www.factualminds.com/services/)
 
 ---
 
