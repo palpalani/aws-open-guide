@@ -20,8 +20,6 @@
 [**🤖 AI & MCP**](#ai-coding-agents-mcp--skills) ·
 [**🤝 Contribute**](CONTRIBUTING.md)
 
-<sub>Maintained by <a href="https://github.com/palpalani">Palaniappan P</a> · Updated continuously</sub>
-
 </div>
 
 ---
