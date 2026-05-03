@@ -52,3 +52,7 @@ lychee/
 
 # Node (in case anyone runs npx markdownlint, etc.)
 node_modules/
+
+# Python (duplicate-link reporter and local tooling)
+__pycache__/
+*.pyc

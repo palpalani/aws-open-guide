@@ -8,11 +8,13 @@ on:
     paths:
       - 'README.md'
       - 'use-cases/**.md'
+      - 'scripts/report_duplicate_md_links.py'
       - '.github/workflows/link-check.yml'
   pull_request:
     paths:
       - 'README.md'
       - 'use-cases/**.md'
+      - 'scripts/report_duplicate_md_links.py'
   schedule:
     # Mondays 08:00 UTC — catches links that rot between releases
     - cron: '0 8 * * 1'
@@ -33,6 +35,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+
+      - name: Duplicate Markdown links (informational)
+        run: python3 scripts/report_duplicate_md_links.py
 
       - name: Restore lychee cache
         uses: actions/cache@v5
