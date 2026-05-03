@@ -130,19 +130,29 @@ Skipping §5 (Failure modes), §7 (When NOT to use), or §9 (Anti-patterns) defe
 
 ## Duplicate links
 
-**Do not treat every repeated URL as a bug.**
+**Goal:** one outbound `https://…` (or `http://…`) target per destination **per Markdown file**, unless two bullets truly need distinct anchor text to the same URL (rare). Duplicate outbound links on a single rendered page add noise and redundant anchors without helping readers.
 
-- **`README.md`** repeats many links on purpose: the service taxonomy, the **Decision Guides — X vs Y** index, the **AWS Glossary**, and **Architecture Patterns** all surface the same URLs in different places so readers can jump in from the section that matches how they browse. Removing those repeats usually hurts discoverability.
-- **`use-cases/*.md` playbooks** often list the same URL in running prose and again in **References**. That is acceptable for skim-ability. If you tighten a playbook, prefer keeping **References** complete and dropping a redundant inline link (or pointing to “see References”) rather than the other way around.
-- **Cross-layer repeats** (`README.md` plus a playbook) are normal: the reference layer and the building layer are allowed to link the same resource ([`CLAUDE.md`](CLAUDE.md)).
+### `README.md`
 
-To audit duplicates locally or in CI output, run:
+The README is long and repeats topics across taxonomy, **Decision Guides — X vs Y**, **AWS Glossary**, **Architecture Patterns**, tools, and appendix sections. **Discoverability stays high** by listing the resource where it fits contextually; **duplicate URLs do not** — keep the first HTTPS link in reading order as canonical, then reuse the resource with a same-page fragment link to that section (`[Label](#heading-slug)`). Merge adjacent bullets that pointed at the identical URL.
+
+Heading IDs follow GitHub-flavored Markdown (lowercase, hyphenated). If a fragment link mis-scrolls after a heading edit, fix the slug to match the rendered anchor.
+
+### `use-cases/*.md` playbooks
+
+Treat **References** (section 11) as the canonical place for full `- [Name](URL) — …` bibliography rows. Earlier sections should not repeat the same `[text](url)` for that destination — use plain text, “see References — …”, or a relative link to another playbook section.
+
+### Across files
+
+The same URL may appear in `README.md` and in a playbook (reference layer vs building layer). That is normal ([`CLAUDE.md`](CLAUDE.md)).
+
+### Audit
 
 ```bash
 python3 scripts/report_duplicate_md_links.py
 ```
 
-The script prints **within-file** duplicates (actionable for playbook edits) and a short **global** summary. It does not fail the build; the link checker remains the hard gate for broken URLs.
+The script reports **within-file** duplicates (these should be cleared when editing) and a short **repo-wide** busiest-URL list (informational only). It does not fail CI; the link checker remains the hard gate for broken URLs.
 
 ## Broken Links
 

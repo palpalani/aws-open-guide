@@ -177,9 +177,12 @@ def main() -> int:
         lines_out.append("")
 
     lines_out.append(
-        "_Policy: README index sections intentionally repeat service links; "
-        "playbooks may repeat prose + References. See CONTRIBUTING.md → Duplicate links._\n"
+        "_Editorial: avoid duplicate outbound HTTPS links within one file — "
+        "`README.md` uses same-page `#fragments` to the first occurrence; playbooks keep URLs "
+        "canonical in References (section 11). Repo-wide repeats across files are normal. "
+        "See [CONTRIBUTING.md — Duplicate links](CONTRIBUTING.md#duplicate-links)._"
     )
+    lines_out.append("")
 
     report = "\n".join(lines_out)
     print(report)
