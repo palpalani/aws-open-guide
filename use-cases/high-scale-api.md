@@ -195,7 +195,7 @@ Worked example: 100M requests/month, 80% cacheable GETs, 20% writes, p50 5KB res
 | **Cloudflare in front of AWS** | Best-in-class WAF + edge | Multi-vendor; egress to AWS still applies |
 | **API on Cloudflare Workers** | Edge-native, low cost | Different runtime; AWS data still has egress |
 
-For X-vs-Y depth: [CloudFront vs Cloudflare](https://www.factualminds.com/compare/aws-cloudfront-vs-cloudflare/), [WAF vs Network Firewall](https://www.factualminds.com/compare/aws-waf-vs-network-firewall/).
+For X-vs-Y depth: CloudFront vs Cloudflare, WAF vs Network Firewall — see Decision guides in References.
 
 ## 9. Anti-patterns
 

@@ -127,7 +127,7 @@ Generic retry/idempotency/DLQ patterns: see [`failure-first.md`](failure-first.m
 
 - **What it looks like** — sudden volume increase from a new dedicated IP → spam folder placement
 - **Why it happens** — mailbox providers throttle unrecognised IPs that send high volume from day one
-- **Recovery** — follow [SES warmup schedule](https://docs.aws.amazon.com/ses/latest/dg/dedicated-ip-warming.html); ramp over 4–6 weeks; mix shared and dedicated during warmup
+- **Recovery** — follow the SES dedicated IP warming schedule (see References — Official); ramp over 4–6 weeks; mix shared and dedicated during warmup
 
 ### Region outage
 
