@@ -86,7 +86,7 @@ The default for most SaaS is the **pool model**: shared infrastructure, tenant I
 - **Schema-per-tenant in shared DB** — mid-isolation; pgbouncer connection cost grows with tenants
 - **Database-per-tenant in shared cluster** — closer to silo on isolation, complex migrations
 
-For SaaS on Bedrock/GenAI specifically, see the [multi-tenant GenAI](https://www.factualminds.com/blog/multi-tenant-genai-bedrock/) variants.
+For SaaS on Bedrock/GenAI specifically, see the multi-tenant GenAI variants (References — Production guides).
 
 ## 5. Failure modes
 

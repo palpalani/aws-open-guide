@@ -157,7 +157,7 @@
 - **Reserved Instances** for stable workloads on RDS, ElastiCache, OpenSearch
 - **Resource cleanup** — tag everything with `owner` and `expires`; automate deletion of un-tagged resources after a grace period
 
-**Reference:** [Compute Optimizer](https://aws.amazon.com/compute-optimizer/) · [Savings Plans](https://aws.amazon.com/savingsplans/)
+**Reference:** [Compute Optimizer](https://aws.amazon.com/compute-optimizer/) · Savings Plans (linked under Reserved capacity and Savings Plans below)
 
 ---
 

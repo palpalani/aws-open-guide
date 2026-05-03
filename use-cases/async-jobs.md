@@ -147,7 +147,7 @@ Worked example: 100k jobs/day, 30s avg duration, 1MB result.
 | S3 PUT + storage (100k × 1MB × 30d retention) | ~$0.15 + $0.07/GB/mo | ~$15 | Lifecycle to IA after 30d |
 | **Total** | ~$51 | **~$1,540** | ~$0.015 per job |
 
-**Scaling shape:** linear with job count for compute; sub-linear for fixed services. Big lever: **right-size Lambda memory** with [Power Tuning](https://github.com/alexcasalboni/aws-lambda-power-tuning) — typical savings 20–40%.
+**Scaling shape:** linear with job count for compute; sub-linear for fixed services. Big lever: **right-size Lambda memory** with Lambda Power Tuning — typical savings 20–40% (see References — OSS tools).
 
 **Cost traps:**
 - **Lambda memory over-provisioned** for short jobs — direct cost multiplier
@@ -181,7 +181,7 @@ Worked example: 100k jobs/day, 30s avg duration, 1MB result.
 - **Visibility timeout shorter than typical job** — message reappears mid-process, two workers race on the same job
 - **Visibility timeout much longer than typical job** — failed jobs sit invisible for hours before retry
 - **Polling DynamoDB at 1Hz from a UI** — wasted reads at scale; use API Gateway WebSockets or AppSync subscriptions for live status, or webhook on completion
-- **Storing entire job payload in SQS** — 256KB SQS limit; oversized messages → use S3 for the payload, SQS message holds the S3 reference (the [Claim Check pattern](https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/claim-check.html))
+- **Storing entire job payload in SQS** — 256KB SQS limit; oversized messages → use S3 for the payload, SQS message holds the S3 reference (Claim Check pattern — see References — Official)
 - **Single shared queue for all tenants in multi-tenant SaaS** — noisy tenant blocks others; per-tenant queues or fair-share scheduling
 - **Status field as freeform string** — typos, drift; enum: `queued | running | done | failed | cancelled`
 - **No timeout on the worker** — runaway job pegs Lambda for 15 minutes per attempt × retries × concurrency

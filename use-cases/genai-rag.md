@@ -106,7 +106,7 @@ Building a demo takes a weekend. Building one that's **accurate, cheap, safe, ev
 | **S3 Vectors (preview)** | Cost-conscious cold vector store | New; evaluate against alternatives |
 | **Pinecone / Weaviate / Qdrant** | Best-in-class vector DB | Vendor cost; managed or self-host |
 | **Agentic / multi-step** | Tool use, planning, multiple retrievals | Bedrock Agents or LangGraph; cost and complexity grow |
-| **Multi-tenant SaaS RAG** | Per-tenant corpus + cost | See [`multi-tenant-saas.md`](multi-tenant-saas.md) + [Multi-tenant GenAI on Bedrock](https://www.factualminds.com/blog/multi-tenant-genai-bedrock/) |
+| **Multi-tenant SaaS RAG** | Per-tenant corpus + cost | See [`multi-tenant-saas.md`](multi-tenant-saas.md) + Multi-tenant GenAI on Bedrock (References — Production guides) |
 
 ## 5. Failure modes
 
@@ -212,7 +212,7 @@ Worked example: 100k queries/month, average 8 retrieved passages × 800 tokens =
 | **Pinecone + OpenAI / Anthropic SDK** | Best-in-class vector + LLM | Multi-vendor; AWS data egress |
 | **Semantic Kernel / Haystack** | Enterprise patterns | Same trade-off as LangChain |
 
-For X-vs-Y: [Bedrock vs SageMaker](https://www.factualminds.com/compare/aws-bedrock-vs-sagemaker/), [Bedrock Agents vs Step Functions](https://www.factualminds.com/compare/aws-bedrock-agents-vs-step-functions/), [Fine-tuning vs RAG on Bedrock](https://www.factualminds.com/blog/fine-tuning-vs-rag-bedrock-when-to-use/).
+For X-vs-Y: Bedrock vs SageMaker, Bedrock Agents vs Step Functions, Fine-tuning vs RAG on Bedrock — see Decision guides and Production guides in References.
 
 ## 9. Anti-patterns
 

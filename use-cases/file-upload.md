@@ -93,7 +93,7 @@ The right pattern: client uploads directly to S3 with a short-lived signed URL. 
                               └──────────────┘
 ```
 
-1. **Client requests upload URL** — `POST /uploads` with file metadata (name, size, type). API validates (size limits, allowed types), creates `(upload_id, status=pending, owner)` in DynamoDB, generates a pre-signed URL or [pre-signed POST policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/PresignedUrlUploadObject.html). Returns to client.
+1. **Client requests upload URL** — `POST /uploads` with file metadata (name, size, type). API validates (size limits, allowed types), creates `(upload_id, status=pending, owner)` in DynamoDB, generates a pre-signed URL or pre-signed POST policy (see References — Official — S3 pre-signed URLs). Returns to client.
 2. **Client uploads to S3** — `PUT` for files <100MB; multipart upload for larger. The bytes never touch your API.
 3. **S3 event** — `ObjectCreated` triggers an SQS message (event notification → SQS).
 4. **Validator** — Lambda picks up the event, validates content (MIME sniff, file headers, virus scan via ClamAV-on-Lambda or GuardDuty Malware Protection for S3), updates DynamoDB.

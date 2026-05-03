@@ -198,7 +198,7 @@ For larger teams: GitHub Actions costs scale with minutes; self-hosting on Farga
 | **CDK Pipelines** | CDK-heavy | Self-mutating pipeline; CDK lock-in |
 | **GitOps (Argo CD / Flux)** | Kubernetes | Different model; strong fit on EKS |
 
-For X-vs-Y depth: [CodePipeline vs GitHub Actions](https://www.factualminds.com/compare/aws-codepipeline-vs-github-actions/), [Terraform vs CDK](https://www.factualminds.com/blog/terraform-vs-aws-cdk-infrastructure-as-code-decision-guide/), [Pulumi vs Terraform](https://www.pulumi.com/docs/iac/concepts/vs/terraform/).
+For X-vs-Y depth: CodePipeline vs GitHub Actions, Terraform vs CDK, Pulumi vs Terraform — see Decision guides in References.
 
 ## 9. Anti-patterns
 
