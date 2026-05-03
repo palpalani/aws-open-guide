@@ -128,6 +128,22 @@ Skipping §5 (Failure modes), §7 (When NOT to use), or §9 (Anti-patterns) defe
 
 **When NOT to add a playbook:** if the use case is fully covered by an existing service section in `README.md` and there's no architectural variation, failure-mode catalog, or cost model worth writing up. Prefer expanding the existing section.
 
+## Duplicate links
+
+**Do not treat every repeated URL as a bug.**
+
+- **`README.md`** repeats many links on purpose: the service taxonomy, the **Decision Guides — X vs Y** index, the **AWS Glossary**, and **Architecture Patterns** all surface the same URLs in different places so readers can jump in from the section that matches how they browse. Removing those repeats usually hurts discoverability.
+- **`use-cases/*.md` playbooks** often list the same URL in running prose and again in **References**. That is acceptable for skim-ability. If you tighten a playbook, prefer keeping **References** complete and dropping a redundant inline link (or pointing to “see References”) rather than the other way around.
+- **Cross-layer repeats** (`README.md` plus a playbook) are normal: the reference layer and the building layer are allowed to link the same resource ([`CLAUDE.md`](CLAUDE.md)).
+
+To audit duplicates locally or in CI output, run:
+
+```bash
+python3 scripts/report_duplicate_md_links.py
+```
+
+The script prints **within-file** duplicates (actionable for playbook edits) and a short **global** summary. It does not fail the build; the link checker remains the hard gate for broken URLs.
+
 ## Broken Links
 
 Found a dead link? [Open a Broken Link issue](https://github.com/palpalani/aws-open-guide/issues/new?template=broken-link.yml) or open a PR removing or updating it.
