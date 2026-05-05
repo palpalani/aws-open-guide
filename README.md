@@ -323,6 +323,8 @@ Container orchestration and registry.
 **Tools:**
 - [Karpenter](https://karpenter.sh/) — node autoscaling for EKS
 - [eksctl](https://eksctl.io/) — official CLI for EKS
+- [terraform-aws-modules/terraform-aws-eks](https://github.com/terraform-aws-modules/terraform-aws-eks) — community Terraform module for EKS clusters and node groups
+- [aws-ia/terraform-aws-eks-blueprints](https://github.com/aws-ia/terraform-aws-eks-blueprints) — Terraform patterns and add-ons for production-style EKS stacks
 
 **Kubernetes cost & ops (vendor blogs):**
 - [Cast AI Blog](https://cast.ai/blog) — Kubernetes cost optimization and autoscaler guidance for cloud workloads
@@ -1013,6 +1015,7 @@ Run code without managing servers.
 
 ### Terraform on AWS
 
+- [OpenTofu](https://opentofu.org/) — open-source Terraform-compatible infrastructure-as-code engine
 - [HashiCorp AWS Provider](https://registry.terraform.io/providers/hashicorp/aws/latest)
 - [Terraform AWS provider upgrade strategy](https://www.factualminds.com/blog/terraform-aws-provider-upgrade-strategy/)
 - [Terraform state management — import, move, repair](https://www.factualminds.com/blog/terraform-state-management-aws-import-move-repair/)
@@ -1149,7 +1152,7 @@ Run code without managing servers.
 
 - [Datadog on AWS — integration](https://www.factualminds.com/integrations/datadog-aws/)
 - [Honeycomb Blog](https://www.honeycomb.io/blog) — distributed systems observability engineering posts
-- [Datadog Engineering — Kubernetes topic](https://www.datadoghq.com/blog/tag/kubernetes/) — Kubernetes reliability and operations articles
+- [Datadog Engineering — Kubernetes topic](https://www.datadoghq.com/blog/topic/kubernetes/) — Kubernetes reliability and operations articles
 - [Lumigo Blog](https://lumigo.io/blog) — serverless observability and Lambda troubleshooting articles
 
 ---
@@ -1819,6 +1822,9 @@ AI-assisted development on AWS — Model Context Protocol (MCP) servers, Claude 
 - [Introducing AWS MCP Servers (AWS ML Blog)](https://aws.amazon.com/blogs/machine-learning/introducing-aws-mcp-servers-for-code-assistants-part-1/)
 - [Unlocking the power of MCP on AWS (AWS ML Blog)](https://aws.amazon.com/blogs/machine-learning/unlocking-the-power-of-model-context-protocol-mcp-on-aws/)
 - [AWS MCP Server (managed, in preview — re:Invent 2025)](https://docs.aws.amazon.com/aws-mcp/latest/userguide/what-is-mcp-server.html) — fully-managed remote server with Agent SOPs + CloudTrail logging
+- [Model Context Protocol strategies on AWS — Prescriptive Guidance](https://docs.aws.amazon.com/prescriptive-guidance/latest/mcp-strategies/introduction.html) — MCP tool design, server hosting, and governance
+- [Guidance for deploying MCP servers on AWS](https://aws.amazon.com/solutions/guidance/deploying-model-context-protocol-servers-on-aws/) — AWS Solutions patterns for secure MCP server deployment
+- [Tool integration strategy — agentic AI frameworks](https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-frameworks/tool-integration-strategy.html) — MCP vs framework-native and meta-tools for agent workloads
 
 **Essential / Core (start here):**
 - [AWS API MCP Server](https://awslabs.github.io/mcp/servers/aws-api-mcp-server) — interact with all AWS services via CLI commands
