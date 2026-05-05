@@ -153,9 +153,9 @@ Cross-cutting patterns: see [`failure-first.md`](failure-first.md). File-upload-
 
 ### Pre-signed URL leaked / replayed
 
-- **What it looks like** — same upload happens multiple times from different IPs
-- **Why it happens** — URL shared, snooped, scraped
-- **Recovery** — short expiry (15 minutes typical); pre-signed POST policy with key prefix matching user ID; per-user upload-rate limit; one-time-use semantics via key-uniqueness check
+- **What it looks like** — same upload happens multiple times from different IPs; in multi-tenant systems, a URL minted for tenant A is replayed by tenant B
+- **Why it happens** — URL shared, snooped, scraped; key prefix not bound to caller identity
+- **Recovery** — short expiry (15 minutes typical); pre-signed POST policy with key prefix matching user ID; per-user upload-rate limit; one-time-use semantics via key-uniqueness check; in multi-tenant SaaS, scope the prefix to the tenant ID and validate server-side on completion — see [`multi-tenant-saas.md`](multi-tenant-saas.md) for tenant-isolation patterns
 
 ### Processing pipeline broken; backlog grows
 

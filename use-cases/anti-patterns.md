@@ -198,7 +198,7 @@
 
 **Why it bites:** keys leak (committed by mistake, exposed in build logs, team member offboarded but not rotated). Compliance issue.
 
-**Better:** GitHub OIDC → AWS IAM role. No long-lived credentials. Per-workflow scoped role. Supported in CodePipeline equivalents too.
+**Better:** GitHub OIDC → AWS IAM role. No long-lived credentials. Per-workflow scoped role. Supported in CodePipeline equivalents too. See [`ci-cd.md`](ci-cd.md) for the full deployment topology.
 
 ### Manual changes in the AWS console
 

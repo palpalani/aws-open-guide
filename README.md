@@ -438,7 +438,7 @@ Run code without managing servers.
 - [S3 Storage Classes](https://aws.amazon.com/s3/storage-classes/)
 
 **Production Guides:**
-- [S3 security best practices — preventing data exposure](https://www.factualminds.com/blog/aws-s3-security-best-practices-preventing-data-exposure/)
+- [S3 security — bucket policies, Block Public Access, default encryption, and IAM conditions](https://www.factualminds.com/blog/aws-s3-security-best-practices-preventing-data-exposure/)
 - [S3 storage costs aren't actually cheap](https://www.factualminds.com/blog/aws-s3-storage-costs-not-cheap/) — real teardown
 - [Building a data lake on S3 + Glue + Athena](https://www.factualminds.com/blog/building-a-data-lake-on-aws-s3-glue-athena-architecture/)
 - [Amazon S3 — glossary entry](https://www.factualminds.com/glossary/amazon-s3/)
@@ -491,6 +491,8 @@ Run code without managing servers.
 
 ## Databases
 
+> Pick by consistency model (ACID vs eventual), scale shape (single-region vs petabyte), and query pattern (relational, key-value, document, graph, time-series). When in doubt, [Decision Guides — X vs Y](#decision-guides--x-vs-y) maps the common choices.
+
 ### Amazon RDS — Relational Database Service
 
 > Managed Postgres, MySQL, MariaDB, Oracle, SQL Server.
@@ -501,7 +503,7 @@ Run code without managing servers.
 - [AWS Database Blog](https://aws.amazon.com/blogs/database/) — RDS, Aurora, DynamoDB, and purpose-built DB posts
 
 **Production Guides:**
-- [RDS database performance best practices](https://www.factualminds.com/blog/aws-rds-database-performance-best-practices/)
+- [RDS performance — connection pooling, parameter groups, slow-query logs, and read-replica routing](https://www.factualminds.com/blog/aws-rds-database-performance-best-practices/)
 - [RDS vs Aurora — when to use which database](https://www.factualminds.com/blog/aws-rds-vs-aurora-when-to-use-which-database/) · [Compare](https://www.factualminds.com/compare/aws-rds-vs-aurora/)
 - [RDS max connection calculator](https://www.factualminds.com/tools/aws-rds-max-connection-calculator/)
 - [High-scale Postgres on AWS — cost optimization](https://www.factualminds.com/blog/high-scale-postgres-aws-cost-optimization/)
@@ -577,6 +579,8 @@ Run code without managing servers.
 
 ## Networking & Content Delivery
 
+> Design for blast radius (multi-AZ), latency (regional vs edge), and the bill (NAT Gateway egress and cross-AZ traffic are the usual surprises).
+
 ### Amazon VPC — Virtual Private Cloud
 
 **Official:**
@@ -584,7 +588,7 @@ Run code without managing servers.
 - [Networking & Content Delivery Blog](https://aws.amazon.com/blogs/networking-and-content-delivery/) — VPC, CDN, and hybrid connectivity posts
 
 **Production Guides:**
-- [VPC networking best practices for production](https://www.factualminds.com/blog/aws-vpc-networking-best-practices-for-production/)
+- [VPC for production — subnet topology, NAT vs VPC endpoints, flow logs, and Transit Gateway](https://www.factualminds.com/blog/aws-vpc-networking-best-practices-for-production/)
 
 - [VPC peering vs Transit Gateway](https://www.factualminds.com/glossary/vpc-peering-vs-transit-gateway/)
 - [Amazon VPC — glossary entry](https://www.factualminds.com/glossary/amazon-vpc/)
@@ -631,6 +635,8 @@ Run code without managing servers.
 
 ## Security & Identity
 
+> Layer it: identity (IAM, Cognito), boundaries (SCPs, permission boundaries), encryption (KMS), detection (GuardDuty, Security Hub), and audit trails (CloudTrail, Config).
+
 ### AWS IAM — Identity & Access Management
 
 **Official:**
@@ -638,7 +644,7 @@ Run code without managing servers.
 - [AWS Security Blog](https://aws.amazon.com/blogs/security/) — IAM, encryption, and detective controls posts
 
 **Production Guides:**
-- [IAM best practices — least-privilege access control](https://www.factualminds.com/blog/aws-iam-best-practices-least-privilege-access-control/)
+- [IAM least privilege — permission boundaries, SCPs, IAM Access Analyzer, and policy conditions](https://www.factualminds.com/blog/aws-iam-best-practices-least-privilege-access-control/)
 - [AWS IAM — glossary entry](https://www.factualminds.com/glossary/aws-iam/)
 
 ### AWS IAM Identity Center (formerly SSO)
@@ -716,7 +722,7 @@ Run code without managing servers.
 
 ### Holistic Security Guides
 
-- [10 AWS cloud security best practices](https://www.factualminds.com/blog/10-aws-cloud-security-best-practices-implementation-guide/)
+- [Cloud security baseline — 10 controls covering IAM, encryption, logging, and incident response](https://www.factualminds.com/blog/10-aws-cloud-security-best-practices-implementation-guide/)
 - [Securing AWS workloads beyond the basics](https://www.factualminds.com/blog/securing-aws-workloads-beyond-the-basics/)
 - [From reactive to proactive — automating AWS security remediation](https://www.factualminds.com/blog/from-reactive-to-proactive-automating-aws-security-remediation/)
 - [AWS resource hardening quick wins (DMS, OpenSearch, SageMaker, Lambda)](https://www.factualminds.com/blog/aws-resource-hardening-quick-wins-dms-opensearch-sagemaker-lambda/)
@@ -743,6 +749,8 @@ Run code without managing servers.
 ---
 
 ## Compliance
+
+> Evidence collection and audit-ready controls — Audit Manager for evidence, Artifact for AWS attestations, Config conformance packs for continuous checks.
 
 ### HIPAA
 
@@ -838,7 +846,7 @@ Run code without managing servers.
 
 > Serverless BI + ML insights + GenAI dashboards.
 - [QuickSight Documentation](https://docs.aws.amazon.com/quicksight/)
-- [QuickSight production guide + best practices](https://www.factualminds.com/blog/amazon-quicksight-production-guide-best-practices/)
+- [QuickSight in production — embedding, row-level security, SPICE refresh, and capacity sizing](https://www.factualminds.com/blog/amazon-quicksight-production-guide-best-practices/)
 - [QuickSight embedding analytics in SaaS apps](https://www.factualminds.com/blog/amazon-quicksight-embedding-analytics-saas-applications/)
 - [QuickSight real-time analytics dashboards](https://www.factualminds.com/blog/aws-quicksight-real-time-analytics-dashboards-guide/)
 - [Amazon Q in QuickSight — generative BI](https://www.factualminds.com/blog/amazon-q-quicksight-generative-bi/)
@@ -988,7 +996,7 @@ Run code without managing servers.
 
 > Native infrastructure-as-code in YAML/JSON.
 - [CloudFormation Documentation](https://docs.aws.amazon.com/cloudformation/)
-- [CloudFormation best practices — IaC](https://www.factualminds.com/blog/aws-cloudformation-best-practices-infrastructure-as-code/)
+- [CloudFormation patterns — stack splitting, drift detection, change sets, and rollback triggers](https://www.factualminds.com/blog/aws-cloudformation-best-practices-infrastructure-as-code/)
 - [Application Composer — IaC generator](https://www.factualminds.com/blog/aws-application-composer-iac-generator/)
 
 ### AWS CDK — Cloud Development Kit
@@ -1039,7 +1047,7 @@ Run code without managing servers.
 
 ### GitHub Actions on AWS
 
-- [GitHub Actions AWS CI/CD security best practices](https://www.factualminds.com/blog/github-actions-aws-cicd-security-best-practices/)
+- [GitHub Actions AWS deploys — OIDC federation, scoped roles, and credential-free pipelines](https://www.factualminds.com/blog/github-actions-aws-cicd-security-best-practices/)
 - [GitHub Actions on AWS — integration guide](https://www.factualminds.com/integrations/github-actions-aws/)
 
 ### CI/CD vendor engineering blogs
@@ -1104,7 +1112,7 @@ Run code without managing servers.
 - [CloudWatch Logs Insights](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html) — query language for log analytics
 
 **Production Guides:**
-- [CloudWatch observability — metrics, logs, alarms best practices](https://www.factualminds.com/blog/aws-cloudwatch-observability-metrics-logs-alarms-best-practices/)
+- [CloudWatch observability — EMF metrics, Logs Insights queries, composite alarms, and metric streams](https://www.factualminds.com/blog/aws-cloudwatch-observability-metrics-logs-alarms-best-practices/)
 - [CloudWatch logging costs](https://www.factualminds.com/blog/aws-cloudwatch-logging-costs-observability/)
 - [Amazon CloudWatch — glossary entry](https://www.factualminds.com/glossary/amazon-cloudwatch/)
 
@@ -1342,7 +1350,7 @@ Run code without managing servers.
 
 - [Control Tower](https://aws.amazon.com/controltower/)
 - [Set up Control Tower for multi-account governance](https://www.factualminds.com/blog/how-to-set-up-aws-control-tower-multi-account-governance/)
-- [AWS multi-account strategy — landing zone best practices](https://www.factualminds.com/blog/aws-multi-account-strategy-landing-zone-best-practices/)
+- [Multi-account landing zone — Control Tower, OUs, SCPs, and Identity Center setup](https://www.factualminds.com/blog/aws-multi-account-strategy-landing-zone-best-practices/)
 - [AWS Control Tower — glossary](https://www.factualminds.com/glossary/aws-control-tower/)
 - [AWS Landing Zone — glossary](https://www.factualminds.com/glossary/aws-landing-zone/)
 
@@ -1437,7 +1445,7 @@ End-to-end reference architectures for verticals.
 
 ### Retail & eCommerce
 
-- [AWS for retail — complete guide](https://www.factualminds.com/blog/aws-for-retail-complete-guide/)
+- [AWS for retail — POS, inventory, recommendations, and peak-event scaling](https://www.factualminds.com/blog/aws-for-retail-complete-guide/)
 - [Retail architecture for Black Friday peak traffic](https://www.factualminds.com/blog/aws-retail-architecture-black-friday-peak-traffic/)
 - [Custom AWS development for retail / eCommerce](https://www.factualminds.com/blog/custom-aws-development-retail-ecommerce/)
 - [Retail & eCommerce industry hub](https://www.factualminds.com/industries/aws-retail-ecommerce/)
@@ -2143,6 +2151,8 @@ Contributions are warmly welcomed. See [CONTRIBUTING.md](CONTRIBUTING.md) for th
 ---
 
 ## Need Implementation Help?
+
+This guide is free. Sometimes you want a human in the loop — for a cost audit, a migration plan, or a production-grade architecture review on a deadline. The maintainer's team ([FactualMinds](https://www.factualminds.com/)) offers AWS implementation services; relevant entry points below.
 
 - [Free AWS Cost Audit](https://www.factualminds.com/aws-cost-audit/)
 - [AWS Migration Services](https://www.factualminds.com/services/aws-migration/)
