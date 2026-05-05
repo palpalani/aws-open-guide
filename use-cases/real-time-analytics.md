@@ -10,7 +10,9 @@
 
 ## 1. Problem
 
-Events arrive continuously: page views, button clicks, IoT sensor readings, transaction logs. Two consumers want different things:
+Marketing wants a live dashboard of "checkouts in the last 5 minutes." Data science wants to query "every clickstream event from the last 90 days." Both want the same source stream. One needs sub-minute freshness; the other needs cheap historical scans. Build it as one path and you'll either bankrupt yourself on hot storage or starve the dashboard on cold latency.
+
+Two consumers, two latency profiles, one event source:
 - **Real-time** dashboard wants to see "last 5 minutes" within seconds (sub-minute freshness, small windows)
 - **Analytics / ML / BI** wants to query "last 30 days" cheaply (high-latency tolerance, large scans)
 
@@ -172,6 +174,8 @@ Worked example: 10k events/sec average (~26B/month), 1KB events, hot + cold path
 - **Storing JSON not Parquet** — Athena scans 5–10× more bytes; Firehose Parquet conversion pays for itself fast
 - **Daily Glue Crawler on huge dataset** — partition projection often replaces crawler entirely
 - **Hot-path Lambda doing too much** — push compute to Flink for stateful, push aggregation to materialised views in Redshift / Snowflake
+
+The same hot/cold split applies to operational data (logs, metrics, traces) — see [`observability-pipeline.md`](observability-pipeline.md) for the analogous pattern with CloudWatch as hot path and S3+Athena as cold path.
 
 ## 7. When NOT to use this
 

@@ -192,6 +192,8 @@ Worked example: 100k queries/month, average 8 retrieved passages × 800 tokens =
 - **Streaming abandoned mid-stream** — full output still billed; user closing tab doesn't refund tokens
 - **Bedrock model in non-US region** — token pricing varies by region; check before committing
 
+For per-tenant cost attribution patterns (Bedrock token tagging, OpenSearch index per tier, log-based usage tracking), see [`cost-pitfalls.md`](cost-pitfalls.md) and [`multi-tenant-saas.md`](multi-tenant-saas.md).
+
 ## 7. When NOT to use this
 
 - **Question can be answered by structured search** — full-text + filters is cheaper, more predictable, more debuggable

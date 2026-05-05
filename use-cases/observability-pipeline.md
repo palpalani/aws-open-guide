@@ -10,7 +10,9 @@
 
 ## 1. Problem
 
-Every service produces logs, metrics, and traces. The default — ship everything to CloudWatch — works at small scale and breaks at large scale. Ingestion at $0.50/GB plus storage adds up; CloudWatch Logs Insights is fine for hot debugging but expensive for analytics; multi-account aggregation is its own project; and you still want a way to keep 90 days of logs cheap.
+Your CloudWatch bill arrives. It's bigger than your EC2 fleet. The team scans it: 70% is `Ingestion` and `LogGroup-Storage`. Someone enabled `DEBUG` on a Lambda last quarter and never turned it off. CloudWatch is doing exactly what you told it to — and that's the problem.
+
+Ship-everything-to-CloudWatch works at small scale and breaks at large scale: ingestion at $0.50/GB compounds, Logs Insights gets expensive for analytics, multi-account aggregation is its own project, and you still want 90 days of logs cheap.
 
 This playbook is the routing-and-retention pipeline that sits behind your apps: hot logs in CloudWatch for short-window debugging, warm logs in S3+Athena for analytics and audit, metrics consolidated, traces sampled. Same idea — separate hot and cold paths — applied to operational data.
 
