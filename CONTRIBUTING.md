@@ -2,6 +2,8 @@
 
 Thanks for considering a contribution. This guide gets better every time someone adds a high-quality resource or fixes a broken link.
 
+**Before a big PR:** use the merge checklists and CI overview in **[PRODUCTION_READINESS.md](PRODUCTION_READINESS.md)** so `main` stays link-clean and playbook-complete.
+
 ## Quick Start
 
 To suggest a new resource without opening a PR, [open a New Resource issue](https://github.com/palpalani/aws-open-guide/issues/new?template=new-resource.yml).
@@ -124,7 +126,7 @@ Skipping §5 (Failure modes), §7 (When NOT to use), or §9 (Anti-patterns) defe
 3. The References section follows the same entry-format rules as the rest of the guide: em-dash separator, descriptions under 100 characters, sentence case, HTTPS URLs.
 4. Update the table in [`use-cases/README.md`](use-cases/README.md).
 5. Add an entry to the Use-Case Playbooks section near the top of the root [`README.md`](README.md) and in its Table of Contents.
-6. Open a PR. The link checker validates every URL in `use-cases/*.md` automatically.
+6. Open a PR. The link checker validates every URL in `use-cases/*.md`, `README.md`, and `PRODUCTION_READINESS.md` automatically. Use the contributor checklist in [PRODUCTION_READINESS.md](PRODUCTION_READINESS.md) before requesting review.
 
 **When NOT to add a playbook:** if the use case is fully covered by an existing service section in `README.md` and there's no architectural variation, failure-mode catalog, or cost model worth writing up. Prefer expanding the existing section.
 

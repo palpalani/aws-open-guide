@@ -4,7 +4,7 @@
 
 ### A curated, opinionated map of Amazon Web Services
 
-**Services · official docs · production deep-dives · OSS tools · battle-tested references — organized by AWS's own service taxonomy.**
+**Official links, production guides, OSS tools, and X-vs-Y comparisons — grouped the way AWS names services so you land on the right resource, not a random category.**
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg?style=flat-square)](https://creativecommons.org/licenses/by/4.0/)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
@@ -18,7 +18,8 @@
 [**⚖️ Decision Guides**](#decision-guides--x-vs-y) ·
 [**💰 Cost & FinOps**](#cost-management--finops) ·
 [**🤖 AI & MCP**](#ai-coding-agents-mcp--skills) ·
-[**🤝 Contribute**](CONTRIBUTING.md)
+[**🤝 Contribute**](CONTRIBUTING.md) ·
+[**✅ Production readiness**](PRODUCTION_READINESS.md)
 
 </div>
 
@@ -26,21 +27,23 @@
 
 ## Why this guide?
 
-The AWS console has **200+ services**. The official docs are exhaustive but fragmented across hundreds of microsites. This guide cuts through the noise:
+AWS lists **200+ services** in the console. The docs are accurate but spread across hundreds of sites, so you lose time tab-hopping and second-guessing which service fits. This guide is a single index with two layers: browse by **service** when you know the name, or by **workload** when you know the problem.
 
 | | |
 |---|---|
-| 🗂️ **Canonical taxonomy** | Organized the way AWS thinks — Compute, Storage, Database, Networking — not by tool category. |
-| 📚 **Three-tier resources per service** | Official docs first, then in-depth production guides, then OSS tools. |
-| ⚠️ **Real cost & gotcha callouts** | Limits, surprise-bill traps, and migration pain points the brochure won't mention. |
-| ⚖️ **Decision-first** | Every "X vs Y" question gets a comparison link. |
-| ⏳ **Lifecycle-aware** | Flags services in maintenance, sunset, or full shutdown so you don't anchor on dead AWS products. |
-| 🤖 **AI-native** | First-class coverage of MCP servers, agent plugins, and Claude Code skills for AWS. |
+| 🗂️ **Same taxonomy as AWS** | Compute, Storage, Databases, Networking — the way the console and docs are organized, not a third-party topic list. |
+| 📚 **Three tiers per topic** | Official sources first, then deep production write-ups, then OSS tools you can run today. |
+| ⚠️ **Costs and gotchas called out** | Limits, bill surprises, and migration friction you rarely see in a product page. |
+| ⚖️ **Comparisons when it matters** | Common "should I use X or Y?" questions point to a decision guide, not guesswork. |
+| ⏳ **Lifecycle you can trust** | Maintenance, sunset, and shutdown flags so you do not design on services AWS is winding down. |
+| 🤖 **Built for how teams work now** | MCP servers, agent plugins, and skills for AI-assisted AWS work sit alongside the traditional links. |
 
 > [!TIP]
 > If a category here is empty or thin, [contributions are warmly welcomed](CONTRIBUTING.md). One link per line, em-dash separator — see [CONTRIBUTING.md](CONTRIBUTING.md) for the full format.
 
 ## How to use this guide
+
+Match the row to what you need **today** — each path sends you to a different slice of this repo (building, evaluating, debugging, or learning).
 
 ### 🧭 Pick your entry point
 
@@ -71,7 +74,7 @@ The AWS console has **200+ services**. The official docs are exhaustive but frag
 
 > How to build common workloads on AWS in production — problem, architecture, failure modes, cost, anti-patterns. Not a links list; a playbook.
 
-The service taxonomy below is the **reference layer** ("what links exist about S3"). Playbooks are the **building layer** ("how do I build X on AWS in production"). Each playbook follows a strict 11-section template — see [`use-cases/_template.md`](use-cases/_template.md).
+**You have a feature to ship** (email at scale, uploads, async jobs, RAG, and the rest). Open a playbook first when you need a production-shaped answer, not a tour of one service. The service taxonomy below is the **reference layer** ("what exists about S3"). Playbooks are the **building layer** ("how do I run X safely in prod"). Each one follows the same 11-section template — see [`use-cases/_template.md`](use-cases/_template.md).
 
 **Workload playbooks:**
 
@@ -94,7 +97,7 @@ The service taxonomy below is the **reference layer** ("what links exist about S
 - 💸 [Cost pitfalls](use-cases/cost-pitfalls.md) — line items that surprise teams (NAT Gateway, cross-AZ, CloudWatch Logs, egress)
 
 > [!TIP]
-> Browse all playbooks at [`use-cases/`](use-cases/). Want to add one? Copy [`_template.md`](use-cases/_template.md) and follow the [contribution guide](CONTRIBUTING.md#adding-a-use-case-playbook).
+> All playbooks live under [`use-cases/`](use-cases/). To propose a new one, copy [`_template.md`](use-cases/_template.md), fill every section, then follow [Adding a use-case playbook](CONTRIBUTING.md#adding-a-use-case-playbook) before you open a PR (the link checker will run on your URLs).
 
 <details>
 <summary><strong>📑 Table of Contents</strong> — click to expand</summary>
@@ -163,6 +166,7 @@ The service taxonomy below is the **reference layer** ("what links exist about S
 - [🎤 Conferences & Events](#conferences--events)
 - [🔖 Other Awesome AWS Lists](#other-awesome-aws-lists)
 - [🤝 Contributing](#contributing)
+- [✅ Production readiness plan](PRODUCTION_READINESS.md)
 - [📄 License](#license)
 
 </details>
@@ -2139,14 +2143,14 @@ Common SaaS / OSS integrations on AWS:
 
 ## Contributing
 
-Contributions are warmly welcomed. See [CONTRIBUTING.md](CONTRIBUTING.md) for the format.
+If something here saved you a search, pay it forward: add a link, fix a 404, or tighten a playbook. [CONTRIBUTING.md](CONTRIBUTING.md) has the full editorial rules. For **merge checklists, CI gates, and ops cadence**, see the [production readiness plan](PRODUCTION_READINESS.md).
 
 **Quick rules:**
 
-1. One link per line, format: `[Name](URL) — short description`.
-2. Resources must be in active use (no dead repos / dead docs).
-3. New top-level categories require an issue first — let's discuss.
-4. Self-promotion is fine if the resource is genuinely useful, but disclose any affiliation in the PR description.
+1. One link per line: `[Name](URL) — short description` (use an em dash between title and description).
+2. Prefer resources that are maintained and AWS-relevant; drop dead repos and stale docs.
+3. Open an issue before adding a new top-level category so maintainers can align on scope.
+4. Self-promotional links are allowed when the resource is useful; say how you are connected in the PR description.
 
 | Action | Link |
 |---|---|
@@ -2158,7 +2162,7 @@ Contributions are warmly welcomed. See [CONTRIBUTING.md](CONTRIBUTING.md) for th
 
 ## Need Implementation Help?
 
-This guide is free. Sometimes you want a human in the loop — for a cost audit, a migration plan, or a production-grade architecture review on a deadline. The maintainer's team ([FactualMinds](https://www.factualminds.com/)) offers AWS implementation services; relevant entry points below.
+Everything in this repo is free to read and reuse under the license below. When you need someone to review a design, run a cost pass, or own a migration on a timeline, the maintainer works with teams through [FactualMinds](https://www.factualminds.com/). Entry points below.
 
 - [Free AWS Cost Audit](https://www.factualminds.com/aws-cost-audit/)
 - [AWS Migration Services](https://www.factualminds.com/services/aws-migration/)

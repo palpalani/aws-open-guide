@@ -1,18 +1,20 @@
 name: Link Check
 
-# Weekly link audit + on-PR safety net for README.md and use-case playbooks.
+# Weekly link audit + on-PR safety net for README.md, PRODUCTION_READINESS.md, and use-case playbooks.
 
 on:
   push:
     branches: [main]
     paths:
       - 'README.md'
+      - 'PRODUCTION_READINESS.md'
       - 'use-cases/**.md'
       - 'scripts/report_duplicate_md_links.py'
       - '.github/workflows/link-check.yml'
   pull_request:
     paths:
       - 'README.md'
+      - 'PRODUCTION_READINESS.md'
       - 'use-cases/**.md'
       - 'scripts/report_duplicate_md_links.py'
   schedule:
@@ -30,7 +32,7 @@ concurrency:
 
 jobs:
   link-check:
-    name: Check README links
+    name: Check Markdown links
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -62,6 +64,7 @@ jobs:
             --exclude '^https?://(www\.)?jeff-barr\.com'
             --exclude '^https?://(www\.)?thecloudpod\.tv'
             README.md
+            PRODUCTION_READINESS.md
             'use-cases/**/*.md'
           # Fail PR/push runs immediately; let scheduled runs file an issue instead.
           fail: ${{ github.event_name != 'schedule' }}
