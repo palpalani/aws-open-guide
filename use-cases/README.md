@@ -2,9 +2,11 @@
 
 > How to build common workloads on AWS in production — problem, architecture, failure modes, cost, anti-patterns. Not a links list; a playbook.
 
-Each playbook follows a strict 11-section template at [`_template.md`](_template.md): Problem · Constraints · Reference architecture · Variants · Failure modes · Cost · When NOT to use · Alternatives · Anti-patterns · Production checklist · References.
+Each doc is written for **engineers who are shipping** — the wiring, tradeoffs, and failure modes that usually sit in scattered posts and internal runbooks. You get one narrative: what to build, what breaks, what it costs, and what to avoid.
 
-The root [README.md](../README.md) is still the place to browse by AWS service. These playbooks are the place to start when you know the **workload** you're building.
+The root [`README.md`](../README.md) is the **service index** (find material by S3, Lambda, EventBridge, …). These playbooks are the **workload index** (email, jobs, APIs, RAG, …). Use both: services for depth on one product, playbooks for end-to-end design.
+
+Every playbook follows the same 11-section template in [`_template.md`](_template.md): Problem · Constraints · Reference architecture · Variants · Failure modes · Cost · When NOT to use · Alternatives · Anti-patterns · Production checklist · References.
 
 ## Workload playbooks
 
@@ -23,7 +25,7 @@ The root [README.md](../README.md) is still the place to browse by AWS service. 
 
 ## Cross-cutting frameworks
 
-Patterns referenced across playbooks. Don't repeat — link.
+Shared patterns used across playbooks — link here instead of duplicating long explanations.
 
 | Framework | Covers |
 |-----------|--------|
@@ -35,7 +37,7 @@ Patterns referenced across playbooks. Don't repeat — link.
 ## Contributing a new playbook
 
 1. Copy [`_template.md`](_template.md) to `<use-case-slug>.md`.
-2. Fill in all 11 sections in order. Don't skip §5 (Failure modes), §7 (When NOT to use), or §9 (Anti-patterns) — those are the differentiators.
-3. Pick tags from the vocabulary in [CONTRIBUTING.md](../CONTRIBUTING.md): `production-ready` · `high-scale` · `low-cost` · `complex` · `deprecated-pattern`.
-4. Add a row to the Workload playbooks table above and link to it from the root [README.md](../README.md).
-5. Open a PR. The link checker will validate every URL.
+2. Complete all 11 sections in order. Sections 5 (Failure modes), 7 (When NOT to use), and 9 (Anti-patterns) are required — they separate a playbook from a link roundup.
+3. Tag the playbook using the vocabulary in [CONTRIBUTING.md](../CONTRIBUTING.md): `production-ready` · `high-scale` · `low-cost` · `complex` · `deprecated-pattern`.
+4. Add a row to the Workload playbooks table here and link the playbook from the root [README.md](../README.md) (overview list and TOC).
+5. Open a PR; CI runs the Markdown link checker on your references. Follow the contributor checklist in [PRODUCTION_READINESS.md](../PRODUCTION_READINESS.md) so the playbook list, TOC, and section completeness stay aligned.

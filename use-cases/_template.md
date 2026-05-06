@@ -1,6 +1,6 @@
 # Playbook: <Use case name>
 
-> One sentence on the problem this playbook solves. No marketing language.
+> One sentence: the workload or outcome — plain language, specific, no hype.
 
 **Tags:** `production-ready` · `high-scale` · `low-cost` · `complex` · `deprecated-pattern`
 *(Pick the ones that apply. Remove the rest.)*
