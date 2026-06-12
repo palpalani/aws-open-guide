@@ -121,6 +121,29 @@
 
 ---
 
+## S3 small-object PUT-heavy without aggregation
+
+**The cost:**
+- S3 Standard PUT/COPY/POST/LIST: **$0.005 per 1,000 requests** (us-east-1; verify your region on the pricing page)
+- Storage is cheap; **request charges dominate** when you write one tiny object per event
+- Example: 100k PUTs/sec × 86,400 sec/day × 30 days ≈ 259B requests/month → **~$1.3M/month in PUT fees alone** (before storage)
+
+**Why it spirals:**
+- Async job workers writing one result object per job (see [`async-jobs.md`](async-jobs.md))
+- Event streams landing as individual S3 objects instead of batched files
+- No lifecycle policy — millions of small objects accumulate; Athena/Glue partition scans get slow and expensive downstream
+- Request charges are easy to miss in Cost Explorer until you filter by **S3 Requests** usage type
+
+**Mitigation:**
+- **Batch before PUT** — buffer in memory or Kinesis Data Firehose (60s / 5MB buffering) so one object holds many events
+- **Aggregate job outputs** — write NDJSON or Parquet files on a schedule, not per invocation
+- **Lifecycle rules** — expire scratch prefixes after N days; transition cold prefixes to IA or Intelligent-Tiering
+- **Cost Explorer** — slice S3 spend by usage type; use [S3 Storage Lens](https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html) or CUR to find high-PUT buckets
+
+**Reference:** [S3 pricing](https://aws.amazon.com/s3/pricing/) · [Optimize S3 API request charges (AWS Storage Blog)](https://aws.amazon.com/blogs/storage/optimize-storage-costs-by-analyzing-api-operations-on-amazon-s3/) · [`anti-patterns.md` — same pattern](anti-patterns.md#s3-small-object-put-heavy-without-aggregation)
+
+---
+
 ## EBS gp2 vs gp3 (almost free win)
 
 **The cost:**
@@ -255,13 +278,13 @@
 - Streaming output where users abandon mid-stream — full output still billed
 
 **Mitigation:**
-- **Prompt caching** in Bedrock for repeated system prompts (significant discount)
+- **Prompt caching** for repeated prefixes (system prompts, RAG documents, tool definitions) — cached reads bill at a reduced rate; cache writes can cost more than standard input tokens. Claude Sonnet 4.5 requires **≥4,096 tokens** per cache checkpoint (TTL: 5 minutes or 1 hour). Place static context first so it hits the cache.
 - Tune retrieval `top_k`; measure precision before adding more context
 - Cap agent iterations
 - Per-tenant token budgets in multi-tenant SaaS
 - Cheaper model for cheaper tasks (Haiku for routing, Sonnet for reasoning, Opus reserved)
 
-**Reference:** [Bedrock pricing](https://aws.amazon.com/bedrock/pricing/) · [Multi-tenant GenAI on Bedrock](https://www.factualminds.com/blog/multi-tenant-genai-bedrock/)
+**Reference:** [Bedrock pricing](https://aws.amazon.com/bedrock/pricing/) · [Prompt caching (Bedrock User Guide)](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html) · [Multi-tenant GenAI on Bedrock](https://www.factualminds.com/blog/multi-tenant-genai-bedrock/)
 
 ---
 
