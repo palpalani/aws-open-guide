@@ -3,6 +3,8 @@
 > The line items that surprise teams. Each entry: what it costs, why it spirals, the mitigation.
 >
 > Pricing changes; verify on the linked AWS pricing page before committing to a number.
+>
+> **Audit workbook:** [`cost-pitfalls-audit.xlsx`](cost-pitfalls-audit.xlsx) — filterable pitfall registry and quarterly checklist. Regenerate after edits: `uv run --python python3 --with openpyxl python3 scripts/generate_cost_pitfalls_audit.py`.
 
 ---
 
