@@ -6,6 +6,25 @@
 >
 > **Audit workbook:** [`cost-pitfalls-audit.xlsx`](cost-pitfalls-audit.xlsx) — filterable pitfall registry and quarterly checklist. Regenerate after edits: `uv run --python python3 --with openpyxl python3 scripts/generate_cost_pitfalls_audit.py`.
 
+**What are AWS cost pitfalls?** Recurring bill line items that surprise teams after architecture choices look correct on paper—NAT Gateway data-processing fees for private-subnet traffic to S3, cross-AZ transfer billed both directions ($0.01/GB each way), CloudWatch Logs ingestion without retention, internet egress without CloudFront, and always-on idle resources. Each section below lists unit pricing, why spend spirals, and mitigations with links to official AWS pricing pages.
+
+## Frequently asked questions
+
+**Why is my NAT Gateway bill so high?**
+Private-subnet traffic to AWS services (S3, DynamoDB, ECR, Secrets Manager) still flows through NAT unless you use VPC endpoints. You pay ~$0.045/hour per gateway plus $0.045/GB processed—often under "Data Processing" in Cost Explorer. See [NAT Gateway](#nat-gateway).
+
+**Does cross-AZ data transfer cost money on AWS?**
+Yes. Same-region cross-AZ transfer is $0.01/GB in each direction. Multi-AZ databases, ALB cross-zone load balancing, and MSK replication multiply this quickly. See [Cross-AZ data transfer](#cross-az-data-transfer).
+
+**Why is CloudWatch Logs so expensive?**
+Ingestion is $0.50/GB; default retention is never expire. Verbose Lambda logs and VPC Flow Logs piped to CloudWatch are common drivers. Set retention on every log group and ship high-volume logs to S3. See [CloudWatch Logs](#cloudwatch-logs).
+
+**How do I reduce AWS data transfer costs?**
+Use gateway VPC endpoints (free) for S3 and DynamoDB, interface endpoints for other AWS APIs, CloudFront for cacheable egress, and topology-aware routing to limit cross-AZ hops. See [NAT Gateway](#nat-gateway), [Egress to internet](#egress-to-internet), and [Cross-AZ data transfer](#cross-az-data-transfer).
+
+**What should I review quarterly for AWS cost optimization?**
+Run visibility (Cost Explorer, anomalies), waste (idle resources), rightsizing (Compute Optimizer, Lambda Power Tuning), commitments (Savings Plans at 60–80% of baseline), architecture (VPC endpoints, S3 lifecycle), and governance (tags, budgets). See [Quarterly optimization cadence](#quarterly-optimization-cadence).
+
 ---
 
 ## NAT Gateway
