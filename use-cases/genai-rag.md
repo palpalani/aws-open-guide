@@ -286,8 +286,8 @@ For cross-cutting AWS anti-patterns, see [`anti-patterns.md`](anti-patterns.md).
 - [LlamaIndex](https://github.com/run-llama/llama_index) — RAG-focused framework
 - [LangGraph](https://github.com/langchain-ai/langgraph) — graph-based agent orchestration
 - [aws-genai-llm-chatbot](https://github.com/aws-samples/aws-genai-llm-chatbot) — AWS sample multi-model chatbot
-- [bedrock-claude-chat](https://github.com/aws-samples/bedrock-claude-chat) — sample Bedrock chat app
-- [ragas](https://github.com/explodinggradients/ragas) — RAG evaluation framework
+- [bedrock-claude-chat](https://github.com/aws-samples/bedrock-chat) — sample Bedrock chat app
+- [ragas](https://github.com/vibrantlabsai/ragas) — RAG evaluation framework
 - [DSPy](https://github.com/stanfordnlp/dspy) — programmatic prompt optimisation
 - [Haystack](https://github.com/deepset-ai/haystack) — search and RAG pipelines
 

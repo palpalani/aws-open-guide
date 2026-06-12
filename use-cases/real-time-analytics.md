@@ -242,10 +242,10 @@ For cross-cutting AWS anti-patterns, see [`anti-patterns.md`](anti-patterns.md).
 - [Managed Service for Apache Flink](https://docs.aws.amazon.com/managed-flink/) — stateful stream processing
 - [AWS Glue Data Catalog](https://docs.aws.amazon.com/glue/latest/dg/components-overview.html) — schema catalog
 - [Athena partition projection](https://docs.aws.amazon.com/athena/latest/ug/partition-projection.html) — partitioning without crawlers
-- [Apache Iceberg on AWS](https://docs.aws.amazon.com/AmazonS3/latest/userguide/querying-iceberg.html) — schema evolution at table level
+- [Apache Iceberg on AWS](https://docs.aws.amazon.com/AmazonS3/latest/userguide/) — schema evolution at table level
 - [Lake Formation](https://docs.aws.amazon.com/lake-formation/) — access control on data lake
-- [QuickSight Documentation](https://docs.aws.amazon.com/quicksight/) — BI on Athena / Redshift
-- [Real-time pipeline reference architecture](https://docs.aws.amazon.com/whitepapers/latest/streaming-data-solutions-amazon-kinesis/streaming-data-solutions-amazon-kinesis.html) — official whitepaper
+- [QuickSight Documentation](https://docs.aws.amazon.com/quick/) — BI on Athena / Redshift
+- [Real-time pipeline reference architecture](https://docs.aws.amazon.com/whitepapers/latest/streaming-data-solutions-amazon-kinesis/) — official whitepaper
 
 **Production guides:**
 - [Real-time pipeline — Kinesis + Lambda + DynamoDB](https://www.factualminds.com/blog/real-time-data-pipeline-kinesis-lambda-dynamodb/) — production walkthrough
@@ -260,7 +260,7 @@ For cross-cutting AWS anti-patterns, see [`anti-patterns.md`](anti-patterns.md).
 **OSS tools:**
 - [aws-kinesis-aggregation](https://github.com/awslabs/kinesis-aggregation) — Kinesis Producer Library aggregation
 - [Kinesis Client Library (KCL)](https://github.com/awslabs/amazon-kinesis-client) — checkpointing consumer
-- [PyAthena](https://github.com/laughingman7743/PyAthena) — Athena driver for Python
+- [PyAthena](https://github.com/pyathena-dev/PyAthena) — Athena driver for Python
 - [duckdb](https://github.com/duckdb/duckdb) — local Parquet querying for development
 
 ---

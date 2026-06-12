@@ -215,8 +215,8 @@ For cross-cutting AWS anti-patterns, see [`anti-patterns.md`](anti-patterns.md).
 - [SQS visibility timeout](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html) — official explanation
 - [Step Functions Documentation](https://docs.aws.amazon.com/step-functions/) — workflow orchestration
 - [Avoiding insurmountable queue backlogs (Builders Library)](https://aws.amazon.com/builders-library/avoiding-insurmountable-queue-backlogs/) — canonical queue anti-pattern reference
-- [Claim Check pattern (AWS prescriptive guidance)](https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/claim-check.html) — for oversized payloads
-- [AWS Powertools for Lambda — Idempotency](https://docs.powertools.aws.dev/lambda/python/latest/utilities/idempotency/) — idempotency utility
+- [Claim Check pattern (AWS prescriptive guidance)](https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/) — for oversized payloads
+- [AWS Powertools for Lambda — Idempotency](https://docs.aws.amazon.com/powertools/python/latest/utilities/idempotency/) — idempotency utility
 
 **Production guides:**
 - [EventBridge event-driven architecture patterns](https://www.factualminds.com/blog/aws-eventbridge-event-driven-architecture-patterns/) — broader event-driven patterns

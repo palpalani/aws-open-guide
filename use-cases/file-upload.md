@@ -250,8 +250,8 @@ For cross-cutting AWS anti-patterns, see [`anti-patterns.md`](anti-patterns.md).
 **Official:**
 - [S3 pre-signed URLs](https://docs.aws.amazon.com/AmazonS3/latest/userguide/PresignedUrlUploadObject.html) — official guide
 - [S3 multipart upload](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html) — for files >100MB
-- [S3 event notifications](https://docs.aws.amazon.com/AmazonS3/latest/userguide/NotificationHowTo.html) — to SQS, SNS, EventBridge, Lambda
-- [GuardDuty Malware Protection for S3](https://docs.aws.amazon.com/guardduty/latest/ug/malware-protection-s3.html) — managed virus scan
+- [S3 event notifications](https://docs.aws.amazon.com/AmazonS3/latest/userguide/EventNotifications.html) — to SQS, SNS, EventBridge, Lambda
+- [GuardDuty Malware Protection for S3](https://docs.aws.amazon.com/guardduty/latest/ug/) — managed virus scan
 - [Rekognition Content Moderation](https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html) — image/video moderation
 - [Textract Documentation](https://docs.aws.amazon.com/textract/) — OCR and document extraction
 - [MediaConvert Documentation](https://docs.aws.amazon.com/mediaconvert/) — video transcoding
@@ -264,7 +264,7 @@ For cross-cutting AWS anti-patterns, see [`anti-patterns.md`](anti-patterns.md).
 **OSS tools:**
 - [Uppy](https://github.com/transloadit/uppy) — modular file uploader with S3 multipart
 - [aws-sdk-s3-request-presigner](https://github.com/aws/aws-sdk-js-v3/tree/main/packages/s3-request-presigner) — generate pre-signed URLs (Node.js)
-- [boto3 generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3/client/generate_presigned_url.html) — Python SDK
+- [boto3 generate_presigned_url](https://docs.aws.amazon.com/boto3/latest/reference/services/s3/client/generate_presigned_url.html) — Python SDK
 - [clamav-lambda-layer](https://github.com/widdix/aws-s3-virusscan) — ClamAV antivirus on S3
 
 ---

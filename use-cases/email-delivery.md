@@ -229,7 +229,7 @@ Pre-ship gate for an SES integration. If any of these is missing, don't ship.
 - [Configuration sets](https://docs.aws.amazon.com/ses/latest/dg/using-configuration-sets.html) — per-stream policy and event destinations
 - [SES event types reference](https://docs.aws.amazon.com/ses/latest/dg/monitor-using-event-publishing.html) — bounce/complaint/delivery payloads
 - [SES suppression list](https://docs.aws.amazon.com/ses/latest/dg/sending-email-suppression-list.html) — account-level and configuration-set scopes
-- [Email authentication — SPF, DKIM, DMARC](https://docs.aws.amazon.com/ses/latest/dg/email-authentication.html) — official SES auth guide
+- [Email authentication — SPF, DKIM, DMARC](https://docs.aws.amazon.com/ses/latest/dg/) — official SES auth guide
 - [SES Mail Manager](https://docs.aws.amazon.com/ses/latest/dg/eb.html) — inbound and outbound email pipelines
 
 **Production guides:**

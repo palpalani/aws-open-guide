@@ -163,7 +163,7 @@ When a playbook says "exponential backoff with jitter" or "use a DLQ," it's poin
 - **S3 Cross-Region Replication** — async; use S3 Multi-Region Access Points for routing
 - **Replicate the failover plumbing too** — DKIM keys, secrets, suppression lists, KMS keys
 
-**Reference:** [DR strategies — pilot light / warm standby / multi-site](https://www.factualminds.com/blog/aws-disaster-recovery-strategies-pilot-light-warm-standby-multi-site/) · [Multi-region AWS without doubling costs](https://www.factualminds.com/blog/multi-region-aws-without-doubling-costs/) · [AWS Multi-Region Fundamentals](https://docs.aws.amazon.com/whitepapers/latest/aws-multi-region-fundamentals/aws-multi-region-fundamentals.html).
+**Reference:** [DR strategies — pilot light / warm standby / multi-site](https://www.factualminds.com/blog/aws-disaster-recovery-strategies-pilot-light-warm-standby-multi-site/) · [Multi-region AWS without doubling costs](https://www.factualminds.com/blog/multi-region-aws-without-doubling-costs/) · [AWS Multi-Region Fundamentals](https://docs.aws.amazon.com/prescriptive-guidance/latest/aws-multi-region-fundamentals/).
 
 ## 9. Static stability
 
