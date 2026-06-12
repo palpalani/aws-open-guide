@@ -11,6 +11,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/palpalani/aws-open-guide?style=flat-square&logo=github)](https://github.com/palpalani/aws-open-guide/stargazers)
 [![GitHub last commit](https://img.shields.io/github/last-commit/palpalani/aws-open-guide?style=flat-square&logo=github)](https://github.com/palpalani/aws-open-guide/commits)
 [![GitHub issues](https://img.shields.io/github/issues/palpalani/aws-open-guide?style=flat-square&logo=github)](https://github.com/palpalani/aws-open-guide/issues)
+[![Link Check](https://github.com/palpalani/aws-open-guide/actions/workflows/link-check.yml/badge.svg?style=flat-square)](https://github.com/palpalani/aws-open-guide/actions/workflows/link-check.yml)
 
 [**🚀 Get Started**](#how-to-use-this-guide) ·
 [**🎯 Use-Case Playbooks**](#use-case-playbooks) ·
@@ -246,6 +247,7 @@ Virtual servers, containers' substrate, and specialized chips.
 > Custom Arm chips with 40% better price/performance than x86 on most workloads.
 
 - [Graviton overview](https://aws.amazon.com/ec2/graviton/)
+- [EC2 M9g and M9gd instances — Graviton5](https://aws.amazon.com/about-aws/whats-new/2026/06/ec2-m9g-m9gd-instances-graviton5-processors-available/) — fifth-gen Graviton processors, GA June 2026
 - [Graviton cost optimization guide](https://www.factualminds.com/blog/aws-graviton-cost-optimization-guide/) — m5.large → t4g.medium real savings
 
 ### AWS Trainium & Inferentia — ML accelerators
@@ -253,6 +255,7 @@ Virtual servers, containers' substrate, and specialized chips.
 > Purpose-built chips for training (Trainium) and inference (Inferentia).
 
 - [Trainium](https://aws.amazon.com/ai/machine-learning/trainium/) · [Inferentia](https://aws.amazon.com/ai/machine-learning/inferentia/)
+- [EC2 Trn3 UltraServers — Trainium3](https://aws.amazon.com/ec2/instance-types/trn3/) — fourth-gen Trainium chips for frontier-scale training
 - [Trainium2 + Inferentia2 deep dive](https://www.factualminds.com/blog/aws-trainium2-inferentia2-ai-chips/)
 
 ### AWS Batch
@@ -931,8 +934,15 @@ Run code without managing servers.
 
 ### Amazon Nova
 
-> Amazon's foundation model family — text, multimodal (Canvas, Reel).
+> Amazon's foundation model family — text, multimodal (Canvas, Reel), and Nova 2 reasoning models.
 
+**Official:**
+- [Amazon Nova models overview](https://aws.amazon.com/nova/models/)
+- [What is Amazon Nova 2?](https://docs.aws.amazon.com/nova/latest/nova2-userguide/what-is-nova-2.html) — Nova 2 Lite, Sonic, and embeddings
+- [Nova 2 foundation models in Bedrock](https://aws.amazon.com/about-aws/whats-new/2025/12/nova-2-foundation-models-amazon-bedrock/) — Lite GA; Pro in preview
+- [Nova 2 Omni](https://aws.amazon.com/about-aws/whats-new/2025/12/amazon-nova-2-omni-preview/) — multimodal reasoning and image generation [preview]
+
+**Production Guides:**
 - [Nova Canvas + Reel — multimodal](https://www.factualminds.com/blog/amazon-nova-canvas-reel-multimodal/)
 
 ### Amazon SageMaker
@@ -1584,7 +1594,7 @@ Per the [May 2025 AWS service changes announcement](#lifecycle-reference). AWS h
 - [AWS Panorama](https://aws.amazon.com/panorama/) — appliance-based computer vision at the edge [sunset]
 - [AWS SimSpace Weaver](https://aws.amazon.com/simspaceweaver/) — large-scale spatial simulations; ends March 31, 2026 [sunset]
 - [Amazon Inspector Classic](https://docs.aws.amazon.com/inspector/v1/userguide/inspector_introduction.html) — replacement → Amazon Inspector v2 [sunset]
-- [AWS IQ](https://aws.amazon.com/iq/) — freelance AWS experts marketplace [sunset]
+- [AWS IQ end of support](https://docs.aws.amazon.com/aws-iq/latest/experts-user-guide/aws-iq-end-of-support.html) — freelance AWS experts marketplace [shutdown]
 - [AWS DMS Fleet Advisor](https://docs.aws.amazon.com/dms/latest/userguide/fleet-advisor.html) — replacement → AWS DMS [sunset]
 - [Amazon Connect Voice ID](https://docs.aws.amazon.com/connect/latest/adminguide/voice-id.html) — caller authentication; end-of-support announced [sunset]
 
@@ -1683,6 +1693,8 @@ Plain-language definitions of common AWS terms:
 
 - [AWS Certifications overview](https://aws.amazon.com/certification/)
 - [AWS Skill Builder](https://skillbuilder.aws/) — official free training
+- [AWS Ramp-Up Guides](https://aws.amazon.com/training/ramp-up-guides/) — role-based learning paths by job function
+- [Well-Architected Labs](https://www.wellarchitectedlabs.com/) — hands-on Well-Architected Framework labs
 - [AWS Workshops catalog](https://workshops.aws/)
 
 ### Cert Deep Dives
@@ -1728,7 +1740,7 @@ See also: [Cognito for SaaS auth](#amazon-cognito) · [DynamoDB single-table for
 - [Recursive scaling with Amazon SQS](https://aws.amazon.com/blogs/architecture/design-pattern-for-highly-parallel-compute-recursive-scaling-with-amazon-sqs/) — parallel compute fan-out using queues
 
 **Additional guides:**
-- [Build event-driven architectures with MSK and EventBridge (Big Data Blog)](https://aws.amazon.com/blogs/big-data/build-event-driven-architectures-with-amazon-msk-and-amazon-eventbridge/) — official Kafka stream and event-bus integration patterns
+- [Build event-driven architectures with MSK and EventBridge (EventBridge Pipes)](https://aws.amazon.com/blogs/aws/new-create-point-to-point-integrations-between-event-producers-and-consumers-with-amazon-eventbridge-pipes/) — MSK as an EventBridge Pipes source
 - [Apache Kafka vs RabbitMQ (CloudAMQP)](https://www.cloudamqp.com/blog/apachekafka-vs-rabbitmq.html) — broker comparison for MSK versus RabbitMQ-class workloads on AWS
 - [Confluent Blog](https://www.confluent.io/blog/) — Kafka ecosystem articles relevant to MSK streaming architectures
 - [microservices.io](https://microservices.io/) — microservices and event-driven architecture patterns catalog
@@ -2008,7 +2020,7 @@ How to plug into the AWS conversation, follow signal-rich voices, and stay curre
 
 - [freeCodeCamp AWS courses](https://www.freecodecamp.org/news/tag/aws/) — free long-form video courses
 - [Tutorials Dojo](https://tutorialsdojo.com/) — cert prep + practice exams
-- [A Cloud Guru](https://acloudguru.com/) — structured cert paths (also in [Books, Courses & Newsletters](#books-courses--newsletters))
+- [Pluralsight Cloud Guru](https://www.pluralsight.com/cloud-guru) — structured cert paths (also in [Books, Courses & Newsletters](#books-courses--newsletters))
 - [Adrian Cantrill](https://learn.cantrill.io/) — deep-dive cert courses (also in [Books, Courses & Newsletters](#books-courses--newsletters))
 
 ### YouTube (practical demos)
@@ -2070,7 +2082,7 @@ Common SaaS / OSS integrations on AWS:
 
 ### Courses (paid)
 
-- [A Cloud Guru](#learning-platforms-free-paid) — cert-focused video courses
+- [Pluralsight Cloud Guru](#learning-platforms-free-paid) — cert-focused video courses
 - [Stephane Maarek on Udemy](https://www.udemy.com/user/stephane-maarek/) — top-rated AWS cert prep
 - [Adrian Cantrill](#learning-platforms-free-paid) — deep-dive cert courses
 
