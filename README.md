@@ -342,7 +342,7 @@ See also: [Spot & interruptible compute — ECS capacity providers](#spot--inter
 - [aws-ia/terraform-aws-eks-blueprints](https://github.com/aws-ia/terraform-aws-eks-blueprints) — Terraform patterns and add-ons for production-style EKS stacks
 
 **Kubernetes cost & ops (vendor blogs):**
-- [Cast AI Blog](https://cast.ai/blog) — Kubernetes cost optimization and autoscaler guidance for cloud workloads
+- [Cast AI Blog](https://cast.ai/blog/) — Kubernetes cost optimization and autoscaler guidance for cloud workloads
 
 ### AWS Fargate
 
