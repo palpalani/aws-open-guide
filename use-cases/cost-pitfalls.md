@@ -27,7 +27,14 @@
 - Audit VPC flow logs to see what's actually going through NAT
 - Consider [VPC Lattice](https://aws.amazon.com/vpc/lattice/) for service-to-service across VPCs without NAT
 
-**Reference:** [VPC pricing](https://aws.amazon.com/vpc/pricing/) · [VPC endpoint types](https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html)
+**Variant — Regional NAT Gateway:**
+- Same $0.045/hour **per AZ where the regional NAT is configured** — three AZs still ≈ $97/mo baseline ($0.135/hr), not one flat hourly fee
+- Same $0.045/GB data processing; hourly billing drops for an AZ only when AWS removes that AZ from the regional NAT footprint
+- One managed NAT resource routes egress across AZs — simpler HA than per-AZ NAT failover, but **not** a way to cut idle NAT cost if all AZs stay in scope
+- Workloads in AZ-a using the regional NAT ENI in AZ-b still pay [cross-AZ data transfer](#cross-az-data-transfer) on top of NAT processing
+- Endpoint coverage still matters: regional NAT does not stop S3/ECR/Secrets Manager traffic from incurring NAT data-processing fees
+
+**Reference:** [VPC pricing](https://aws.amazon.com/vpc/pricing/) · [NAT gateway pricing](https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-pricing.html) · [VPC endpoint types](https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html)
 
 ---
 
