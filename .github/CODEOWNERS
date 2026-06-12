@@ -1,0 +1,8 @@
+# Default reviewers for all changes
+* @palpalani
+
+# Workflow and template changes
+.github/ @palpalani
+
+# Production playbooks
+use-cases/ @palpalani
