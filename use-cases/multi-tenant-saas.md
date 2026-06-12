@@ -226,12 +226,12 @@ For cross-cutting AWS anti-patterns, see [`anti-patterns.md`](anti-patterns.md).
 
 **Official:**
 - [AWS SaaS Lens (Well-Architected)](https://docs.aws.amazon.com/wellarchitected/latest/saas-lens/saas-lens.html) — official guidance for SaaS architecture decisions
-- [AWS SaaS Factory program](https://aws.amazon.com/partners/saas-factory/) — reference architectures, tooling, advisory
+- [AWS SaaS Factory program](https://aws.amazon.com/partners/marketplace/) — reference architectures, tooling, advisory
 - [Tenant isolation strategies (whitepaper)](https://docs.aws.amazon.com/whitepapers/latest/saas-tenant-isolation-strategies/saas-tenant-isolation-strategies.html) — silo / pool / bridge from the source
 - [Split cost allocation data](https://docs.aws.amazon.com/cur/latest/userguide/split-cost-allocation-data.html) — per-pod cost attribution for shared EKS / ECS
 - [AWS Cost Categories](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html) — tag-based rollup for per-tenant reports
 - [Cognito multi-tenant patterns](https://docs.aws.amazon.com/cognito/latest/developerguide/multi-tenant-application-best-practices.html) — official auth multi-tenancy guidance
-- [DynamoDB multi-tenant data partitioning](https://docs.aws.amazon.com/prescriptive-guidance/latest/saas-multitenant-api-access-authorization/multi-tenant-data-partitioning.html) — partition key design for SaaS
+- [DynamoDB multi-tenant data partitioning](https://docs.aws.amazon.com/prescriptive-guidance/latest/saas-multitenant-api-access-authorization/) — partition key design for SaaS
 - [IAM session tags for tenant isolation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html) — STS session-policy pattern
 
 **Production guides:**

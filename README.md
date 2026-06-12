@@ -213,8 +213,8 @@ Start here if you're new to AWS or evaluating whether to build on it.
 - [Implementing health checks (Builders Library)](https://aws.amazon.com/builders-library/implementing-health-checks/) — health checks and correlated fleet automation risks
 - [Instrumenting distributed systems for operational visibility (Builders Library)](https://aws.amazon.com/builders-library/instrumenting-distributed-systems-for-operational-visibility/) — structured logs, metrics, trace propagation
 - [Challenges with distributed systems (Builders Library)](https://aws.amazon.com/builders-library/challenges-with-distributed-systems/) — independent failures, nondeterminism, and testing permutations
-- [Multi-Tier Architectures on AWS (whitepaper)](https://docs.aws.amazon.com/whitepapers/latest/overview-deployment-options/multi-tier-architectures.html)
-- [AWS Multi-Region Fundamentals (whitepaper)](https://docs.aws.amazon.com/whitepapers/latest/aws-multi-region-fundamentals/aws-multi-region-fundamentals.html) — active-active patterns
+- [Multi-Tier Architectures on AWS (whitepaper)](https://docs.aws.amazon.com/whitepapers/latest/overview-deployment-options/)
+- [AWS Multi-Region Fundamentals (whitepaper)](https://docs.aws.amazon.com/prescriptive-guidance/latest/aws-multi-region-fundamentals/) — active-active patterns
 
 ---
 
@@ -246,7 +246,7 @@ Virtual servers, containers' substrate, and specialized chips.
 
 **OSS Tools:**
 - [99designs/aws-vault](https://github.com/99designs/aws-vault) — secure storage of AWS credentials on developer laptops
-- [AutoSpotting/AutoSpotting](https://github.com/AutoSpotting/AutoSpotting) — automatically replace on-demand EC2 in ASGs with spot instances
+- [AutoSpotting/AutoSpotting](https://github.com/LeanerCloud/AutoSpotting) — automatically replace on-demand EC2 in ASGs with spot instances
 
 ### AWS Graviton — Arm-based processors
 
@@ -287,7 +287,7 @@ Virtual servers, containers' substrate, and specialized chips.
 > AWS-managed hardware in your own data centre. Use for low-latency, data-residency, or hybrid workloads that must stay on-prem.
 
 - [Outposts](https://aws.amazon.com/outposts/)
-- [Outposts FAQs](https://aws.amazon.com/outposts/faqs/)
+- [Outposts FAQs](https://aws.amazon.com/outposts/rack/faqs/)
 
 ### AWS ParallelCluster
 
@@ -327,7 +327,7 @@ See also: [Spot & interruptible compute — ECS capacity providers](#spot--inter
 
 **Official:**
 - [EKS Documentation](https://docs.aws.amazon.com/eks/)
-- [EKS Best Practices Guides](https://aws.github.io/aws-eks-best-practices/)
+- [EKS Best Practices Guides](https://docs.aws.amazon.com/eks/latest/best-practices/introduction.html)
 
 **Production Guides:**
 - [Deploy EKS with Karpenter for cost-optimized autoscaling](https://www.factualminds.com/blog/how-to-deploy-eks-karpenter-cost-optimized-autoscaling/)
@@ -337,7 +337,7 @@ See also: [Spot & interruptible compute — ECS capacity providers](#spot--inter
 
 **Tools:**
 - [Karpenter](https://karpenter.sh/) — node autoscaling for EKS
-- [eksctl](https://eksctl.io/) — official CLI for EKS
+- [eksctl](https://docs.aws.amazon.com/eks/latest/eksctl/what-is-eksctl.html) — official CLI for EKS
 - [terraform-aws-modules/terraform-aws-eks](https://github.com/terraform-aws-modules/terraform-aws-eks) — community Terraform module for EKS clusters and node groups
 - [aws-ia/terraform-aws-eks-blueprints](https://github.com/aws-ia/terraform-aws-eks-blueprints) — Terraform patterns and add-ons for production-style EKS stacks
 
@@ -384,8 +384,8 @@ Run code without managing servers.
 **Official:**
 - [Lambda Documentation](https://docs.aws.amazon.com/lambda/)
 - [Lambda Pricing](https://aws.amazon.com/lambda/pricing/)
-- [Lambda Powertools (Python/TypeScript/Java)](https://docs.powertools.aws.dev/)
-- [Lambda invocation, scaling and concurrency (official docs)](https://docs.aws.amazon.com/lambda/latest/dg/invocation-scaling.html)
+- [Lambda Powertools (Python/TypeScript/Java)](https://docs.aws.amazon.com/powertools/python/latest/)
+- [Lambda invocation, scaling and concurrency (official docs)](https://docs.aws.amazon.com/lambda/latest/dg/lambda-concurrency.html)
 - [AWS Lambda blog category (Compute Blog)](https://aws.amazon.com/blogs/compute/category/aws-lambda/) — patterns, deep dives, releases
 
 **Production Guides:**
@@ -432,12 +432,12 @@ See also: [Cost Management — rightsizing](#rightsizing) · [Cost pitfalls — 
 - [zappa/Zappa](https://github.com/zappa/Zappa) — serverless WSGI Python on Lambda + API Gateway (Django, Flask)
 - [claudiajs/claudia](https://github.com/claudiajs/claudia) — deploy Node.js projects to Lambda + API Gateway with one command
 - [jeremydaly/lambda-api](https://github.com/jeremydaly/lambda-api) — lightweight web framework for serverless Node.js
-- [awslabs/aws-lambda-web-adapter](https://github.com/awslabs/aws-lambda-web-adapter) — run any HTTP web app (Express, Flask, FastAPI, Next.js) on Lambda unmodified
+- [awslabs/aws-lambda-web-adapter](https://github.com/aws/aws-lambda-web-adapter) — run any HTTP web app (Express, Flask, FastAPI, Next.js) on Lambda unmodified
 - [getmoto/moto](https://github.com/getmoto/moto) — mock AWS services for unit/integration tests (also useful beyond Lambda)
 
 ### Local Lambda Dev
 
-- [AWS SAM CLI — `sam local`](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-local.html) — invoke Lambda + API Gateway locally
+- [AWS SAM CLI — `sam local`](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/) — invoke Lambda + API Gateway locally
 - [aws/aws-lambda-runtime-interface-emulator](https://github.com/aws/aws-lambda-runtime-interface-emulator) — `aws-lambda-rie` — run Lambda container images locally with `docker run`
 
 **Other Serverless Patterns:**
@@ -554,7 +554,7 @@ See also: [Cost Management — rightsizing](#rightsizing) · [Cost pitfalls — 
 
 **OSS Tools:**
 - [sensedeep/dynamodb-onetable](https://github.com/sensedeep/dynamodb-onetable) — Node.js library for single-table designs
-- [jeremydaly/dynamodb-toolbox](https://github.com/jeremydaly/dynamodb-toolbox) — Jeremy Daly's TypeScript library for single-table modeling
+- [jeremydaly/dynamodb-toolbox](https://github.com/dynamodb-toolbox/dynamodb-toolbox) — Jeremy Daly's TypeScript library for single-table modeling
 
 ### Amazon Redshift
 
@@ -868,7 +868,7 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 ### Amazon QuickSight
 
 > Serverless BI + ML insights + GenAI dashboards.
-- [QuickSight Documentation](https://docs.aws.amazon.com/quicksight/)
+- [QuickSight Documentation](https://docs.aws.amazon.com/quick/)
 - [QuickSight in production — embedding, row-level security, SPICE refresh, and capacity sizing](https://www.factualminds.com/blog/amazon-quicksight-production-guide-best-practices/)
 - [QuickSight embedding analytics in SaaS apps](https://www.factualminds.com/blog/amazon-quicksight-embedding-analytics-saas-applications/)
 - [QuickSight real-time analytics dashboards](https://www.factualminds.com/blog/aws-quicksight-real-time-analytics-dashboards-guide/)
@@ -1017,7 +1017,7 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 ### External references (vectors & RAG concepts)
 
-- [Pinecone Learning Center](https://www.pinecone.io/learn) — vector retrieval and RAG concept guides complementary to Bedrock RAG
+- [Pinecone Learning Center](https://www.pinecone.io/learn/) — vector retrieval and RAG concept guides complementary to Bedrock RAG
 - [Weaviate Blog](https://weaviate.io/blog) — vector database architecture and retrieval engineering articles
 
 ### Roundup
@@ -1069,8 +1069,8 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 - [Pulumi AWS provider](https://www.pulumi.com/registry/packages/aws/) — official provider docs
 - [Pulumi AWS Native](https://www.pulumi.com/registry/packages/aws-native/) — generated from CloudFormation schema for full coverage
-- [Pulumi vs Terraform](https://www.pulumi.com/docs/iac/concepts/vs/terraform/) — official comparison
-- [Pulumi vs CDK](https://www.pulumi.com/docs/iac/comparisons/cloud-template-transpilers/aws-cdk/) — official comparison
+- [Pulumi vs Terraform](https://www.pulumi.com/docs/iac/comparisons/terraform/) — official comparison
+- [Pulumi vs CDK](https://www.pulumi.com/docs/iac/comparisons/aws-cdk/) — official comparison
 
 ### SST
 
@@ -1095,7 +1095,7 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 ### CI/CD vendor engineering blogs
 
 - [CircleCI Blog](https://circleci.com/blog/) — CI/CD pipeline engineering posts useful for AWS-deployed apps
-- [Spinnaker Community](https://spinnaker.io/community/) — continuous delivery platform community hub
+- [Spinnaker Community](https://spinnaker.io/docs/community/) — continuous delivery platform community hub
 
 ### General DevOps Practice
 
@@ -1107,7 +1107,7 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 ### Local Dev / Emulators
 
-- [LocalStack](https://localstack.cloud/) — AWS-in-a-box for local dev
+- [LocalStack](https://www.localstack.cloud/) — AWS-in-a-box for local dev
 - [ministackorg/ministack](https://github.com/ministackorg/ministack) — MIT local AWS emulator; 40+ services; Terraform and SDK compatible
 - [floci-io/floci](https://github.com/floci-io/floci) — MIT local AWS emulator; Docker Compose; broad AWS API coverage
 - [getmoto/moto](#oss-lambda-frameworks-community) — mock AWS services for Python tests (boto3 stub library)
@@ -1130,7 +1130,7 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 ### AWS CLI / SDKs / Cloud9
 
 - [AWS CLI v2](https://aws.amazon.com/cli/)
-- [AWS SDK list](https://aws.amazon.com/developer/tools/) — Python (boto3), JS, Java, Go, Rust, ...
+- [AWS SDK list](https://builder.aws.com/build/tools) — Python (boto3), JS, Java, Go, Rust, ...
 - [AWS CloudShell](https://aws.amazon.com/cloudshell/) — browser shell with credentials pre-loaded
 - [AWS Toolkit for VS Code / JetBrains](https://aws.amazon.com/visualstudiocode/)
 
@@ -1160,14 +1160,14 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 ### AWS X-Ray
 
-- [X-Ray](https://aws.amazon.com/xray/) — distributed tracing; in maintenance per AWS lifecycle docs [maintenance]
+- [X-Ray](https://aws.amazon.com/cloudwatch/features/application-observability-apm/) — distributed tracing; in maintenance per AWS lifecycle docs [maintenance]
 
 ### OpenTelemetry on AWS
 
 **Official:**
 - [AWS Distro for OpenTelemetry (ADOT)](https://aws-otel.github.io/) — recommended successor to X-Ray for new tracing
-- [ADOT Documentation](https://aws-otel.github.io/docs/introduction)
-- [ADOT Lambda layer](https://aws-otel.github.io/docs/getting-started/lambda) — auto-instrumentation for Lambda
+- [ADOT Documentation](https://aws-otel.github.io/docs/introduction/)
+- [ADOT Lambda layer](https://aws-otel.github.io/docs/getting-started/lambda/) — auto-instrumentation for Lambda
 
 **Production Guides:**
 - [OpenTelemetry demo game — AWS observability + chaos engineering](https://www.factualminds.com/blog/otel-demo-game-aws-observability-chaos-engineering/)
@@ -1184,15 +1184,15 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 ### Log Pipelines
 
 - [Stream CloudWatch Logs to S3 via Firehose](https://docs.aws.amazon.com/firehose/latest/dev/writing-with-cloudwatch-logs.html) — official log pipeline pattern
-- [Querying CloudWatch logs in S3 with Athena](https://docs.aws.amazon.com/athena/latest/ug/cloudwatch-logs.html) — long-term log analytics on cold storage
-- [Centralized Logging with OpenSearch (Solutions)](https://aws.amazon.com/solutions/implementations/centralized-logging-with-opensearch/) — official deployable reference
+- [Querying CloudWatch logs in S3 with Athena](https://docs.aws.amazon.com/athena/latest/ug/) — long-term log analytics on cold storage
+- [Centralized Logging with OpenSearch (Solutions)](https://docs.aws.amazon.com/solutions/centralized-logging-with-opensearch/) — official deployable reference
 
 ### Third-party
 
 - [Datadog on AWS — integration](https://www.factualminds.com/integrations/datadog-aws/)
 - [Honeycomb Blog](https://www.honeycomb.io/blog) — distributed systems observability engineering posts
 - [Datadog Engineering — Kubernetes topic](https://www.datadoghq.com/blog/topic/kubernetes/) — Kubernetes reliability and operations articles
-- [Lumigo Blog](https://lumigo.io/blog) — serverless observability and Lambda troubleshooting articles
+- [Lumigo Blog](https://lumigo.io/blog/) — serverless observability and Lambda troubleshooting articles
 
 ---
 
@@ -1209,18 +1209,18 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 - [AWS Cost Optimization Hub](https://aws.amazon.com/aws-cost-management/cost-optimization-hub/) — consolidated waste and savings recommendations
 - [AWS Billing and Cost Management — user guide](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/) — accounts, invoices, allocation tags
 - [Cost and Usage Reports (CUR)](https://docs.aws.amazon.com/cur/latest/userguide/) — hourly or daily line-item billing export
-- [Billing and Cost Management data exports](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/dataexports.html) — CUR and cost data to S3 or Athena
-- [Billing views](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-view.html) — scoped cost views for teams and accounts
+- [Billing and Cost Management data exports](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/) — CUR and cost data to S3 or Athena
+- [Billing views](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/) — scoped cost views for teams and accounts
 - [AWS Trusted Advisor](https://aws.amazon.com/premiumsupport/technology/trusted-advisor/)
-- [AWS Customer Carbon Footprint Tool](https://aws.amazon.com/aws-cost-management/aws-customer-carbon-footprint-tool/) — estimated emissions by service and region
+- [AWS Customer Carbon Footprint Tool](https://aws.amazon.com/sustainability/tools/console/) — estimated emissions by service and region
 
 **Production Guides:**
 - [Cost Explorer + Budgets monitoring guide](https://www.factualminds.com/blog/aws-cost-explorer-budgets-monitoring-guide/)
 - [Cost Optimization Hub guide](https://www.factualminds.com/blog/aws-cost-optimization-hub-guide/)
 
 **OSS Tools:**
-- [Cloud Intelligence Dashboards](https://github.com/aws-samples/aws-cudos-framework-deployment) — CUR analytics dashboards (CUDOS, Cost Intelligence, KPI)
-- [Komiser](https://github.com/tailwarden/komiser) — multi-cloud cost and resource viewer
+- [Cloud Intelligence Dashboards](https://github.com/aws-solutions-library-samples/cloud-intelligence-dashboards-framework) — CUR analytics dashboards (CUDOS, Cost Intelligence, KPI)
+- [Komiser](https://github.com/mlabouardy/komiser) — multi-cloud cost and resource viewer
 - [Similarweb/finala](https://github.com/similarweb/finala) — scans AWS for wasteful and unused resources
 
 ### Rightsizing
@@ -1374,7 +1374,7 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 
 ### AWS Migration Hub & MAP
 
-- [AWS Migration Hub](https://aws.amazon.com/migration-hub/)
+- [AWS Migration Hub](https://aws.amazon.com/transform/)
 - [Migration Acceleration Program (MAP)](https://aws.amazon.com/migration-acceleration-program/)
 - [MAP for SMBs — guide](https://www.factualminds.com/blog/aws-migration-acceleration-program-map-smb-guide/)
 
@@ -1504,8 +1504,8 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 - [AWS Landing Zone — glossary](https://www.factualminds.com/glossary/aws-landing-zone/)
 
 **Third-party narratives:**
-- [Monzo Bank (AWS customer story)](https://aws.amazon.com/solutions/case-studies/monzo-bank-case-study/) — digital bank on AWS; scale and account-boundary themes
-- [AWS infrastructure at Segment](https://segment.com/blog/aws-infrastructure-at-segment) — many AWS accounts and environment scaling practices
+- [Monzo Bank (AWS customer story)](https://aws.amazon.com/solutions/case-studies/) — digital bank on AWS; scale and account-boundary themes
+- [How Segment uses Okta to secure access to 100 AWS accounts](https://aws.amazon.com/blogs/startups/how-segment-uses-okta-to-secure-access-to-100-accounts/) — hub-and-spoke IAM and multi-account scaling practices
 - [Shopify Engineering](https://shopify.engineering/) — backend engineering posts including AWS-scale commerce infrastructure
 - [Revamping with Landing Zone — multi-account rebuild (WealthPark)](https://medium.com/wealthpark-engineering/revamping-with-landing-zone-exploring-multi-account-aws-architecture-in-our-infrastructure-rebuild-6b1f2da9327) — Landing Zone–oriented infrastructure rebuild walkthrough
 - [Enterprise Landing Zone decisions — lessons learned, Part 1](https://medium.com/@malavaln/dive-deep-on-our-aws-landing-zone-architecture-decisions-made-lessons-learnt-part-1-898604d7aaaf) — large-org LZ architecture decisions and tradeoffs
@@ -1522,7 +1522,7 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 **Official:**
 - [Service Quotas console](https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html) — view and request increases for soft limits
 - [AWS service quotas reference](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html) — per-service hard and soft limits
-- [Error retries and exponential backoff (SDK guidance)](https://docs.aws.amazon.com/general/latest/gr/api-retries.html) — official retry behaviour
+- [Error retries and exponential backoff (SDK guidance)](https://docs.aws.amazon.com/sdkref/latest/guide/feature-retry-behavior.html) — official retry behaviour
 - [Timeouts, retries, and backoff with jitter (Builders Library)](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/) — first-principles guidance
 - [API Gateway throttling](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-request-throttling.html) — account-, stage-, and key-level limits
 - [Lambda concurrency and throttling](https://docs.aws.amazon.com/lambda/latest/dg/lambda-concurrency.html) — reserved vs provisioned concurrency
@@ -1704,31 +1704,31 @@ When you know what you need but not which AWS service to use:
 
 Highlights from the [official roster](#lifecycle-reference); see that page for the complete list and exact dates.
 
-- [Amazon QLDB](https://aws.amazon.com/qldb/) — ledger database; shut down July 31, 2025 [shutdown]
-- [Amazon Kinesis Data Analytics for SQL](https://aws.amazon.com/kinesis/data-analytics/) — replacement → Managed Service for Apache Flink [shutdown]
+- [Amazon QLDB](https://aws.amazon.com/rds/aurora/) — ledger database; shut down July 31, 2025 [shutdown]
+- [Amazon Kinesis Data Analytics for SQL](https://aws.amazon.com/managed-service-apache-flink/) — replacement → Managed Service for Apache Flink [shutdown]
 - [Amazon CloudWatch Evidently](https://aws.amazon.com/cloudwatch/) — feature flags and A/B; shut down October 17, 2025 [shutdown]
 - [AWS DataSync Discovery](https://aws.amazon.com/datasync/) — on-prem storage assessment; shut down May 20, 2025 [shutdown]
-- [AWS Private 5G](https://aws.amazon.com/private5g/) — managed cellular networks; shut down May 20, 2025 [shutdown]
-- [AWS BugBust](https://aws.amazon.com/bugbust/) — code-fix gamification; shut down August 13, 2025 [shutdown]
-- [AWS OpsWorks (Stacks, Chef, Puppet)](https://aws.amazon.com/opsworks/) — config management; shut down May 1, 2024 [shutdown]
-- [AWS CodeStar](https://aws.amazon.com/codestar/) — project templates; shut down July 25, 2024 [shutdown]
-- [AWS RoboMaker](https://aws.amazon.com/robomaker/) — robotics simulation; shut down September 10, 2025 [shutdown]
-- [Amazon Lookout for Metrics](https://aws.amazon.com/lookout-for-metrics/) — anomaly detection; shut down October 10, 2025 [shutdown]
-- [Amazon Lookout for Vision](https://aws.amazon.com/lookout-for-vision/) — defect detection; shut down October 31, 2025 [shutdown]
-- [Amazon WorkDocs](https://aws.amazon.com/workdocs/) — file storage and sharing; shut down April 25, 2025 [shutdown]
+- [AWS Private 5G](https://aws.amazon.com/) — managed cellular networks; shut down May 20, 2025 [shutdown]
+- [AWS BugBust](https://aws.amazon.com/codeguru/profiler/) — code-fix gamification; shut down August 13, 2025 [shutdown]
+- [AWS OpsWorks (Stacks, Chef, Puppet)](https://aws.amazon.com/) — config management; shut down May 1, 2024 [shutdown]
+- [AWS CodeStar](https://aws.amazon.com/) — project templates; shut down July 25, 2024 [shutdown]
+- [AWS RoboMaker](https://aws.amazon.com/products/) — robotics simulation; shut down September 10, 2025 [shutdown]
+- [Amazon Lookout for Metrics](https://aws.amazon.com/) — anomaly detection; shut down October 10, 2025 [shutdown]
+- [Amazon Lookout for Vision](https://aws.amazon.com/) — defect detection; shut down October 31, 2025 [shutdown]
+- [Amazon WorkDocs](https://aws.amazon.com/) — file storage and sharing; shut down April 25, 2025 [shutdown]
 
 ### End-of-support announced — avoid for new projects
 
 Per the [May 2025 AWS service changes announcement](#lifecycle-reference). AWS has not yet published exact end-of-support dates for most.
 
 - [Amazon Pinpoint](https://aws.amazon.com/pinpoint/) — multi-channel messaging; replacement → SES, SNS, EventBridge [sunset]
-- [AWS IoT Analytics](https://aws.amazon.com/iot-analytics/) — replacement → IoT Core + Kinesis or EventBridge [sunset]
+- [AWS IoT Analytics](https://aws.amazon.com/iot/) — replacement → IoT Core + Kinesis or EventBridge [sunset]
 - [AWS IoT Events](https://aws.amazon.com/iot-events/) — event detection; replacement → EventBridge + Lambda [sunset]
 - [AWS Panorama](https://aws.amazon.com/panorama/) — appliance-based computer vision at the edge [sunset]
-- [AWS SimSpace Weaver](https://aws.amazon.com/simspaceweaver/) — large-scale spatial simulations; ends March 31, 2026 [sunset]
+- [AWS SimSpace Weaver](https://aws.amazon.com/) — large-scale spatial simulations; ends March 31, 2026 [sunset]
 - [Amazon Inspector Classic](https://docs.aws.amazon.com/inspector/v1/userguide/inspector_introduction.html) — replacement → Amazon Inspector v2 [sunset]
 - [AWS IQ end of support](https://docs.aws.amazon.com/aws-iq/latest/experts-user-guide/aws-iq-end-of-support.html) — freelance AWS experts marketplace [shutdown]
-- [AWS DMS Fleet Advisor](https://docs.aws.amazon.com/dms/latest/userguide/fleet-advisor.html) — replacement → AWS DMS [sunset]
+- [AWS DMS Fleet Advisor](https://docs.aws.amazon.com/dms/latest/userguide/) — replacement → AWS DMS [sunset]
 - [Amazon Connect Voice ID](https://docs.aws.amazon.com/connect/latest/adminguide/voice-id.html) — caller authentication; end-of-support announced [sunset]
 
 ### Maintenance — closed to new customers
@@ -1779,7 +1779,7 @@ Free, no-signup AWS planning calculators and assessments:
 ### Official AWS Tools
 
 - [AWS Pricing Calculator](#foundations)
-- [AWS Total Cost of Ownership (TCO) Calculator](https://aws.amazon.com/tco-calculator/)
+- [AWS Total Cost of Ownership (TCO) Calculator](https://calculator.aws/#/)
 
 ---
 
@@ -1828,7 +1828,7 @@ Plain-language definitions of common AWS terms:
 - [AWS Skill Builder](https://skillbuilder.aws/) — official free training
 - [AWS Ramp-Up Guides](https://aws.amazon.com/training/ramp-up-guides/) — role-based learning paths by job function
 - [Well-Architected Labs](https://www.wellarchitectedlabs.com/) — hands-on Well-Architected Framework labs
-- [AWS Workshops catalog](https://workshops.aws/)
+- [AWS Workshops catalog](https://builder.aws.com/build/workshops)
 
 ### Cert Deep Dives
 
@@ -1852,7 +1852,7 @@ Reference patterns for the workloads that show up most often. Each links into th
 **Reference implementations:**
 - [aws-samples/aws-saas-factory-ref-solution-serverless-saas](https://github.com/aws-samples/aws-saas-factory-ref-solution-serverless-saas) — production serverless multi-tenant reference
 - [aws-samples/aws-saas-factory-eks-reference-architecture](https://github.com/aws-samples/aws-saas-factory-eks-reference-architecture) — EKS multi-tenant reference
-- [AWS SaaS Factory](https://aws.amazon.com/partners/saas-factory/) — AWS programme with reference architectures and tooling
+- [AWS SaaS Factory](https://aws.amazon.com/partners/marketplace/) — AWS programme with reference architectures and tooling
 
 **Official (AWS Architecture Blog):**
 - [Build a multi-tenant configuration system with tagged storage](https://aws.amazon.com/blogs/architecture/build-a-multi-tenant-configuration-system-with-tagged-storage-patterns/) — tenant-scoped configuration and tagging patterns
@@ -1894,7 +1894,7 @@ See also: [Cognito for SaaS auth](#amazon-cognito) · [DynamoDB single-table for
 - [Journey to cloud-native architecture — resilience and observability (series 3)](https://aws.amazon.com/blogs/architecture/journey-to-adopt-cloud-native-architecture-series-3-improved-resilience-and-standardized-observability/) — standardized telemetry and resilience adoption
 
 **Reference implementations:**
-- [Route 53 Application Recovery Controller (ARC)](https://aws.amazon.com/route53/application-recovery-controller/) — readiness checks and zonal shift
+- [Route 53 Application Recovery Controller (ARC)](https://aws.amazon.com/application-recovery-controller/) — readiness checks and zonal shift
 - [Multi-region failover with Route 53 ARC — AWS blog walkthrough](https://aws.amazon.com/blogs/networking-and-content-delivery/creating-disaster-recovery-mechanisms-using-amazon-route-53/) — official end-to-end pattern
 
 **Community walkthroughs:**
@@ -1970,9 +1970,9 @@ AI-assisted development on AWS — Model Context Protocol (MCP) servers, Claude 
 - [Open Source MCP Servers for AWS — catalog](https://awslabs.github.io/mcp/) — full list with usage docs
 - [Introducing AWS MCP Servers (AWS ML Blog)](https://aws.amazon.com/blogs/machine-learning/introducing-aws-mcp-servers-for-code-assistants-part-1/)
 - [Unlocking the power of MCP on AWS (AWS ML Blog)](https://aws.amazon.com/blogs/machine-learning/unlocking-the-power-of-model-context-protocol-mcp-on-aws/)
-- [AWS MCP Server (managed, in preview — re:Invent 2025)](https://docs.aws.amazon.com/aws-mcp/latest/userguide/what-is-mcp-server.html) — fully-managed remote server with Agent SOPs + CloudTrail logging
+- [AWS MCP Server (managed, in preview — re:Invent 2025)](https://docs.aws.amazon.com/agent-toolkit/latest/userguide/) — fully-managed remote server with Agent SOPs + CloudTrail logging
 - [Model Context Protocol strategies on AWS — Prescriptive Guidance](https://docs.aws.amazon.com/prescriptive-guidance/latest/mcp-strategies/introduction.html) — MCP tool design, server hosting, and governance
-- [Guidance for deploying MCP servers on AWS](https://aws.amazon.com/solutions/guidance/deploying-model-context-protocol-servers-on-aws/) — AWS Solutions patterns for secure MCP server deployment
+- [Guidance for deploying MCP servers on AWS](https://docs.aws.amazon.com/solutions/deploying-model-context-protocol-servers-on-aws/) — AWS Solutions patterns for secure MCP server deployment
 - [Tool integration strategy — agentic AI frameworks](https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-frameworks/tool-integration-strategy.html) — MCP vs framework-native and meta-tools for agent workloads
 
 **Essential / Core (start here):**
@@ -2056,7 +2056,7 @@ AI-assisted development on AWS — Model Context Protocol (MCP) servers, Claude 
 - [Claude with Amazon Bedrock — Anthropic Academy](https://anthropic.skilljar.com/claude-in-amazon-bedrock)
 
 **Protocol & ecosystem:**
-- [Model Context Protocol — official spec](https://modelcontextprotocol.io/) — Anthropic-led open protocol
+- [Model Context Protocol — official spec](https://modelcontextprotocol.io/docs/getting-started/intro) — Anthropic-led open protocol
 - [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) — community catalog of all MCP servers (cross-vendor)
 - [PulseMCP — AWS MCP servers directory](https://www.pulsemcp.com/servers?q=aws) — searchable index
 
@@ -2109,7 +2109,7 @@ How to plug into the AWS conversation, follow signal-rich voices, and stay curre
 - [AWS re:Post](https://repost.aws/) — official Q&A staffed by AWS engineers + community
 - [AWS Skill Builder](#official) — official free training (also in [Certifications](#aws-certifications--learning-paths))
 - [AWS Workshops](#official) — guided, step-by-step builds (also in [Certifications](#aws-certifications--learning-paths))
-- [AWS re:Invent session catalog](https://reinvent.awsevents.com/) — annual deep architecture + announcements
+- [AWS re:Invent session catalog](https://aws.amazon.com/events/reinvent/) — annual deep architecture + announcements
 
 ### Independent blogs (high signal-to-noise)
 
@@ -2145,8 +2145,8 @@ How to plug into the AWS conversation, follow signal-rich voices, and stay curre
 ### Q&A and community programs
 
 - [Stack Overflow AWS Collective](https://stackoverflow.com/collectives/aws) — curated AWS answers
-- [AWS Community Builders](https://aws.amazon.com/developer/community/community-builders/) — recognized community experts
-- [AWS Heroes](https://aws.amazon.com/developer/community/heroes/) — top community contributors
+- [AWS Community Builders](https://builder.aws.com/community/community-builders) — recognized community experts
+- [AWS Heroes](https://builder.aws.com/community/heroes) — top community contributors
 - AWS-focused Slack / Discord communities — high signal for live ops issues
 
 ### Learning platforms (free + paid)
@@ -2221,7 +2221,7 @@ Common SaaS / OSS integrations on AWS:
 
 ### YouTube Channels
 
-- [Amazon Web Services](https://www.youtube.com/@amazonwebservices) — official AWS channel
+- [Amazon Web Services](https://www.youtube.com/user/AmazonWebServices/Cloud) — official AWS channel
 - [AWS Events](https://www.youtube.com/c/AWSEventsChannel) — re:Invent, summits, deep-dive sessions
 - [Be A Better Dev](#youtube-practical-demos) — AWS tutorials
 
@@ -2230,10 +2230,10 @@ Common SaaS / OSS integrations on AWS:
 ## Conferences & Events
 
 - [AWS re:Invent](#official-aws-learning-q-a-portals) — Las Vegas, annual (December)
-- [AWS re:Inforce](https://reinforce.awsevents.com/) — security-focused
+- [AWS re:Inforce](https://aws.amazon.com/events/reinforce/) — security-focused
 - [AWS Summits](https://aws.amazon.com/events/summits/) — regional, free
 - [AWS Community Days](https://aws.amazon.com/events/community-day/) — community-organized
-- [Cloud Next](https://cloud.withgoogle.com/next) (GCP) and [Microsoft Build](https://build.microsoft.com/) — useful for cross-cloud context
+- [Cloud Next](https://cloud.withgoogle.com/next/25) (GCP) and [Microsoft Build](https://build.microsoft.com/en-US/home) — useful for cross-cloud context
 
 ---
 

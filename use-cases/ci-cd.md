@@ -245,12 +245,12 @@ For cross-cutting AWS anti-patterns, see [`anti-patterns.md`](anti-patterns.md).
 ## 11. References
 
 **Official:**
-- [GitHub OIDC with AWS](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services) — official setup guide
+- [GitHub OIDC with AWS](https://docs.github.com/en/actions/how-tos/secure-your-work/security-harden-deployments/oidc-in-aws) — official setup guide
 - [aws-actions/configure-aws-credentials](https://github.com/aws-actions/configure-aws-credentials) — OIDC action for GitHub Actions
 - [AWS CodePipeline Documentation](https://docs.aws.amazon.com/codepipeline/) — full guide
 - [AWS CodeBuild Documentation](https://docs.aws.amazon.com/codebuild/) — managed build
 - [AWS CodeDeploy Documentation](https://docs.aws.amazon.com/codedeploy/) — deployment, blue/green, canary
-- [CDK Pipelines](https://docs.aws.amazon.com/cdk/v2/guide/cdk_pipeline.html) — pipeline-as-code in CDK
+- [CDK Pipelines](https://docs.aws.amazon.com/cdk/v2/guide/) — pipeline-as-code in CDK
 - [Terraform AWS provider](https://registry.terraform.io/providers/hashicorp/aws/latest/docs) — official docs
 - [AWS Control Tower](https://docs.aws.amazon.com/controltower/) — multi-account governance
 - [IAM Identity Center](https://docs.aws.amazon.com/singlesignon/) — workforce SSO
@@ -262,8 +262,8 @@ For cross-cutting AWS anti-patterns, see [`anti-patterns.md`](anti-patterns.md).
 **Decision guides:**
 - [CodePipeline vs GitHub Actions](https://www.factualminds.com/compare/aws-codepipeline-vs-github-actions/) — CI choice
 - [Terraform vs CDK — IaC decision guide](https://www.factualminds.com/blog/terraform-vs-aws-cdk-infrastructure-as-code-decision-guide/) — IaC choice
-- [Pulumi vs Terraform](https://www.pulumi.com/docs/iac/concepts/vs/terraform/) — official comparison
-- [Pulumi vs CDK](https://www.pulumi.com/docs/iac/comparisons/cloud-template-transpilers/aws-cdk/) — official comparison
+- [Pulumi vs Terraform](https://www.pulumi.com/docs/iac/comparisons/terraform/) — official comparison
+- [Pulumi vs CDK](https://www.pulumi.com/docs/iac/comparisons/aws-cdk/) — official comparison
 
 **OSS tools:**
 - [terraform](https://github.com/hashicorp/terraform) — IaC
