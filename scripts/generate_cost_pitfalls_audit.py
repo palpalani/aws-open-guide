@@ -19,6 +19,7 @@ OUTPUT_XLSX = REPO_ROOT / "use-cases" / "cost-pitfalls-audit.xlsx"
 
 SKIP_SECTIONS = frozenset(
     {
+        "Frequently asked questions",
         "Quarterly optimization cadence",
         "Tools to find these proactively",
         "Cost discipline checklist",
