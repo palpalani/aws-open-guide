@@ -1289,7 +1289,7 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 ### Container cost optimization
 
 **Official:**
-- [Amazon EKS best practices — cost optimization](https://aws.github.io/aws-eks-best-practices/cost_optimization/cost_optimization/)
+- [Amazon EKS best practices — cost optimization](https://docs.aws.amazon.com/eks/latest/best-practices/cost-opt.html)
 - [ECS pricing](#amazon-ecs--elastic-container-service) · [Fargate pricing](#aws-fargate)
 
 **Production Guides:**

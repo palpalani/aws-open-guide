@@ -91,4 +91,4 @@ Suggested repository **Topics**: `aws`, `cloud`, `documentation`, `devops`, `ser
 
 ---
 
-**Related:** [CONTRIBUTING.md](CONTRIBUTING.md) · [CLAUDE.md](CLAUDE.md) · [use-cases/_template.md](use-cases/_template.md)
+**Related:** [CONTRIBUTING.md](CONTRIBUTING.md) · [use-cases/_template.md](use-cases/_template.md) · maintainer agent context in local `CLAUDE.md` (gitignored, not link-checked)
