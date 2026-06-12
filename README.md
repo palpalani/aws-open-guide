@@ -139,6 +139,12 @@ Match the row to what you need **today** — each path sends you to a different 
 - [🛠️ Developer Tools, DevOps & CI/CD](#developer-tools-devops--cicd)
 - [🔭 Observability & Monitoring](#observability--monitoring)
 - [💰 Cost Management & FinOps](#cost-management--finops)
+  - [Analysis & visibility](#analysis--visibility)
+  - [Rightsizing](#rightsizing)
+  - [Commitment discounts](#commitment-discounts-savings-plans--reserved-instances)
+  - [Cost allocation & tagging](#cost-allocation--tagging)
+  - [Bill teardowns](#bill-teardowns-real-customer-incidents)
+  - [Cost pitfalls playbook](use-cases/cost-pitfalls.md)
 - [🚚 Migration & Transfer](#migration--transfer)
 - [📡 Internet of Things (IoT)](#internet-of-things-iot)
 - [🔄 Application Integration](#application-integration)
@@ -311,6 +317,8 @@ Container orchestration and registry.
 - [Blue-green deployments with ECS + CodeDeploy](https://www.factualminds.com/blog/how-to-implement-blue-green-deployments-ecs-codedeploy/)
 - [Modernizing monolithic APIs with Amazon ECS — case study](https://www.factualminds.com/case-study/microservices-on-amazon-ecs/)
 
+See also: [Spot & interruptible compute — ECS capacity providers](#spot--interruptible-compute) · [Container cost optimization](#container-cost-optimization)
+
 ### Amazon EKS — Elastic Kubernetes Service
 
 > Managed Kubernetes. Use when you need K8s portability or have existing K8s expertise.
@@ -341,6 +349,8 @@ Container orchestration and registry.
 > Serverless compute for containers. Pay per task, not per VM.
 - [Fargate](https://aws.amazon.com/fargate/)
 - [Lambda vs ECS Fargate — when to use which](https://www.factualminds.com/compare/aws-lambda-vs-ecs-fargate/)
+
+See also: [Fargate Spot — capacity providers](#spot--interruptible-compute) · [Container cost optimization](#container-cost-optimization)
 
 ### Amazon ECR — Elastic Container Registry
 
@@ -382,6 +392,8 @@ Run code without managing servers.
 - [Lambda cost optimization — pay-per-request vs provisioned](https://www.factualminds.com/blog/aws-lambda-cost-optimization-pay-per-request-vs-provisioned/)
 - [AWS Lambda — glossary entry](https://www.factualminds.com/glossary/aws-lambda/)
 - [Going Serverless at Scale — Adrian Cockcroft (re:Invent talk)](https://www.youtube.com/watch?v=EBSdyoO3goc)
+
+See also: [Cost Management — rightsizing](#rightsizing) · [Cost pitfalls — Lambda memory](use-cases/cost-pitfalls.md#lambda-over-provisioned-memory)
 
 **Comparisons:**
 - [Lambda vs container cost calculator](https://www.factualminds.com/tools/aws-lambda-vs-container-cost-calculator/)
@@ -606,6 +618,8 @@ Run code without managing servers.
 
 - [NAT Gateway billing — idle cost alternatives](https://www.factualminds.com/blog/aws-nat-gateway-billing-idle-cost-alternatives/) — bill teardown
 - [Bill teardown — healthcare's NAT Gateway problem](https://www.factualminds.com/blog/aws-bill-teardown-2-healthcare-nat-gateway-problem/)
+
+See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway) · [Network cost optimization](#network-cost-optimization)
 
 ### Amazon Route 53
 
@@ -924,13 +938,24 @@ Run code without managing servers.
 **Official:**
 - [Bedrock AgentCore](https://aws.amazon.com/bedrock/agentcore/)
 - [AgentCore documentation](https://docs.aws.amazon.com/bedrock-agentcore/)
+- [Get started with the AgentCore CLI](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/agentcore-get-started-cli.html) — scaffold, deploy, and invoke with `agentcore create`
+- [Get started without the AgentCore CLI](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/getting-started-custom.html) — BYO container Runtime contract (`/invocations`, `/ping`)
+- [AgentCore pricing](https://aws.amazon.com/bedrock/agentcore/pricing/) — Runtime, Memory, Gateway, and eval line items
+- [AgentCore resources hub](https://aws.amazon.com/bedrock/agentcore/resources/) — blogs and videos by Runtime, Gateway, Memory, and more
+- [AgentCore FAQs](https://aws.amazon.com/bedrock/agentcore/faqs/) — Runtime vs managed harness, composable capabilities
+- [AgentCore service quotas](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/bedrock-agentcore-limits.html) — default limits and adjustable quotas
 
 **Production Guides:**
 - [AgentCore production patterns](#amazon-bedrock)
+- [Fullstack AgentCore starter template (FAST)](https://aws.amazon.com/blogs/machine-learning/accelerate-agentic-application-development-with-a-full-stack-starter-template-for-amazon-bedrock-agentcore/) — Runtime, Gateway, Memory, Cognito, and React reference app
 
 **OSS Tools:**
 - [awslabs/agentcore-samples](https://github.com/awslabs/agentcore-samples) — official sample patterns
 - [Amazon Bedrock AgentCore MCP Server](https://awslabs.github.io/mcp/servers/amazon-bedrock-agentcore-mcp-server) — build/deploy/manage agents from a coding agent
+- [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws) — AgentCore IDE skills (scaffold, gateway, harden, evals) and MCP servers
+
+**Decision Guides:**
+- [AgentCore FAQs](https://aws.amazon.com/bedrock/agentcore/faqs/) — Bedrock Agents vs AgentCore Runtime, Gateway, and Memory
 
 ### Amazon Nova
 
@@ -1174,43 +1199,163 @@ Run code without managing servers.
 ## Cost Management & FinOps
 
 > 🎯 **Hunting a surprise bill?** See the [Cost pitfalls playbook](use-cases/cost-pitfalls.md) — NAT Gateway egress, cross-AZ traffic, CloudWatch Logs ingestion, and the other line items that surprise teams.
+>
+> For a quarterly optimization cadence, see the [Cost pitfalls playbook](use-cases/cost-pitfalls.md#quarterly-optimization-cadence) and the production checklist at the bottom.
 
-### Cost Tools (Native)
+### Analysis & visibility
 
+**Official:**
 - [AWS Cost Explorer](https://aws.amazon.com/aws-cost-management/aws-cost-explorer/)
-- [AWS Budgets](https://aws.amazon.com/aws-cost-management/aws-budgets/)
-- [AWS Compute Optimizer](https://aws.amazon.com/compute-optimizer/)
-- [AWS Cost Anomaly Detection](https://aws.amazon.com/aws-cost-management/aws-cost-anomaly-detection/)
+- [AWS Cost Optimization Hub](https://aws.amazon.com/aws-cost-management/cost-optimization-hub/) — consolidated waste and savings recommendations
+- [AWS Billing and Cost Management — user guide](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/) — accounts, invoices, allocation tags
+- [Cost and Usage Reports (CUR)](https://docs.aws.amazon.com/cur/latest/userguide/) — hourly or daily line-item billing export
+- [Billing and Cost Management data exports](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/dataexports.html) — CUR and cost data to S3 or Athena
+- [Billing views](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-view.html) — scoped cost views for teams and accounts
 - [AWS Trusted Advisor](https://aws.amazon.com/premiumsupport/technology/trusted-advisor/)
-- [AWS Billing and Cost Management — official user guide](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/) — accounts, invoices, allocation tags
-- [AWS Customer Carbon Footprint Tool](https://aws.amazon.com/aws-cost-management/aws-customer-carbon-footprint-tool/) — estimated emissions by service + region (free, in Billing console)
+- [AWS Customer Carbon Footprint Tool](https://aws.amazon.com/aws-cost-management/aws-customer-carbon-footprint-tool/) — estimated emissions by service and region
 
-### Strategy & Playbooks
-
+**Production Guides:**
 - [Cost Explorer + Budgets monitoring guide](https://www.factualminds.com/blog/aws-cost-explorer-budgets-monitoring-guide/)
 - [Cost Optimization Hub guide](https://www.factualminds.com/blog/aws-cost-optimization-hub-guide/)
-- [Use Cost Anomaly Detection to catch surprise bills](https://www.factualminds.com/blog/how-to-use-aws-cost-anomaly-detection-catch-surprise-bills/)
+
+**OSS Tools:**
+- [Cloud Intelligence Dashboards](https://github.com/aws-samples/aws-cudos-framework-deployment) — CUR analytics dashboards (CUDOS, Cost Intelligence, KPI)
+- [Komiser](https://github.com/tailwarden/komiser) — multi-cloud cost and resource viewer
+- [Similarweb/finala](https://github.com/similarweb/finala) — scans AWS for wasteful and unused resources
+
+### Rightsizing
+
+**Official:**
+- [AWS Compute Optimizer](https://aws.amazon.com/compute-optimizer/)
+- [Compute Optimizer user guide](https://docs.aws.amazon.com/compute-optimizer/latest/ug/) — EC2, EBS, Lambda, ECS Fargate, RDS recommendations
+- [Operating Lambda — performance optimization (Compute Blog)](https://aws.amazon.com/blogs/compute/operating-lambda-performance-optimization-part-2/) — memory and cost trade-offs
+
+**Production Guides:**
 - [5 cost optimization strategies most teams overlook](https://www.factualminds.com/blog/5-aws-cost-optimization-strategies-most-teams-overlook/)
+
+**OSS Tools:**
+- [alexcasalboni/aws-lambda-power-tuning](https://github.com/alexcasalboni/aws-lambda-power-tuning) — Step Functions tool to find optimal Lambda memory
+
+See also: [Cost pitfalls — EBS gp2 vs gp3](use-cases/cost-pitfalls.md#ebs-gp2-vs-gp3-almost-free-win) · [Idle resources](use-cases/cost-pitfalls.md#idle-resources) · [Lambda over-provisioned memory](use-cases/cost-pitfalls.md#lambda-over-provisioned-memory)
+
+### Commitment discounts (Savings Plans & Reserved Instances)
+
+**Official:**
+- [Savings Plans](https://aws.amazon.com/savingsplans/) · [Reserved Instances](https://aws.amazon.com/ec2/pricing/reserved-instances/)
+- [Savings Plans recommendations](https://docs.aws.amazon.com/savingsplans/latest/userguide/sp-recommendations.html)
+- [Reserved Instance recommendations in Cost Explorer](https://docs.aws.amazon.com/cost-management/latest/userguide/ri-recommendations.html)
+
+**Production Guides:**
+- [Reserved Instances vs Savings Plans](https://www.factualminds.com/glossary/reserved-instances-vs-savings-plans/)
+- [AWS Savings Plans — glossary](https://www.factualminds.com/glossary/aws-savings-plans/)
+
+See also: [Cost pitfalls — reserved capacity and Savings Plans](use-cases/cost-pitfalls.md#reserved-capacity-and-savings-plans)
+
+### Spot & interruptible compute
+
+**Official:**
+- [EC2 Spot best practices](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html)
+- [Fargate capacity providers](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html) — includes Fargate Spot
+
+**Production Guides:**
+- [EC2 Spot Instance intelligent selection](#amazon-ec2--elastic-compute-cloud) — cost optimization for Spot workloads
+
+### Storage optimization
+
+**Official:**
+- [S3 Intelligent-Tiering](https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering.html)
+- [S3 lifecycle configurations](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html)
+- [EBS pricing](https://aws.amazon.com/ebs/pricing/)
+
+**Production Guides:**
+- [S3 storage costs aren't actually cheap](#amazon-s3--simple-storage-service) — real teardown
+
+See also: [Cost pitfalls — EBS gp2 vs gp3](use-cases/cost-pitfalls.md#ebs-gp2-vs-gp3-almost-free-win) · [File upload playbook — S3 lifecycle](use-cases/file-upload.md)
+
+### Network cost optimization
+
+**Official:**
+- [EC2 data transfer pricing](https://aws.amazon.com/ec2/pricing/on-demand/#Data_Transfer)
+- [VPC pricing](https://aws.amazon.com/vpc/pricing/) — NAT Gateway and data processing
+- [CloudFront pricing](https://aws.amazon.com/cloudfront/pricing/)
+
+**Production Guides:**
+- [NAT Gateway billing — idle cost alternatives](#nat-gateway) — bill teardown
+- [AWS data transfer costs for startups](https://www.factualminds.com/blog/aws-data-transfer-costs-startups/)
+- [Multi-region AWS without doubling costs](https://www.factualminds.com/blog/multi-region-aws-without-doubling-costs/)
+
+See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway) · [Cross-AZ data transfer](use-cases/cost-pitfalls.md#cross-az-data-transfer) · [Egress to internet](use-cases/cost-pitfalls.md#egress-to-internet)
+
+### Container cost optimization
+
+**Official:**
+- [Amazon EKS best practices — cost optimization](https://aws.github.io/aws-eks-best-practices/cost_optimization/cost_optimization/)
+- [ECS pricing](#amazon-ecs--elastic-container-service) · [Fargate pricing](#aws-fargate)
+
+**Production Guides:**
+- [Deploy EKS with Karpenter for cost-optimized autoscaling](#amazon-eks--elastic-kubernetes-service)
+- [Karpenter vs Cluster Autoscaler — EKS cost optimization](#amazon-eks--elastic-kubernetes-service)
+
+**Kubernetes cost & ops (vendor blogs):**
+- [Cast AI Blog](#amazon-eks--elastic-kubernetes-service) — Kubernetes cost optimization guidance
+
+See also: [Spot & interruptible compute](#spot--interruptible-compute) · [Fargate](#aws-fargate) · [Amazon ECS](#amazon-ecs--elastic-container-service)
+
+### Serverless cost optimization
+
+**Official:**
+- [Lambda pricing](#aws-lambda)
+- [Step Functions pricing](https://aws.amazon.com/step-functions/pricing/)
+- [API Gateway pricing](https://aws.amazon.com/api-gateway/pricing/)
+
+**Production Guides:**
+- [Lambda cost optimization — pay-per-request vs provisioned](#aws-lambda)
+- [Eliminate surprise bills with autoscaling](https://www.factualminds.com/blog/aws-eliminate-surprise-bills-autoscaling/)
+- [Prevent queue cost explosions on AWS](https://www.factualminds.com/blog/prevent-queue-cost-explosions-aws/)
+
+See also: [Rightsizing](#rightsizing) · [Cost pitfalls — Lambda over-provisioned memory](use-cases/cost-pitfalls.md#lambda-over-provisioned-memory)
+
+### Cost allocation & tagging
+
+**Official:**
+- [Cost Categories](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html) — tag-based rollup in Cost Explorer
+- [Tag policies (Organizations)](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html)
+- [Split cost allocation data](https://docs.aws.amazon.com/cur/latest/userguide/split-cost-allocation-data.html) — per-pod cost for shared EKS or ECS
+
+**Production Guides:**
+- [FinOps on AWS — complete cost governance guide](https://www.factualminds.com/blog/finops-on-aws-complete-guide-cloud-cost-governance/)
+- [AWS FinOps gap — engineering cost ownership](https://www.factualminds.com/blog/aws-finops-gap-engineering-cost-ownership/)
+
+See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tenant-saas.md) · [FinOps Foundation](#finops-community)
+
+### Monitoring & alerts
+
+**Official:**
+- [AWS Budgets](https://aws.amazon.com/aws-cost-management/aws-budgets/)
+- [Budget actions](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-action-configure.html) — IAM, SNS, or SSM actions at thresholds
+- [AWS Cost Anomaly Detection](https://aws.amazon.com/aws-cost-management/aws-cost-anomaly-detection/)
+- [Cost Anomaly Detection user guide](https://docs.aws.amazon.com/cost-management/latest/userguide/manage-ad.html)
+
+**Production Guides:**
+- [Use Cost Anomaly Detection to catch surprise bills](https://www.factualminds.com/blog/how-to-use-aws-cost-anomaly-detection-catch-surprise-bills/)
+
+### Strategy & playbooks
+
 - [Cloud cost optimization — modern strategies](https://www.factualminds.com/blog/cloud-cost-optimization-2026-modern-strategies/)
 - [AWS cost prediction playbook](https://www.factualminds.com/blog/aws-cost-prediction-2026-playbook/)
 - [AWS cost control architecture optimization playbook](https://www.factualminds.com/blog/aws-cost-control-architecture-optimization-playbook/)
 - [Designing cost-stable AWS architectures](https://www.factualminds.com/blog/aws-cost-stable-architecture-design/)
-- [Eliminate surprise bills with autoscaling](https://www.factualminds.com/blog/aws-eliminate-surprise-bills-autoscaling/)
-- [Multi-region AWS without doubling costs](https://www.factualminds.com/blog/multi-region-aws-without-doubling-costs/)
 - [AWS pricing emergent behavior — billing complexity](https://www.factualminds.com/blog/aws-pricing-emergent-behavior-billing-complexity/)
-- [Prevent queue cost explosions on AWS](https://www.factualminds.com/blog/prevent-queue-cost-explosions-aws/)
 - [Cost-optimized SaaS stack on AWS — end to end](https://www.factualminds.com/blog/cost-optimized-saas-stack-aws-end-to-end/)
-- [AWS data transfer costs for startups](https://www.factualminds.com/blog/aws-data-transfer-costs-startups/)
+- [AWS managed services vs DIY — total cost of ownership](https://www.factualminds.com/blog/aws-managed-services-vs-diy-total-cost-of-ownership/)
 
-### FinOps
+### FinOps community
 
-- [FinOps on AWS — complete cost governance guide](https://www.factualminds.com/blog/finops-on-aws-complete-guide-cloud-cost-governance/)
-- [AWS FinOps gap — engineering cost ownership](https://www.factualminds.com/blog/aws-finops-gap-engineering-cost-ownership/)
 - [FinOps — glossary entry](https://www.factualminds.com/glossary/finops/)
 - [FinOps Foundation](https://www.finops.org/) — global community
-- [FinOps Foundation Insights](https://www.finops.org/insights/) — foundation articles and updates on FinOps practice and cloud financial operations
+- [FinOps Foundation Insights](https://www.finops.org/insights/) — foundation articles on cloud financial operations
 
-### Bill Teardowns (real customer incidents)
+### Bill teardowns (real customer incidents)
 
 - [Bill teardown #1 — SaaS startup with $40k/mo overrun](https://www.factualminds.com/blog/aws-bill-teardown-1-saas-startup-40k-month-overrun/)
 - [Bill teardown #2 — healthcare's NAT Gateway problem](#nat-gateway)
@@ -1218,23 +1363,10 @@ Run code without managing servers.
 - [AWS startup cost explosion — real failure patterns](https://www.factualminds.com/blog/aws-startup-cost-explosion-real-failure-patterns/)
 - [SaaS cost optimization — case study ($85k → $58k/mo)](https://www.factualminds.com/case-study/saas-cost-optimization-30-percent-reduction/)
 
-### Savings Plans / Reserved Instances
-
-- [Savings Plans](https://aws.amazon.com/savingsplans/) · [Reserved Instances](https://aws.amazon.com/ec2/pricing/reserved-instances/)
-- [Reserved Instances vs Savings Plans](https://www.factualminds.com/glossary/reserved-instances-vs-savings-plans/)
-- [AWS Savings Plans — glossary](https://www.factualminds.com/glossary/aws-savings-plans/)
-
-### Managed vs DIY Cost
-
-- [AWS managed services vs DIY — total cost of ownership](https://www.factualminds.com/blog/aws-managed-services-vs-diy-total-cost-of-ownership/)
-
-**OSS Cost Tools:**
-- [Infracost](https://www.infracost.io/) — Terraform → cost diff in PRs
-- [Komiser](https://github.com/tailwarden/komiser) — multi-cloud cost + resource viewer
+**OSS cost tools:**
+- [Infracost](https://www.infracost.io/) — Terraform cost diff in PRs
+- [cloud-custodian/cloud-custodian](https://github.com/cloud-custodian/cloud-custodian) — YAML rules for resource governance and cost enforcement
 - [aws-nuke](#data-perimeter) — wipe orphaned dev accounts
-- [Cloud Intelligence Dashboards](https://github.com/aws-samples/aws-cudos-framework-deployment) — CUR analytics dashboards (CUDOS, Cost Intelligence, KPI)
-- [cloud-custodian/cloud-custodian](https://github.com/cloud-custodian/cloud-custodian) — YAML rules engine for resource governance, cost, and compliance enforcement
-- [Similarweb/finala](https://github.com/similarweb/finala) — scans AWS for wasteful and unused resources to cut spend
 
 ---
 
@@ -1526,6 +1658,7 @@ When you know what you need but not which AWS service to use:
 ### AI/ML
 
 - [Bedrock vs SageMaker](#amazon-sagemaker)
+- [Bedrock Agents vs AgentCore](#amazon-bedrock-agentcore)
 - [Amazon Q vs ChatGPT Enterprise](#amazon-q)
 
 ### Cloud Platform
@@ -1675,7 +1808,7 @@ Plain-language definitions of common AWS terms:
 - [AWS Savings Plans](#savings-plans-reserved-instances)
 - [AWS Shared Responsibility Model](#foundations)
 - [AWS Step Functions](#aws-step-functions)
-- [FinOps](#finops)
+- [FinOps](#finops-community)
 - [HIPAA-eligible AWS services](#hipaa)
 - [Multi-tenant architecture](https://www.factualminds.com/glossary/multi-tenant-architecture/)
 - [PCI DSS Cardholder Data Environment](#pci-dss)

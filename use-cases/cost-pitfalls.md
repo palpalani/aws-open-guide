@@ -265,6 +265,24 @@
 
 ---
 
+## Quarterly optimization cadence
+
+Run this workflow every quarter (or after a bill spike). Each step maps to sections elsewhere in this playbook and the [Cost Management & FinOps](../README.md#cost-management--finops) index.
+
+1. **Visibility** — Slice [Cost Explorer](https://aws.amazon.com/aws-cost-management/aws-cost-explorer/) by service, tag, and region. Review [Cost Optimization Hub](https://aws.amazon.com/aws-cost-management/cost-optimization-hub/) or CUR exports for recommendations. Triage open [Cost Anomaly Detection](https://aws.amazon.com/aws-cost-management/aws-cost-anomaly-detection/) alerts.
+
+2. **Waste** — Hunt idle EC2, RDS, ELB, EIP, and unattached EBS ([Idle resources](#idle-resources)). Use Trusted Advisor, [Finala](https://github.com/similarweb/finala), or Cost Optimization Hub idle-resource findings.
+
+3. **Rightsizing** — Export [Compute Optimizer](#idle-resources) recommendations for EC2, EBS, Lambda, and RDS. Run [Lambda Power Tuning](#lambda-over-provisioned-memory) on the top 10 functions by spend. Migrate remaining gp2 volumes to gp3 ([EBS gp2 vs gp3](#ebs-gp2-vs-gp3-almost-free-win)).
+
+4. **Commitments** — Review Savings Plans and RI coverage in Cost Explorer. Commit at **60–80%** of stable baseline, not 100% ([Reserved capacity and Savings Plans](#reserved-capacity-and-savings-plans)).
+
+5. **Architecture** — [VPC endpoint coverage audit](#nat-gateway) for every service Lambda or ECS reaches. Set S3 [lifecycle policies](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html) and Intelligent-Tiering where access is unpredictable. Review cross-AZ topology ([Cross-AZ data transfer](#cross-az-data-transfer)).
+
+6. **Governance** — Verify required tag keys and [Cost Categories](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html). Refresh budget thresholds and [budget actions](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-action-configure.html). Update team-facing billing views if org structure changed.
+
+---
+
 ## Tools to find these proactively
 
 - **AWS Cost Explorer** — slice by service, tag, region; spot anomalies
@@ -283,6 +301,11 @@
 - [ ] Anomaly detection enabled
 - [ ] Tag policy enforced via SCP; un-tagged resources flagged daily
 - [ ] Cost Categories rolling tags up to per-team / per-product / per-tenant
+- [ ] Compute Optimizer recommendations reviewed for EC2, EBS, Lambda, and RDS
+- [ ] Savings Plans / RI coverage within 60–80% of stable baseline
+- [ ] Spot or Fargate Spot evaluated for fault-tolerant batch and CI workloads
+- [ ] S3 lifecycle and Intelligent-Tiering on buckets without a retention policy
+- [ ] Cost Categories and required tag keys enforced (Tag Policies or Config rules)
 - [ ] Quarterly Savings Plan review with commit at 60–80% of stable baseline
 - [ ] Quarterly cleanup sweep — un-attached EBS volumes, idle ELBs, un-attached EIPs, unused snapshots
 - [ ] VPC endpoint coverage audit — every AWS service Lambda/ECS reaches has an endpoint or a justification
