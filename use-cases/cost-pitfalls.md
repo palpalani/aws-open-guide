@@ -53,7 +53,7 @@ Run visibility (Cost Explorer, anomalies), waste (idle resources), rightsizing (
 - Workloads in AZ-a using the regional NAT ENI in AZ-b still pay [cross-AZ data transfer](#cross-az-data-transfer) on top of NAT processing
 - Endpoint coverage still matters: regional NAT does not stop S3/ECR/Secrets Manager traffic from incurring NAT data-processing fees
 
-**Reference:** [VPC pricing](https://aws.amazon.com/vpc/pricing/) · [NAT gateway pricing](https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-pricing.html) · [VPC endpoint types](https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html)
+**Reference:** [VPC pricing](https://aws.amazon.com/vpc/pricing/) · [NAT gateway pricing](https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-pricing.html) · [VPC endpoint types](https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html) · [NAT Gateway implementation guide](https://www.factualminds.com/blog/nat-gateway-cost-implementation-aws/?utm_source=aws-open-guide&utm_medium=playbook&utm_campaign=cost-pitfalls) — step-by-step endpoint rollout
 
 ---
 
