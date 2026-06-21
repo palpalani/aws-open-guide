@@ -27,37 +27,37 @@ This playbook is the production operating model between "we ran a scan" and "our
 ## 3. Reference architecture
 
 ```
-                    ┌─────────────────────────────────────┐
-                    │         AWS Organizations            │
-                    │  Security Hub delegated admin        │
-                    └──────────────────┬──────────────────┘
-                                       │
-     ┌─────────────────────────────────┼─────────────────────────────────┐
-     ▼                                 ▼                                 ▼
-┌─────────────┐              ┌─────────────────┐              ┌─────────────────┐
-│  GuardDuty  │              │  AWS Config     │              │  Inspector v2   │
-│  (threat)   │              │  conformance    │              │  (CVE/vuln)     │
-└──────┬──────┘              └────────┬────────┘              └────────┬────────┘
-       │                              │                                │
-       └──────────────────────────────┼────────────────────────────────┘
-                                      ▼
-                           ┌─────────────────────┐
-                           │   AWS Security Hub   │
-                           │   (aggregation)      │
-                           └──────────┬───────────┘
-                                      │
-              ┌───────────────────────┼───────────────────────┐
-              ▼                       ▼                       ▼
-       ┌─────────────┐         ┌─────────────┐         ┌─────────────┐
-       │   Prowler   │         │ EventBridge │         │  Audit Mgr   │
-       │  (scheduled)│         │  → SNS/PD   │         │  (evidence)  │
-       └─────────────┘         └─────────────┘         └─────────────┘
+ ┌─────────────────────────────────────┐
+ │ AWS Organizations │
+ │ Security Hub delegated admin │
+ └──────────────────┬──────────────────┘
+ │
+ ┌─────────────────────────────────┼─────────────────────────────────┐
+ ▼ ▼ ▼
+┌─────────────┐ ┌─────────────────┐ ┌─────────────────┐
+│ GuardDuty │ │ AWS Config │ │ Inspector v2 │
+│ (threat) │ │ conformance │ │ (CVE/vuln) │
+└──────┬──────┘ └────────┬────────┘ └────────┬────────┘
+ │ │ │
+ └──────────────────────────────┼────────────────────────────────┘
+ ▼
+ ┌─────────────────────┐
+ │ AWS Security Hub │
+ │ (aggregation) │
+ └──────────┬───────────┘
+ │
+ ┌───────────────────────┼───────────────────────┐
+ ▼ ▼ ▼
+ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐
+ │ Prowler │ │ EventBridge │ │ Audit Mgr │
+ │ (scheduled)│ │ → SNS/PD │ │ (evidence) │
+ └─────────────┘ └─────────────┘ └─────────────┘
 
 Shift-left (CI/CD):
-┌──────────────┐    ┌──────────────┐    ┌──────────────┐
-│   Git PR     │───▶│   Checkov    │───▶│   Deploy     │
-│              │    │   (IaC gate) │    │   (OIDC)     │
-└──────────────┘    └──────────────┘    └──────────────┘
+┌──────────────┐ ┌──────────────┐ ┌──────────────┐
+│ Git PR │───▶│ Checkov │───▶│ Deploy │
+│ │ │ (IaC gate) │ │ (OIDC) │
+└──────────────┘ └──────────────┘ └──────────────┘
 ```
 
 1. **Organizations** with SCPs for region/service guardrails.
@@ -189,11 +189,7 @@ Link: [anti-patterns.md](anti-patterns.md), [ci-cd.md](ci-cd.md) for OIDC and pi
 - [AWS Audit Manager](https://aws.amazon.com/audit-manager/) — compliance evidence
 
 **Production guides:**
-- [Implement Prowler + Security Hub on AWS](https://www.factualminds.com/blog/prowler-security-hub-aws/?utm_source=aws-open-guide&utm_medium=playbook&utm_campaign=security-baseline) — production checklist and step-by-step setup
-- [Who remediates Prowler findings?](https://www.factualminds.com/blog/prowler-remediation-aws/?utm_source=aws-open-guide&utm_medium=playbook&utm_campaign=security-baseline) — remediation workflow and automation patterns
-- [SOC 2: Prowler vs Security Hub vs consultant](https://www.factualminds.com/compare/soc-2-prowler-security-hub/?utm_source=aws-open-guide&utm_medium=playbook&utm_campaign=security-baseline) — audit framing
 - [10 AWS cloud security best practices](https://www.factualminds.com/blog/10-aws-cloud-security-best-practices-implementation-guide/) — baseline controls implementation
-- [Wiz findings remediation on AWS](https://www.factualminds.com/blog/wiz-findings-remediation-aws/?utm_source=aws-open-guide&utm_medium=playbook&utm_campaign=security-baseline) — CNAPP findings to closed risks
 - [AWS Cloud Security services](https://www.factualminds.com/services/aws-cloud-security/?utm_source=aws-open-guide&utm_medium=playbook&utm_campaign=security-baseline) — remediation sprints
 
 **OSS tools:**
@@ -202,7 +198,6 @@ Link: [anti-patterns.md](anti-patterns.md), [ci-cd.md](ci-cd.md) for OIDC and pi
 - [Steampipe](https://steampipe.io/) — SQL queries across AWS security APIs
 
 **Decision guides:**
-- [Prowler vs Checkov on AWS](https://www.factualminds.com/compare/prowler-vs-checkov-aws/?utm_source=aws-open-guide&utm_medium=playbook&utm_campaign=security-baseline) — scanning strategy and remediation playbook
 - [Prowler documentation](https://docs.prowler.com/) — runtime scanning vs Checkov IaC gates
 
 ---

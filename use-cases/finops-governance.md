@@ -28,33 +28,33 @@ This playbook defines the **governance layer**: how data flows from AWS billing 
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                     AWS Organizations                            │
-│  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐             │
-│  │  Prod   │  │ Staging │  │   Dev   │  │  Sandbox│             │
-│  └────┬────┘  └────┬────┘  └────┬────┘  └────┬────┘             │
-│       └────────────┴────────────┴────────────┘                   │
-│                         │ tag policies                           │
+│ AWS Organizations │
+│ ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐ │
+│ │ Prod │ │ Staging │ │ Dev │ │ Sandbox│ │
+│ └────┬────┘ └────┬────┘ └────┬────┘ └────┬────┘ │
+│ └────────────┴────────────┴────────────┘ │
+│ │ tag policies │
 └─────────────────────────┼───────────────────────────────────────┘
-                          ▼
-              ┌───────────────────────┐
-              │ CUR 2.0 → S3 → Athena │
-              │ Cost Categories       │
-              └───────────┬───────────┘
-                          │
-        ┌─────────────────┼─────────────────┐
-        ▼                 ▼                 ▼
+ ▼
+ ┌───────────────────────┐
+ │ CUR 2.0 → S3 → Athena │
+ │ Cost Categories │
+ └───────────┬───────────┘
+ │
+ ┌─────────────────┼─────────────────┐
+ ▼ ▼ ▼
 ┌───────────────┐ ┌───────────────┐ ┌───────────────┐
-│ Cost Explorer │ │ FinOps SaaS   │ │ CID dashboards│
-│ + Budgets     │ │ (optional)    │ │ (optional)    │
+│ Cost Explorer │ │ FinOps SaaS │ │ CID dashboards│
+│ + Budgets │ │ (optional) │ │ (optional) │
 └───────┬───────┘ └───────┬───────┘ └───────┬───────┘
-        │                 │                 │
-        └─────────────────┼─────────────────┘
-                          ▼
-              ┌───────────────────────┐
-              │ Quarterly optimization│
-              │ cadence + architecture│
-              │ sprints               │
-              └───────────────────────┘
+ │ │ │
+ └─────────────────┼─────────────────┘
+ ▼
+ ┌───────────────────────┐
+ │ Quarterly optimization│
+ │ cadence + architecture│
+ │ sprints │
+ └───────────────────────┘
 ```
 
 1. **Tag policies** enforce `Environment`, `Team`, `CostCenter`, `Product` (or your schema) at resource creation.
@@ -179,21 +179,16 @@ Link cross-cutting patterns: [anti-patterns.md](anti-patterns.md).
 - [FinOps Foundation](https://www.finops.org/) — community standards and capabilities framework
 
 **Production guides:**
-- [FinOps platform selection hub](https://www.factualminds.com/blog/aws-finops-tool-implementation/?utm_source=aws-open-guide&utm_medium=playbook&utm_campaign=finops-governance) — operating model and platform implementation gap
-- [FinOps tools vs AWS cost consulting](https://www.factualminds.com/compare/finops-tools-vs-aws-cost-consulting/?utm_source=aws-open-guide&utm_medium=playbook&utm_campaign=finops-governance) — culture, accountability, and when consulting beats switching tools
-- [AWS Cost Optimization & FinOps services](https://www.factualminds.com/services/aws-cloud-cost-optimization-services/) — fixed-scope engagements
+- [Multi-region AWS without doubling costs](https://www.factualminds.com/blog/multi-region-aws-without-doubling-costs/) — DR and replication cost trade-offs
+- [Protect AWS infrastructure from cost-based attacks](https://www.factualminds.com/blog/protect-aws-infrastructure-cost-based-attacks/) — abuse and runaway spend controls
 
 **OSS tools:**
 - [Cloud Intelligence Dashboards](https://github.com/aws-solutions-library-samples/cloud-intelligence-dashboards-framework) — CUR analytics on AWS
 - [CloudBurn](https://cloudburn.io/) — open-source cost policy engine for IaC and live AWS
 
 **Decision guides:**
-- [For FinOps teams](https://www.factualminds.com/for/finops-team/) — persona hub for platform selection and execution
-- [nOps vs AWS native FinOps](https://www.factualminds.com/compare/nops-vs-aws-cost-optimization/?utm_source=aws-open-guide&utm_medium=playbook&utm_campaign=finops-governance) — platform comparison and architecture execution gap
-- [Vantage alternative — past the free tier](https://www.factualminds.com/compare/vantage-alternative-aws-implementation/?utm_source=aws-open-guide&utm_medium=playbook&utm_campaign=finops-governance) — when visibility needs implementation
-- [NAT Gateway implementation guide](https://www.factualminds.com/blog/nat-gateway-cost-implementation-aws/?utm_source=aws-open-guide&utm_medium=playbook&utm_campaign=finops-governance) — architecture savings FinOps tools surface
-- [ProsperOps on AWS](https://www.factualminds.com/blog/prosperops-aws-savings-plans/?utm_source=aws-open-guide&utm_medium=playbook&utm_campaign=finops-governance) — commitment automation checklist
-- [Kubecost on EKS](https://www.factualminds.com/blog/kubecost-eks-optimization/?utm_source=aws-open-guide&utm_medium=playbook&utm_campaign=finops-governance) — allocation to actual savings
+- [FactualMinds decide hub](https://www.factualminds.com/decide/) — interactive compare and decision trees
+- [AWS Cost Optimization & FinOps services](https://www.factualminds.com/services/aws-cloud-cost-optimization-services/) — fixed-scope engagements
 
 ---
 

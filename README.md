@@ -200,10 +200,7 @@ Start here if you're new to AWS or evaluating whether to build on it.
 
 **Foundational Guides:**
 - [AWS Cloud Adoption Framework (CAF)](https://aws.amazon.com/cloud-adoption-framework/) — official six-perspective enterprise migration framework
-- [AWS Well-Architected Framework — 6 pillars explained](https://www.factualminds.com/blog/aws-well-architected-framework-6-pillars-explained/)
-- [AWS Shared Responsibility Model](https://www.factualminds.com/glossary/aws-shared-responsibility-model/) — what AWS secures vs what you secure
-- [Microservices vs monolith on AWS — architecture decision guide](https://www.factualminds.com/blog/microservices-vs-monolith-on-aws-architecture-decision-guide/)
-- [Top 20 modern AWS AI services — overview](https://www.factualminds.com/blog/top-20-aws-ai-modern-services-2026/)
+- [AWS Well-Architected Framework — six pillars (FactualMinds)](https://www.factualminds.com/blog/aws-well-architected-framework-6-pillars-explained/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=foundations) — pillar walkthrough with production context
 
 **Architecture Deep Reading (essential AWS canon):**
 - [AWS Architecture Blog](https://aws.amazon.com/blogs/architecture/) — reference architectures and AWS engineering posts
@@ -239,17 +236,6 @@ Virtual servers, containers' substrate, and specialized chips.
 - [Spot Instance Advisor](https://aws.amazon.com/ec2/spot/instance-advisor/)
 - [AWS Compute Blog](https://aws.amazon.com/blogs/compute/) — EC2, Lambda, Batch, and Step Functions posts
 
-**Production Guides:**
-- [EC2 high-performance API optimization](https://www.factualminds.com/blog/ec2-high-performance-api-optimization/)
-- [EC2 Spot Instance intelligent selection for cost optimization](https://www.factualminds.com/blog/ec2-spot-instance-intelligent-selection-cost-optimization/)
-- [Hybrid compute — EC2 + serverless cost efficiency](https://www.factualminds.com/blog/hybrid-compute-ec2-serverless-cost-efficiency/)
-- [Auto-scaling strategies for EC2, ECS, Lambda](https://www.factualminds.com/blog/aws-auto-scaling-strategies-ec2-ecs-lambda/)
-- [Amazon EC2 — glossary entry](https://www.factualminds.com/glossary/amazon-ec2/)
-
-**Decision Guides:**
-- [Which AWS compute should I use?](https://www.factualminds.com/decide/which-aws-compute/)
-- [EC2 vs Lambda — when to use which](https://www.factualminds.com/compare/aws-ec2-vs-lambda/)
-
 **OSS Tools:**
 - [99designs/aws-vault](https://github.com/99designs/aws-vault) — secure storage of AWS credentials on developer laptops
 - [AutoSpotting/AutoSpotting](https://github.com/LeanerCloud/AutoSpotting) — automatically replace on-demand EC2 in ASGs with spot instances
@@ -266,15 +252,6 @@ Virtual servers, containers' substrate, and specialized chips.
 - [Graviton5 chiplet architecture — Amazon Science](https://www.amazon.science/blog/graviton5s-improved-design-increases-speed-and-energy-efficiency-beyond-moores-law) — DDR5-8800, PCIe Gen6, Nitro Isolation Engine
 - [M9g preview announcement](https://aws.amazon.com/about-aws/whats-new/2025/12/ec2-m9g-instances-graviton5-processors-preview/) — Dec 2025 preview; superseded by GA
 
-**Production Guides:**
-- [EC2 M9g and M9gd Graviton5 GA migration field guide](https://www.factualminds.com/blog/ec2-m9g-m9gd-graviton5-ga-2026/) — M9g vs M9gd, canary checklist, RI traps
-- [EC2 on-demand pricing — Graviton crossover](https://www.factualminds.com/blog/amazon-ec2-on-demand-pricing-instance-families-2026/) — family selection and Graviton savings
-- [Graviton cost optimization guide](https://www.factualminds.com/blog/aws-graviton-cost-optimization-guide/) — Graviton5 GA through Graviton2 migration paths and x86 savings
-
-**Decision Guides:**
-- [M9g vs M8g — when to upgrade to Graviton5](https://www.factualminds.com/blog/ec2-m9g-m9gd-graviton5-ga-2026/) — migration field guide; dedicated compare page pending
-- [M9g vs M9gd — when to use local NVMe](https://www.factualminds.com/blog/ec2-m9g-m9gd-graviton5-ga-2026/) — ephemeral NVMe vs EBS-backed M9g
-- [Graviton vs x86 on EC2](https://www.factualminds.com/blog/aws-graviton-cost-optimization-guide/) — when to stay on Intel or AMD
 
 ### AWS Trainium & Inferentia — ML accelerators
 
@@ -282,7 +259,6 @@ Virtual servers, containers' substrate, and specialized chips.
 
 - [Trainium](https://aws.amazon.com/ai/machine-learning/trainium/) · [Inferentia](https://aws.amazon.com/ai/machine-learning/inferentia/)
 - [EC2 Trn3 UltraServers — Trainium3](https://aws.amazon.com/ec2/instance-types/trn3/) — fourth-gen Trainium chips for frontier-scale training
-- [Trainium2 + Inferentia2 deep dive](https://www.factualminds.com/blog/aws-trainium2-inferentia2-ai-chips/)
 
 ### AWS Batch
 
@@ -300,7 +276,6 @@ Virtual servers, containers' substrate, and specialized chips.
 
 ### Amazon Elastic VMware Service (EVS)
 
-- [EVS deep dive](https://www.factualminds.com/blog/amazon-elastic-vmware-service-evs/) — VMware workloads on AWS
 
 ### AWS Outposts
 
@@ -331,11 +306,6 @@ Container orchestration and registry.
 - [ECS Pricing](https://aws.amazon.com/ecs/pricing/)
 - [AWS Containers Blog](https://aws.amazon.com/blogs/containers/) — ECS, EKS, Fargate, and ECR architecture posts
 
-**Production Guides:**
-- [Production Laravel/Django/Node on ECS](https://www.factualminds.com/blog/production-laravel-django-node-on-ecs-2026/)
-- [How to migrate a monolith to ECS Fargate with zero downtime](https://www.factualminds.com/blog/how-to-migrate-monolith-ecs-fargate-zero-downtime/)
-- [Blue-green deployments with ECS + CodeDeploy](https://www.factualminds.com/blog/how-to-implement-blue-green-deployments-ecs-codedeploy/)
-- [Modernizing monolithic APIs with Amazon ECS — case study](https://www.factualminds.com/case-study/microservices-on-amazon-ecs/)
 
 See also: [Spot & interruptible compute — ECS capacity providers](#spot--interruptible-compute) · [Container cost optimization](#container-cost-optimization)
 
@@ -348,12 +318,6 @@ See also: [Spot & interruptible compute — ECS capacity providers](#spot--inter
 **Official:**
 - [EKS Documentation](https://docs.aws.amazon.com/eks/)
 - [EKS Best Practices Guides](https://docs.aws.amazon.com/eks/latest/best-practices/introduction.html)
-
-**Production Guides:**
-- [Deploy EKS with Karpenter for cost-optimized autoscaling](https://www.factualminds.com/blog/how-to-deploy-eks-karpenter-cost-optimized-autoscaling/)
-- [Karpenter vs Cluster Autoscaler — EKS cost optimization](https://www.factualminds.com/blog/karpenter-vs-cluster-autoscaler-eks-cost-optimization/)
-- [Host n8n on AWS EKS — production guide](https://www.factualminds.com/blog/how-to-host-n8n-on-aws-eks-production-guide/)
-- [Amazon EKS — glossary entry](https://www.factualminds.com/glossary/amazon-eks/)
 
 **Tools:**
 - [Karpenter](https://karpenter.sh/) — node autoscaling for EKS
@@ -368,7 +332,6 @@ See also: [Spot & interruptible compute — ECS capacity providers](#spot--inter
 
 > Serverless compute for containers. Pay per task, not per VM.
 - [Fargate](https://aws.amazon.com/fargate/)
-- [Lambda vs ECS Fargate — when to use which](https://www.factualminds.com/compare/aws-lambda-vs-ecs-fargate/)
 
 See also: [Fargate Spot — capacity providers](#spot--interruptible-compute) · [Container cost optimization](#container-cost-optimization)
 
@@ -386,8 +349,6 @@ See also: [Fargate Spot — capacity providers](#spot--interruptible-compute) ·
 
 ### Decision
 
-- [ECS vs EKS — container orchestration decision guide](https://www.factualminds.com/blog/aws-ecs-vs-eks-container-orchestration-decision-guide/) · [Compare](https://www.factualminds.com/compare/aws-ecs-vs-eks/)
-- [Kubernetes on AWS EKS — integration guide](https://www.factualminds.com/integrations/kubernetes-aws-eks/)
 
 ---
 
@@ -409,14 +370,11 @@ Run code without managing servers.
 - [AWS Lambda blog category (Compute Blog)](https://aws.amazon.com/blogs/compute/category/aws-lambda/) — patterns, deep dives, releases
 
 **Production Guides:**
-- [Lambda cost optimization — pay-per-request vs provisioned](https://www.factualminds.com/blog/aws-lambda-cost-optimization-pay-per-request-vs-provisioned/)
-- [AWS Lambda — glossary entry](https://www.factualminds.com/glossary/aws-lambda/)
 - [Going Serverless at Scale — Adrian Cockcroft (re:Invent talk)](https://www.youtube.com/watch?v=EBSdyoO3goc)
 
 See also: [Cost Management — rightsizing](#rightsizing) · [Cost pitfalls — Lambda memory](use-cases/cost-pitfalls.md#lambda-over-provisioned-memory)
 
 **Comparisons:**
-- [Lambda vs container cost calculator](https://www.factualminds.com/tools/aws-lambda-vs-container-cost-calculator/)
 
 ### AWS Step Functions
 
@@ -426,19 +384,12 @@ See also: [Cost Management — rightsizing](#rightsizing) · [Cost pitfalls — 
 - [Step Functions Documentation](https://docs.aws.amazon.com/step-functions/)
 - [AWS Step Functions blog category (Compute Blog)](https://aws.amazon.com/blogs/compute/category/aws-step-functions/) — workflow patterns and launches
 
-**Production Guides:**
-- [Step Functions workflow orchestration patterns](https://www.factualminds.com/blog/aws-step-functions-workflow-orchestration-patterns/)
-- [AWS Step Functions — glossary entry](https://www.factualminds.com/glossary/aws-step-functions/)
-
 **Comparisons:**
-- [Step Functions vs EventBridge](https://www.factualminds.com/compare/aws-step-functions-vs-eventbridge/)
-- [Bedrock Agents vs Step Functions](https://www.factualminds.com/compare/aws-bedrock-agents-vs-step-functions/)
 
 ### Amazon EventBridge
 
 > Serverless event bus for SaaS, AWS services, and custom events.
 - [EventBridge Documentation](https://docs.aws.amazon.com/eventbridge/)
-- [EventBridge event-driven architecture patterns](https://www.factualminds.com/blog/aws-eventbridge-event-driven-architecture-patterns/)
 - [AWS Event-Driven Architecture (overview)](https://aws.amazon.com/event-driven-architecture/) — official intro, services, patterns, and reference architectures
 
 ### AWS SAM & Serverless Framework
@@ -461,7 +412,6 @@ See also: [Cost Management — rightsizing](#rightsizing) · [Cost pitfalls — 
 - [aws/aws-lambda-runtime-interface-emulator](https://github.com/aws/aws-lambda-runtime-interface-emulator) — `aws-lambda-rie` — run Lambda container images locally with `docker run`
 
 **Other Serverless Patterns:**
-- [Scaling EdTech platforms on AWS serverless architecture](https://www.factualminds.com/blog/scaling-edtech-platforms-on-aws-serverless-architecture/)
 
 ---
 
@@ -477,12 +427,6 @@ See also: [Cost Management — rightsizing](#rightsizing) · [Cost pitfalls — 
 - [S3 Documentation](https://docs.aws.amazon.com/s3/)
 - [S3 Pricing](https://aws.amazon.com/s3/pricing/)
 - [S3 Storage Classes](https://aws.amazon.com/s3/storage-classes/)
-
-**Production Guides:**
-- [S3 security — bucket policies, Block Public Access, default encryption, and IAM conditions](https://www.factualminds.com/blog/aws-s3-security-best-practices-preventing-data-exposure/)
-- [S3 storage costs aren't actually cheap](https://www.factualminds.com/blog/aws-s3-storage-costs-not-cheap/) — real teardown
-- [Building a data lake on S3 + Glue + Athena](https://www.factualminds.com/blog/building-a-data-lake-on-aws-s3-glue-athena-architecture/)
-- [Amazon S3 — glossary entry](https://www.factualminds.com/glossary/amazon-s3/)
 
 **Tools:**
 - [s3cmd](https://github.com/s3tools/s3cmd) — full-featured CLI
@@ -504,12 +448,10 @@ See also: [Cost Management — rightsizing](#rightsizing) · [Cost pitfalls — 
 ### Amazon S3 Vectors
 
 > Native vector storage in S3 — purpose-built for RAG and AI workloads.
-- [S3 Vectors deep dive](https://www.factualminds.com/blog/amazon-s3-vectors-native-vector-storage/)
 
 ### Amazon EBS — Elastic Block Store
 
 - [EBS Documentation](https://docs.aws.amazon.com/ebs/)
-- [EBS encryption + snapshot hygiene + KMS lifecycle](https://www.factualminds.com/blog/aws-ebs-encryption-snapshot-hygiene-kms-lifecycle/)
 
 ### Amazon EFS — Elastic File System
 
@@ -523,7 +465,6 @@ See also: [Cost Management — rightsizing](#rightsizing) · [Cost pitfalls — 
 
 > Centralized backup service across AWS resources.
 - [AWS Backup](https://aws.amazon.com/backup/)
-- [AWS backup strategies — automated data protection](https://www.factualminds.com/blog/aws-backup-strategies-automated-data-protection/)
 
 ### AWS Storage Gateway
 
@@ -545,11 +486,6 @@ See also: [Cost Management — rightsizing](#rightsizing) · [Cost pitfalls — 
 - [AWS Database Blog](https://aws.amazon.com/blogs/database/) — RDS, Aurora, DynamoDB, and purpose-built DB posts
 
 **Production Guides:**
-- [RDS performance — connection pooling, parameter groups, slow-query logs, and read-replica routing](https://www.factualminds.com/blog/aws-rds-database-performance-best-practices/)
-- [RDS vs Aurora — when to use which database](https://www.factualminds.com/blog/aws-rds-vs-aurora-when-to-use-which-database/) · [Compare](https://www.factualminds.com/compare/aws-rds-vs-aurora/)
-- [RDS max connection calculator](https://www.factualminds.com/tools/aws-rds-max-connection-calculator/)
-- [High-scale Postgres on AWS — cost optimization](https://www.factualminds.com/blog/high-scale-postgres-aws-cost-optimization/)
-- [Amazon RDS — glossary entry](https://www.factualminds.com/glossary/amazon-rds/)
 - [Citus Data Blog](https://www.citusdata.com/blog) — Postgres horizontal scaling patterns relevant to RDS PostgreSQL fleets
 
 ### Amazon Aurora
@@ -557,9 +493,6 @@ See also: [Cost Management — rightsizing](#rightsizing) · [Cost pitfalls — 
 > AWS-built relational DB. Postgres/MySQL-compatible, 5x performance of stock MySQL.
 
 - [Aurora Documentation](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html)
-- [Aurora Limitless Database](https://www.factualminds.com/blog/amazon-aurora-limitless-database/) — horizontal scaling
-- [Aurora Serverless v2 vs Aurora provisioned](https://www.factualminds.com/compare/aws-aurora-serverless-vs-aurora-provisioned/)
-- [Amazon Aurora — glossary entry](https://www.factualminds.com/glossary/amazon-aurora/)
 
 ### Amazon DynamoDB
 
@@ -569,9 +502,6 @@ See also: [Cost Management — rightsizing](#rightsizing) · [Cost pitfalls — 
 - [DynamoDB best practices (official)](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/best-practices.html) — partition keys, indexes, scaling
 - [DynamoDB single-table design — Alex DeBrie](https://www.alexdebrie.com/posts/dynamodb-single-table/) — canonical reading
 - [Advanced design patterns for DynamoDB — Rick Houlihan (re:Invent talk)](https://www.youtube.com/watch?v=HaEPXoXVf2k)
-- [DynamoDB single-table design patterns for SaaS](https://www.factualminds.com/blog/dynamodb-single-table-design-patterns-for-saas/)
-- [Amazon DynamoDB — glossary entry](https://www.factualminds.com/glossary/amazon-dynamodb/)
-- [DynamoDB vs RDS](https://www.factualminds.com/compare/dynamodb-vs-rds/)
 
 **OSS Tools:**
 - [sensedeep/dynamodb-onetable](https://github.com/sensedeep/dynamodb-onetable) — Node.js library for single-table designs
@@ -582,31 +512,23 @@ See also: [Cost Management — rightsizing](#rightsizing) · [Cost pitfalls — 
 > Petabyte-scale data warehouse.
 
 - [Redshift Documentation](https://docs.aws.amazon.com/redshift/)
-- [Redshift Serverless vs Provisioned — when to use each](https://www.factualminds.com/blog/amazon-redshift-serverless-vs-provisioned-when-to-use-each/)
-- [Amazon Redshift — glossary entry](https://www.factualminds.com/glossary/amazon-redshift/)
 
 ### Amazon ElastiCache
 
 > Managed Redis & Memcached.
 - [ElastiCache Documentation](https://docs.aws.amazon.com/elasticache/)
-- [ElastiCache Redis caching strategies for production](https://www.factualminds.com/blog/aws-elasticache-redis-caching-strategies-for-production/)
-- [Redis-Valkey cost-saving layer on AWS](https://www.factualminds.com/blog/redis-valkey-cost-saving-layer-aws/)
 
 ### Amazon MemoryDB for Redis
 
 - [MemoryDB](https://aws.amazon.com/memorydb/)
-- [MemoryDB vector search](https://www.factualminds.com/blog/amazon-memorydb-vector-search/)
 
 ### Amazon DocumentDB
 
 - [DocumentDB](https://aws.amazon.com/documentdb/) — MongoDB-compatible
-- [Migrate from MongoDB Atlas to DocumentDB](https://www.factualminds.com/compare/mongodb-atlas-to-documentdb/)
-- [MongoDB scalable, cost-efficient on AWS](https://www.factualminds.com/blog/mongodb-scalable-cost-efficient-aws/)
 
 ### Amazon Neptune
 
 - [Neptune](https://aws.amazon.com/neptune/) — graph database
-- [Neptune Analytics — graph + vector](https://www.factualminds.com/blog/amazon-neptune-analytics-graph-vector/)
 
 ### Amazon Timestream
 
@@ -614,8 +536,6 @@ See also: [Cost Management — rightsizing](#rightsizing) · [Cost pitfalls — 
 
 ### Decision Guides
 
-- [Which AWS database should I use?](https://www.factualminds.com/decide/which-aws-database/)
-- [Heroku Postgres → AWS RDS](https://www.factualminds.com/compare/heroku-postgres-to-aws-rds/)
 
 ---
 
@@ -629,23 +549,15 @@ See also: [Cost Management — rightsizing](#rightsizing) · [Cost pitfalls — 
 - [VPC Documentation](https://docs.aws.amazon.com/vpc/)
 - [Networking & Content Delivery Blog](https://aws.amazon.com/blogs/networking-and-content-delivery/) — VPC, CDN, and hybrid connectivity posts
 
-**Production Guides:**
-- [VPC for production — subnet topology, NAT vs VPC endpoints, flow logs, and Transit Gateway](https://www.factualminds.com/blog/aws-vpc-networking-best-practices-for-production/)
-
-- [VPC peering vs Transit Gateway](https://www.factualminds.com/glossary/vpc-peering-vs-transit-gateway/)
-- [Amazon VPC — glossary entry](https://www.factualminds.com/glossary/amazon-vpc/)
 
 ### NAT Gateway
 
-- [NAT Gateway billing — idle cost alternatives](https://www.factualminds.com/blog/aws-nat-gateway-billing-idle-cost-alternatives/) — bill teardown
-- [Bill teardown — healthcare's NAT Gateway problem](https://www.factualminds.com/blog/aws-bill-teardown-2-healthcare-nat-gateway-problem/)
 
 See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway) · [Network cost optimization](#network-cost-optimization)
 
 ### Amazon Route 53
 
 - [Route 53](https://aws.amazon.com/route53/) — DNS + traffic management
-- [Route 53 DNS traffic management patterns](https://www.factualminds.com/blog/aws-route-53-dns-traffic-management-patterns/)
 
 ### Amazon CloudFront
 
@@ -654,22 +566,15 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 **Official:**
 - [CloudFront Documentation](https://docs.aws.amazon.com/cloudfront/)
 
-**Production Guides:**
-- [CloudFront vs Cloudflare — which CDN for your enterprise](https://www.factualminds.com/blog/aws-cloudfront-vs-cloudflare-which-cdn-for-your-enterprise/) · [Compare](https://www.factualminds.com/compare/aws-cloudfront-vs-cloudflare/)
-- [Image optimization + CloudFront — case study](https://www.factualminds.com/case-study/image-optimization-cloudfront/)
-- [Automated image pipeline + CloudFront — 30% cost reduction](https://www.factualminds.com/case-study/cloudfront/)
-- [AWS CloudFront Consulting](https://www.factualminds.com/services/aws-cloudfront-consultant/)
 
 ### Amazon API Gateway
 
 > 🎯 **Building a high-traffic API?** See the [High-scale API backend playbook](use-cases/high-scale-api.md) — CloudFront + WAF + API Gateway with caching, rate limits, and graceful degradation under load.
 
 - [API Gateway Documentation](https://docs.aws.amazon.com/apigateway/)
-- [API Gateway patterns — REST, HTTP, WebSocket](https://www.factualminds.com/blog/aws-api-gateway-patterns-rest-http-websocket/)
 
 ### AWS Verified Access
 
-- [Verified Access — ZTNA zero-trust network](https://www.factualminds.com/blog/aws-verified-access-ztna-zero-trust-network/)
 
 ### AWS Direct Connect / Transit Gateway / Global Accelerator
 
@@ -679,7 +584,7 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 ## Security & Identity
 
-> Layer it: identity (IAM, Cognito), boundaries (SCPs, permission boundaries), encryption (KMS), detection (GuardDuty, Security Hub), and audit trails (CloudTrail, Config). For end-to-end posture and remediation, see the [security baseline playbook](use-cases/security-baseline.md) and [Implement Prowler + Security Hub on AWS](https://www.factualminds.com/blog/prowler-security-hub-aws/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=security-identity).
+> Layer it: identity (IAM, Cognito), boundaries (SCPs, permission boundaries), encryption (KMS), detection (GuardDuty, Security Hub), and audit trails (CloudTrail, Config). For end-to-end posture and remediation, see the [security baseline playbook](use-cases/security-baseline.md) and [AWS cloud security services](https://www.factualminds.com/services/aws-cloud-security/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=security-identity).
 
 ### AWS IAM — Identity & Access Management
 
@@ -687,79 +592,53 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 - [IAM Documentation](https://docs.aws.amazon.com/iam/)
 - [AWS Security Blog](https://aws.amazon.com/blogs/security/) — IAM, encryption, and detective controls posts
 
-**Production Guides:**
-- [IAM least privilege — permission boundaries, SCPs, IAM Access Analyzer, and policy conditions](https://www.factualminds.com/blog/aws-iam-best-practices-least-privilege-access-control/)
-- [AWS IAM — glossary entry](https://www.factualminds.com/glossary/aws-iam/)
 
 ### AWS IAM Identity Center (formerly SSO)
 
-- [IAM Identity Center workforce SSO + identity propagation](https://www.factualminds.com/blog/aws-iam-identity-center-workforce-sso-identity-propagation/)
-- [IAM Identity Center vs Cognito](https://www.factualminds.com/compare/aws-iam-identity-center-vs-cognito/)
 
 ### Amazon Cognito
 
 - [Cognito](https://aws.amazon.com/cognito/) — user identity for apps
-- [Cognito authentication for SaaS applications](https://www.factualminds.com/blog/aws-cognito-authentication-for-saas-applications/)
 
 ### AWS KMS — Key Management Service
 
 - [KMS Documentation](https://docs.aws.amazon.com/kms/)
-- [KMS post-quantum cryptography — ML-KEM, ML-DSA](https://www.factualminds.com/blog/aws-kms-post-quantum-cryptography-ml-kem-ml-dsa/)
-- [AWS KMS — glossary entry](https://www.factualminds.com/glossary/aws-kms/)
 
 ### Amazon GuardDuty
 
 > Managed threat detection across AWS accounts.
 - [GuardDuty](https://aws.amazon.com/guardduty/)
-- [GuardDuty threat detection production guide](https://www.factualminds.com/blog/aws-guardduty-threat-detection-production-guide/)
-- [GuardDuty vs Security Hub](https://www.factualminds.com/compare/aws-guardduty-vs-security-hub/)
 
 ### AWS Security Hub
 
 - [Security Hub](https://aws.amazon.com/security-hub/)
-- [Implement Prowler + Security Hub on AWS](https://www.factualminds.com/blog/prowler-security-hub-aws/)
-- [Prowler vs Checkov on AWS](https://www.factualminds.com/compare/prowler-vs-checkov-aws/)
 
 ### AWS WAF — Web Application Firewall
 
 - [WAF Documentation](https://docs.aws.amazon.com/waf/)
-- [WAF web application firewall production guide](https://www.factualminds.com/blog/aws-waf-web-application-firewall-production-guide/)
-- [WAF API protection beyond basics](https://www.factualminds.com/blog/how-to-configure-aws-waf-api-protection-beyond-basics/)
-- [WAF vs Network Firewall](https://www.factualminds.com/compare/aws-waf-vs-network-firewall/)
-- [WAF case study — 99% threat blocking for eLearning](https://www.factualminds.com/case-study/aws-waf-security/)
-- [WAF case study — DDoS mitigation for BI](https://www.factualminds.com/case-study/aws-waf-ddos-protection-analytics/)
-- [WAF case study — PCI compliance for eCommerce](https://www.factualminds.com/case-study/aws-waf-pci-compliance/)
 
 ### Amazon Inspector
 
-- [Inspector v2 — container + Lambda scanning](https://www.factualminds.com/blog/amazon-inspector-v2-container-lambda/)
 
 ### Amazon Macie & Detective
 
-- [Macie + Detective — data security investigation](https://www.factualminds.com/blog/aws-macie-detective-data-security-investigation/)
 
 ### AWS Network Firewall & Firewall Manager
 
-- [Network Firewall + Firewall Manager — multi-account](https://www.factualminds.com/blog/aws-network-firewall-firewall-manager-multi-account/)
 
 ### AWS Secrets Manager / Parameter Store
 
 - [Secrets Manager](https://aws.amazon.com/secrets-manager/) · [Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html)
-- [Secrets Manager vs Parameter Store — when to use which](https://www.factualminds.com/blog/aws-secrets-manager-vs-parameter-store-when-to-use-which/)
 
 ### AWS CloudTrail
 
 - [CloudTrail Documentation](https://docs.aws.amazon.com/cloudtrail/)
-- [CloudTrail production setup — multi-region + validation + Lake](https://www.factualminds.com/blog/aws-cloudtrail-production-setup-multi-region-validation-lake/)
-- [AWS CloudTrail — glossary entry](https://www.factualminds.com/glossary/aws-cloudtrail/)
 
 ### Amazon Verified Permissions (Cedar)
 
-- [Verified Permissions + Cedar policy language](https://www.factualminds.com/blog/amazon-verified-permissions-cedar/)
 
 ### Amazon Security Lake
 
-- [Security Lake — OCSF schema](https://www.factualminds.com/blog/amazon-security-lake-ocsf/)
 
 ### AWS Shared Responsibility Model
 
@@ -767,16 +646,7 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 ### Holistic Security Guides
 
-- [Cloud security baseline — 10 controls covering IAM, encryption, logging, and incident response](https://www.factualminds.com/blog/10-aws-cloud-security-best-practices-implementation-guide/)
-- [Securing AWS workloads beyond the basics](https://www.factualminds.com/blog/securing-aws-workloads-beyond-the-basics/)
-- [Who remediates Prowler findings?](https://www.factualminds.com/blog/prowler-remediation-aws/)
-- [AWS resource hardening quick wins (DMS, OpenSearch, SageMaker, Lambda)](https://www.factualminds.com/blog/aws-resource-hardening-quick-wins-dms-opensearch-sagemaker-lambda/)
-- [AWS vulnerability management program — CVSS + KEV prioritization](https://www.factualminds.com/blog/aws-vulnerability-management-program-cvss-kev-prioritization/)
-- [Protect AWS infrastructure from cost-based attacks](https://www.factualminds.com/blog/protect-aws-infrastructure-cost-based-attacks/)
-- [Security & Compliance hub](https://www.factualminds.com/security-compliance/)
-- [AWS Cloud Security services](https://www.factualminds.com/services/aws-cloud-security/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=holistic-security) — remediation sprints and audit-ready baselines
-- [Wiz findings remediation on AWS](https://www.factualminds.com/blog/wiz-findings-remediation-aws/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=holistic-security) — CNAPP dashboard to closed risks
-
+- [Security baseline playbook](use-cases/security-baseline.md) — Prowler, Security Hub, Config, and IaC gates in production
 ### Data Perimeter
 
 - [Data perimeters on AWS](https://aws.amazon.com/identity/data-perimeters-on-aws/) — official identity, network, and resource perimeter model
@@ -791,7 +661,6 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 - [aws-nuke](https://github.com/rebuy-de/aws-nuke) — wipe an AWS account clean
 - [Checkov](https://github.com/bridgecrewio/checkov) — static analysis for Terraform, CloudFormation, CDK, Kubernetes, ARM, Bicep
 - [Steampipe](https://steampipe.io/) — query AWS security and compliance with SQL
-- [Implement Prowler + Security Hub on AWS](https://www.factualminds.com/blog/prowler-security-hub-aws/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=security-tools) — production security scanning and remediation
 - [Security baseline playbook](use-cases/security-baseline.md) — Prowler, Security Hub, Config, and IaC gates
 - [policy_sentry](https://github.com/salesforce/policy_sentry) — Salesforce IAM least-privilege policy generator
 - [algo](https://github.com/trailofbits/algo) — Trail of Bits one-click personal IPSEC VPN on EC2 (and other clouds)
@@ -805,47 +674,30 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 ### HIPAA
 
 - [HIPAA Eligible AWS Services](https://aws.amazon.com/compliance/hipaa-eligible-services-reference/)
-- [HIPAA on AWS — complete compliance checklist](https://www.factualminds.com/blog/hipaa-on-aws-complete-compliance-checklist/)
-- [HIPAA-compliant architecture on AWS](https://www.factualminds.com/blog/how-to-implement-hipaa-compliant-architecture-aws/)
-- [HIPAA-compliant AI on AWS Bedrock](https://www.factualminds.com/blog/hipaa-compliant-ai-aws-bedrock/)
-- [HIPAA telehealth platform — case study (8 weeks)](https://www.factualminds.com/case-study/hipaa-compliant-telehealth-platform-aws/)
-- [HIPAA-eligible AWS services — glossary](https://www.factualminds.com/glossary/hipaa-eligible-aws-services/)
-- [HIPAA compliance checker tool](https://www.factualminds.com/tools/hipaa-compliance-checker/)
 
 ### PCI DSS
 
-- [PCI DSS compliance on AWS — fintech guide](https://www.factualminds.com/blog/pci-dss-compliance-aws-architecture-guide-fintech/)
-- [PCI DSS fintech AWS migration — case study (12 weeks)](https://www.factualminds.com/case-study/pci-dss-fintech-aws-migration/)
-- [PCI DSS Cardholder Data Environment — glossary](https://www.factualminds.com/glossary/pci-dss-cardholder-data-environment/)
 
 ### SOC 2
 
-- [SOC 2 compliance on AWS — implementation guide](https://www.factualminds.com/blog/how-to-achieve-soc2-compliance-aws-2026/)
-- [SOC 2 Type 2 — glossary](https://www.factualminds.com/glossary/soc2-type-2/)
 
 ### ISO 27001
 
-- [ISO 27001 certification on AWS — ISMS implementation](https://www.factualminds.com/blog/iso-27001-certification-aws-isms-implementation/)
 
 ### GDPR
 
-- [GDPR compliance on AWS for SaaS data protection](https://www.factualminds.com/blog/gdpr-compliance-aws-saas-data-protection/)
 
 ### NIS2
 
-- [NIS2 directive — AWS for critical infrastructure](https://www.factualminds.com/blog/nis2-directive-aws-critical-infrastructure/)
 
 ### NIST CSF 2.0
 
-- [NIST CSF 2.0 — AWS implementation guide](https://www.factualminds.com/blog/nist-csf-2-0-aws-implementation-guide/)
 
 ### DORA (Digital Operational Resilience Act)
 
-- [DORA compliance — AWS for financial services](https://www.factualminds.com/blog/dora-compliance-aws-financial-services/)
 
 ### EU AI Act
 
-- [EU AI Act compliance — AWS Bedrock + SageMaker](https://www.factualminds.com/blog/eu-ai-act-compliance-aws-bedrock-sagemaker/)
 
 ---
 
@@ -860,24 +712,18 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 > Serverless SQL on S3.
 - [Athena Documentation](https://docs.aws.amazon.com/athena/)
-- [Athena query cost optimization — partition, compress, cache, Iceberg](https://www.factualminds.com/blog/athena-query-cost-optimization-partition-compress-cache-iceberg/)
 
 ### AWS Glue
 
 > Serverless ETL + data catalog.
 - [Glue Documentation](https://docs.aws.amazon.com/glue/)
-- [Glue 5 + Apache Iceberg — modern ETL](https://www.factualminds.com/blog/aws-glue-5-apache-iceberg-modern-etl/)
-- [Glue vs dbt on AWS — data transformation guide](https://www.factualminds.com/blog/aws-glue-vs-dbt-on-aws-data-transformation-guide/)
 
 ### Amazon Kinesis
 
 - [Kinesis Documentation](https://docs.aws.amazon.com/kinesis/)
-- [Kinesis Data Streams vs MSK — which streaming platform](https://www.factualminds.com/blog/amazon-kinesis-data-streams-vs-msk-which-streaming-platform/)
-- [Real-time data pipeline — Kinesis + Lambda + DynamoDB](https://www.factualminds.com/blog/real-time-data-pipeline-kinesis-lambda-dynamodb/)
 
 ### Amazon Managed Service for Apache Flink
 
-- [Apache Flink on AWS — managed streaming analytics](https://www.factualminds.com/blog/apache-flink-on-aws-managed-service-streaming-analytics/)
 
 ### Amazon OpenSearch Service
 
@@ -885,38 +731,24 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 - [OpenSearch Documentation](https://docs.aws.amazon.com/opensearch-service/)
 - [Unified observability in OpenSearch Service (Big Data Blog)](https://aws.amazon.com/blogs/big-data/unified-observability-in-amazon-opensearch-service-metrics-traces-and-ai-agent-debugging-in-a-single-interface/) — metrics, traces, and AI agent debugging together
 
-**Production Guides:**
-- [OpenSearch architecture patterns + cost optimization](https://www.factualminds.com/blog/amazon-opensearch-service-architecture-patterns-cost-optimization/)
 
 ### Amazon EMR
 
-- [EMR Serverless vs EC2 vs EKS — cost comparison](https://www.factualminds.com/blog/aws-emr-serverless-vs-ec2-vs-eks-cost-comparison/)
 
 ### Amazon QuickSight
 
 > Serverless BI + ML insights + GenAI dashboards.
 - [QuickSight Documentation](https://docs.aws.amazon.com/quick/)
-- [QuickSight in production — embedding, row-level security, SPICE refresh, and capacity sizing](https://www.factualminds.com/blog/amazon-quicksight-production-guide-best-practices/)
-- [QuickSight embedding analytics in SaaS apps](https://www.factualminds.com/blog/amazon-quicksight-embedding-analytics-saas-applications/)
-- [QuickSight real-time analytics dashboards](https://www.factualminds.com/blog/aws-quicksight-real-time-analytics-dashboards-guide/)
-- [Amazon Q in QuickSight — generative BI](https://www.factualminds.com/blog/amazon-q-quicksight-generative-bi/)
-- [QuickSight + SPICE case study](https://www.factualminds.com/case-study/amazon-quicksight-spice/)
-- [Amazon Q for QuickSight service](https://www.factualminds.com/services/amazon-q-for-quicksight/)
 
 ### Amazon DataZone
 
-- [DataZone — enterprise governance](https://www.factualminds.com/blog/amazon-datazone-enterprise-governance/)
 
 ### AWS Clean Rooms
 
-- [Clean Rooms — privacy-safe analytics](https://www.factualminds.com/blog/aws-clean-rooms-privacy-analytics/)
 
 ### Data Pipelines & Lakes
 
 - [Building a data lake on S3 + Glue + Athena](#amazon-s3-simple-storage-service)
-- [Build a serverless data pipeline — Glue + Athena](https://www.factualminds.com/blog/how-to-build-serverless-data-pipeline-glue-athena/)
-- [AWS virtual data modeling guide](https://www.factualminds.com/blog/aws-virtual-data-modeling-guide/)
-- [Snowflake on AWS — integration](https://www.factualminds.com/integrations/snowflake-aws/)
 
 ---
 
@@ -935,28 +767,6 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 - [Bedrock Agents](https://aws.amazon.com/bedrock/agents/)
 - [Bedrock Guardrails](https://aws.amazon.com/bedrock/guardrails/)
 
-**Production Guides:**
-- [Why Bedrock is the fastest path to enterprise GenAI](https://www.factualminds.com/blog/why-aws-bedrock-is-the-fastest-path-to-enterprise-genai/)
-- [Bedrock cost optimization — token budgets + model selection](https://www.factualminds.com/blog/aws-bedrock-cost-optimization-token-budgets-model-selection/)
-- [Bedrock Provisioned Throughput vs On-Demand — break-even analysis](https://www.factualminds.com/blog/aws-bedrock-provisioned-throughput-vs-on-demand-break-even-2026/)
-- [Bedrock vs OpenAI API — enterprise comparison](https://www.factualminds.com/blog/aws-bedrock-vs-openai-api-enterprise/)
-- [Build a Bedrock Agent with tool use](https://www.factualminds.com/blog/how-to-build-amazon-bedrock-agent-tool-use-2026/)
-- [Build a RAG pipeline with Bedrock Knowledge Bases](https://www.factualminds.com/blog/how-to-build-rag-pipeline-amazon-bedrock-knowledge-bases/)
-- [Set up Bedrock Guardrails in production](https://www.factualminds.com/blog/how-to-set-up-amazon-bedrock-guardrails-production/)
-- [Implementing GenAI guardrails — secure AI governance](https://www.factualminds.com/blog/implementing-genai-guardrails-secure-ai-governance-aws/)
-- [Bedrock AI agents + agentic workflows](https://www.factualminds.com/blog/aws-bedrock-ai-agents-agentic-workflows/)
-- [Bedrock multi-agent supervisor pattern](https://www.factualminds.com/blog/aws-bedrock-multi-agent-supervisor-pattern/)
-- [Bedrock OpenAI models, Codex, Managed Agents](https://www.factualminds.com/blog/amazon-bedrock-openai-models-codex-managed-agents/)
-- [Bedrock AgentCore — production patterns](https://www.factualminds.com/blog/amazon-bedrock-agentcore-production/)
-- [Bedrock Flows — workflow orchestration](https://www.factualminds.com/blog/amazon-bedrock-flows-workflow-orchestration/)
-- [Bedrock Marketplace — third-party models](https://www.factualminds.com/blog/amazon-bedrock-marketplace-third-party-models/)
-- [Bedrock Automated Reasoning Checks — hallucination prevention](https://www.factualminds.com/blog/amazon-bedrock-automated-reasoning-checks-hallucination-prevention/)
-- [Bedrock Data Automation](https://www.factualminds.com/blog/amazon-bedrock-data-automation/)
-- [Fine-tuning vs RAG on Bedrock — when to use each](https://www.factualminds.com/blog/fine-tuning-vs-rag-bedrock-when-to-use/)
-- [Multi-tenant GenAI on Bedrock](https://www.factualminds.com/blog/multi-tenant-genai-bedrock/)
-- [Bedrock Nova models guide](https://www.factualminds.com/blog/aws-bedrock-nova-models-guide/)
-- [Amazon Bedrock — glossary entry](https://www.factualminds.com/glossary/amazon-bedrock/)
-- [RAG pipeline — glossary entry](https://www.factualminds.com/glossary/rag-pipeline/)
 
 ### Amazon Bedrock AgentCore
 
@@ -994,8 +804,6 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 - [Nova 2 foundation models in Bedrock](https://aws.amazon.com/about-aws/whats-new/2025/12/nova-2-foundation-models-amazon-bedrock/) — Lite GA; Pro in preview
 - [Nova 2 Omni](https://aws.amazon.com/about-aws/whats-new/2025/12/amazon-nova-2-omni-preview/) — multimodal reasoning and image generation [preview]
 
-**Production Guides:**
-- [Nova Canvas + Reel — multimodal](https://www.factualminds.com/blog/amazon-nova-canvas-reel-multimodal/)
 
 ### Amazon SageMaker
 
@@ -1005,12 +813,6 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 - [SageMaker Documentation](https://docs.aws.amazon.com/sagemaker/)
 - [AWS Machine Learning Blog](https://aws.amazon.com/blogs/machine-learning/) — training, inference, and MLOps posts
 
-**Production Guides:**
-- [SageMaker Unified Studio](https://www.factualminds.com/blog/amazon-sagemaker-unified-studio/)
-- [Run SageMaker training jobs cost-efficiently](https://www.factualminds.com/blog/how-to-run-sagemaker-training-jobs-cost-efficiently/)
-
-**Decision Guides:**
-- [Bedrock vs SageMaker](https://www.factualminds.com/compare/aws-bedrock-vs-sagemaker/)
 
 ### Amazon Q
 
@@ -1019,15 +821,9 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 **Official:**
 - [Amazon Q for Business](https://aws.amazon.com/q/business/)
 
-**Production Guides:**
-- [Q for Business vs ChatGPT Enterprise — CTO guide](https://www.factualminds.com/blog/amazon-q-for-business-vs-chatgpt-enterprise-cto-guide/) · [Compare](https://www.factualminds.com/compare/amazon-q-vs-chatgpt-enterprise/)
-- [Set up Q for Business with SharePoint + S3](https://www.factualminds.com/blog/how-to-set-up-amazon-q-for-business-sharepoint-s3/)
-- [Q vs GitHub Copilot](https://www.factualminds.com/blog/amazon-q-vs-github-copilot-2026/)
-- [Q for Business case study](https://www.factualminds.com/case-study/amazonq/)
 
 ### Kiro IDE
 
-- [Kiro IDE — AWS agentic coding](https://www.factualminds.com/blog/kiro-ide-aws-agentic-coding/)
 
 ### Other AI/ML Services
 
@@ -1039,8 +835,6 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 ### Cost Control for AI
 
-- [AWS autoscaling for AI workloads — avoid budget overrun](https://www.factualminds.com/blog/aws-autoscaling-ai-workloads-budget-overrun/)
-- [Bedrock token cost calculator](https://www.factualminds.com/tools/aws-bedrock-token-cost-calculator/)
 
 ### External references (vectors & RAG concepts)
 
@@ -1064,15 +858,12 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 > Native infrastructure-as-code in YAML/JSON.
 - [CloudFormation Documentation](https://docs.aws.amazon.com/cloudformation/)
-- [CloudFormation patterns — stack splitting, drift detection, change sets, and rollback triggers](https://www.factualminds.com/blog/aws-cloudformation-best-practices-infrastructure-as-code/)
-- [Application Composer — IaC generator](https://www.factualminds.com/blog/aws-application-composer-iac-generator/)
 
 ### AWS CDK — Cloud Development Kit
 
 > Imperative IaC in TypeScript / Python / Java / Go / .NET.
 - [CDK Documentation](https://docs.aws.amazon.com/cdk/)
 - [Construct Hub](https://constructs.dev/) — community CDK constructs
-- [Terraform vs AWS CDK — IaC decision guide](https://www.factualminds.com/blog/terraform-vs-aws-cdk-infrastructure-as-code-decision-guide/)
 
 **OSS Tools:**
 - [cdklabs/cdk-nag](https://github.com/cdklabs/cdk-nag) — checks CDK apps against AWS Solutions, HIPAA, NIST, PCI rule packs at synth time
@@ -1083,12 +874,6 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 - [OpenTofu](https://opentofu.org/) — open-source Terraform-compatible infrastructure-as-code engine
 - [HashiCorp AWS Provider](https://registry.terraform.io/providers/hashicorp/aws/latest)
-- [Terraform AWS provider upgrade strategy](https://www.factualminds.com/blog/terraform-aws-provider-upgrade-strategy/)
-- [Terraform state management — import, move, repair](https://www.factualminds.com/blog/terraform-state-management-aws-import-move-repair/)
-- [Safe Terraform apply workflows — approval gates](https://www.factualminds.com/blog/safe-terraform-apply-workflows-approval-gates-aws/)
-- [AWS infrastructure drift detection — Terraform](https://www.factualminds.com/blog/aws-infrastructure-drift-detection-terraform/)
-- [Migrate Terraform → OpenTofu on AWS](https://www.factualminds.com/blog/migrate-terraform-opentofu-aws/)
-- [Terraform on AWS — integration guide](https://www.factualminds.com/integrations/terraform-aws/)
 
 ### Pulumi on AWS
 
@@ -1111,13 +896,9 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 ### AWS CodePipeline / CodeBuild / CodeDeploy
 
 - [CodePipeline](https://aws.amazon.com/codepipeline/) · [CodeBuild](https://aws.amazon.com/codebuild/) · [CodeDeploy](https://aws.amazon.com/codedeploy/)
-- [CodePipeline CI/CD patterns for production](https://www.factualminds.com/blog/aws-codepipeline-cicd-pipeline-patterns-for-production/)
-- [DevOps on AWS — CodePipeline vs GitHub Actions vs Jenkins](https://www.factualminds.com/blog/devops-on-aws-codepipeline-vs-github-actions-vs-jenkins/) · [Compare](https://www.factualminds.com/compare/aws-codepipeline-vs-github-actions/)
 
 ### GitHub Actions on AWS
 
-- [GitHub Actions AWS deploys — OIDC federation, scoped roles, and credential-free pipelines](https://www.factualminds.com/blog/github-actions-aws-cicd-security-best-practices/)
-- [GitHub Actions on AWS — integration guide](https://www.factualminds.com/integrations/github-actions-aws/)
 
 ### CI/CD vendor engineering blogs
 
@@ -1126,11 +907,6 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 ### General DevOps Practice
 
-- [10 AWS DevOps practices for production](https://www.factualminds.com/blog/10-aws-devops-practices-production-2026/)
-- [DevOps Exercises on AWS — production reality](https://www.factualminds.com/blog/devops-exercises-aws-production-reality/)
-- [AWS environment parity — dev / staging / production](https://www.factualminds.com/blog/aws-environment-parity-dev-staging-production/)
-- [Cost-aware CI/CD pipelines on AWS](https://www.factualminds.com/blog/cost-aware-cicd-pipelines-aws/)
-- [Debug production distributed AWS systems](https://www.factualminds.com/blog/debug-production-distributed-aws-systems/)
 
 ### Local Dev / Emulators
 
@@ -1138,7 +914,6 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 - [ministackorg/ministack](https://github.com/ministackorg/ministack) — MIT local AWS emulator; 40+ services; Terraform and SDK compatible
 - [floci-io/floci](https://github.com/floci-io/floci) — MIT local AWS emulator; Docker Compose; broad AWS API coverage
 - [getmoto/moto](#oss-lambda-frameworks-community) — mock AWS services for Python tests (boto3 stub library)
-- [AWS CLI chmod /dev/null streaming bug](https://www.factualminds.com/blog/aws-cli-chmod-dev-null-streaming-bug-2026/) — gotcha alert
 
 ### CLI & Productivity OSS
 
@@ -1163,9 +938,6 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 ### Asset Pipelines / Runtimes
 
-- [Tune PHP / Node / Python / Go for high concurrency](https://www.factualminds.com/blog/tune-php-node-python-go-high-concurrency/)
-- [Ultra-fast asset pipelines — Bun + Vite + Rust](https://www.factualminds.com/blog/ultra-fast-asset-pipelines-bun-vite-rust/)
-- [Nginx vs FrankenPHP — modern runtimes comparison](https://www.factualminds.com/blog/nginx-frankenphp-modern-runtimes-comparison/)
 
 ---
 
@@ -1180,10 +952,6 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 - [CloudWatch Application Signals](https://aws.amazon.com/cloudwatch/features/application-observability-apm/) — auto-instrumented APM with SLO tracking
 - [CloudWatch Logs Insights](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html) — query language for log analytics
 
-**Production Guides:**
-- [CloudWatch observability — EMF metrics, Logs Insights queries, composite alarms, and metric streams](https://www.factualminds.com/blog/aws-cloudwatch-observability-metrics-logs-alarms-best-practices/)
-- [CloudWatch logging costs](https://www.factualminds.com/blog/aws-cloudwatch-logging-costs-observability/)
-- [Amazon CloudWatch — glossary entry](https://www.factualminds.com/glossary/amazon-cloudwatch/)
 
 ### AWS X-Ray
 
@@ -1196,8 +964,6 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 - [ADOT Documentation](https://aws-otel.github.io/docs/introduction/)
 - [ADOT Lambda layer](https://aws-otel.github.io/docs/getting-started/lambda/) — auto-instrumentation for Lambda
 
-**Production Guides:**
-- [OpenTelemetry demo game — AWS observability + chaos engineering](https://www.factualminds.com/blog/otel-demo-game-aws-observability-chaos-engineering/)
 
 ### Amazon Managed Service for Prometheus / Grafana
 
@@ -1205,8 +971,6 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 ### Operational Monitoring
 
-- [The real cost of no 24/7 AWS monitoring](https://www.factualminds.com/blog/real-cost-of-no-24-7-aws-monitoring/)
-- [AWS 24/7 managed support + monitoring](https://www.factualminds.com/blog/aws-24-7-managed-support-monitoring/)
 
 ### Log Pipelines
 
@@ -1216,7 +980,6 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 ### Third-party
 
-- [Datadog on AWS — integration](https://www.factualminds.com/integrations/datadog-aws/)
 - [Honeycomb Blog](https://www.honeycomb.io/blog) — distributed systems observability engineering posts
 - [Datadog Engineering — Kubernetes topic](https://www.datadoghq.com/blog/topic/kubernetes/) — Kubernetes reliability and operations articles
 - [Lumigo Blog](https://lumigo.io/blog/) — serverless observability and Lambda troubleshooting articles
@@ -1227,7 +990,7 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 > 🎯 **Hunting a surprise bill?** See the [Cost pitfalls playbook](use-cases/cost-pitfalls.md) — NAT Gateway egress, cross-AZ traffic, CloudWatch Logs ingestion, and the other line items that surprise teams.
 >
-> For a quarterly optimization cadence, see the [Cost pitfalls playbook](use-cases/cost-pitfalls.md#quarterly-optimization-cadence) and the [FinOps governance playbook](use-cases/finops-governance.md). For FinOps SaaS rollout, see [FinOps platform selection hub](https://www.factualminds.com/blog/aws-finops-tool-implementation/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=cost-management-finops).
+> For a quarterly optimization cadence, see the [Cost pitfalls playbook](use-cases/cost-pitfalls.md#quarterly-optimization-cadence) and the [FinOps governance playbook](use-cases/finops-governance.md). For FinOps SaaS rollout, see [AWS cost optimization services](https://www.factualminds.com/services/aws-cloud-cost-optimization-services/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=cost-management-finops).
 
 ### Analysis & visibility
 
@@ -1241,10 +1004,6 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 - [AWS Trusted Advisor](https://aws.amazon.com/premiumsupport/technology/trusted-advisor/)
 - [AWS Customer Carbon Footprint Tool](https://aws.amazon.com/sustainability/tools/console/) — estimated emissions by service and region
 
-**Production Guides:**
-- [Cost Explorer + Budgets monitoring guide](https://www.factualminds.com/blog/aws-cost-explorer-budgets-monitoring-guide/)
-- [Cost Optimization Hub guide](https://www.factualminds.com/blog/aws-cost-optimization-hub-guide/)
-
 **OSS Tools:**
 - [Cloud Intelligence Dashboards](https://github.com/aws-solutions-library-samples/cloud-intelligence-dashboards-framework) — CUR analytics dashboards (CUDOS, Cost Intelligence, KPI)
 - [Komiser](https://github.com/mlabouardy/komiser) — multi-cloud cost and resource viewer
@@ -1255,12 +1014,10 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 - [nOps](https://www.nops.io/) — AWS cost optimization, Savings Plans, RI management, EKS optimization
 - [CloudZero](https://www.cloudzero.com/) — cost intelligence for engineering teams
 - [Vantage](https://www.vantage.sh/) — AWS/GCP/Azure cost management
-- [Vantage alternative for AWS teams past the free tier](https://www.factualminds.com/compare/vantage-alternative-aws-implementation/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=finops-platforms) — visibility vs implementation next steps
 - [Finout](https://www.finout.io/) — cost allocation and FinOps analytics
 - [ProsperOps](https://www.prosperops.com/) — automated Savings Plans optimization
 - [Kubecost](https://www.kubecost.com/) — Kubernetes cost optimization
 - [CloudBurn](https://cloudburn.io/) — open-source AWS cost policy engine for IaC and live scanning
-- [FinOps platform selection hub](https://www.factualminds.com/blog/aws-finops-tool-implementation/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=finops-platforms) — production rollout for cost visibility platforms
 - [FinOps governance playbook](use-cases/finops-governance.md) — tagging, CUR, allocation, and quarterly optimization cadence
 
 ### Rightsizing
@@ -1269,10 +1026,6 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 - [AWS Compute Optimizer](https://aws.amazon.com/compute-optimizer/)
 - [Compute Optimizer user guide](https://docs.aws.amazon.com/compute-optimizer/latest/ug/) — EC2 rightsizing and cross-architecture Graviton migration recommendations
 - [Operating Lambda — performance optimization (Compute Blog)](https://aws.amazon.com/blogs/compute/operating-lambda-performance-optimization-part-2/) — memory and cost trade-offs
-
-**Production Guides:**
-- [5 cost optimization strategies most teams overlook](https://www.factualminds.com/blog/5-aws-cost-optimization-strategies-most-teams-overlook/)
-- [EC2 M9g and M9gd Graviton5 GA migration field guide](https://www.factualminds.com/blog/ec2-m9g-m9gd-graviton5-ga-2026/) — canary checklist before Graviton5 rollout
 
 **OSS Tools:**
 - [alexcasalboni/aws-lambda-power-tuning](https://github.com/alexcasalboni/aws-lambda-power-tuning) — Step Functions tool to find optimal Lambda memory
@@ -1286,9 +1039,6 @@ See also: [AWS Graviton](#aws-graviton--arm-based-processors) · [Cost pitfalls 
 - [Savings Plans recommendations](https://docs.aws.amazon.com/savingsplans/latest/userguide/sp-recommendations.html)
 - [Reserved Instance recommendations in Cost Explorer](https://docs.aws.amazon.com/cost-management/latest/userguide/ri-recommendations.html)
 
-**Production Guides:**
-- [ProsperOps on AWS](https://www.factualminds.com/blog/prosperops-aws-savings-plans/)
-- [AWS Savings Plans — glossary](https://www.factualminds.com/glossary/aws-savings-plans/)
 
 See also: [Cost pitfalls — reserved capacity and Savings Plans](use-cases/cost-pitfalls.md#reserved-capacity-and-savings-plans)
 
@@ -1322,9 +1072,6 @@ See also: [Cost pitfalls — EBS gp2 vs gp3](use-cases/cost-pitfalls.md#ebs-gp2-
 
 **Production Guides:**
 - [NAT Gateway billing — idle cost alternatives](#nat-gateway) — bill teardown
-- [NAT Gateway cost implementation guide](https://www.factualminds.com/blog/nat-gateway-cost-implementation-aws/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=network-cost) — VPC endpoints and Terraform rollout
-- [AWS data transfer costs for startups](https://www.factualminds.com/blog/aws-data-transfer-costs-startups/)
-- [Multi-region AWS without doubling costs](https://www.factualminds.com/blog/multi-region-aws-without-doubling-costs/)
 
 See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway) · [Cross-AZ data transfer](use-cases/cost-pitfalls.md#cross-az-data-transfer) · [Egress to internet](use-cases/cost-pitfalls.md#egress-to-internet)
 
@@ -1337,7 +1084,6 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 **Production Guides:**
 - [Deploy EKS with Karpenter for cost-optimized autoscaling](#amazon-eks--elastic-kubernetes-service)
 - [Karpenter vs Cluster Autoscaler — EKS cost optimization](#amazon-eks--elastic-kubernetes-service)
-- [Kubecost on EKS — cost visibility to savings](https://www.factualminds.com/blog/kubecost-eks-optimization/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=container-cost) — allocation plus architecture fixes on EKS
 
 **Kubernetes cost & ops (vendor blogs):**
 - [Cast AI Blog](#amazon-eks--elastic-kubernetes-service) — Kubernetes cost optimization guidance
@@ -1353,8 +1099,6 @@ See also: [Spot & interruptible compute](#spot--interruptible-compute) · [Farga
 
 **Production Guides:**
 - [Lambda cost optimization — pay-per-request vs provisioned](#aws-lambda)
-- [Eliminate surprise bills with autoscaling](https://www.factualminds.com/blog/aws-eliminate-surprise-bills-autoscaling/)
-- [Prevent queue cost explosions on AWS](https://www.factualminds.com/blog/prevent-queue-cost-explosions-aws/)
 
 See also: [Rightsizing](#rightsizing) · [Cost pitfalls — Lambda over-provisioned memory](use-cases/cost-pitfalls.md#lambda-over-provisioned-memory)
 
@@ -1365,9 +1109,6 @@ See also: [Rightsizing](#rightsizing) · [Cost pitfalls — Lambda over-provisio
 - [Tag policies (Organizations)](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html)
 - [Split cost allocation data](https://docs.aws.amazon.com/cur/latest/userguide/split-cost-allocation-data.html) — per-pod cost for shared EKS or ECS
 
-**Production Guides:**
-- [FinOps tools vs AWS cost consulting](https://www.factualminds.com/compare/finops-tools-vs-aws-cost-consulting/)
-- [AWS FinOps gap — engineering cost ownership](https://www.factualminds.com/blog/aws-finops-gap-engineering-cost-ownership/)
 
 See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tenant-saas.md) · [FinOps Foundation](#finops-community)
 
@@ -1379,32 +1120,18 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 - [AWS Cost Anomaly Detection](https://aws.amazon.com/aws-cost-management/aws-cost-anomaly-detection/)
 - [Cost Anomaly Detection user guide](https://docs.aws.amazon.com/cost-management/latest/userguide/manage-ad.html)
 
-**Production Guides:**
-- [Use Cost Anomaly Detection to catch surprise bills](https://www.factualminds.com/blog/how-to-use-aws-cost-anomaly-detection-catch-surprise-bills/)
 
 ### Strategy & playbooks
 
-- [Cloud cost optimization — modern strategies](https://www.factualminds.com/blog/cloud-cost-optimization-2026-modern-strategies/)
-- [AWS cost prediction playbook](https://www.factualminds.com/blog/aws-cost-prediction-2026-playbook/)
-- [AWS cost control architecture optimization playbook](https://www.factualminds.com/blog/aws-cost-control-architecture-optimization-playbook/)
-- [Designing cost-stable AWS architectures](https://www.factualminds.com/blog/aws-cost-stable-architecture-design/)
-- [AWS pricing emergent behavior — billing complexity](https://www.factualminds.com/blog/aws-pricing-emergent-behavior-billing-complexity/)
-- [Cost-optimized SaaS stack on AWS — end to end](https://www.factualminds.com/blog/cost-optimized-saas-stack-aws-end-to-end/)
-- [AWS managed services vs DIY — total cost of ownership](https://www.factualminds.com/blog/aws-managed-services-vs-diy-total-cost-of-ownership/)
 
 ### FinOps community
 
-- [FinOps — glossary entry](https://www.factualminds.com/glossary/finops/)
 - [FinOps Foundation](https://www.finops.org/) — global community
 - [FinOps Foundation Insights](https://www.finops.org/insights/) — foundation articles on cloud financial operations
 
 ### Bill teardowns (real customer incidents)
 
-- [Bill teardown #1 — SaaS startup with $40k/mo overrun](https://www.factualminds.com/blog/aws-bill-teardown-1-saas-startup-40k-month-overrun/)
 - [Bill teardown #2 — healthcare's NAT Gateway problem](#nat-gateway)
-- [Bill teardown #3 — retail's data transfer trap](https://www.factualminds.com/blog/aws-bill-teardown-3-retail-data-transfer-trap/)
-- [AWS startup cost explosion — real failure patterns](https://www.factualminds.com/blog/aws-startup-cost-explosion-real-failure-patterns/)
-- [SaaS cost optimization — case study ($85k → $58k/mo)](https://www.factualminds.com/case-study/saas-cost-optimization-30-percent-reduction/)
 
 **OSS cost tools:**
 - [Infracost](https://www.infracost.io/) — Terraform cost diff in PRs
@@ -1419,7 +1146,6 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 
 - [AWS Migration Hub](https://aws.amazon.com/transform/)
 - [Migration Acceleration Program (MAP)](https://aws.amazon.com/migration-acceleration-program/)
-- [MAP for SMBs — guide](https://www.factualminds.com/blog/aws-migration-acceleration-program-map-smb-guide/)
 
 ### AWS Application Migration Service (MGN) & DMS
 
@@ -1428,16 +1154,9 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 
 ### Migration Strategy
 
-- [AWS migration strategy — choose the right approach](https://www.factualminds.com/blog/aws-migration-strategy-choose-right-approach/)
-- [Application modernization — refactor / replatform / rearchitect](https://www.factualminds.com/blog/aws-application-modernization-refactor-replatform-rearchitect/)
-- [Application modernization ROI + business case](https://www.factualminds.com/blog/aws-application-modernization-roi-business-case/)
-- [Migrate without cost surprises](https://www.factualminds.com/blog/aws-migration-without-cost-surprises/)
-- [7 signs you need a migration partner](https://www.factualminds.com/blog/7-signs-you-need-an-aws-cloud-migration-partner/)
-- [Cloud migration estimator tool](https://www.factualminds.com/tools/cloud-migration-estimator/)
 
 ### Disaster Recovery
 
-- [DR strategies — pilot light / warm standby / multi-site](https://www.factualminds.com/blog/aws-disaster-recovery-strategies-pilot-light-warm-standby-multi-site/)
 
 ### VMware → AWS
 
@@ -1453,27 +1172,18 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 - [IoT Core Documentation](https://docs.aws.amazon.com/iot/)
 - [AWS IoT Blog](https://aws.amazon.com/blogs/iot/) — device connectivity, Greengrass, and industrial IoT posts
 
-**Production Guides:**
-- [IoT Core MQTT for industrial workloads](https://www.factualminds.com/blog/aws-iot-core-mqtt-industrial-workloads/)
-- [IoT solutions architecture guide](https://www.factualminds.com/blog/aws-iot-solutions-architecture-guide/)
 
 ### AWS IoT Greengrass
 
-- [Greengrass v2 — edge computing for the factory floor](https://www.factualminds.com/blog/aws-iot-greengrass-v2-edge-computing-factory-floor/)
 
 ### AWS IoT SiteWise
 
-- [SiteWise native anomaly detection — predictive maintenance](https://www.factualminds.com/blog/aws-iot-sitewise-native-anomaly-detection-predictive-maintenance/)
-- [OPC UA → IoT SiteWise edge gateway setup](https://www.factualminds.com/blog/opc-ua-aws-iot-sitewise-edge-gateway-setup/)
 
 ### AWS IoT TwinMaker
 
-- [TwinMaker — digital twin for manufacturing](https://www.factualminds.com/blog/aws-iot-twinmaker-digital-twin-manufacturing/)
 
 ### Architecture
 
-- [OT/IT convergence — AWS architecture patterns](https://www.factualminds.com/blog/ot-it-convergence-aws-architecture-patterns/)
-- [Manufacturing IoT predictive maintenance — case study](https://www.factualminds.com/case-study/manufacturing-iot-predictive-maintenance-aws/)
 
 ---
 
@@ -1487,9 +1197,6 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 - [SQS Documentation](https://docs.aws.amazon.com/sqs/)
 - [Application Integration category (AWS News Blog)](https://aws.amazon.com/blogs/aws/category/application-integration/) — EventBridge, Step Functions, and messaging launches
 
-**Production Guides:**
-- [SQS reliable messaging patterns for production](https://www.factualminds.com/blog/aws-sqs-reliable-messaging-patterns-for-production/)
-- [Reliable queue systems on AWS — SQS, Kafka, Redis](https://www.factualminds.com/blog/reliable-queue-systems-aws-sqs-kafka-redis/)
 
 ### Amazon SNS
 
@@ -1516,18 +1223,9 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 > 🎯 **Building transactional email at scale?** Start with the [Email delivery playbook](use-cases/email-delivery.md) — full architecture (SES → SNS → Firehose → S3 → Athena), bounce/complaint handling, IP warming, cost model, and 18-item production checklist.
 
 - [SES Documentation](https://docs.aws.amazon.com/ses/)
-- [SES e-commerce email marketing](https://www.factualminds.com/blog/aws-ses-ecommerce-email-marketing/)
-- [Migrate from SendGrid to SES](https://www.factualminds.com/blog/how-to-migrate-from-sendgrid-to-amazon-ses/)
-- [SES at scale — case study (200M+ messages/mo)](https://www.factualminds.com/case-study/aws-ses/)
 
 ### SES Migrations from Competitors
 
-- [SendGrid → SES](https://www.factualminds.com/compare/sendgrid-to-aws-ses/)
-- [Mailgun → SES](https://www.factualminds.com/compare/mailgun-to-aws-ses/)
-- [Postmark → SES](https://www.factualminds.com/compare/postmark-to-aws-ses/)
-- [Resend → SES](https://www.factualminds.com/compare/resend-to-aws-ses/)
-- [SparkPost → SES](https://www.factualminds.com/compare/sparkpost-to-aws-ses/)
-- [Elastic Email → SES](https://www.factualminds.com/compare/elastic-email-to-aws-ses/)
 
 ---
 
@@ -1536,15 +1234,10 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 ### AWS Organizations
 
 - [AWS Organizations](https://aws.amazon.com/organizations/)
-- [Organizations + SCPs — glossary](https://www.factualminds.com/glossary/aws-organizations-scps/)
 
 ### AWS Control Tower & Landing Zone
 
 - [Control Tower](https://aws.amazon.com/controltower/)
-- [Set up Control Tower for multi-account governance](https://www.factualminds.com/blog/how-to-set-up-aws-control-tower-multi-account-governance/)
-- [Multi-account landing zone — Control Tower, OUs, SCPs, and Identity Center setup](https://www.factualminds.com/blog/aws-multi-account-strategy-landing-zone-best-practices/)
-- [AWS Control Tower — glossary](https://www.factualminds.com/glossary/aws-control-tower/)
-- [AWS Landing Zone — glossary](https://www.factualminds.com/glossary/aws-landing-zone/)
 
 **Third-party narratives:**
 - [Monzo Bank (AWS customer story)](https://aws.amazon.com/solutions/case-studies/) — digital bank on AWS; scale and account-boundary themes
@@ -1556,7 +1249,6 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 ### AWS Config
 
 - [AWS Config](https://aws.amazon.com/config/) — resource inventory + compliance
-- [AWS Config Rules — glossary](https://www.factualminds.com/glossary/aws-config-rules/)
 
 ### Service Limits, Quotas & Throttling
 
@@ -1574,22 +1266,13 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 ### AWS Support & MSP
 
 - [AWS Support Plans](https://aws.amazon.com/premiumsupport/plans/)
-- [AWS managed services vs Support plans — difference](https://www.factualminds.com/blog/aws-managed-services-vs-aws-support-plans-difference/)
-- [What does an AWS MSP actually do](https://www.factualminds.com/blog/what-does-aws-msp-actually-do/)
-- [When do you need an AWS MSP](https://www.factualminds.com/blog/when-do-you-need-aws-managed-services-provider/)
-- [How to evaluate an AWS MSP](https://www.factualminds.com/blog/how-to-evaluate-aws-managed-services-provider/)
 
 ### Hiring an AWS Consultant
 
-- [How to choose an AWS cloud consulting partner](https://www.factualminds.com/blog/aws-cloud-consulting-partner-how-to-choose/)
-- [Benefits of hiring a certified AWS consultant](https://www.factualminds.com/blog/benefits-of-hiring-certified-aws-consultant/)
-- [What to look for when hiring an AWS consultant](https://www.factualminds.com/blog/hire-aws-consultant-what-to-look-for/)
-- [When to hire an AWS consultant — business triggers](https://www.factualminds.com/blog/when-to-hire-aws-consultant-business-triggers/)
 
 ### AWS Partner Network
 
 - [AWS Partner Network (APN)](https://aws.amazon.com/partners/)
-- [AWS Retail Competency — what it means for your business](https://www.factualminds.com/blog/aws-retail-competency-what-it-means-for-your-business/)
 
 ---
 
@@ -1603,9 +1286,6 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 - [Reliability Pillar (official whitepaper)](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/) — failure isolation, recovery, multi-AZ
 - [Cost Optimization Pillar (official whitepaper)](https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/) — practices for spend efficiency
 - [WAF 6 pillars explained](#foundations)
-- [Well-Architected Framework — glossary](https://www.factualminds.com/glossary/well-architected-framework/)
-- [AWS Well-Architected Review service](https://www.factualminds.com/services/aws-architecture-review/)
-- [Free Well-Architected self-assessment tool](https://www.factualminds.com/tools/aws-well-architected-assessment/)
 
 ---
 
@@ -1615,51 +1295,37 @@ End-to-end reference architectures for verticals.
 
 ### SaaS
 
-- [SaaS multi-tenancy on AWS — silo vs pool vs bridge](https://www.factualminds.com/blog/saas-multi-tenancy-on-aws-silo-vs-pool-vs-bridge-model/)
-- [Multi-tenant SaaS on AWS — architecture pattern](https://www.factualminds.com/patterns/multi-tenant-saas-on-aws/)
-- [SaaS industry hub](https://www.factualminds.com/industries/saas/)
 - [How UNiDAYS achieved AWS Region expansion in three weeks](https://aws.amazon.com/blogs/architecture/how-unidays-achieved-aws-region-expansion-in-3-weeks/) — multi-Region SaaS rollout case study
 
 ### Startups
 
-- [AWS for Startups industry hub](https://www.factualminds.com/industries/aws-startups/)
 
 ### Fintech
 
-- [Fintech architecture patterns on AWS](https://www.factualminds.com/blog/building-fintech-applications-on-aws-architecture-patterns/)
-- [Fintech industry hub](https://www.factualminds.com/industries/aws-fintech/)
 - [BFS health finance transformation on AWS — PCG DACH (Medium)](https://pcg-dach.medium.com/bfs-health-finance-a-journey-of-transformation-into-the-aws-cloud-11c44aa2af8b) — regulated workload migration with ECS and IaC themes
 
 ### Healthcare
 
-- [Healthcare industry hub](https://www.factualminds.com/industries/aws-healthcare/)
 - [How Artera enhances prostate cancer diagnostics using AWS](https://aws.amazon.com/blogs/architecture/how-artera-enhances-prostate-cancer-diagnostics-using-aws/) — imaging diagnostics workload architecture
 
 ### Retail & eCommerce
 
-- [AWS for retail — POS, inventory, recommendations, and peak-event scaling](https://www.factualminds.com/blog/aws-for-retail-complete-guide/)
-- [Retail architecture for Black Friday peak traffic](https://www.factualminds.com/blog/aws-retail-architecture-black-friday-peak-traffic/)
-- [Custom AWS development for retail / eCommerce](https://www.factualminds.com/blog/custom-aws-development-retail-ecommerce/)
-- [Retail & eCommerce industry hub](https://www.factualminds.com/industries/aws-retail-ecommerce/)
 
 ### Manufacturing & Industrial IoT
 
-- [Manufacturing industry hub](https://www.factualminds.com/industries/aws-manufacturing/)
 - [AI on AWS for predictive maintenance — case study (Medium)](https://medium.com/@andreas.braun.2011/ai-on-aws-architecture-interface-and-resilience-a-case-study-on-leveraging-cloud-computing-in-47cdeba62e20) — industrial AI architecture, interfaces, and resilience framing on AWS
 
 ### Education / EdTech
 
-- [Education industry hub](https://www.factualminds.com/industries/aws-education/)
 
 ### Real Estate / PropTech
 
-- [Real Estate industry hub](https://www.factualminds.com/industries/aws-real-estate/)
 
 ---
 
 ## Decision Guides — X vs Y
 
-When you know what you need but not which AWS service to use:
+When you know what you need but not which AWS service to use. For interactive decision trees and compare pages, see [FactualMinds decide hub](https://www.factualminds.com/decide/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=decision-guides).
 
 ### Compute
 
@@ -1709,22 +1375,15 @@ When you know what you need but not which AWS service to use:
 
 ### Cloud Platform
 
-- [AWS vs Azure for enterprise](https://www.factualminds.com/compare/aws-vs-azure-for-enterprise/)
-- [AWS vs GCP for startups](https://www.factualminds.com/compare/aws-vs-gcp-for-startups/)
 
 ### Consulting Partner Comparisons
 
-- [FactualMinds vs Big 4 AWS](https://www.factualminds.com/compare/factualminds-vs-big4-aws/)
-- [FactualMinds vs Cloudreach](https://www.factualminds.com/compare/factualminds-vs-cloudreach/)
-- [FactualMinds vs Slalom](https://www.factualminds.com/compare/factualminds-vs-slalom/)
 
 ---
 
 ## Migration Guides — From Other Platforms
 
-- [DigitalOcean → AWS](https://www.factualminds.com/compare/digitalocean-to-aws/)
 - [Heroku Postgres → AWS RDS](#decision-guides)
-- [GCP → AWS migration](https://www.factualminds.com/compare/gcp-to-aws-migration/)
 - [MongoDB Atlas → DocumentDB](#amazon-documentdb)
 - [SendGrid → SES](#ses-migrations-from-competitors)
 - [Mailgun → SES](#ses-migrations-from-competitors)
@@ -1801,17 +1460,7 @@ Free, no-signup AWS planning calculators and assessments:
 
 ### Cost & Pricing
 
-- [AWS Cost Savings Calculator](https://www.factualminds.com/tools/aws-cost-savings-calculator/)
-- [AWS Cost Waste Quiz](https://www.factualminds.com/tools/aws-cost-waste-quiz/)
-- [AWS Feature Cost Estimator](https://www.factualminds.com/tools/aws-feature-cost-estimator/)
-- [AWS Free Tier Calculator](https://www.factualminds.com/tools/aws-free-tier-calculator/)
-- [AWS IOPS Cost Calculator](https://www.factualminds.com/tools/aws-iops-cost-calculator/)
 - [AWS Lambda vs Container Cost Calculator](#aws-lambda)
-- [AWS Reserved Instance Calculator](https://www.factualminds.com/tools/aws-reserved-instance-calculator/)
-- [AWS Savings Plans Calculator](https://www.factualminds.com/tools/aws-savings-plans-calculator/)
-- [AWS Scaling Cost Simulator](https://www.factualminds.com/tools/aws-scaling-cost-simulator/)
-- [AWS Tenancy Cost Calculator](https://www.factualminds.com/tools/aws-tenancy-cost-calculator/)
-- [AWS Unit Economics Calculator](https://www.factualminds.com/tools/aws-unit-economics-calculator/)
 - [AWS RDS Max Connection Calculator](#amazon-rds-relational-database-service)
 - [AWS Bedrock Token Cost Calculator](#cost-control-for-ai)
 
@@ -1819,7 +1468,6 @@ Free, no-signup AWS planning calculators and assessments:
 
 - [Cloud Migration Estimator](#migration-strategy)
 - [AWS Well-Architected Assessment](#well-architected-framework)
-- [GenAI Readiness Assessment](https://www.factualminds.com/tools/genai-readiness-assessment/)
 - [HIPAA Compliance Checker](#hipaa)
 
 ### Official AWS Tools
@@ -1856,7 +1504,6 @@ Plain-language definitions of common AWS terms:
 - [AWS Step Functions](#aws-step-functions)
 - [FinOps](#finops-community)
 - [HIPAA-eligible AWS services](#hipaa)
-- [Multi-tenant architecture](https://www.factualminds.com/glossary/multi-tenant-architecture/)
 - [PCI DSS Cardholder Data Environment](#pci-dss)
 - [RAG pipeline](#amazon-bedrock)
 - [Reserved Instances vs Savings Plans](#savings-plans-reserved-instances)
@@ -1878,8 +1525,6 @@ Plain-language definitions of common AWS terms:
 
 ### Cert Deep Dives
 
-- [AWS Solutions Architect — Associate](https://www.factualminds.com/certifications/aws-solutions-architect-associate/)
-- [AWS Security — Specialty](https://www.factualminds.com/certifications/aws-security-specialty/)
 
 ---
 
@@ -2234,13 +1879,8 @@ Common SaaS / OSS integrations on AWS:
 
 - [Datadog on AWS](#third-party)
 - [GitHub Actions on AWS](#github-actions-on-aws)
-- [HashiCorp Vault on AWS](https://www.factualminds.com/integrations/hashicorp-vault-aws/)
 - [Kubernetes on AWS EKS](#decision)
-- [MongoDB on AWS](https://www.factualminds.com/integrations/mongodb-aws/)
-- [Okta on AWS](https://www.factualminds.com/integrations/okta-aws/)
-- [Salesforce on AWS](https://www.factualminds.com/integrations/salesforce-aws/)
 - [Snowflake on AWS](#data-pipelines-lakes)
-- [Stripe on AWS](https://www.factualminds.com/integrations/stripe-aws/)
 - [Terraform on AWS](#terraform-on-aws)
 
 ---
@@ -2253,7 +1893,6 @@ Common SaaS / OSS integrations on AWS:
 - [The Cloud Pod](https://www.thecloudpod.tv/) — multi-cloud podcast
 - [AWS What's New RSS](https://aws.amazon.com/about-aws/whats-new/recent/feed/)
 - [AWS Blog](https://aws.amazon.com/blogs/aws/)
-- [FactualMinds Blog](https://www.factualminds.com/blog/) — production AWS guides
 
 ### Books
 

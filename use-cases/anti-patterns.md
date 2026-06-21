@@ -58,7 +58,6 @@
 
 **Why it bites:** they're not the same shape. DynamoDB enforces access-pattern thinking; RDS enforces schema thinking. Migrating either direction is a rewrite, not a swap.
 
-**Better:** pick once with eyes open. [DynamoDB vs RDS](https://www.factualminds.com/compare/dynamodb-vs-rds/).
 
 ### RDS without RDS Proxy and a connection pool plan
 
@@ -178,7 +177,6 @@
 
 **Why it bites:** runaway resource (NAT Gateway loop, Lambda recursion, DDoS) can rack up four-figure bills in hours.
 
-**Better:** AWS Budgets with alerts at 50%, 80%, 100% of expected spend. CloudWatch Anomaly Detection on cost. Per-service alarms for the top spenders. **Reference:** [Protect AWS infrastructure from cost-based attacks](https://www.factualminds.com/blog/protect-aws-infrastructure-cost-based-attacks/).
 
 ---
 

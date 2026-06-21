@@ -29,37 +29,37 @@ This playbook is the AWS-native version of that pattern — schemas, routing, ar
 ## 3. Reference architecture
 
 ```
-┌────────────┐   PutEvents   ┌─────────────────────────────┐
-│ Producer A │──────────────▶│        EventBridge          │
-│ (order     │               │   custom event bus          │
-│  service)  │               │                             │
-└────────────┘               │  ┌──────────────────────┐   │
-                             │  │  Schema Registry     │   │
-                             │  │  (versioned)         │   │
-                             │  └──────────────────────┘   │
-                             │                             │
-                             │  ┌──────────────────────┐   │
-                             │  │  Archive             │   │
-                             │  │  (replay window)     │   │
-                             │  └──────────────────────┘   │
-                             │                             │
-                             │  ┌──────────────────────┐   │
-                             │  │  Rules               │   │
-                             │  │  (pattern → target)  │   │
-                             │  └─────────┬────────────┘   │
-                             └────────────┼────────────────┘
-                                          │
-              ┌───────────────────────────┼───────────────────────────┐
-              │                           │                           │
-              ▼                           ▼                           ▼
-       ┌──────────────┐           ┌──────────────┐           ┌──────────────┐
-       │   SQS queue  │           │   Lambda     │           │  HTTP target │
-       │      ↓       │           │  (subscriber │           │ (API dest.   │
-       │   Subscriber │           │   B)         │           │  signed,     │
-       │   ECS / Lambda│           │              │           │  retry)      │
-       │      ↓       │           │      ↓       │           │      ↓       │
-       │     DLQ      │           │     DLQ      │           │     DLQ      │
-       └──────────────┘           └──────────────┘           └──────────────┘
+┌────────────┐ PutEvents ┌─────────────────────────────┐
+│ Producer A │──────────────▶│ EventBridge │
+│ (order │ │ custom event bus │
+│ service) │ │ │
+└────────────┘ │ ┌──────────────────────┐ │
+ │ │ Schema Registry │ │
+ │ │ (versioned) │ │
+ │ └──────────────────────┘ │
+ │ │
+ │ ┌──────────────────────┐ │
+ │ │ Archive │ │
+ │ │ (replay window) │ │
+ │ └──────────────────────┘ │
+ │ │
+ │ ┌──────────────────────┐ │
+ │ │ Rules │ │
+ │ │ (pattern → target) │ │
+ │ └─────────┬────────────┘ │
+ └────────────┼────────────────┘
+ │
+ ┌───────────────────────────┼───────────────────────────┐
+ │ │ │
+ ▼ ▼ ▼
+ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐
+ │ SQS queue │ │ Lambda │ │ HTTP target │
+ │ ↓ │ │ (subscriber │ │ (API dest. │
+ │ Subscriber │ │ B) │ │ signed, │
+ │ ECS / Lambda│ │ │ │ retry) │
+ │ ↓ │ │ ↓ │ │ ↓ │
+ │ DLQ │ │ DLQ │ │ DLQ │
+ └──────────────┘ └──────────────┘ └──────────────┘
 ```
 
 1. **Producer** — emits to a custom event bus via `PutEvents` (10 events per call max). Schema registry enforces structure.

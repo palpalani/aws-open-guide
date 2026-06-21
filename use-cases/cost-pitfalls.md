@@ -53,7 +53,6 @@ Run visibility (Cost Explorer, anomalies), waste (idle resources), rightsizing (
 - Workloads in AZ-a using the regional NAT ENI in AZ-b still pay [cross-AZ data transfer](#cross-az-data-transfer) on top of NAT processing
 - Endpoint coverage still matters: regional NAT does not stop S3/ECR/Secrets Manager traffic from incurring NAT data-processing fees
 
-**Reference:** [VPC pricing](https://aws.amazon.com/vpc/pricing/) · [NAT gateway pricing](https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-pricing.html) · [VPC endpoint types](https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html) · [NAT Gateway implementation guide](https://www.factualminds.com/blog/nat-gateway-cost-implementation-aws/?utm_source=aws-open-guide&utm_medium=playbook&utm_campaign=cost-pitfalls) — step-by-step endpoint rollout
 
 ---
 
@@ -268,7 +267,6 @@ Run visibility (Cost Explorer, anomalies), waste (idle resources), rightsizing (
 - For DR-only multi-region (warm standby), don't replicate hot data — replicate config and run minimal warm capacity
 - Consolidate logs in S3 in primary region; replicate **selectively** to DR region
 
-**Reference:** [Multi-region AWS without doubling costs](https://www.factualminds.com/blog/multi-region-aws-without-doubling-costs/)
 
 ---
 
@@ -288,7 +286,6 @@ Run visibility (Cost Explorer, anomalies), waste (idle resources), rightsizing (
 - **Anomaly detection** on per-tenant resource usage
 - AWS WAF rate-limit rules
 
-**Reference:** [Protect AWS infrastructure from cost-based attacks](https://www.factualminds.com/blog/protect-aws-infrastructure-cost-based-attacks/)
 
 ---
 
@@ -312,7 +309,6 @@ Run visibility (Cost Explorer, anomalies), waste (idle resources), rightsizing (
 - Per-tenant token budgets in multi-tenant SaaS
 - Cheaper model for cheaper tasks (Haiku for routing, Sonnet for reasoning, Opus reserved)
 
-**Reference:** [Bedrock pricing](https://aws.amazon.com/bedrock/pricing/) · [Prompt caching (Bedrock User Guide)](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html) · [Multi-tenant GenAI on Bedrock](https://www.factualminds.com/blog/multi-tenant-genai-bedrock/)
 
 ---
 

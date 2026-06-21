@@ -31,50 +31,50 @@ The pattern below is the **lambda architecture** done with AWS-managed services:
 ## 3. Reference architecture
 
 ```
-┌────────────┐   PutRecords   ┌─────────────────────┐
-│  Producer  │───────────────▶│  Kinesis Data       │
-│ (web app,  │                │  Streams            │
-│  mobile,   │                │  (sharded, 24h-365d │
-│  IoT,      │                │   retention)        │
-│  backend)  │                └─────┬───────────┬───┘
-└────────────┘                      │           │
-                                    │           │
-                       hot path     │           │   cold path
-                        ▼           │           │   ▼
-            ┌────────────────────┐  │           │  ┌──────────────────┐
-            │  Lambda or Flink   │◀─┘           └─▶│ Kinesis Firehose │
-            │  (windowed agg,    │                 │  - buffer 60s/5MB│
-            │   filter, alert)   │                 │  - convert to    │
-            └─────────┬──────────┘                 │    Parquet       │
-                      │                            │  - partition by  │
-                      ▼                            │    event_date    │
-            ┌────────────────────┐                 └────────┬─────────┘
-            │   ElastiCache /    │                          │
-            │   DynamoDB         │                          ▼
-            │   (latest counts,  │                 ┌──────────────────┐
-            │    rolling p99)    │                 │       S3         │
-            └─────────┬──────────┘                 │   data lake      │
-                      │                            │   raw/, parquet/ │
-                      ▼                            └────────┬─────────┘
-            ┌────────────────────┐                          │
-            │   Real-time API /  │                          ▼
-            │   WebSocket /      │                 ┌──────────────────┐
-            │   AppSync sub      │                 │   Glue Catalog   │
-            └────────────────────┘                 │   (table schemas)│
-                                                   └────────┬─────────┘
-                                                            │
-                                                            ▼
-                                                   ┌──────────────────┐
-                                                   │     Athena       │
-                                                   │  (ad-hoc SQL)    │
-                                                   └────────┬─────────┘
-                                                            │
-                                                            ▼
-                                                   ┌──────────────────┐
-                                                   │  QuickSight /    │
-                                                   │  Redshift /      │
-                                                   │  Snowflake / BI  │
-                                                   └──────────────────┘
+┌────────────┐ PutRecords ┌─────────────────────┐
+│ Producer │───────────────▶│ Kinesis Data │
+│ (web app, │ │ Streams │
+│ mobile, │ │ (sharded, 24h-365d │
+│ IoT, │ │ retention) │
+│ backend) │ └─────┬───────────┬───┘
+└────────────┘ │ │
+ │ │
+ hot path │ │ cold path
+ ▼ │ │ ▼
+ ┌────────────────────┐ │ │ ┌──────────────────┐
+ │ Lambda or Flink │◀─┘ └─▶│ Kinesis Firehose │
+ │ (windowed agg, │ │ - buffer 60s/5MB│
+ │ filter, alert) │ │ - convert to │
+ └─────────┬──────────┘ │ Parquet │
+ │ │ - partition by │
+ ▼ │ event_date │
+ ┌────────────────────┐ └────────┬─────────┘
+ │ ElastiCache / │ │
+ │ DynamoDB │ ▼
+ │ (latest counts, │ ┌──────────────────┐
+ │ rolling p99) │ │ S3 │
+ └─────────┬──────────┘ │ data lake │
+ │ │ raw/, parquet/ │
+ ▼ └────────┬─────────┘
+ ┌────────────────────┐ │
+ │ Real-time API / │ ▼
+ │ WebSocket / │ ┌──────────────────┐
+ │ AppSync sub │ │ Glue Catalog │
+ └────────────────────┘ │ (table schemas)│
+ └────────┬─────────┘
+ │
+ ▼
+ ┌──────────────────┐
+ │ Athena │
+ │ (ad-hoc SQL) │
+ └────────┬─────────┘
+ │
+ ▼
+ ┌──────────────────┐
+ │ QuickSight / │
+ │ Redshift / │
+ │ Snowflake / BI │
+ └──────────────────┘
 ```
 
 1. **Producer** — every event source writes to one Kinesis Data Stream (`PutRecords` for batched writes; partition key spreads across shards).
@@ -250,8 +250,8 @@ For cross-cutting AWS anti-patterns, see [`anti-patterns.md`](anti-patterns.md).
 **Production guides:**
 - [Real-time pipeline — Kinesis + Lambda + DynamoDB](https://www.factualminds.com/blog/real-time-data-pipeline-kinesis-lambda-dynamodb/) — production walkthrough
 - [Building a data lake on S3 + Glue + Athena](https://www.factualminds.com/blog/building-a-data-lake-on-aws-s3-glue-athena-architecture/) — cold-path deep dive
-- [Build a serverless data pipeline — Glue + Athena](https://www.factualminds.com/blog/how-to-build-serverless-data-pipeline-glue-athena/) — Glue/Athena patterns
-- [Glue 5 + Apache Iceberg — modern ETL](https://www.factualminds.com/blog/aws-glue-5-apache-iceberg-modern-etl/) — Iceberg on AWS
+
+
 
 **Decision guides:**
 - [Which AWS database](https://www.factualminds.com/decide/which-aws-database/) — for query-side store

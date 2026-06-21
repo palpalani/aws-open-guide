@@ -89,6 +89,29 @@ Configure once in **Settings → Branches → Branch protection rules** for `mai
 
 Suggested repository **Topics**: `aws`, `cloud`, `documentation`, `devops`, `serverless` (Settings → General).
 
+## factualminds.com hub pages (CMS — out of repo)
+
+When README/playbook link reduction lands, **reciprocal internal linking on factualminds.com** carries the long-tail SEO the GitHub index no longer repeats. Complete on the CMS (not in this repo); track in the PR description or a linked issue.
+
+**On each hub page below:**
+
+- [ ] Link to the matching [aws-open-guide playbook on GitHub](https://github.com/palpalani/aws-open-guide/tree/main/use-cases) (E-E-A-T reciprocity)
+- [ ] Link to **3–5 child** compare/blog pages that were removed from the README body
+- [ ] Single CTA to [`/aws-cost-audit/`](https://www.factualminds.com/aws-cost-audit/) where relevant
+- [ ] `BreadcrumbList` + `Article` or `WebPage` schema where applicable
+
+| Hub URL | Inbound from aws-open-guide |
+|---------|----------------------------|
+| `/blog/aws-finops-tool-implementation/` | Cost Management & FinOps section *(publish on CMS — currently 404)* |
+| `/blog/prowler-security-hub-aws/` | Security & Identity intro *(publish on CMS — currently 404)* |
+| `/blog/kubecost-eks-optimization/` | Container cost optimization *(publish on CMS — currently 404)* |
+| `/blog/nat-gateway-cost-implementation-aws/` | Network cost *(publish on CMS — currently 404)* |
+| `/decide/` | Decision Guides index |
+| `/compare/finops-tools-vs-aws-cost-consulting/` | FinOps governance playbook |
+| `/compare/prowler-vs-checkov-aws/` | Security baseline playbook |
+| `/services/aws-cloud-cost-optimization-services/` | Footer + finops-governance |
+| `/services/aws-cloud-security/` | Footer + security-baseline |
+
 ---
 
 **Related:** [CONTRIBUTING.md](CONTRIBUTING.md) · [use-cases/_template.md](use-cases/_template.md) · maintainer agent context in local `CLAUDE.md` (gitignored, not link-checked)

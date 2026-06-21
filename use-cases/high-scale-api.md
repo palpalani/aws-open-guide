@@ -27,62 +27,62 @@ This playbook is the architecture for HTTP APIs at scale: edge caching, layered 
 ## 3. Reference architecture
 
 ```
-                          ┌──────────────────────────────────┐
-                          │              Client              │
-                          │   (browser, mobile, server)      │
-                          └────────────────┬─────────────────┘
-                                           │
-                                           ▼
-                          ┌──────────────────────────────────┐
-                          │           Route 53               │
-                          │   (latency-based / failover)     │
-                          └────────────────┬─────────────────┘
-                                           │
-                                           ▼
-                          ┌──────────────────────────────────┐
-                          │           CloudFront             │
-                          │   ┌──────────────────────────┐   │
-                          │   │  WAF (managed rules,     │   │
-                          │   │  rate-based rules,       │   │
-                          │   │  geo, IP reputation)     │   │
-                          │   └──────────────────────────┘   │
-                          │   ┌──────────────────────────┐   │
-                          │   │  Cache (cacheable GETs)  │   │
-                          │   └──────────────────────────┘   │
-                          └────────────────┬─────────────────┘
-                                           │ origin pull
-                                           ▼
-                          ┌──────────────────────────────────┐
-                          │   API Gateway (REST / HTTP)      │
-                          │   - usage plans (per-key limits) │
-                          │   - request validation           │
-                          │   - authoriser (Lambda / Cognito)│
-                          └────────────────┬─────────────────┘
-                                           │
-                                           ▼
-                          ┌──────────────────────────────────┐
-                          │        ALB (if container)        │
-                          │   or direct Lambda integration   │
-                          └────────────────┬─────────────────┘
-                                           │
-              ┌────────────────────────────┼────────────────────────────┐
-              │                            │                            │
-              ▼                            ▼                            ▼
-       ┌──────────────┐            ┌──────────────┐             ┌──────────────┐
-       │   Lambda     │            │ ECS Fargate  │             │  ElastiCache │
-       │  (low-state, │            │  (steady     │             │   (read      │
-       │   bursty)    │            │   traffic)   │             │   cache)     │
-       └──────┬───────┘            └──────┬───────┘             └──────────────┘
-              │                            │
-              └────────────┬───────────────┘
-                           │
-                           ▼
-                   ┌──────────────┐
-                   │   Database   │
-                   │  (DynamoDB,  │
-                   │   Aurora,    │
-                   │   ...)       │
-                   └──────────────┘
+ ┌──────────────────────────────────┐
+ │ Client │
+ │ (browser, mobile, server) │
+ └────────────────┬─────────────────┘
+ │
+ ▼
+ ┌──────────────────────────────────┐
+ │ Route 53 │
+ │ (latency-based / failover) │
+ └────────────────┬─────────────────┘
+ │
+ ▼
+ ┌──────────────────────────────────┐
+ │ CloudFront │
+ │ ┌──────────────────────────┐ │
+ │ │ WAF (managed rules, │ │
+ │ │ rate-based rules, │ │
+ │ │ geo, IP reputation) │ │
+ │ └──────────────────────────┘ │
+ │ ┌──────────────────────────┐ │
+ │ │ Cache (cacheable GETs) │ │
+ │ └──────────────────────────┘ │
+ └────────────────┬─────────────────┘
+ │ origin pull
+ ▼
+ ┌──────────────────────────────────┐
+ │ API Gateway (REST / HTTP) │
+ │ - usage plans (per-key limits) │
+ │ - request validation │
+ │ - authoriser (Lambda / Cognito)│
+ └────────────────┬─────────────────┘
+ │
+ ▼
+ ┌──────────────────────────────────┐
+ │ ALB (if container) │
+ │ or direct Lambda integration │
+ └────────────────┬─────────────────┘
+ │
+ ┌────────────────────────────┼────────────────────────────┐
+ │ │ │
+ ▼ ▼ ▼
+ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐
+ │ Lambda │ │ ECS Fargate │ │ ElastiCache │
+ │ (low-state, │ │ (steady │ │ (read │
+ │ bursty) │ │ traffic) │ │ cache) │
+ └──────┬───────┘ └──────┬───────┘ └──────────────┘
+ │ │
+ └────────────┬───────────────┘
+ │
+ ▼
+ ┌──────────────┐
+ │ Database │
+ │ (DynamoDB, │
+ │ Aurora, │
+ │...) │
+ └──────────────┘
 ```
 
 1. **Route 53** — latency-based routing for multi-region; health checks for failover.
