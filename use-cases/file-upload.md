@@ -27,70 +27,70 @@ The right pattern: client uploads directly to S3 with a short-lived signed URL. 
 ## 3. Reference architecture
 
 ```
-┌────────────┐                          ┌──────────────┐
-│            │   1. POST /uploads       │              │
-│  Browser   │─────────────────────────▶│  API Gateway │
-│            │                          │   + Lambda   │
-│            │   2. {url, fields}       │              │
-│            │◀─────────────────────────│              │
-│            │                          └──────┬───────┘
-│            │                                 │
-│            │                                 │ create
-│            │                                 │ pending
-│            │                                 ▼
-│            │                          ┌──────────────┐
-│            │                          │  DynamoDB    │
-│            │                          │  uploads     │
-│            │                          │  table       │
-│            │                          └──────────────┘
-│            │
-│            │   3. PUT (or multipart)
-│            │      directly to S3
-│            │      with pre-signed
-│            │      URL
-│            ▼
-│      ┌──────────────┐                 ┌──────────────┐
-│      │   S3 bucket  │─────────────────│  S3 Event    │
-│      │   uploads/   │   ObjectCreated │  Notification│
-└──────│   raw/       │                 │   → SQS      │
-       └──────────────┘                 └──────┬───────┘
-              │                                │
-              │                                ▼
-              │                         ┌──────────────┐
-              │                         │  Validator   │
-              │                         │  Lambda      │
-              │                         │ - check MIME │
-              │                         │ - virus scan │
-              │                         │ - update DDB │
-              │                         └──────┬───────┘
-              │                                │
-              │                                ▼
-              │                         ┌──────────────┐
-              │                         │   Workflow   │
-              │                         │  (Step Fns)  │
-              │                         └──────┬───────┘
-              │                                │
-              │           ┌────────────────────┼──────────────────┐
-              ▼           ▼                    ▼                  ▼
-       ┌──────────────┐ ┌─────────┐      ┌──────────┐       ┌──────────┐
-       │ image resize │ │ thumbnail│     │ transcode │      │ extract  │
-       │   (Lambda)   │ │ (Lambda) │     │  (ECS)    │      │ (Textract│
-       │              │ │          │     │           │      │  /Compre-│
-       │              │ │          │     │           │      │   hend)  │
-       └──────┬───────┘ └────┬─────┘     └────┬──────┘      └────┬─────┘
-              │              │                 │                  │
-              └──────────────┴────────┬────────┴──────────────────┘
-                                      ▼
-                              ┌──────────────┐
-                              │  S3 bucket   │
-                              │  processed/  │
-                              └──────────────┘
-                                      │
-                                      ▼
-                              ┌──────────────┐
-                              │  DynamoDB    │
-                              │  status=done │
-                              └──────────────┘
+┌────────────┐ ┌──────────────┐
+│ │ 1. POST /uploads │ │
+│ Browser │─────────────────────────▶│ API Gateway │
+│ │ │ + Lambda │
+│ │ 2. {url, fields} │ │
+│ │◀─────────────────────────│ │
+│ │ └──────┬───────┘
+│ │ │
+│ │ │ create
+│ │ │ pending
+│ │ ▼
+│ │ ┌──────────────┐
+│ │ │ DynamoDB │
+│ │ │ uploads │
+│ │ │ table │
+│ │ └──────────────┘
+│ │
+│ │ 3. PUT (or multipart)
+│ │ directly to S3
+│ │ with pre-signed
+│ │ URL
+│ ▼
+│ ┌──────────────┐ ┌──────────────┐
+│ │ S3 bucket │─────────────────│ S3 Event │
+│ │ uploads/ │ ObjectCreated │ Notification│
+└──────│ raw/ │ │ → SQS │
+ └──────────────┘ └──────┬───────┘
+ │ │
+ │ ▼
+ │ ┌──────────────┐
+ │ │ Validator │
+ │ │ Lambda │
+ │ │ - check MIME │
+ │ │ - virus scan │
+ │ │ - update DDB │
+ │ └──────┬───────┘
+ │ │
+ │ ▼
+ │ ┌──────────────┐
+ │ │ Workflow │
+ │ │ (Step Fns) │
+ │ └──────┬───────┘
+ │ │
+ │ ┌────────────────────┼──────────────────┐
+ ▼ ▼ ▼ ▼
+ ┌──────────────┐ ┌─────────┐ ┌──────────┐ ┌──────────┐
+ │ image resize │ │ thumbnail│ │ transcode │ │ extract │
+ │ (Lambda) │ │ (Lambda) │ │ (ECS) │ │ (Textract│
+ │ │ │ │ │ │ │ /Compre-│
+ │ │ │ │ │ │ │ hend) │
+ └──────┬───────┘ └────┬─────┘ └────┬──────┘ └────┬─────┘
+ │ │ │ │
+ └──────────────┴────────┬────────┴──────────────────┘
+ ▼
+ ┌──────────────┐
+ │ S3 bucket │
+ │ processed/ │
+ └──────────────┘
+ │
+ ▼
+ ┌──────────────┐
+ │ DynamoDB │
+ │ status=done │
+ └──────────────┘
 ```
 
 1. **Client requests upload URL** — `POST /uploads` with file metadata (name, size, type). API validates (size limits, allowed types), creates `(upload_id, status=pending, owner)` in DynamoDB, generates a pre-signed URL or pre-signed POST policy (see References — Official — S3 pre-signed URLs). Returns to client.

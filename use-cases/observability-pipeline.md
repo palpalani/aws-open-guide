@@ -30,59 +30,59 @@ This playbook is the routing-and-retention pipeline that sits behind your apps: 
 
 ```
 ┌──────────────────────────────────────────────────────────┐
-│  Application services (Lambda, ECS, EC2, RDS, …)          │
-│  - structured JSON logs to stdout                         │
-│  - EMF metrics in log lines                               │
-│  - X-Ray / OTel traces sent to collector                  │
+│ Application services (Lambda, ECS, EC2, RDS, …) │
+│ - structured JSON logs to stdout │
+│ - EMF metrics in log lines │
+│ - X-Ray / OTel traces sent to collector │
 └──────┬─────────────────────────┬──────────────────────────┘
-       │                         │
-       │ logs                    │ traces
-       ▼                         ▼
-┌──────────────┐          ┌──────────────┐
-│  CloudWatch  │          │  X-Ray /     │
-│  Logs        │          │  ADOT        │
-│  - hot, 7-30d│          │  collector   │
-│  - INSIGHTS  │          └──────┬───────┘
-└──────┬───────┘                 │
-       │                         │
-       │ subscription            │ sample %
-       │ filter                  │
-       ▼                         ▼
-┌──────────────┐          ┌──────────────┐
-│  Firehose    │          │  Trace       │
-│  - buffer    │          │  storage     │
-│  - convert   │          │  (X-Ray or   │
-│  - partition │          │   3rd-party) │
-└──────┬───────┘          └──────────────┘
-       │
-       ▼
+ │ │
+ │ logs │ traces
+ ▼ ▼
+┌──────────────┐ ┌──────────────┐
+│ CloudWatch │ │ X-Ray / │
+│ Logs │ │ ADOT │
+│ - hot, 7-30d│ │ collector │
+│ - INSIGHTS │ └──────┬───────┘
+└──────┬───────┘ │
+ │ │
+ │ subscription │ sample %
+ │ filter │
+ ▼ ▼
+┌──────────────┐ ┌──────────────┐
+│ Firehose │ │ Trace │
+│ - buffer │ │ storage │
+│ - convert │ │ (X-Ray or │
+│ - partition │ │ 3rd-party) │
+└──────┬───────┘ └──────────────┘
+ │
+ ▼
 ┌──────────────┐
-│      S3      │
-│  log lake    │
-│  raw/+parquet│
+│ S3 │
+│ log lake │
+│ raw/+parquet│
 └──────┬───────┘
-       │
-       ▼
-┌──────────────┐    ┌──────────────┐
-│   Glue       │───▶│   Athena     │
-│   Catalog    │    │  (SQL on     │
-│              │    │   logs)      │
-└──────────────┘    └──────────────┘
+ │
+ ▼
+┌──────────────┐ ┌──────────────┐
+│ Glue │───▶│ Athena │
+│ Catalog │ │ (SQL on │
+│ │ │ logs) │
+└──────────────┘ └──────────────┘
 
 Metrics path:
-┌──────────────┐  EMF in log line  ┌──────────────┐
-│  Application │──────────────────▶│  CloudWatch  │
-│  (Powertools │                   │  Metrics     │
-│   logger)    │                   │  (auto-      │
-│              │                   │   extracted) │
-└──────────────┘                   └──────┬───────┘
-                                          │
-                                          ▼
-                                   ┌──────────────┐
-                                   │  CloudWatch  │
-                                   │  alarms +    │
-                                   │  dashboards  │
-                                   └──────────────┘
+┌──────────────┐ EMF in log line ┌──────────────┐
+│ Application │──────────────────▶│ CloudWatch │
+│ (Powertools │ │ Metrics │
+│ logger) │ │ (auto- │
+│ │ │ extracted) │
+└──────────────┘ └──────┬───────┘
+ │
+ ▼
+ ┌──────────────┐
+ │ CloudWatch │
+ │ alarms + │
+ │ dashboards │
+ └──────────────┘
 ```
 
 1. **Application** — emits **structured JSON** logs to stdout. Embedded Metric Format (EMF) lines turn into CloudWatch metrics automatically — no separate `PutMetricData` calls. Traces go via OpenTelemetry / X-Ray SDK to a collector.

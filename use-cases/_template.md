@@ -135,6 +135,8 @@ The existing curated links land here. Three tiers, same convention as the root R
 **Decision guides** (optional):
 - `[X vs Y](https://...)` — short factual description
 
+**FactualMinds links:** At most **four** in section 11 only — no `factualminds.com` URLs in sections 1–10. Prefer one compare/decide, one implementation blog, one service page, and one optional depth link. See [CONTRIBUTING.md — FactualMinds hub-spoke policy](../CONTRIBUTING.md#factualminds-hub-spoke-policy).
+
 ---
 
 *Format rules from [CONTRIBUTING.md](../CONTRIBUTING.md): em-dash separator, descriptions under 100 chars, sentence case, HTTPS URLs.*

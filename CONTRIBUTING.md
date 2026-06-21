@@ -58,6 +58,21 @@ If your resource doesn't obviously fit, suggest a category in your PR — we'll 
 
 Self-promotion is allowed if the resource is genuinely useful and the description is honest. Disclose your affiliation in the PR description. We may ask you to tighten the description.
 
+### Maintainer links (factualminds.com hub-spoke policy)
+
+The maintainer's site [factualminds.com](https://www.factualminds.com/) is **disclosed, intentional self-promotion** — not unbounded link spam.
+
+| Layer | Rule |
+|-------|------|
+| **README body** | At most **one hub link per major section** (FinOps, Security, Network cost, Container cost, Decision Guides, Foundations). No per-service Production Guide links to factualminds. |
+| **README footer** | [Need Implementation Help?](README.md#need-implementation-help) block — full service entry points (unchanged). |
+| **Playbooks** | factualminds links **only in §11 References**, max **4 per playbook** (one compare/decide, one implementation blog if needed, one service, optional fourth). |
+| **UTMs** | Use `?utm_source=aws-open-guide&utm_medium=readme&utm_campaign={section}` on README hub links only. |
+
+Depth content (blogs, compares, glossary) lives on factualminds.com and in playbook References — not scattered across every README service tier.
+
+For *new* self-promotional links from contributors, disclose affiliation in the PR description.
+
 ## Style
 
 - One link per line.

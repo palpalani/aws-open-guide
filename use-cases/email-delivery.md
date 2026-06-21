@@ -27,36 +27,36 @@ The cost of getting it wrong is invisible until it isn't. Then your password res
 ## 3. Reference architecture
 
 ```
-                                     ┌────────────────────────┐
-                                     │  Configuration Set     │
-                                     │  (per-stream policy)   │
-                                     └───────────┬────────────┘
-                                                 │
-┌──────────┐    ┌──────────────┐    ┌────────────▼─────────┐
-│   App    │───▶│   SES API    │───▶│  Mailbox provider    │
-│ (Lambda, │    │  (SendEmail, │    │  (Gmail, Outlook,    │
-│  ECS,    │    │  SendBulk)   │    │   Yahoo, Apple)      │
-│  EC2…)   │    │              │    └────────────┬─────────┘
-└──────────┘    └──────┬───────┘                 │
-                       │                         │
-                       │ events: send,           │ bounce,
-                       │ delivery, open,         │ complaint
-                       │ click, bounce,          │ feedback
-                       │ complaint, reject       ▼
-                       │
-                       ▼
-                ┌──────────────┐
-                │   SNS topic  │ ─────▶ Lambda (suppression list,
-                │  (per event  │        billing, alerting)
-                │   type)      │
-                └──────┬───────┘
-                       │
-                       ▼
-                ┌──────────────┐    ┌──────────┐    ┌──────────┐
-                │   Firehose   │───▶│    S3    │───▶│  Athena  │
-                │  (buffered)  │    │ (raw +   │    │ (SQL on  │
-                │              │    │  Parquet)│    │  events) │
-                └──────────────┘    └──────────┘    └──────────┘
+ ┌────────────────────────┐
+ │ Configuration Set │
+ │ (per-stream policy) │
+ └───────────┬────────────┘
+ │
+┌──────────┐ ┌──────────────┐ ┌────────────▼─────────┐
+│ App │───▶│ SES API │───▶│ Mailbox provider │
+│ (Lambda, │ │ (SendEmail, │ │ (Gmail, Outlook, │
+│ ECS, │ │ SendBulk) │ │ Yahoo, Apple) │
+│ EC2…) │ │ │ └────────────┬─────────┘
+└──────────┘ └──────┬───────┘ │
+ │ │
+ │ events: send, │ bounce,
+ │ delivery, open, │ complaint
+ │ click, bounce, │ feedback
+ │ complaint, reject ▼
+ │
+ ▼
+ ┌──────────────┐
+ │ SNS topic │ ─────▶ Lambda (suppression list,
+ │ (per event │ billing, alerting)
+ │ type) │
+ └──────┬───────┘
+ │
+ ▼
+ ┌──────────────┐ ┌──────────┐ ┌──────────┐
+ │ Firehose │───▶│ S3 │───▶│ Athena │
+ │ (buffered) │ │ (raw + │ │ (SQL on │
+ │ │ │ Parquet)│ │ events) │
+ └──────────────┘ └──────────┘ └──────────┘
 ```
 
 1. **App → SES** — call `SendEmail` (templated) or `SendBulkEmail` (up to 50 destinations per call). Authenticate the sender domain with SPF, DKIM (Easy DKIM via SES), and DMARC. Always send through a **configuration set** so you can route events.
@@ -233,17 +233,12 @@ Pre-ship gate for an SES integration. If any of these is missing, don't ship.
 - [SES Mail Manager](https://docs.aws.amazon.com/ses/latest/dg/eb.html) — inbound and outbound email pipelines
 
 **Production guides:**
-- [SES e-commerce email marketing](https://www.factualminds.com/blog/aws-ses-ecommerce-email-marketing/) — patterns for retail transactional + marketing
 - [Migrate from SendGrid to SES](https://www.factualminds.com/blog/how-to-migrate-from-sendgrid-to-amazon-ses/) — migration playbook with cutover strategy
-- [SES at scale — case study (200M+ messages/mo)](https://www.factualminds.com/case-study/aws-ses/) — real-world deployment at high volume
 
 **Decision and migration guides:**
 - [SendGrid → SES](https://www.factualminds.com/compare/sendgrid-to-aws-ses/) — comparison and migration cost
 - [Mailgun → SES](https://www.factualminds.com/compare/mailgun-to-aws-ses/) — comparison and migration cost
-- [Postmark → SES](https://www.factualminds.com/compare/postmark-to-aws-ses/) — comparison and migration cost
-- [Resend → SES](https://www.factualminds.com/compare/resend-to-aws-ses/) — comparison and migration cost
-- [SparkPost → SES](https://www.factualminds.com/compare/sparkpost-to-aws-ses/) — comparison and migration cost
-- [Elastic Email → SES](https://www.factualminds.com/compare/elastic-email-to-aws-ses/) — comparison and migration cost
+- [SES Migration & Email Delivery](https://www.factualminds.com/services/aws-ses-migration/) — fixed-scope migration engagements
 
 **OSS tools:**
 - [aws-lambda-ses-forwarder](https://github.com/arithmetric/aws-lambda-ses-forwarder) — forward inbound SES email to a different mailbox
@@ -251,7 +246,7 @@ Pre-ship gate for an SES integration. If any of these is missing, don't ship.
 - [dmarc-report-converter](https://github.com/tierpod/dmarc-report-converter) — parse DMARC aggregate reports to JSON/CSV
 - [parsedmarc](https://github.com/domainaware/parsedmarc) — DMARC report parser with Elasticsearch ingestion
 
-**Need help?** [Amazon SES Deliverability service](https://www.factualminds.com/services/aws-ses/) · [SES Migration & Email Delivery](https://www.factualminds.com/services/aws-ses-migration/)
+
 
 ---
 

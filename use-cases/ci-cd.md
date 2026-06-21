@@ -29,53 +29,53 @@ This playbook is the deployment topology that holds up under the realities of AW
 
 ```
 ┌──────────────┐
-│  Developer   │
-│  pushes PR   │
+│ Developer │
+│ pushes PR │
 └──────┬───────┘
-       │
-       ▼
+ │
+ ▼
 ┌──────────────────────────────────────────────────────────────────┐
-│                          GitHub                                  │
-│                                                                  │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐            │
-│  │  CODEOWNERS  │  │  Branch      │  │  Required    │            │
-│  │  review      │  │  protection  │  │  checks      │            │
-│  └──────────────┘  └──────────────┘  └──────────────┘            │
+│ GitHub │
+│ │
+│ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ │
+│ │ CODEOWNERS │ │ Branch │ │ Required │ │
+│ │ review │ │ protection │ │ checks │ │
+│ └──────────────┘ └──────────────┘ └──────────────┘ │
 └──────────────┬───────────────────────────────────────────────────┘
-               │
-               ▼
+ │
+ ▼
 ┌──────────────────────────────────────────────────────────────────┐
-│                  GitHub Actions workflow                         │
-│                                                                  │
-│  1. Checkout                                                     │
-│  2. Lint, type-check, unit tests                                 │
-│  3. Build artifacts (container, Lambda zip, frontend bundle)     │
-│  4. SAST / dependency scan                                       │
-│  5. IaC plan (Terraform plan / CDK diff) — POSTED ON PR          │
-│  6. Push image to ECR (only on merge to main)                    │
-│  7. Deploy to dev → run integration tests                        │
-│  8. Deploy to staging → run E2E tests + smoke                    │
-│  9. Manual approval gate                                         │
-│  10. Deploy to prod (canary / staged ring)                       │
-│  11. Auto-rollback on regression                                 │
+│ GitHub Actions workflow │
+│ │
+│ 1. Checkout │
+│ 2. Lint, type-check, unit tests │
+│ 3. Build artifacts (container, Lambda zip, frontend bundle) │
+│ 4. SAST / dependency scan │
+│ 5. IaC plan (Terraform plan / CDK diff) — POSTED ON PR │
+│ 6. Push image to ECR (only on merge to main) │
+│ 7. Deploy to dev → run integration tests │
+│ 8. Deploy to staging → run E2E tests + smoke │
+│ 9. Manual approval gate │
+│ 10. Deploy to prod (canary / staged ring) │
+│ 11. Auto-rollback on regression │
 └──────────────┬───────────────────────────────────────────────────┘
-               │
-               │ OIDC AssumeRole (no long-lived keys)
-               ▼
+ │
+ │ OIDC AssumeRole (no long-lived keys)
+ ▼
 ┌──────────────────────────────────────────────────────────────────┐
-│            AWS (per environment, separate accounts)              │
-│                                                                  │
-│  ┌──────────┐    ┌──────────┐    ┌──────────┐                    │
-│  │   Dev    │───▶│ Staging  │───▶│   Prod   │                    │
-│  │  account │    │  account │    │  account │                    │
-│  └──────────┘    └──────────┘    └──────────┘                    │
-│                                       │                          │
-│                                       ▼                          │
-│                              ┌──────────────────┐                │
-│                              │ CloudFormation / │                │
-│                              │ Terraform state  │                │
-│                              │ change record    │                │
-│                              └──────────────────┘                │
+│ AWS (per environment, separate accounts) │
+│ │
+│ ┌──────────┐ ┌──────────┐ ┌──────────┐ │
+│ │ Dev │───▶│ Staging │───▶│ Prod │ │
+│ │ account │ │ account │ │ account │ │
+│ └──────────┘ └──────────┘ └──────────┘ │
+│ │ │
+│ ▼ │
+│ ┌──────────────────┐ │
+│ │ CloudFormation / │ │
+│ │ Terraform state │ │
+│ │ change record │ │
+│ └──────────────────┘ │
 └──────────────────────────────────────────────────────────────────┘
 ```
 

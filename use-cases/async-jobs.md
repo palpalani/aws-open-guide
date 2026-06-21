@@ -27,47 +27,47 @@ The naïve solution — kick off a background thread in your API process — fal
 ## 3. Reference architecture
 
 ```
-┌────────────┐    ┌──────────────┐    ┌──────────────┐
-│   Client   │───▶│  API Gateway │───▶│   Lambda     │
-│            │    │   /jobs POST │    │  (validate,  │
-│            │◀───│              │    │   enqueue)   │
-└─────┬──────┘    └──────────────┘    └──────┬───────┘
-      │ job_id                                │
-      │                                       ▼
-      │                              ┌────────────────┐
-      │                              │  DynamoDB      │
-      │                              │  jobs table:   │
-      │                              │  status=queued │
-      │                              └────────┬───────┘
-      │                                       │
-      │                                       ▼
-      │                              ┌────────────────┐
-      │                              │     SQS        │
-      │                              │   (job queue)  │
-      │                              └────────┬───────┘
-      │                                       │
-      │                                       ▼
-      │                              ┌────────────────┐
-      │                              │    Worker      │
-      │                              │ (Lambda / ECS) │
-      │                              │ - process work │
-      │                              │ - update status│
-      │                              │ - handle retry │
-      │                              └────────┬───────┘
-      │                                       │
-      │                                       ▼
-      │                              ┌────────────────┐
-      │   GET /jobs/{id} ─────────▶  │  jobs table:   │
-      │                              │  status=done,  │
-      │   or webhook callback ◀──────│  result_url=…  │
-      │                              └────────────────┘
-                                              │
-                                              ▼
-                                     ┌────────────────┐
-                                     │  Result store  │
-                                     │  (S3 for blobs,│
-                                     │   DDB for JSON)│
-                                     └────────────────┘
+┌────────────┐ ┌──────────────┐ ┌──────────────┐
+│ Client │───▶│ API Gateway │───▶│ Lambda │
+│ │ │ /jobs POST │ │ (validate, │
+│ │◀───│ │ │ enqueue) │
+└─────┬──────┘ └──────────────┘ └──────┬───────┘
+ │ job_id │
+ │ ▼
+ │ ┌────────────────┐
+ │ │ DynamoDB │
+ │ │ jobs table: │
+ │ │ status=queued │
+ │ └────────┬───────┘
+ │ │
+ │ ▼
+ │ ┌────────────────┐
+ │ │ SQS │
+ │ │ (job queue) │
+ │ └────────┬───────┘
+ │ │
+ │ ▼
+ │ ┌────────────────┐
+ │ │ Worker │
+ │ │ (Lambda / ECS) │
+ │ │ - process work │
+ │ │ - update status│
+ │ │ - handle retry │
+ │ └────────┬───────┘
+ │ │
+ │ ▼
+ │ ┌────────────────┐
+ │ GET /jobs/{id} ─────────▶ │ jobs table: │
+ │ │ status=done, │
+ │ or webhook callback ◀──────│ result_url=… │
+ │ └────────────────┘
+ │
+ ▼
+ ┌────────────────┐
+ │ Result store │
+ │ (S3 for blobs,│
+ │ DDB for JSON)│
+ └────────────────┘
 ```
 
 1. **POST /jobs** — Lambda validates the request, generates `job_id` (UUID), writes `(job_id, status=queued, created_at)` to DynamoDB, sends a message to SQS with `job_id` and the work payload. Returns `202 Accepted` with `job_id`.

@@ -28,54 +28,54 @@ Building a demo takes a weekend. Building one that's **accurate, cheap, safe, ev
 ## 3. Reference architecture
 
 ```
-                Ingestion (offline / scheduled)
+ Ingestion (offline / scheduled)
 ─────────────────────────────────────────────────────────────────
-┌────────────┐   ┌──────────┐   ┌──────────┐   ┌─────────────┐
-│  Sources   │──▶│  Loader  │──▶│  Chunker │──▶│  Embedding  │
-│  (S3, web, │   │  (Lambda,│   │  (split, │   │  (Bedrock   │
-│   Notion,  │   │   Glue)  │   │   overlap│   │   Titan /   │
-│   GitHub…) │   │          │   │   metadat│   │   Cohere)   │
-└────────────┘   └──────────┘   └──────────┘   └──────┬──────┘
-                                                       │
-                                                       ▼
-                                              ┌─────────────┐
-                                              │ Vector store│
-                                              │ (OpenSearch │
-                                              │  k-NN /     │
-                                              │  Aurora     │
-                                              │  pgvector / │
-                                              │  Pinecone)  │
-                                              └─────────────┘
+┌────────────┐ ┌──────────┐ ┌──────────┐ ┌─────────────┐
+│ Sources │──▶│ Loader │──▶│ Chunker │──▶│ Embedding │
+│ (S3, web, │ │ (Lambda,│ │ (split, │ │ (Bedrock │
+│ Notion, │ │ Glue) │ │ overlap│ │ Titan / │
+│ GitHub…) │ │ │ │ metadat│ │ Cohere) │
+└────────────┘ └──────────┘ └──────────┘ └──────┬──────┘
+ │
+ ▼
+ ┌─────────────┐
+ │ Vector store│
+ │ (OpenSearch │
+ │ k-NN / │
+ │ Aurora │
+ │ pgvector / │
+ │ Pinecone) │
+ └─────────────┘
 
-                Query (online)
+ Query (online)
 ─────────────────────────────────────────────────────────────────
-┌────────────┐   ┌──────────┐   ┌──────────┐   ┌─────────────┐
-│  User      │──▶│ API GW + │──▶│ Retrieve │──▶│  Re-rank    │
-│  question  │   │ Lambda   │   │ top-k    │   │  (Cohere /  │
-│            │   │          │   │ from     │   │   Bedrock)  │
-└────────────┘   └────┬─────┘   │ vector   │   └──────┬──────┘
-                      │         │ store    │          │
-                      │         └──────────┘          ▼
-                      │                        ┌─────────────┐
-                      │                        │  Bedrock    │
-                      │                        │  LLM        │
-                      │                        │  (Claude /  │
-                      │                        │   Nova /    │
-                      │                        │   Llama)    │
-                      │                        └──────┬──────┘
-                      │                               │
-                      ▼                               ▼
-              ┌──────────────┐                 ┌─────────────┐
-              │  Bedrock     │                 │  Response + │
-              │  Guardrails  │◀────────────────│  citations  │
-              └──────────────┘                 └─────────────┘
-                      │
-                      ▼
-              ┌──────────────┐
-              │  Logging,    │
-              │  evals,      │
-              │  metering    │
-              └──────────────┘
+┌────────────┐ ┌──────────┐ ┌──────────┐ ┌─────────────┐
+│ User │──▶│ API GW + │──▶│ Retrieve │──▶│ Re-rank │
+│ question │ │ Lambda │ │ top-k │ │ (Cohere / │
+│ │ │ │ │ from │ │ Bedrock) │
+└────────────┘ └────┬─────┘ │ vector │ └──────┬──────┘
+ │ │ store │ │
+ │ └──────────┘ ▼
+ │ ┌─────────────┐
+ │ │ Bedrock │
+ │ │ LLM │
+ │ │ (Claude / │
+ │ │ Nova / │
+ │ │ Llama) │
+ │ └──────┬──────┘
+ │ │
+ ▼ ▼
+ ┌──────────────┐ ┌─────────────┐
+ │ Bedrock │ │ Response + │
+ │ Guardrails │◀────────────────│ citations │
+ └──────────────┘ └─────────────┘
+ │
+ ▼
+ ┌──────────────┐
+ │ Logging, │
+ │ evals, │
+ │ metering │
+ └──────────────┘
 ```
 
 **Ingestion (offline, idempotent):**
@@ -272,9 +272,9 @@ For cross-cutting AWS anti-patterns, see [`anti-patterns.md`](anti-patterns.md).
 
 **Production guides:**
 - [Build a RAG pipeline with Bedrock Knowledge Bases](https://www.factualminds.com/blog/how-to-build-rag-pipeline-amazon-bedrock-knowledge-bases/) — Bedrock-managed RAG walkthrough
-- [Bedrock multi-agent supervisor pattern](https://www.factualminds.com/blog/aws-bedrock-multi-agent-supervisor-pattern/) — multi-agent orchestration
-- [Multi-tenant GenAI on Bedrock](https://www.factualminds.com/blog/multi-tenant-genai-bedrock/) — RAG in SaaS
-- [Fine-tuning vs RAG on Bedrock](https://www.factualminds.com/blog/fine-tuning-vs-rag-bedrock-when-to-use/) — when each fits
+
+
+
 
 **Decision guides:**
 - [Bedrock vs SageMaker](https://www.factualminds.com/compare/aws-bedrock-vs-sagemaker/) — managed model APIs vs custom training

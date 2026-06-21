@@ -91,7 +91,7 @@ Cross-links: [`failure-first.md`](failure-first.md) for retries/DLQs, [`anti-pat
 - RDS system of record + ElastiCache for hot reads
 - S3 data lake + Athena for ad-hoc + Redshift for BI
 
-For X-vs-Y depth: [DynamoDB vs RDS](https://www.factualminds.com/compare/dynamodb-vs-rds/), [RDS vs Aurora](https://www.factualminds.com/compare/aws-rds-vs-aurora/), [Aurora Serverless vs Provisioned](https://www.factualminds.com/compare/aws-aurora-serverless-vs-aurora-provisioned/), [Which AWS database](https://www.factualminds.com/decide/which-aws-database/).
+For X-vs-Y depth, see [Databases](../README.md#databases) in Decision Guides.
 
 ---
 
@@ -131,7 +131,7 @@ For X-vs-Y depth: [DynamoDB vs RDS](https://www.factualminds.com/compare/dynamod
 | Spiky, unpredictable workloads | **Lambda or Fargate Spot** | Pay-per-use, scale-to-zero |
 | Edge / low-latency to user | **Lambda@Edge** or **CloudFront Functions** | Functions are JS-only and faster; Edge supports Python/Node and longer-running |
 
-For X-vs-Y depth: [EC2 vs Lambda](https://www.factualminds.com/compare/aws-ec2-vs-lambda/), [Lambda vs ECS Fargate](https://www.factualminds.com/compare/aws-lambda-vs-ecs-fargate/), [ECS vs EKS](https://www.factualminds.com/compare/aws-ecs-vs-eks/), [Which AWS compute](https://www.factualminds.com/decide/which-aws-compute/).
+For X-vs-Y depth, see [Compute](../README.md#compute) in Decision Guides.
 
 ---
 
@@ -167,7 +167,7 @@ For X-vs-Y depth: [EC2 vs Lambda](https://www.factualminds.com/compare/aws-ec2-v
 | Stream processing | **Kinesis or Managed Flink** | See Event processing tree above |
 | Cron / scheduled | **EventBridge Scheduler** | Replaces CloudWatch Events scheduled rules |
 
-For X-vs-Y depth: [Step Functions vs EventBridge](https://www.factualminds.com/compare/aws-step-functions-vs-eventbridge/).
+For X-vs-Y depth, see [Integration](../README.md#integration) in Decision Guides.
 
 ---
 
@@ -228,7 +228,7 @@ For X-vs-Y depth: [Step Functions vs EventBridge](https://www.factualminds.com/c
 | Federated B2B (customer's IdP) | **Cognito Identity Pools** or **WorkOS** | WorkOS for out-of-the-box SCIM + SAML directory sync |
 | Per-tenant auth in SaaS | See [`multi-tenant-saas.md`](multi-tenant-saas.md) | Single Cognito pool with custom attributes vs pool-per-tenant |
 
-For X-vs-Y depth: [IAM Identity Center vs Cognito](https://www.factualminds.com/compare/aws-iam-identity-center-vs-cognito/).
+For X-vs-Y depth, see [Security & Identity](../README.md#security--identity) in Decision Guides.
 
 ---
 
@@ -267,7 +267,7 @@ For X-vs-Y depth: [IAM Identity Center vs Cognito](https://www.factualminds.com/
 | Container build pipeline | **CodeBuild** or GitHub Actions runners | Cache layers via ECR |
 | IaC | **Terraform** or **CDK** or **Pulumi** | All viable; pick on team taste + ecosystem |
 
-For X-vs-Y depth: [CodePipeline vs GitHub Actions](https://www.factualminds.com/compare/aws-codepipeline-vs-github-actions/), [Terraform vs CDK](https://www.factualminds.com/blog/terraform-vs-aws-cdk-infrastructure-as-code-decision-guide/).
+For X-vs-Y depth, see [CI/CD](../README.md#cicd) in Decision Guides.
 
 ---
 

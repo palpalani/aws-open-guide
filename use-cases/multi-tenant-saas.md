@@ -30,38 +30,38 @@ The hard part isn't the first ten tenants. It's the architecture decision that's
 The default for most SaaS is the **pool model**: shared infrastructure, tenant ID propagated through every layer, isolation enforced in code and IAM rather than separate deployments. Silo is the answer when compliance or contract terms demand it. Bridge is the realistic answer at scale.
 
 ```
-                                         ┌────────────────────────────────────┐
-                                         │  Identity (Cognito / IDP)          │
-                                         │  tenant_id encoded in JWT claims   │
-                                         └────────────────┬───────────────────┘
-                                                          │
-                                                          ▼
-┌──────────────┐    ┌─────────────────┐    ┌───────────────────────────┐
-│   Browser /  │───▶│   API Gateway   │───▶│  App (Lambda / ECS)       │
-│   Mobile     │    │   per-route     │    │  - reads tenant_id from   │
-│              │    │   throttling    │    │    JWT, never the body    │
-└──────────────┘    └─────────────────┘    │  - tenant_id on every     │
-                                           │    DB query, log line,    │
-                                           │    metric, downstream call│
-                                           └─────────┬─────────────────┘
-                                                     │
-                          ┌──────────────────────────┼──────────────────────────┐
-                          │                          │                          │
-                          ▼                          ▼                          ▼
-                  ┌──────────────┐           ┌──────────────┐           ┌──────────────┐
-                  │ DynamoDB     │           │   S3         │           │   Search     │
-                  │ PK starts    │           │ prefix:      │           │   tenant     │
-                  │ with         │           │ tenants/<id> │           │   filter on  │
-                  │ tenant_id    │           │              │           │   every query│
-                  └──────────────┘           └──────────────┘           └──────────────┘
-                          │                          │                          │
-                          └──────────────────────────┼──────────────────────────┘
-                                                     │
-                                                     ▼
-                                       ┌──────────────────────────┐
-                                       │  Tagging + Cost Categories│
-                                       │  cost-per-tenant rollup   │
-                                       └──────────────────────────┘
+ ┌────────────────────────────────────┐
+ │ Identity (Cognito / IDP) │
+ │ tenant_id encoded in JWT claims │
+ └────────────────┬───────────────────┘
+ │
+ ▼
+┌──────────────┐ ┌─────────────────┐ ┌───────────────────────────┐
+│ Browser / │───▶│ API Gateway │───▶│ App (Lambda / ECS) │
+│ Mobile │ │ per-route │ │ - reads tenant_id from │
+│ │ │ throttling │ │ JWT, never the body │
+└──────────────┘ └─────────────────┘ │ - tenant_id on every │
+ │ DB query, log line, │
+ │ metric, downstream call│
+ └─────────┬─────────────────┘
+ │
+ ┌──────────────────────────┼──────────────────────────┐
+ │ │ │
+ ▼ ▼ ▼
+ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐
+ │ DynamoDB │ │ S3 │ │ Search │
+ │ PK starts │ │ prefix: │ │ tenant │
+ │ with │ │ tenants/<id> │ │ filter on │
+ │ tenant_id │ │ │ │ every query│
+ └──────────────┘ └──────────────┘ └──────────────┘
+ │ │ │
+ └──────────────────────────┼──────────────────────────┘
+ │
+ ▼
+ ┌──────────────────────────┐
+ │ Tagging + Cost Categories│
+ │ cost-per-tenant rollup │
+ └──────────────────────────┘
 ```
 
 1. **Identity** — tenant ID lives in the token, signed by your IDP. Never trust a tenant ID from the request body or URL alone.
@@ -236,9 +236,9 @@ For cross-cutting AWS anti-patterns, see [`anti-patterns.md`](anti-patterns.md).
 
 **Production guides:**
 - [SaaS multi-tenancy on AWS — silo vs pool vs bridge](https://www.factualminds.com/blog/saas-multi-tenancy-on-aws-silo-vs-pool-vs-bridge-model/) — model selection deep dive
-- [Multi-tenant SaaS on AWS — architecture pattern](https://www.factualminds.com/patterns/multi-tenant-saas-on-aws/) — full pattern reference
+
 - [Multi-tenant GenAI on Bedrock](https://www.factualminds.com/blog/multi-tenant-genai-bedrock/) — SaaS layered with Bedrock
-- [Multi-tenant architecture — glossary](https://www.factualminds.com/glossary/multi-tenant-architecture/) — terminology reference
+
 
 **Reference implementations:**
 - [aws-samples/aws-saas-factory-ref-solution-serverless-saas](https://github.com/aws-samples/aws-saas-factory-ref-solution-serverless-saas) — production serverless multi-tenant reference
@@ -248,7 +248,7 @@ For cross-cutting AWS anti-patterns, see [`anti-patterns.md`](anti-patterns.md).
 **Decision guides:**
 - [DynamoDB vs RDS for SaaS](https://www.factualminds.com/compare/dynamodb-vs-rds/) — pick the storage layer
 - [IAM Identity Center vs Cognito](https://www.factualminds.com/compare/aws-iam-identity-center-vs-cognito/) — pick the auth surface
-- [SaaS industry hub](https://www.factualminds.com/industries/saas/) — broader industry context
+
 
 **OSS tools:**
 - [Frontegg](https://github.com/frontegg) — managed multi-tenant auth + admin (alternative to building it)
