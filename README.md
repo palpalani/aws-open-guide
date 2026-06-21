@@ -250,15 +250,29 @@ Virtual servers, containers' substrate, and specialized chips.
 
 ### AWS Graviton — Arm-based processors
 
-> Custom Arm chips with 40% better price/performance than x86 on most workloads.
+> Custom Arm chips with up to 40% better price/performance than x86. Graviton5 (M9g/M9gd) GA June 2026 for agentic AI and general-purpose workloads.
 
+**Official:**
 - [Graviton overview](https://aws.amazon.com/ec2/graviton/)
-- [EC2 M9g and M9gd instances — Graviton5](https://aws.amazon.com/about-aws/whats-new/2026/06/ec2-m9g-m9gd-instances-graviton5-processors-available/) — fifth-gen Graviton processors, GA June 2026
-- [Graviton cost optimization guide](https://www.factualminds.com/blog/aws-graviton-cost-optimization-guide/) — m5.large → t4g.medium real savings
+- [EC2 M9g instances](https://aws.amazon.com/ec2/instance-types/m9g/) — Graviton5 general-purpose instance specs and sizes
+- [EC2 M9g and M9gd instances — Graviton5 GA](https://aws.amazon.com/about-aws/whats-new/2026/06/ec2-m9g-m9gd-instances-graviton5-processors-available/) — fifth-gen Graviton processors, GA June 2026
+- [M9g/M9gd GA — AWS News Blog](https://aws.amazon.com/blogs/aws/now-available-amazon-ec2-m9g-and-m9gd-instances-powered-by-new-aws-graviton5-processors/) — Graviton5 launch details and customer results
+- [Graviton5 chiplet architecture — Amazon Science](https://www.amazon.science/blog/graviton5s-improved-design-increases-speed-and-energy-efficiency-beyond-moores-law) — DDR5-8800, PCIe Gen6, Nitro Isolation Engine
+- [M9g preview announcement](https://aws.amazon.com/about-aws/whats-new/2025/12/ec2-m9g-instances-graviton5-processors-preview/) — Dec 2025 preview; superseded by GA
+
+**Production Guides:**
+- [EC2 M9g and M9gd Graviton5 GA migration field guide](https://www.factualminds.com/blog/ec2-m9g-m9gd-graviton5-ga-2026/) — M9g vs M9gd, canary checklist, RI traps
+- [EC2 on-demand pricing — Graviton crossover](https://www.factualminds.com/blog/amazon-ec2-on-demand-pricing-instance-families-2026/) — family selection and Graviton savings
+- [Graviton cost optimization guide](https://www.factualminds.com/blog/aws-graviton-cost-optimization-guide/) — Graviton5 GA through Graviton2 migration paths and x86 savings
+
+**Decision Guides:**
+- [M9g vs M8g — when to upgrade to Graviton5](https://www.factualminds.com/blog/ec2-m9g-m9gd-graviton5-ga-2026/) — migration field guide; dedicated compare page pending
+- [M9g vs M9gd — when to use local NVMe](https://www.factualminds.com/blog/ec2-m9g-m9gd-graviton5-ga-2026/) — ephemeral NVMe vs EBS-backed M9g
+- [Graviton vs x86 on EC2](https://www.factualminds.com/blog/aws-graviton-cost-optimization-guide/) — when to stay on Intel or AMD
 
 ### AWS Trainium & Inferentia — ML accelerators
 
-> Purpose-built chips for training (Trainium) and inference (Inferentia).
+> Purpose-built chips for training (Trainium) and inference (Inferentia). For agentic AI orchestration on general-purpose compute, see [AWS Graviton](#aws-graviton--arm-based-processors).
 
 - [Trainium](https://aws.amazon.com/ai/machine-learning/trainium/) · [Inferentia](https://aws.amazon.com/ai/machine-learning/inferentia/)
 - [EC2 Trn3 UltraServers — Trainium3](https://aws.amazon.com/ec2/instance-types/trn3/) — fourth-gen Trainium chips for frontier-scale training
@@ -1227,16 +1241,17 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 **Official:**
 - [AWS Compute Optimizer](https://aws.amazon.com/compute-optimizer/)
-- [Compute Optimizer user guide](https://docs.aws.amazon.com/compute-optimizer/latest/ug/) — EC2, EBS, Lambda, ECS Fargate, RDS recommendations
+- [Compute Optimizer user guide](https://docs.aws.amazon.com/compute-optimizer/latest/ug/) — EC2 rightsizing and cross-architecture Graviton migration recommendations
 - [Operating Lambda — performance optimization (Compute Blog)](https://aws.amazon.com/blogs/compute/operating-lambda-performance-optimization-part-2/) — memory and cost trade-offs
 
 **Production Guides:**
 - [5 cost optimization strategies most teams overlook](https://www.factualminds.com/blog/5-aws-cost-optimization-strategies-most-teams-overlook/)
+- [EC2 M9g and M9gd Graviton5 GA migration field guide](https://www.factualminds.com/blog/ec2-m9g-m9gd-graviton5-ga-2026/) — canary checklist before Graviton5 rollout
 
 **OSS Tools:**
 - [alexcasalboni/aws-lambda-power-tuning](https://github.com/alexcasalboni/aws-lambda-power-tuning) — Step Functions tool to find optimal Lambda memory
 
-See also: [Cost pitfalls — EBS gp2 vs gp3](use-cases/cost-pitfalls.md#ebs-gp2-vs-gp3-almost-free-win) · [Idle resources](use-cases/cost-pitfalls.md#idle-resources) · [Lambda over-provisioned memory](use-cases/cost-pitfalls.md#lambda-over-provisioned-memory)
+See also: [AWS Graviton](#aws-graviton--arm-based-processors) · [Cost pitfalls — EBS gp2 vs gp3](use-cases/cost-pitfalls.md#ebs-gp2-vs-gp3-almost-free-win) · [Idle resources](use-cases/cost-pitfalls.md#idle-resources) · [Lambda over-provisioned memory](use-cases/cost-pitfalls.md#lambda-over-provisioned-memory)
 
 ### Commitment discounts (Savings Plans & Reserved Instances)
 
@@ -1624,6 +1639,9 @@ When you know what you need but not which AWS service to use:
 - [Lambda vs ECS Fargate](#aws-fargate)
 - [ECS vs EKS](#decision)
 - [Which AWS compute?](#amazon-ec2-elastic-compute-cloud)
+- [M9g vs M8g — Graviton5 upgrade](#aws-graviton--arm-based-processors)
+- [M9g vs M9gd — local NVMe or EBS](#aws-graviton--arm-based-processors)
+- [Graviton vs x86 on EC2](#aws-graviton--arm-based-processors)
 
 ### Databases
 
