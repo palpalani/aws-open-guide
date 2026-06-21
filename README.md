@@ -89,6 +89,8 @@ Match the row to what you need **today** — each path sends you to a different 
 - 🏗️ [Observability pipeline](use-cases/observability-pipeline.md) — hot CloudWatch + cold S3-Athena with EMF metrics and trace sampling
 - 🏗️ [GenAI / RAG application](use-cases/genai-rag.md) — Bedrock + vector store + retrieval + Guardrails with evals
 - 🏗️ [CI/CD for AWS workloads](use-cases/ci-cd.md) — GitHub Actions + OIDC + per-environment accounts with canary and rollback
+- 🏗️ [FinOps governance](use-cases/finops-governance.md) — tagging, CUR, allocation, commitments, and quarterly optimization cadence
+- 🏗️ [AWS security baseline](use-cases/security-baseline.md) — Prowler, Security Hub, Config, Checkov, and remediation workflow
 
 **Cross-cutting frameworks** (referenced by every playbook):
 
@@ -118,6 +120,8 @@ Match the row to what you need **today** — each path sends you to a different 
 - [Observability pipeline](use-cases/observability-pipeline.md)
 - [GenAI / RAG application](use-cases/genai-rag.md)
 - [CI/CD for AWS workloads](use-cases/ci-cd.md)
+- [FinOps governance](use-cases/finops-governance.md)
+- [AWS security baseline](use-cases/security-baseline.md)
 - [Decision trees](use-cases/decision-trees.md)
 - [Failure-first patterns](use-cases/failure-first.md)
 - [Anti-patterns](use-cases/anti-patterns.md)
@@ -140,11 +144,13 @@ Match the row to what you need **today** — each path sends you to a different 
 - [🔭 Observability & Monitoring](#observability--monitoring)
 - [💰 Cost Management & FinOps](#cost-management--finops)
   - [Analysis & visibility](#analysis--visibility)
+  - [FinOps platforms (third-party)](#finops-platforms-third-party)
   - [Rightsizing](#rightsizing)
   - [Commitment discounts](#commitment-discounts-savings-plans--reserved-instances)
   - [Cost allocation & tagging](#cost-allocation--tagging)
   - [Bill teardowns](#bill-teardowns-real-customer-incidents)
   - [Cost pitfalls playbook](use-cases/cost-pitfalls.md)
+  - [FinOps governance playbook](use-cases/finops-governance.md)
 - [🚚 Migration & Transfer](#migration--transfer)
 - [📡 Internet of Things (IoT)](#internet-of-things-iot)
 - [🔄 Application Integration](#application-integration)
@@ -486,6 +492,7 @@ See also: [Cost Management — rightsizing](#rightsizing) · [Cost pitfalls — 
 - [goofys](https://github.com/kahing/goofys) — S3 file system in Go, optimized for read throughput
 - [MinIO](https://github.com/minio/minio) — self-hosted S3-compatible object storage (good for hybrid + dev/test)
 - [MinIO `mc` client](https://github.com/minio/mc) — S3-compatible CLI (works with S3 + MinIO)
+- [s3-server](https://github.com/opsfour/s3-server) — S3-compatible object storage server as a PHP 8.4+ Composer package
 - [rclone](https://github.com/rclone/rclone) — rsync for S3 + 70+ other cloud storage backends
 
 > [!WARNING]
@@ -672,7 +679,7 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 ## Security & Identity
 
-> Layer it: identity (IAM, Cognito), boundaries (SCPs, permission boundaries), encryption (KMS), detection (GuardDuty, Security Hub), and audit trails (CloudTrail, Config).
+> Layer it: identity (IAM, Cognito), boundaries (SCPs, permission boundaries), encryption (KMS), detection (GuardDuty, Security Hub), and audit trails (CloudTrail, Config). For end-to-end posture and remediation, see the [security baseline playbook](use-cases/security-baseline.md) and [Implement Prowler + Security Hub on AWS](https://www.factualminds.com/blog/prowler-security-hub-aws/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=security-identity).
 
 ### AWS IAM — Identity & Access Management
 
@@ -710,7 +717,8 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 ### AWS Security Hub
 
 - [Security Hub](https://aws.amazon.com/security-hub/)
-- [Security Hub compliance monitoring setup](https://www.factualminds.com/blog/how-to-set-up-aws-security-hub-compliance-monitoring/)
+- [Implement Prowler + Security Hub on AWS](https://www.factualminds.com/blog/prowler-security-hub-aws/)
+- [Prowler vs Checkov on AWS](https://www.factualminds.com/compare/prowler-vs-checkov-aws/)
 
 ### AWS WAF — Web Application Firewall
 
@@ -761,11 +769,13 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 - [Cloud security baseline — 10 controls covering IAM, encryption, logging, and incident response](https://www.factualminds.com/blog/10-aws-cloud-security-best-practices-implementation-guide/)
 - [Securing AWS workloads beyond the basics](https://www.factualminds.com/blog/securing-aws-workloads-beyond-the-basics/)
-- [From reactive to proactive — automating AWS security remediation](https://www.factualminds.com/blog/from-reactive-to-proactive-automating-aws-security-remediation/)
+- [Who remediates Prowler findings?](https://www.factualminds.com/blog/prowler-remediation-aws/)
 - [AWS resource hardening quick wins (DMS, OpenSearch, SageMaker, Lambda)](https://www.factualminds.com/blog/aws-resource-hardening-quick-wins-dms-opensearch-sagemaker-lambda/)
 - [AWS vulnerability management program — CVSS + KEV prioritization](https://www.factualminds.com/blog/aws-vulnerability-management-program-cvss-kev-prioritization/)
 - [Protect AWS infrastructure from cost-based attacks](https://www.factualminds.com/blog/protect-aws-infrastructure-cost-based-attacks/)
 - [Security & Compliance hub](https://www.factualminds.com/security-compliance/)
+- [AWS Cloud Security services](https://www.factualminds.com/services/aws-cloud-security/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=holistic-security) — remediation sprints and audit-ready baselines
+- [Wiz findings remediation on AWS](https://www.factualminds.com/blog/wiz-findings-remediation-aws/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=holistic-security) — CNAPP dashboard to closed risks
 
 ### Data Perimeter
 
@@ -780,6 +790,9 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 - [Pacu](https://github.com/RhinoSecurityLabs/pacu) — AWS exploitation framework (offensive)
 - [aws-nuke](https://github.com/rebuy-de/aws-nuke) — wipe an AWS account clean
 - [Checkov](https://github.com/bridgecrewio/checkov) — static analysis for Terraform, CloudFormation, CDK, Kubernetes, ARM, Bicep
+- [Steampipe](https://steampipe.io/) — query AWS security and compliance with SQL
+- [Implement Prowler + Security Hub on AWS](https://www.factualminds.com/blog/prowler-security-hub-aws/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=security-tools) — production security scanning and remediation
+- [Security baseline playbook](use-cases/security-baseline.md) — Prowler, Security Hub, Config, and IaC gates
 - [policy_sentry](https://github.com/salesforce/policy_sentry) — Salesforce IAM least-privilege policy generator
 - [algo](https://github.com/trailofbits/algo) — Trail of Bits one-click personal IPSEC VPN on EC2 (and other clouds)
 
@@ -1214,7 +1227,7 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 > 🎯 **Hunting a surprise bill?** See the [Cost pitfalls playbook](use-cases/cost-pitfalls.md) — NAT Gateway egress, cross-AZ traffic, CloudWatch Logs ingestion, and the other line items that surprise teams.
 >
-> For a quarterly optimization cadence, see the [Cost pitfalls playbook](use-cases/cost-pitfalls.md#quarterly-optimization-cadence) and the production checklist at the bottom.
+> For a quarterly optimization cadence, see the [Cost pitfalls playbook](use-cases/cost-pitfalls.md#quarterly-optimization-cadence) and the [FinOps governance playbook](use-cases/finops-governance.md). For FinOps SaaS rollout, see [FinOps platform selection hub](https://www.factualminds.com/blog/aws-finops-tool-implementation/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=cost-management-finops).
 
 ### Analysis & visibility
 
@@ -1236,6 +1249,19 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 - [Cloud Intelligence Dashboards](https://github.com/aws-solutions-library-samples/cloud-intelligence-dashboards-framework) — CUR analytics dashboards (CUDOS, Cost Intelligence, KPI)
 - [Komiser](https://github.com/mlabouardy/komiser) — multi-cloud cost and resource viewer
 - [Similarweb/finala](https://github.com/similarweb/finala) — scans AWS for wasteful and unused resources
+
+### FinOps platforms (third-party)
+
+- [nOps](https://www.nops.io/) — AWS cost optimization, Savings Plans, RI management, EKS optimization
+- [CloudZero](https://www.cloudzero.com/) — cost intelligence for engineering teams
+- [Vantage](https://www.vantage.sh/) — AWS/GCP/Azure cost management
+- [Vantage alternative for AWS teams past the free tier](https://www.factualminds.com/compare/vantage-alternative-aws-implementation/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=finops-platforms) — visibility vs implementation next steps
+- [Finout](https://www.finout.io/) — cost allocation and FinOps analytics
+- [ProsperOps](https://www.prosperops.com/) — automated Savings Plans optimization
+- [Kubecost](https://www.kubecost.com/) — Kubernetes cost optimization
+- [CloudBurn](https://cloudburn.io/) — open-source AWS cost policy engine for IaC and live scanning
+- [FinOps platform selection hub](https://www.factualminds.com/blog/aws-finops-tool-implementation/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=finops-platforms) — production rollout for cost visibility platforms
+- [FinOps governance playbook](use-cases/finops-governance.md) — tagging, CUR, allocation, and quarterly optimization cadence
 
 ### Rightsizing
 
@@ -1261,7 +1287,7 @@ See also: [AWS Graviton](#aws-graviton--arm-based-processors) · [Cost pitfalls 
 - [Reserved Instance recommendations in Cost Explorer](https://docs.aws.amazon.com/cost-management/latest/userguide/ri-recommendations.html)
 
 **Production Guides:**
-- [Reserved Instances vs Savings Plans](https://www.factualminds.com/glossary/reserved-instances-vs-savings-plans/)
+- [ProsperOps on AWS](https://www.factualminds.com/blog/prosperops-aws-savings-plans/)
 - [AWS Savings Plans — glossary](https://www.factualminds.com/glossary/aws-savings-plans/)
 
 See also: [Cost pitfalls — reserved capacity and Savings Plans](use-cases/cost-pitfalls.md#reserved-capacity-and-savings-plans)
@@ -1296,6 +1322,7 @@ See also: [Cost pitfalls — EBS gp2 vs gp3](use-cases/cost-pitfalls.md#ebs-gp2-
 
 **Production Guides:**
 - [NAT Gateway billing — idle cost alternatives](#nat-gateway) — bill teardown
+- [NAT Gateway cost implementation guide](https://www.factualminds.com/blog/nat-gateway-cost-implementation-aws/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=network-cost) — VPC endpoints and Terraform rollout
 - [AWS data transfer costs for startups](https://www.factualminds.com/blog/aws-data-transfer-costs-startups/)
 - [Multi-region AWS without doubling costs](https://www.factualminds.com/blog/multi-region-aws-without-doubling-costs/)
 
@@ -1310,11 +1337,12 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 **Production Guides:**
 - [Deploy EKS with Karpenter for cost-optimized autoscaling](#amazon-eks--elastic-kubernetes-service)
 - [Karpenter vs Cluster Autoscaler — EKS cost optimization](#amazon-eks--elastic-kubernetes-service)
+- [Kubecost on EKS — cost visibility to savings](https://www.factualminds.com/blog/kubecost-eks-optimization/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=container-cost) — allocation plus architecture fixes on EKS
 
 **Kubernetes cost & ops (vendor blogs):**
 - [Cast AI Blog](#amazon-eks--elastic-kubernetes-service) — Kubernetes cost optimization guidance
 
-See also: [Spot & interruptible compute](#spot--interruptible-compute) · [Fargate](#aws-fargate) · [Amazon ECS](#amazon-ecs--elastic-container-service)
+See also: [Spot & interruptible compute](#spot--interruptible-compute) · [Fargate](#aws-fargate) · [Amazon ECS](#amazon-ecs--elastic-container-service) · [FinOps governance playbook](use-cases/finops-governance.md)
 
 ### Serverless cost optimization
 
@@ -1338,7 +1366,7 @@ See also: [Rightsizing](#rightsizing) · [Cost pitfalls — Lambda over-provisio
 - [Split cost allocation data](https://docs.aws.amazon.com/cur/latest/userguide/split-cost-allocation-data.html) — per-pod cost for shared EKS or ECS
 
 **Production Guides:**
-- [FinOps on AWS — complete cost governance guide](https://www.factualminds.com/blog/finops-on-aws-complete-guide-cloud-cost-governance/)
+- [FinOps tools vs AWS cost consulting](https://www.factualminds.com/compare/finops-tools-vs-aws-cost-consulting/)
 - [AWS FinOps gap — engineering cost ownership](https://www.factualminds.com/blog/aws-finops-gap-engineering-cost-ownership/)
 
 See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tenant-saas.md) · [FinOps Foundation](#finops-community)

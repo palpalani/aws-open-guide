@@ -22,6 +22,8 @@ Every playbook follows the same 11-section template in [`_template.md`](_templat
 | [Observability pipeline](observability-pipeline.md) | Hot CloudWatch + cold S3-Athena with EMF metrics, trace sampling, and PII redaction |
 | [GenAI / RAG application](genai-rag.md) | Bedrock + vector store + retrieval + Guardrails with evals and per-tenant cost attribution |
 | [CI/CD for AWS workloads](ci-cd.md) | GitHub Actions + OIDC + per-environment accounts with canary, rollback, and drift detection |
+| [FinOps governance](finops-governance.md) | Tagging, CUR, allocation, commitments, FinOps platforms, and quarterly optimization cadence |
+| [AWS security baseline](security-baseline.md) | Prowler, Security Hub, Config, Checkov, and remediation workflow with audit evidence |
 
 ## Cross-cutting frameworks
 
