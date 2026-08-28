@@ -8,7 +8,7 @@
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg?style=flat-square)](https://creativecommons.org/licenses/by/4.0/)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
-[![GitHub stars](https://img.shields.io/github/stars/palpalani/aws-open-guide?style=flat-square&logo=github)](https://github.com/palpalani/aws-open-guide/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/palpalani/aws-open-guide?style=flat-square&logo=github)](https://github.com/palpalani/aws-open-guide)
 [![GitHub last commit](https://img.shields.io/github/last-commit/palpalani/aws-open-guide?style=flat-square&logo=github)](https://github.com/palpalani/aws-open-guide/commits)
 [![GitHub issues](https://img.shields.io/github/issues/palpalani/aws-open-guide?style=flat-square&logo=github)](https://github.com/palpalani/aws-open-guide/issues)
 [![Link Check](https://github.com/palpalani/aws-open-guide/actions/workflows/link-check.yml/badge.svg?style=flat-square)](https://github.com/palpalani/aws-open-guide/actions/workflows/link-check.yml)
@@ -1421,20 +1421,20 @@ Highlights from the [official roster](#lifecycle-reference); see that page for t
 - [Amazon Lookout for Metrics](https://aws.amazon.com/) — anomaly detection; shut down October 10, 2025 [shutdown]
 - [Amazon Lookout for Vision](https://aws.amazon.com/) — defect detection; shut down October 31, 2025 [shutdown]
 - [Amazon WorkDocs](https://aws.amazon.com/) — file storage and sharing; shut down April 25, 2025 [shutdown]
+- [AWS IoT Analytics](https://aws.amazon.com/iot/) — replacement → IoT Core + Kinesis or EventBridge; shut down December 15, 2025 [shutdown]
+- [AWS SimSpace Weaver](https://aws.amazon.com/) — large-scale spatial simulations; shut down March 31, 2026 [shutdown]
+- [Amazon Connect Voice ID](https://docs.aws.amazon.com/connect/latest/adminguide/voice-id.html) — caller authentication; shut down May 20, 2026 [shutdown]
+- [AWS DMS Fleet Advisor](https://docs.aws.amazon.com/dms/latest/userguide/) — replacement → AWS DMS; shut down May 20, 2026 [shutdown]
+- [AWS IoT Events](https://aws.amazon.com/iot-events/) — event detection; replacement → EventBridge + Lambda; shut down May 20, 2026 [shutdown]
+- [AWS IQ](https://aws.amazon.com/partners/find-a-partner/) — freelance AWS experts marketplace; shut down May 20, 2026 [shutdown]
+- [AWS Panorama](https://aws.amazon.com/panorama/) — appliance-based computer vision at the edge; shut down May 20, 2026 [shutdown]
+- [Amazon Inspector Classic](https://docs.aws.amazon.com/inspector/v1/userguide/inspector_introduction.html) — replacement → Amazon Inspector v2; shut down May 20, 2026 [shutdown]
 
 ### End-of-support announced — avoid for new projects
 
-Per the [May 2025 AWS service changes announcement](#lifecycle-reference). AWS has not yet published exact end-of-support dates for most.
+Per the [May 2025 AWS service changes announcement](#lifecycle-reference). AWS has not yet published an exact end-of-support date.
 
 - [Amazon Pinpoint](https://aws.amazon.com/pinpoint/) — multi-channel messaging; replacement → SES, SNS, EventBridge [sunset]
-- [AWS IoT Analytics](https://aws.amazon.com/iot/) — replacement → IoT Core + Kinesis or EventBridge [sunset]
-- [AWS IoT Events](https://aws.amazon.com/iot-events/) — event detection; replacement → EventBridge + Lambda [sunset]
-- [AWS Panorama](https://aws.amazon.com/panorama/) — appliance-based computer vision at the edge [sunset]
-- [AWS SimSpace Weaver](https://aws.amazon.com/) — large-scale spatial simulations; ends March 31, 2026 [sunset]
-- [Amazon Inspector Classic](https://docs.aws.amazon.com/inspector/v1/userguide/inspector_introduction.html) — replacement → Amazon Inspector v2 [sunset]
-- [AWS IQ end of support](https://docs.aws.amazon.com/aws-iq/latest/experts-user-guide/aws-iq-end-of-support.html) — freelance AWS experts marketplace [shutdown]
-- [AWS DMS Fleet Advisor](https://docs.aws.amazon.com/dms/latest/userguide/) — replacement → AWS DMS [sunset]
-- [Amazon Connect Voice ID](https://docs.aws.amazon.com/connect/latest/adminguide/voice-id.html) — caller authentication; end-of-support announced [sunset]
 
 ### Maintenance — closed to new customers
 
