@@ -237,7 +237,7 @@ For cross-cutting AWS anti-patterns, see [`anti-patterns.md`](anti-patterns.md).
 **Production guides:**
 - [SaaS multi-tenancy on AWS — silo vs pool vs bridge](https://www.factualminds.com/blog/saas-multi-tenancy-on-aws-silo-vs-pool-vs-bridge-model/) — model selection deep dive
 
-- [Multi-tenant GenAI on Bedrock](https://www.factualminds.com/blog/multi-tenant-genai-bedrock/) — SaaS layered with Bedrock
+- [Multi-tenant SaaS on AWS pattern](https://www.factualminds.com/patterns/multi-tenant-saas-on-aws/) — reference pattern on AWS
 
 
 **Reference implementations:**

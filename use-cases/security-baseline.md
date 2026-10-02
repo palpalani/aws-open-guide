@@ -190,6 +190,7 @@ Link: [anti-patterns.md](anti-patterns.md), [ci-cd.md](ci-cd.md) for OIDC and pi
 
 **Production guides:**
 - [10 AWS cloud security best practices](https://www.factualminds.com/blog/10-aws-cloud-security-best-practices-implementation-guide/) — baseline controls implementation
+- [How to set up Security Hub compliance monitoring](https://www.factualminds.com/blog/how-to-set-up-aws-security-hub-compliance-monitoring/) — Security Hub setup walkthrough
 - [AWS Cloud Security services](https://www.factualminds.com/services/aws-cloud-security/?utm_source=aws-open-guide&utm_medium=playbook&utm_campaign=security-baseline) — remediation sprints
 
 **OSS tools:**
@@ -199,6 +200,7 @@ Link: [anti-patterns.md](anti-patterns.md), [ci-cd.md](ci-cd.md) for OIDC and pi
 
 **Decision guides:**
 - [Prowler documentation](https://docs.prowler.com/introduction) — runtime scanning vs Checkov IaC gates
+- [GuardDuty vs Security Hub](https://www.factualminds.com/compare/aws-guardduty-vs-security-hub/) — threat detection vs posture aggregation
 
 ---
 

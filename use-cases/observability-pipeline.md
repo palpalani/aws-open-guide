@@ -253,6 +253,8 @@ For cross-cutting AWS anti-patterns, see [`anti-patterns.md`](anti-patterns.md).
 **Production guides:**
 - [How to build serverless data pipeline — Glue + Athena](https://www.factualminds.com/blog/how-to-build-serverless-data-pipeline-glue-athena/) — same pattern, applied to logs
 - [Building a data lake on S3 + Glue + Athena](https://www.factualminds.com/blog/building-a-data-lake-on-aws-s3-glue-athena-architecture/) — log-lake foundations
+- [AWS observability beyond CloudWatch — OTel, Prometheus, Grafana](https://www.factualminds.com/blog/aws-observability-beyond-cloudwatch-otel-prometheus-grafana-2026/) — open-standards stack on AWS
+- [Observability FinOps — cardinality and cost control](https://www.factualminds.com/blog/aws-observability-finops-cardinality-cost-control/) — metric and log cost control
 
 **OSS tools:**
 - [aws-lambda-powertools-python](https://github.com/aws-powertools/powertools-lambda-python) — structured logging, metrics, tracing
