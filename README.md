@@ -6,6 +6,8 @@
 
 **Official links, production guides, OSS tools, and X-vs-Y comparisons — grouped the way AWS names services so you land on the right resource, not a random category.**
 
+<sub>Maintained by <a href="https://github.com/palpalani">Palaniappan P</a> at <a href="https://www.factualminds.com/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=header">FactualMinds</a>, an AWS Select Tier Services Partner</sub>
+
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg?style=flat-square)](https://creativecommons.org/licenses/by/4.0/)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 [![GitHub stars](https://img.shields.io/github/stars/palpalani/aws-open-guide?style=flat-square&logo=github)](https://github.com/palpalani/aws-open-guide)
@@ -931,6 +933,8 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 > 🎯 **Building a RAG application?** See the [GenAI / RAG playbook](use-cases/genai-rag.md) — Bedrock + vector store + retrieval + Guardrails, with evaluation harness and per-tenant cost attribution.
 
+> 🛒 **Building eCommerce AI agents?** See [eCommerce AI agents on Amazon Bedrock](https://www.factualminds.com/services/ecommerce-ai-agents/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=ai-ml) — support, sales, and operations agents built on Bedrock and AgentCore.
+
 ### Amazon Bedrock
 
 > Fully managed access to top foundation models (Anthropic, Meta, Amazon Nova, Mistral, Cohere, OpenAI, Stability AI).
@@ -1441,7 +1445,7 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 
 ### Amazon SES — Simple Email Service
 
-> 🎯 **Building transactional email at scale?** Start with the [Email delivery playbook](use-cases/email-delivery.md) — full architecture (SES → SNS → Firehose → S3 → Athena), bounce/complaint handling, IP warming, cost model, and 18-item production checklist.
+> 🎯 **Building transactional email at scale?** Start with the [Email delivery playbook](use-cases/email-delivery.md) — full architecture (SES → SNS → Firehose → S3 → Athena), bounce/complaint handling, IP warming, cost model, and 18-item production checklist. For SES deliverability reviews or migrations from another provider, see [AWS SES and email deliverability services](https://www.factualminds.com/services/aws-ses/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=email-communication).
 
 - [SES Documentation](https://docs.aws.amazon.com/ses/)
 
@@ -2265,13 +2269,16 @@ If something here saved you a search, pay it forward: add a link, fix a 404, or 
 
 ## Need Implementation Help?
 
-Everything in this repo is free to read and reuse under the license below. When you need someone to review a design, run a cost pass, or own a migration on a timeline, the maintainer works with teams through [FactualMinds](https://www.factualminds.com/). Entry points below.
+Everything in this repo is free to read and reuse under the license below. When you need someone to review a design, run a cost pass, or own a migration on a timeline, the maintainer works with teams through [FactualMinds](https://www.factualminds.com/aws-partner/), an AWS Select Tier Services Partner. Entry points below.
 
 - [Free AWS Cost Audit](https://www.factualminds.com/aws-cost-audit/)
 - [AWS Migration Services](https://www.factualminds.com/services/aws-migration/)
 - [AWS Cost Optimization & FinOps](https://www.factualminds.com/services/aws-cloud-cost-optimization-services/)
 - [AWS Cloud Security](https://www.factualminds.com/services/aws-cloud-security/)
 - [Generative AI on AWS](https://www.factualminds.com/services/generative-ai-on-aws/)
+- [AWS SES & Email Deliverability](https://www.factualminds.com/services/aws-ses/)
+- [eCommerce AI Agents on Amazon Bedrock](https://www.factualminds.com/services/ecommerce-ai-agents/)
+- [Amazon Connect & Customer Communications](https://www.factualminds.com/services/amazon-connect/)
 - [AWS Managed Services](https://www.factualminds.com/services/aws-managed-services/)
 - [Hire a Dedicated AWS Expert](https://www.factualminds.com/services/hire-a-dedicated-aws-expert/)
 - [Browse all 25+ services →](https://www.factualminds.com/services/)
