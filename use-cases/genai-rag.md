@@ -279,7 +279,7 @@ For cross-cutting AWS anti-patterns, see [`anti-patterns.md`](anti-patterns.md).
 **Decision guides:**
 - [Bedrock vs SageMaker](https://www.factualminds.com/compare/aws-bedrock-vs-sagemaker/) — managed model APIs vs custom training
 - [Bedrock Agents vs Step Functions](https://www.factualminds.com/compare/aws-bedrock-agents-vs-step-functions/) — orchestration choice
-- [Amazon Q vs ChatGPT Enterprise](https://www.factualminds.com/compare/amazon-q-vs-chatgpt-enterprise/) — productised GenAI choice
+- [Generative AI RAG on Bedrock pattern](https://www.factualminds.com/patterns/generative-ai-rag-on-bedrock/) — reference pattern on AWS
 
 **OSS tools:**
 - [LangChain](https://github.com/langchain-ai/langchain) — RAG / agent framework (Python / JS)

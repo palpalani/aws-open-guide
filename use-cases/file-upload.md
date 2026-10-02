@@ -260,6 +260,8 @@ For cross-cutting AWS anti-patterns, see [`anti-patterns.md`](anti-patterns.md).
 
 **Production guides:**
 - [Building a data lake on S3 + Glue + Athena](https://www.factualminds.com/blog/building-a-data-lake-on-aws-s3-glue-athena-architecture/) — when uploads feed analytics
+- [S3 security best practices — preventing data exposure](https://www.factualminds.com/blog/aws-s3-security-best-practices-preventing-data-exposure/) — bucket exposure controls
+- [Amazon S3 pricing calculator](https://www.factualminds.com/tools/aws-s3-pricing-calculator/) — storage and request cost estimate
 
 **OSS tools:**
 - [Uppy](https://github.com/transloadit/uppy) — modular file uploader with S3 multipart
