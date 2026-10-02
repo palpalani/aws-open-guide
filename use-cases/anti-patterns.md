@@ -264,4 +264,4 @@
 
 ---
 
-*See also: [`failure-first.md`](failure-first.md) · [`cost-pitfalls.md`](cost-pitfalls.md) · [The Amazon Builders' Library](https://aws.amazon.com/builders-library/) · [Bill teardowns in the root README](../README.md#cost-management--finops).*
+*See also: [`failure-first.md`](failure-first.md) · [`cost-pitfalls.md`](cost-pitfalls.md) · [The Amazon Builders' Library](https://builder.aws.com/learn/topics/builders-library) · [Bill teardowns in the root README](../README.md#cost-management--finops).*

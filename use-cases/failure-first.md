@@ -25,7 +25,7 @@ When a playbook says "exponential backoff with jitter" or "use a DLQ," it's poin
 
 **Anti-pattern:** retry-without-jitter retry storm; retrying a 4xx because "it might work next time"; no cap on total wait so a request hangs for minutes.
 
-**Reference:** [Timeouts, retries, and backoff with jitter (Builders Library)](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/) is the canonical AWS write-up.
+**Reference:** [Timeouts, retries, and backoff with jitter (Builders Library)](https://builder.aws.com/content/3EumjoZascWd1oZiEgL8ORlv3qE/timeouts-retries-and-backoff-with-jitter) is the canonical AWS write-up.
 
 ## 2. Idempotency
 
@@ -127,7 +127,7 @@ When a playbook says "exponential backoff with jitter" or "use a DLQ," it's poin
 
 **The backlog math:** if your queue has N messages and consumer drains at R/sec, recovery takes N/R seconds. Plot it. Set alarms before the queue holds more than you can drain in your error budget window.
 
-**Anti-pattern:** unbounded retries that send retried work back to the same queue, creating a feedback loop. **Reference:** [Avoiding insurmountable queue backlogs (Builders Library)](https://aws.amazon.com/builders-library/avoiding-insurmountable-queue-backlogs/).
+**Anti-pattern:** unbounded retries that send retried work back to the same queue, creating a feedback loop. **Reference:** [Avoiding insurmountable queue backlogs (Builders Library)](https://builder.aws.com/content/3EuRcgkTP1MI0c7zM8W6HL3WIqA/avoiding-insurmountable-queue-backlogs).
 
 ## 7. Bulkheads
 
@@ -195,7 +195,7 @@ When a playbook says "exponential backoff with jitter" or "use a DLQ," it's poin
 - Lambda reserved concurrency throttles at the function
 - ALB has no native load shedding; do it in your app
 
-**Reference:** [Avoiding overload by putting the smaller service in control (Builders Library)](https://aws.amazon.com/builders-library/avoiding-overload-in-distributed-systems-by-putting-the-smaller-service-in-control/).
+**Reference:** [Avoiding overload by putting the smaller service in control (Builders Library)](https://builder.aws.com/content/3EukISjbJAGNdrxjKaN6RG0wlHG/avoiding-overload-in-distributed-systems-by-putting-the-smaller-service-in-control).
 
 ## 11. Health checks that mean something
 

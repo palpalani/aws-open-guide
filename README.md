@@ -204,18 +204,18 @@ Start here if you're new to AWS or evaluating whether to build on it.
 
 **Architecture Deep Reading (essential AWS canon):**
 - [AWS Architecture Blog](https://aws.amazon.com/blogs/architecture/) — reference architectures and AWS engineering posts
-- [AWS Builders Library](https://aws.amazon.com/builders-library/) — operations + resilience essays from AWS principal engineers
+- [AWS Builders Library](https://builder.aws.com/learn/topics/builders-library) — operations + resilience essays from AWS principal engineers
 - [Static Stability Using Availability Zones](https://aws.amazon.com/builders-library/static-stability-using-availability-zones/) — Builders Library essay on designing for failure
-- [Workload isolation using shuffle-sharding (Builders Library)](https://aws.amazon.com/builders-library/workload-isolation-using-shuffle-sharding/) — fault isolation beyond naive sharding
-- [Automating safe hands-off deployments (Builders Library)](https://aws.amazon.com/builders-library/automating-safe-hands-off-deployments/) — cells, waves, and limiting deployment blast radius
-- [Avoiding fallback in distributed systems (Builders Library)](https://aws.amazon.com/builders-library/avoiding-fallback-in-distributed-systems/) — why distributed fallback often widens outages
-- [Making retries safe with idempotent APIs (Builders Library)](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-apis/) — idempotency for safe retries under UNKNOWN outcomes
-- [Using load shedding to avoid overload (Builders Library)](https://aws.amazon.com/builders-library/using-load-shedding-to-avoid-overload/) — overload feedback loops and shedding layers
-- [Leader election in distributed systems (Builders Library)](https://aws.amazon.com/builders-library/leader-election-in-distributed-systems/) — leases, partitions, and consistency trade-offs
-- [Using dependency isolation / circuit breakers (Builders Library)](https://aws.amazon.com/builders-library/dependency-isolation/) — bulkheads and concurrency overload containment
-- [Implementing health checks (Builders Library)](https://aws.amazon.com/builders-library/implementing-health-checks/) — health checks and correlated fleet automation risks
-- [Instrumenting distributed systems for operational visibility (Builders Library)](https://aws.amazon.com/builders-library/instrumenting-distributed-systems-for-operational-visibility/) — structured logs, metrics, trace propagation
-- [Challenges with distributed systems (Builders Library)](https://aws.amazon.com/builders-library/challenges-with-distributed-systems/) — independent failures, nondeterminism, and testing permutations
+- [Workload isolation using shuffle-sharding (Builders Library)](https://builder.aws.com/content/3F06NpJ8YeoIGP8VHTw4n81pFn8/workload-isolation-using-shuffle-sharding) — fault isolation beyond naive sharding
+- [Automating safe hands-off deployments (Builders Library)](https://builder.aws.com/content/3ErTKQOTKc5NIw031UePBPxTQ6I/automating-safe-hands-off-deployments) — cells, waves, and limiting deployment blast radius
+- [Avoiding fallback in distributed systems (Builders Library)](https://builder.aws.com/content/3EuS9Sakq7L3VLQIF3qzfMfke1Y/avoiding-fallback-in-distributed-systems) — why distributed fallback often widens outages
+- [Making retries safe with idempotent APIs (Builders Library)](https://builder.aws.com/content/3Ev0BENTyBr0XxzRk5FDZzgNYos/making-retries-safe-with-idempotent-apis) — idempotency for safe retries under UNKNOWN outcomes
+- [Using load shedding to avoid overload (Builders Library)](https://builder.aws.com/content/3Eun1EEyX6p2e3VYNyRLSJzLuMV/using-load-shedding-to-avoid-overload) — overload feedback loops and shedding layers
+- [Leader election in distributed systems (Builders Library)](https://builder.aws.com/content/3Ev0vH0hfkcUizISUWYTvHibtcp/leader-election-in-distributed-systems) — leases, partitions, and consistency trade-offs
+- [Using dependency isolation / circuit breakers (Builders Library)](https://builder.aws.com/content/3EuxuD6bWtQ6gEp9FaKQfd3Z2AM/using-dependency-isolation-to-contain-concurrency-overload) — bulkheads and concurrency overload containment
+- [Implementing health checks (Builders Library)](https://builder.aws.com/content/3Ev53O39izHCtWLzp4XU6t8PC1O/implementing-health-checks) — health checks and correlated fleet automation risks
+- [Instrumenting distributed systems for operational visibility (Builders Library)](https://builder.aws.com/content/3EuxPBdIiiUhB5IK47p3O3fxhy7/instrumenting-distributed-systems-for-operational-visibility) — structured logs, metrics, trace propagation
+- [Challenges with distributed systems (Builders Library)](https://builder.aws.com/content/3F08f7GPFiZMCgXD8gny6OjxR0Z/challenges-with-distributed-systems) — independent failures, nondeterminism, and testing permutations
 - [Multi-Tier Architectures on AWS (whitepaper)](https://docs.aws.amazon.com/whitepapers/latest/overview-deployment-options/)
 - [AWS Multi-Region Fundamentals (whitepaper)](https://docs.aws.amazon.com/prescriptive-guidance/latest/aws-multi-region-fundamentals/) — active-active patterns
 
@@ -1016,7 +1016,7 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 - [Vantage](https://www.vantage.sh/) — AWS/GCP/Azure cost management
 - [Finout](https://www.finout.io/) — cost allocation and FinOps analytics
 - [ProsperOps](https://www.prosperops.com/) — automated Savings Plans optimization
-- [Kubecost](https://www.kubecost.com/) — Kubernetes cost optimization
+- [Kubecost](https://www.apptio.com/products/kubecost/) — Kubernetes cost optimization
 - [CloudBurn](https://cloudburn.io/) — open-source AWS cost policy engine for IaC and live scanning
 - [FinOps governance playbook](use-cases/finops-governance.md) — tagging, CUR, allocation, and quarterly optimization cadence
 
@@ -1258,7 +1258,7 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 - [Service Quotas console](https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html) — view and request increases for soft limits
 - [AWS service quotas reference](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html) — per-service hard and soft limits
 - [Error retries and exponential backoff (SDK guidance)](https://docs.aws.amazon.com/sdkref/latest/guide/feature-retry-behavior.html) — official retry behaviour
-- [Timeouts, retries, and backoff with jitter (Builders Library)](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/) — first-principles guidance
+- [Timeouts, retries, and backoff with jitter (Builders Library)](https://builder.aws.com/content/3EumjoZascWd1oZiEgL8ORlv3qE/timeouts-retries-and-backoff-with-jitter) — first-principles guidance
 - [API Gateway throttling](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-request-throttling.html) — account-, stage-, and key-level limits
 - [Lambda concurrency and throttling](https://docs.aws.amazon.com/lambda/latest/dg/lambda-concurrency.html) — reserved vs provisioned concurrency
 - [DynamoDB throttling and adaptive capacity](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html) — partition-level throttling
@@ -1425,10 +1425,10 @@ Highlights from the [official roster](#lifecycle-reference); see that page for t
 - [AWS SimSpace Weaver](https://aws.amazon.com/) — large-scale spatial simulations; shut down March 31, 2026 [shutdown]
 - [Amazon Connect Voice ID](https://docs.aws.amazon.com/connect/latest/adminguide/voice-id.html) — caller authentication; shut down May 20, 2026 [shutdown]
 - [AWS DMS Fleet Advisor](https://docs.aws.amazon.com/dms/latest/userguide/) — replacement → AWS DMS; shut down May 20, 2026 [shutdown]
-- [AWS IoT Events](https://aws.amazon.com/iot-events/) — event detection; replacement → EventBridge + Lambda; shut down May 20, 2026 [shutdown]
-- [AWS IQ](https://aws.amazon.com/partners/find-a-partner/) — freelance AWS experts marketplace; shut down May 20, 2026 [shutdown]
-- [AWS Panorama](https://aws.amazon.com/panorama/) — appliance-based computer vision at the edge; shut down May 20, 2026 [shutdown]
-- [Amazon Inspector Classic](https://docs.aws.amazon.com/inspector/v1/userguide/inspector_introduction.html) — replacement → Amazon Inspector v2; shut down May 20, 2026 [shutdown]
+- [AWS IoT Events](https://aws.amazon.com/iot/) — event detection; replacement → EventBridge + Lambda; shut down May 20, 2026 [shutdown]
+- [AWS IQ](https://partners.amazonaws.com/) — freelance AWS experts marketplace; shut down May 20, 2026 [shutdown]
+- [AWS Panorama](https://aws.amazon.com/ai/machine-learning/) — appliance-based computer vision at the edge; shut down May 20, 2026 [shutdown]
+- [Amazon Inspector Classic](https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html) — replacement → Amazon Inspector v2; shut down May 20, 2026 [shutdown]
 
 ### End-of-support announced — avoid for new projects
 
@@ -1639,9 +1639,9 @@ See also: [Cognito for SaaS auth](#amazon-cognito) · [DynamoDB single-table for
 > What teams get wrong on AWS — drawn from postmortems, bill-shock case studies, and scaling war stories.
 
 - [The Amazon Builders' Library](#foundations) — first-person engineering writeups including how AWS itself avoids common mistakes
-- [Avoiding insurmountable queue backlogs (Builders Library)](https://aws.amazon.com/builders-library/avoiding-insurmountable-queue-backlogs/) — the classic queue anti-pattern
+- [Avoiding insurmountable queue backlogs (Builders Library)](https://builder.aws.com/content/3EuRcgkTP1MI0c7zM8W6HL3WIqA/avoiding-insurmountable-queue-backlogs) — the classic queue anti-pattern
 - [Caching challenges and strategies (Builders Library)](https://aws.amazon.com/builders-library/caching-challenges-and-strategies/) — when caches make things worse
-- [Avoiding overload in distributed systems by putting the smaller service in control (Builders Library)](https://aws.amazon.com/builders-library/avoiding-overload-in-distributed-systems-by-putting-the-smaller-service-in-control/) — load shedding done right
+- [Avoiding overload in distributed systems by putting the smaller service in control (Builders Library)](https://builder.aws.com/content/3EukISjbJAGNdrxjKaN6RG0wlHG/avoiding-overload-in-distributed-systems-by-putting-the-smaller-service-in-control) — load shedding done right
 - [Bill teardowns — NAT Gateway, data transfer, Lambda runaway](#bill-teardowns-real-customer-incidents) — see Cost Management section for real customer incidents
 - [Protect AWS infrastructure from cost-based attacks](#holistic-security-guides) — denial-of-wallet patterns
 
@@ -1915,7 +1915,7 @@ Common SaaS / OSS integrations on AWS:
 ## Conferences & Events
 
 - [AWS re:Invent](#official-aws-learning-q-a-portals) — Las Vegas, annual (December)
-- [AWS re:Inforce](https://aws.amazon.com/events/reinforce/) — security-focused
+- [AWS re:Invent security sessions](https://aws.amazon.com/events/reinvent/sessions/security-focus/) — security-focused sessions at re:Invent
 - [AWS Summits](https://aws.amazon.com/events/summits/) — regional, free
 - [AWS Community Days](https://aws.amazon.com/events/community-day/) — community-organized
 - [Cloud Next](https://cloud.withgoogle.com/next/25) (GCP) and [Microsoft Build](https://build.microsoft.com/en-US/home) — useful for cross-cloud context

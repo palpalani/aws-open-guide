@@ -99,7 +99,7 @@ Shift-left (CI/CD):
 - **Symptom:** Prowler role has `AdministratorAccess`
 - **Cause:** Quick-start templates in dev never tightened
 - **Detection:** IAM Access Analyzer; Prowler self-check
-- **Recovery:** Read-only scan role per [Prowler docs](https://docs.prowler.com/)
+- **Recovery:** Read-only scan role per [Prowler docs](https://docs.prowler.com/introduction)
 
 ### Compliance score gaming
 
@@ -198,7 +198,7 @@ Link: [anti-patterns.md](anti-patterns.md), [ci-cd.md](ci-cd.md) for OIDC and pi
 - [Steampipe](https://steampipe.io/) — SQL queries across AWS security APIs
 
 **Decision guides:**
-- [Prowler documentation](https://docs.prowler.com/) — runtime scanning vs Checkov IaC gates
+- [Prowler documentation](https://docs.prowler.com/introduction) — runtime scanning vs Checkov IaC gates
 
 ---
 
