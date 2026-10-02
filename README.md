@@ -233,6 +233,7 @@ Virtual servers, containers' substrate, and specialized chips.
 - [EC2 Documentation](https://docs.aws.amazon.com/ec2/)
 - [EC2 Instance Types](https://aws.amazon.com/ec2/instance-types/)
 - [EC2 Pricing](https://aws.amazon.com/ec2/pricing/)
+- [Amazon Linux 2023](https://docs.aws.amazon.com/linux/al2023/ug/what-is-amazon-linux.html) — AWS-maintained Linux distribution optimized for EC2
 - [Spot Instance Advisor](https://aws.amazon.com/ec2/spot/instance-advisor/)
 - [AWS Compute Blog](https://aws.amazon.com/blogs/compute/) — EC2, Lambda, Batch, and Step Functions posts
 
@@ -267,6 +268,11 @@ Virtual servers, containers' substrate, and specialized chips.
 ### EC2 Image Builder
 
 - [Image Builder documentation](https://docs.aws.amazon.com/imagebuilder/) — automated pipelines to build, test, and distribute AMIs and container images
+
+### AWS Local Zones & Wavelength
+
+- [Local Zones documentation](https://docs.aws.amazon.com/local-zones/) — AWS infrastructure in metro areas for single-digit ms latency
+- [Wavelength documentation](https://docs.aws.amazon.com/wavelength/) — AWS compute embedded in 5G carrier networks
 
 ### AWS Batch
 
@@ -319,6 +325,7 @@ Container orchestration and registry.
 **Official:**
 - [ECS Documentation](https://docs.aws.amazon.com/ecs/)
 - [ECS Pricing](https://aws.amazon.com/ecs/pricing/)
+- [ECS Anywhere](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-anywhere.html) — run ECS tasks on on-prem servers and VMs
 - [AWS Containers Blog](https://aws.amazon.com/blogs/containers/) — ECS, EKS, Fargate, and ECR architecture posts
 
 
@@ -334,6 +341,7 @@ See also: [Spot & interruptible compute — ECS capacity providers](#spot--inter
 - [EKS Documentation](https://docs.aws.amazon.com/eks/)
 - [EKS Best Practices Guides](https://docs.aws.amazon.com/eks/latest/best-practices/introduction.html)
 - [EKS Auto Mode](https://docs.aws.amazon.com/eks/latest/userguide/automode.html) — AWS manages cluster compute, networking, and storage
+- [EKS Anywhere](https://anywhere.eks.amazonaws.com/docs/) — EKS-distro Kubernetes clusters on your own infrastructure
 
 **Tools:**
 - [Karpenter](https://karpenter.sh/) — node autoscaling for EKS
@@ -792,6 +800,10 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 > Evidence collection and audit-ready controls — Audit Manager for evidence, Artifact for AWS attestations, Config conformance packs for continuous checks.
 
+### Compliance tooling
+
+- [AWS Artifact](https://docs.aws.amazon.com/artifact/) — on-demand AWS compliance reports and agreements
+
 ### HIPAA
 
 - [HIPAA Eligible AWS Services](https://aws.amazon.com/compliance/hipaa-eligible-services-reference/)
@@ -854,6 +866,7 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 ### Amazon Kinesis
 
 - [Kinesis Documentation](https://docs.aws.amazon.com/kinesis/)
+- [Kinesis Video Streams](https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/what-is-kinesis-video.html) — ingest, store, and process video streams from devices
 
 ### Amazon Data Firehose
 
@@ -899,6 +912,14 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 - [Clean Rooms documentation](https://docs.aws.amazon.com/clean-rooms/) — analyze combined datasets with partners without sharing raw data
 
+
+### AWS Data Exchange
+
+- [Data Exchange documentation](https://docs.aws.amazon.com/data-exchange/) — find, subscribe to, and use third-party datasets
+
+### AWS Entity Resolution
+
+- [Entity Resolution documentation](https://docs.aws.amazon.com/entityresolution/) — match and link related records across data sources
 
 ### Data Pipelines & Lakes
 
@@ -966,6 +987,8 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 **Official:**
 - [SageMaker Documentation](https://docs.aws.amazon.com/sagemaker/)
 - [AWS Machine Learning Blog](https://aws.amazon.com/blogs/machine-learning/) — training, inference, and MLOps posts
+- [SageMaker HyperPod](https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod.html) — resilient clusters for large-scale model training
+- [SageMaker JumpStart](https://docs.aws.amazon.com/sagemaker/latest/dg/studio-jumpstart.html) — pretrained models and solution templates
 
 
 ### Amazon Q
@@ -989,6 +1012,10 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 - [Amazon Textract](https://aws.amazon.com/textract/) — OCR + document AI
 - [Amazon Polly](https://aws.amazon.com/polly/) — text-to-speech
 - [Amazon Translate](https://aws.amazon.com/translate/) · [Amazon Transcribe](https://aws.amazon.com/transcribe/)
+- [Amazon Lex](https://docs.aws.amazon.com/lex/) — conversational voice and text bots
+- [Amazon Personalize](https://docs.aws.amazon.com/personalize/) — real-time recommendations
+- [Amazon HealthLake](https://docs.aws.amazon.com/healthlake/) — FHIR data store for health data
+- [Amazon Comprehend Medical](https://docs.aws.amazon.com/comprehend-medical/latest/dev/comprehendmedical-welcome.html) — extract medical entities from clinical text
 
 ### Cost Control for AI
 
@@ -1102,6 +1129,7 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 - [AWS SDK list](https://builder.aws.com/build/tools) — Python (boto3), JS, Java, Go, Rust, ...
 - [AWS CloudShell](https://aws.amazon.com/cloudshell/) — browser shell with credentials pre-loaded
 - [AWS Toolkit for VS Code / JetBrains](https://aws.amazon.com/visualstudiocode/)
+- [Amazon Corretto](https://aws.amazon.com/corretto/) — no-cost, production-ready OpenJDK distribution
 
 ### Asset Pipelines / Runtimes
 
@@ -1170,6 +1198,7 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 - [Billing views](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/) — scoped cost views for teams and accounts
 - [AWS Trusted Advisor](https://aws.amazon.com/premiumsupport/technology/trusted-advisor/)
 - [AWS Customer Carbon Footprint Tool](https://aws.amazon.com/sustainability/tools/console/) — estimated emissions by service and region
+- [AWS Billing Conductor](https://docs.aws.amazon.com/billingconductor/latest/userguide/what-is-billingconductor.html) — pro forma billing for showback and chargeback
 
 **OSS Tools:**
 - [Cloud Intelligence Dashboards](https://github.com/aws-solutions-library-samples/cloud-intelligence-dashboards-framework) — CUR analytics dashboards (CUDOS, Cost Intelligence, KPI)
@@ -1346,6 +1375,11 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 - [AWS IoT Blog](https://aws.amazon.com/blogs/iot/) — device connectivity, Greengrass, and industrial IoT posts
 
 
+### AWS IoT Device Management & Device Defender
+
+- [IoT Device Management](https://aws.amazon.com/iot-device-management/) — register, organize, monitor, and update device fleets
+- [IoT Device Defender](https://docs.aws.amazon.com/iot-device-defender/latest/devguide/what-is-device-defender.html) — audit device security configuration
+
 ### AWS IoT Greengrass
 
 - [Greengrass documentation](https://docs.aws.amazon.com/greengrass/) — edge runtime for local compute, messaging, and ML on devices
@@ -1360,6 +1394,10 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 
 - [IoT TwinMaker documentation](https://docs.aws.amazon.com/iot-twinmaker/) — build digital twins of real-world systems
 
+
+### FreeRTOS
+
+- [FreeRTOS documentation](https://docs.aws.amazon.com/freertos/) — real-time OS for microcontrollers with AWS IoT libraries
 
 ### Architecture
 
