@@ -64,7 +64,8 @@ The maintainer's site [factualminds.com](https://www.factualminds.com/) is **dis
 
 | Layer | Rule |
 |-------|------|
-| **README body** | At most **one hub link per major section** (FinOps, Security, Network cost, Container cost, Decision Guides, Foundations). No per-service Production Guide links to factualminds. |
+| **README body** | At most **one hub link per major section** (FinOps, Security, Network cost, Container cost, Decision Guides, Foundations, Email & Communication, AI & ML). No per-service Production Guide links to factualminds. |
+| **README header** | One maintainer credit line naming the verified AWS partner tier only. No competency or designation claims without an AWS-published source. |
 | **README footer** | [Need Implementation Help?](README.md#need-implementation-help) block — full service entry points (unchanged). |
 | **Playbooks** | factualminds links **only in §11 References**, max **4 per playbook** (one compare/decide, one implementation blog if needed, one service, optional fourth). |
 | **UTMs** | Use `?utm_source=aws-open-guide&utm_medium=readme&utm_campaign={section}` on README hub links only. |
