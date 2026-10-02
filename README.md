@@ -1247,7 +1247,7 @@ See also: [Cost pitfalls — reserved capacity and Savings Plans](use-cases/cost
 - [Fargate capacity providers](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html) — includes Fargate Spot
 
 **Production Guides:**
-- [EC2 Spot Instance intelligent selection](#amazon-ec2--elastic-compute-cloud) — cost optimization for Spot workloads
+- [Attribute-based instance type selection](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html) — flexible instance pools for Spot capacity
 
 ### Storage optimization
 
@@ -1257,7 +1257,7 @@ See also: [Cost pitfalls — reserved capacity and Savings Plans](use-cases/cost
 - [EBS pricing](https://aws.amazon.com/ebs/pricing/)
 
 **Production Guides:**
-- [S3 storage costs aren't actually cheap](#amazon-s3--simple-storage-service) — real teardown
+- [Amazon S3 cost optimization](https://docs.aws.amazon.com/AmazonS3/latest/userguide/cost-optimization.html) — storage classes, lifecycle, and request cost levers
 
 See also: [Cost pitfalls — EBS gp2 vs gp3](use-cases/cost-pitfalls.md#ebs-gp2-vs-gp3-almost-free-win) · [File upload playbook — S3 lifecycle](use-cases/file-upload.md)
 
@@ -1296,7 +1296,7 @@ See also: [Spot & interruptible compute](#spot--interruptible-compute) · [Farga
 - [API Gateway pricing](https://aws.amazon.com/api-gateway/pricing/)
 
 **Production Guides:**
-- [Lambda cost optimization — pay-per-request vs provisioned](#aws-lambda)
+- [Lambda provisioned concurrency](https://docs.aws.amazon.com/lambda/latest/dg/provisioned-concurrency.html) — when provisioned beats on-demand pricing
 
 See also: [Rightsizing](#rightsizing) · [Cost pitfalls — Lambda over-provisioned memory](use-cases/cost-pitfalls.md#lambda-over-provisioned-memory)
 
@@ -1329,7 +1329,7 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 
 ### Bill teardowns (real customer incidents)
 
-- [Bill teardown #2 — healthcare's NAT Gateway problem](#nat-gateway)
+- [The $1000 AWS mistake (Geocodio)](https://www.geocod.io/code-and-coordinates/2025-11-18-the-1000-aws-mistake) — S3 traffic through NAT Gateway without a VPC endpoint
 
 **OSS cost tools:**
 - [Infracost](https://www.infracost.io/) — Terraform cost diff in PRs
