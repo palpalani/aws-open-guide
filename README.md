@@ -280,7 +280,7 @@ Virtual servers, containers' substrate, and specialized chips.
 ### AWS App Runner
 
 > Fully managed container service for web apps and APIs.
-- [App Runner](https://aws.amazon.com/apprunner/)
+- [App Runner](https://aws.amazon.com/apprunner/) — maintenance effective April 30, 2026 [maintenance]
 
 ### AWS Elastic Beanstalk
 
@@ -973,7 +973,7 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 > AI assistant family for developers, business users, and analytics.
 
 **Official:**
-- [Amazon Q for Business](https://aws.amazon.com/q/business/)
+- [Amazon Q for Business](https://aws.amazon.com/q/business/) — maintenance announced June 2026 [maintenance]
 
 
 ### Kiro IDE
@@ -1605,7 +1605,11 @@ When you know what you need but not which AWS service to use. For interactive de
 
 - [AWS Service Lifecycle](https://docs.aws.amazon.com/general/latest/gr/service-lifecycle.html) — official definitions of Maintenance, Sunset, Full Shutdown
 - [Services in Full Shutdown](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html) — official roster of shut-down services with dates
-- [AWS service changes — May 2025](https://aws.amazon.com/about-aws/whats-new/2025/05/aws-service-changes/) — most recent batch of lifecycle announcements
+- [AWS service changes — May 2025](https://aws.amazon.com/about-aws/whats-new/2025/05/aws-service-changes/) — May 2025 batch of lifecycle announcements
+- [AWS service availability updates — October 2025](https://aws.amazon.com/about-aws/whats-new/2025/10/aws-service-availability/) — maintenance and sunset batch effective November 7, 2025
+- [AWS service availability updates — March 2026](https://aws.amazon.com/about-aws/whats-new/2026/03/aws-service-availability/) — App Runner, Audit Manager, and CloudTrail Lake changes
+- [AWS service availability updates — June 2026](https://aws.amazon.com/about-aws/whats-new/2026/06/aws-service-availability/) — Kendra, Q Business, and WorkSpaces changes
+- [AWS service availability updates — September 2026](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-service-availability/) — most recent batch of lifecycle announcements
 - [AWS Product Lifecycle blog post](https://aws.amazon.com/blogs/aws/introducing-the-aws-product-lifecycle-page-and-aws-service-availability-updates/) — context behind the lifecycle page
 
 ### Full shutdown — already removed
@@ -1632,12 +1636,25 @@ Highlights from the [official roster](#lifecycle-reference); see that page for t
 - [AWS IQ](https://partners.amazonaws.com/) — freelance AWS experts marketplace; shut down May 20, 2026 [shutdown]
 - [AWS Panorama](https://aws.amazon.com/ai/machine-learning/) — appliance-based computer vision at the edge; shut down May 20, 2026 [shutdown]
 - [Amazon Inspector Classic](https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html) — replacement → Amazon Inspector v2; shut down May 20, 2026 [shutdown]
+- [AWS Infrastructure Composer (standalone console)](#lifecycle-reference) — no longer available as of September 29, 2026 [shutdown]
+- [Amazon Mechanical Turk](#lifecycle-reference) — crowdsourcing marketplace; no longer available as of September 29, 2026 [shutdown]
 
 ### End-of-support announced — avoid for new projects
 
-Per the [May 2025 AWS service changes announcement](#lifecycle-reference). AWS has not yet published an exact end-of-support date.
+Per the [AWS service availability announcements](#lifecycle-reference). Dates are listed where AWS has published them.
 
 - [Amazon Pinpoint](https://aws.amazon.com/pinpoint/) — multi-channel messaging; replacement → SES, SNS, EventBridge [sunset]
+- [AWS Proton](#lifecycle-reference) — platform-engineering templates; sunset announced October 2025 [sunset]
+- [Amazon FinSpace](#lifecycle-reference) — financial-services analytics; sunset announced October 2025 [sunset]
+- [Amazon Lookout for Equipment](#lifecycle-reference) — predictive maintenance; sunset announced October 2025 [sunset]
+- [AWS IoT Greengrass v1](#aws-iot-greengrass) — sunset announced October 2025 [sunset]
+- [Amazon WorkSpaces PCoIP and WorkSpaces Pools](#lifecycle-reference) — sunset announced June 2026 [sunset]
+- [AWS Managed Services (AMS) Advanced](#lifecycle-reference) — sunset announced June 2026 [sunset]
+- [AWS re:Post Private](#lifecycle-reference) — private re:Post community; sunset announced June 2026 [sunset]
+- [Amazon Managed Blockchain](#lifecycle-reference) — end of support September 29, 2027 [sunset]
+- [Amazon DevOps Guru](#lifecycle-reference) — ML ops insights; end of support September 30, 2027 [sunset]
+- [Amazon RDS Custom for Oracle](#lifecycle-reference) — sunset announced March 2026 [sunset]
+- [Amazon WorkMail and WorkSpaces Thin Client](#lifecycle-reference) — sunset announced March 2026 [sunset]
 
 ### Maintenance — closed to new customers
 
@@ -1645,6 +1662,21 @@ Per AWS lifecycle docs: existing customers retain access; no new features, no on
 
 - [AWS X-Ray](#aws-x-ray) — distributed tracing; in maintenance per AWS lifecycle docs [maintenance]
 - [Amazon Timestream for LiveAnalytics](#amazon-timestream) — closed to new customers June 20, 2025 [maintenance]
+- [AWS Migration Hub and Application Discovery Service](#migration--transfer) — closed to new customers November 7, 2025 [maintenance]
+- [AWS Mainframe Modernization](#lifecycle-reference) — closed to new customers November 7, 2025 [maintenance]
+- [Amazon CodeCatalyst and CodeGuru Reviewer](#lifecycle-reference) — closed to new customers November 7, 2025 [maintenance]
+- [Amazon Fraud Detector](#lifecycle-reference) — closed to new customers November 7, 2025 [maintenance]
+- [Amazon S3 Object Lambda and Glacier vaults](#lifecycle-reference) — S3 Glacier storage classes are unaffected [maintenance]
+- [AWS Snowball Edge (Compute and Storage Optimized)](#lifecycle-reference) — closed to new customers November 7, 2025 [maintenance]
+- [Systems Manager Change Manager and Incident Manager](#lifecycle-reference) — closed to new customers November 7, 2025 [maintenance]
+- [AWS App Runner](#aws-app-runner) — closed to new customers April 30, 2026 [maintenance]
+- [AWS Audit Manager and CloudTrail Lake](#lifecycle-reference) — closed to new customers April 30, 2026 [maintenance]
+- [AWS IoT FleetWise](#lifecycle-reference) — closed to new customers April 30, 2026 [maintenance]
+- [Amazon Kendra](#lifecycle-reference) — enterprise search; maintenance announced June 2026 [maintenance]
+- [Amazon Q Business](#amazon-q) — maintenance announced June 2026 [maintenance]
+- [Amazon Bedrock Agents Classic](#amazon-bedrock) — maintenance announced June 2026 [maintenance]
+- [Amazon Cognito Sync and Directory Service Simple AD](#lifecycle-reference) — maintenance announced June 2026 [maintenance]
+- [Amazon WorkSpaces Secure Browser](#lifecycle-reference) — closed to new customers October 29, 2026 [maintenance]
 
 ### Status tags used in this guide
 
