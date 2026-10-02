@@ -260,6 +260,14 @@ Virtual servers, containers' substrate, and specialized chips.
 - [Trainium](https://aws.amazon.com/ai/machine-learning/trainium/) · [Inferentia](https://aws.amazon.com/ai/machine-learning/inferentia/)
 - [EC2 Trn3 UltraServers — Trainium3](https://aws.amazon.com/ec2/instance-types/trn3/) — fourth-gen Trainium chips for frontier-scale training
 
+### Amazon EC2 Auto Scaling
+
+- [EC2 Auto Scaling documentation](https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html) — keeps the right number of EC2 instances via Auto Scaling groups
+
+### EC2 Image Builder
+
+- [Image Builder documentation](https://docs.aws.amazon.com/imagebuilder/) — automated pipelines to build, test, and distribute AMIs and container images
+
 ### AWS Batch
 
 - [Batch documentation](https://docs.aws.amazon.com/batch/)
@@ -274,7 +282,14 @@ Virtual servers, containers' substrate, and specialized chips.
 > Fully managed container service for web apps and APIs.
 - [App Runner](https://aws.amazon.com/apprunner/)
 
+### AWS Elastic Beanstalk
+
+> PaaS for web apps — provisions EC2, load balancing, scaling, and health monitoring.
+- [Elastic Beanstalk documentation](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html)
+
 ### Amazon Elastic VMware Service (EVS)
+
+- [EVS documentation](https://docs.aws.amazon.com/evs/) — run VMware Cloud Foundation inside your VPC on EC2 bare metal
 
 
 ### AWS Outposts
@@ -318,6 +333,7 @@ See also: [Spot & interruptible compute — ECS capacity providers](#spot--inter
 **Official:**
 - [EKS Documentation](https://docs.aws.amazon.com/eks/)
 - [EKS Best Practices Guides](https://docs.aws.amazon.com/eks/latest/best-practices/introduction.html)
+- [EKS Auto Mode](https://docs.aws.amazon.com/eks/latest/userguide/automode.html) — AWS manages cluster compute, networking, and storage
 
 **Tools:**
 - [Karpenter](https://karpenter.sh/) — node autoscaling for EKS
@@ -327,6 +343,10 @@ See also: [Spot & interruptible compute — ECS capacity providers](#spot--inter
 
 **Kubernetes cost & ops (vendor blogs):**
 - [Cast AI Blog](https://cast.ai/blog/) — Kubernetes cost optimization and autoscaler guidance for cloud workloads
+
+### Red Hat OpenShift Service on AWS (ROSA)
+
+- [ROSA documentation](https://docs.aws.amazon.com/rosa/) — managed OpenShift jointly operated by Red Hat and AWS
 
 ### AWS Fargate
 
@@ -349,6 +369,8 @@ See also: [Fargate Spot — capacity providers](#spot--interruptible-compute) ·
 
 ### Decision
 
+- [Choosing an AWS container service](https://docs.aws.amazon.com/decision-guides/latest/decision-guides/choosing-aws-container-service.html) — official ECS vs EKS vs Fargate vs App Runner guide
+
 
 ---
 
@@ -367,6 +389,8 @@ Run code without managing servers.
 - [Lambda Pricing](https://aws.amazon.com/lambda/pricing/)
 - [Lambda Powertools (Python/TypeScript/Java)](https://docs.aws.amazon.com/powertools/python/latest/)
 - [Lambda invocation, scaling and concurrency (official docs)](https://docs.aws.amazon.com/lambda/latest/dg/lambda-concurrency.html)
+- [Lambda Managed Instances](https://docs.aws.amazon.com/lambda/latest/dg/lambda-managed-instances.html) — run functions on chosen EC2 instance types, no instance management
+- [Lambda durable functions](https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html) — resilient multi-step workflows that can run up to one year
 - [AWS Lambda blog category (Compute Blog)](https://aws.amazon.com/blogs/compute/category/aws-lambda/) — patterns, deep dives, releases
 
 **Production Guides:**
@@ -391,6 +415,15 @@ See also: [Cost Management — rightsizing](#rightsizing) · [Cost pitfalls — 
 > Serverless event bus for SaaS, AWS services, and custom events.
 - [EventBridge Documentation](https://docs.aws.amazon.com/eventbridge/)
 - [AWS Event-Driven Architecture (overview)](https://aws.amazon.com/event-driven-architecture/) — official intro, services, patterns, and reference architectures
+
+### AWS AppSync
+
+- [AppSync documentation](https://docs.aws.amazon.com/appsync/latest/devguide/what-is-appsync.html) — serverless GraphQL and Pub/Sub APIs connecting apps to data
+
+### AWS Amplify
+
+- [Amplify Hosting documentation](https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html) — Git-based hosting and CI/CD for full-stack SSR and SPA apps
+- [Amplify Gen 2 docs](https://docs.amplify.aws/) — TypeScript code-first backends for web and mobile
 
 ### AWS SAM & Serverless Framework
 
@@ -449,6 +482,8 @@ See also: [Cost Management — rightsizing](#rightsizing) · [Cost pitfalls — 
 
 > Native vector storage in S3 — purpose-built for RAG and AI workloads.
 
+- [S3 Vectors documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors.html) — vector buckets and indexes with Bedrock Knowledge Bases integration
+
 ### Amazon EBS — Elastic Block Store
 
 - [EBS Documentation](https://docs.aws.amazon.com/ebs/)
@@ -461,10 +496,22 @@ See also: [Cost Management — rightsizing](#rightsizing) · [Cost pitfalls — 
 
 - [FSx](https://aws.amazon.com/fsx/) — managed Windows, Lustre, NetApp ONTAP, OpenZFS
 
+### AWS DataSync
+
+- [DataSync documentation](https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html) — fast transfers between on-prem, other clouds, and AWS storage
+
+### AWS Transfer Family
+
+- [Transfer Family documentation](https://docs.aws.amazon.com/transfer/latest/userguide/what-is-aws-transfer-family.html) — managed SFTP, FTPS, FTP, and AS2 into S3 and EFS
+
 ### AWS Backup
 
 > Centralized backup service across AWS resources.
 - [AWS Backup](https://aws.amazon.com/backup/)
+
+### AWS Elastic Disaster Recovery
+
+- [Elastic Disaster Recovery documentation](https://docs.aws.amazon.com/drs/latest/userguide/what-is-drs.html) — continuous replication with point-in-time recovery
 
 ### AWS Storage Gateway
 
@@ -494,6 +541,11 @@ See also: [Cost Management — rightsizing](#rightsizing) · [Cost pitfalls — 
 
 - [Aurora Documentation](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html)
 
+### Amazon Aurora DSQL
+
+> Serverless, distributed SQL with active-active multi-Region writes.
+- [Aurora DSQL documentation](https://docs.aws.amazon.com/aurora-dsql/latest/userguide/what-is-aurora-dsql.html)
+
 ### Amazon DynamoDB
 
 > Single-digit millisecond NoSQL key-value + document store.
@@ -512,6 +564,7 @@ See also: [Cost Management — rightsizing](#rightsizing) · [Cost pitfalls — 
 > Petabyte-scale data warehouse.
 
 - [Redshift Documentation](https://docs.aws.amazon.com/redshift/)
+- [Redshift Serverless](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-serverless.html) — run analytics without provisioning clusters
 
 ### Amazon ElastiCache
 
@@ -530,11 +583,17 @@ See also: [Cost Management — rightsizing](#rightsizing) · [Cost pitfalls — 
 
 - [Neptune](https://aws.amazon.com/neptune/) — graph database
 
+### Amazon Keyspaces
+
+- [Keyspaces documentation](https://docs.aws.amazon.com/keyspaces/latest/devguide/what-is-keyspaces.html) — serverless Apache Cassandra-compatible database
+
 ### Amazon Timestream
 
 - [Timestream](https://aws.amazon.com/timestream/) — time-series; LiveAnalytics closed to new customers June 20, 2025
 
 ### Decision Guides
+
+- [Choosing an AWS database service](https://docs.aws.amazon.com/decision-guides/latest/decision-guides/databases-on-aws-how-to-choose.html) — official relational, key-value, document, and graph guide
 
 
 ---
@@ -552,8 +611,13 @@ See also: [Cost Management — rightsizing](#rightsizing) · [Cost pitfalls — 
 
 ### NAT Gateway
 
+- [NAT gateways documentation](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html) — public and private NAT, AZ placement, and pricing behavior
 
 See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway) · [Network cost optimization](#network-cost-optimization)
+
+### Elastic Load Balancing
+
+- [ELB documentation](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html) — Application, Network, and Gateway Load Balancers across AZs
 
 ### Amazon Route 53
 
@@ -573,7 +637,25 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 - [API Gateway Documentation](https://docs.aws.amazon.com/apigateway/)
 
+### AWS PrivateLink
+
+- [PrivateLink documentation](https://docs.aws.amazon.com/vpc/latest/privatelink/what-is-privatelink.html) — private connectivity to services via VPC endpoints
+
+### AWS Site-to-Site VPN
+
+- [Site-to-Site VPN documentation](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html) — IPsec tunnels between VPCs or Transit Gateway and on-prem
+
+### Amazon VPC Lattice
+
+- [VPC Lattice documentation](https://docs.aws.amazon.com/vpc-lattice/latest/ug/what-is-vpc-lattice.html) — service-to-service networking, auth, and monitoring across VPCs
+
+### AWS Cloud Map
+
+- [Cloud Map documentation](https://docs.aws.amazon.com/cloud-map/latest/dg/what-is-cloud-map.html) — service discovery for cloud resources by name
+
 ### AWS Verified Access
+
+- [Verified Access documentation](https://docs.aws.amazon.com/verified-access/) — VPN-less, zero-trust access to corporate applications
 
 
 ### AWS Direct Connect / Transit Gateway / Global Accelerator
@@ -595,6 +677,8 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 ### AWS IAM Identity Center (formerly SSO)
 
+- [IAM Identity Center documentation](https://docs.aws.amazon.com/singlesignon/) — workforce single sign-on across AWS accounts and applications
+
 
 ### Amazon Cognito
 
@@ -603,6 +687,14 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 ### AWS KMS — Key Management Service
 
 - [KMS Documentation](https://docs.aws.amazon.com/kms/)
+
+### AWS Certificate Manager (ACM)
+
+- [ACM documentation](https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html) — issue, store, and auto-renew public and private TLS certificates
+
+### AWS CloudHSM
+
+- [CloudHSM documentation](https://docs.aws.amazon.com/cloudhsm/) — single-tenant FIPS-validated hardware security modules
 
 ### Amazon GuardDuty
 
@@ -617,14 +709,34 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 - [WAF Documentation](https://docs.aws.amazon.com/waf/)
 
+### AWS Shield
+
+- [Shield documentation](https://docs.aws.amazon.com/waf/latest/developerguide/shield-chapter.html) — managed DDoS protection; Standard is free, Advanced is paid
+
 ### Amazon Inspector
+
+- [Inspector documentation](https://docs.aws.amazon.com/inspector/) — vulnerability scanning for EC2, ECR images, and Lambda functions
 
 
 ### Amazon Macie & Detective
 
+- [Macie documentation](https://docs.aws.amazon.com/macie/) — sensitive data discovery in S3
+- [Detective documentation](https://docs.aws.amazon.com/detective/) — investigate the root cause of security findings
+
 
 ### AWS Network Firewall & Firewall Manager
 
+- [Network Firewall documentation](https://docs.aws.amazon.com/network-firewall/) — managed stateful network firewall and IPS for VPCs
+- [Firewall Manager](https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html) — central WAF, Shield, and firewall policy across an organization
+
+
+### AWS Resource Access Manager (RAM)
+
+- [RAM documentation](https://docs.aws.amazon.com/ram/latest/userguide/what-is.html) — share resources across accounts, OUs, and organizations
+
+### AWS Directory Service
+
+- [Directory Service documentation](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html) — managed Microsoft AD and AD Connector
 
 ### AWS Secrets Manager / Parameter Store
 
@@ -636,9 +748,18 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 ### Amazon Verified Permissions (Cedar)
 
+- [Verified Permissions documentation](https://docs.aws.amazon.com/verifiedpermissions/) — managed fine-grained authorization for applications
+- [Cedar policy language](https://cedarpolicy.com/) — open-source policy language behind Verified Permissions
+
 
 ### Amazon Security Lake
 
+- [Security Lake documentation](https://docs.aws.amazon.com/security-lake/) — centralizes security logs in S3 in the OCSF format
+
+
+### AWS Security Incident Response
+
+- [Security Incident Response documentation](https://docs.aws.amazon.com/security-ir/latest/userguide/what-is.html) — triages findings and engages responders for incidents
 
 ### AWS Shared Responsibility Model
 
@@ -677,14 +798,22 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 ### PCI DSS
 
+- [AWS PCI compliance](https://aws.amazon.com/compliance/pci-faqs/) — AWS PCI DSS attestation, scoping, and responsibility FAQs
+
 
 ### SOC 2
+
+- [AWS SOC reports](https://aws.amazon.com/compliance/soc-faqs/) — SOC 1, 2, and 3 scope, periods, and how to request reports
 
 
 ### ISO 27001
 
+- [AWS ISO/IEC 27001](https://aws.amazon.com/compliance/iso-27001-faqs/) — certification scope, regions, and in-scope services
+
 
 ### GDPR
+
+- [AWS GDPR Center](https://aws.amazon.com/compliance/gdpr-center/) — DPA, data transfers, and GDPR controls on AWS
 
 
 ### NIS2
@@ -695,8 +824,12 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 ### DORA (Digital Operational Resilience Act)
 
+- [AWS and DORA](https://aws.amazon.com/compliance/dora/) — AWS resources for EU financial-sector operational resilience
+
 
 ### EU AI Act
+
+- [The AWS approach to the EU AI Act](https://aws.amazon.com/blogs/machine-learning/building-trust-in-ai-the-aws-approach-to-the-eu-ai-act/) — AWS position and customer obligations
 
 
 ---
@@ -722,28 +855,49 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 - [Kinesis Documentation](https://docs.aws.amazon.com/kinesis/)
 
+### Amazon Data Firehose
+
+- [Data Firehose documentation](https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html) — managed delivery of streams to S3, Redshift, OpenSearch, and Iceberg
+
+### Amazon MSK — Managed Streaming for Apache Kafka
+
+- [MSK documentation](https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html) — managed Apache Kafka, provisioned and serverless
+
 ### Amazon Managed Service for Apache Flink
+
+- [Managed Service for Apache Flink documentation](https://docs.aws.amazon.com/managed-flink/) — serverless Apache Flink for stream processing
 
 
 ### Amazon OpenSearch Service
 
 **Official:**
 - [OpenSearch Documentation](https://docs.aws.amazon.com/opensearch-service/)
+- [OpenSearch Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless.html) — search and vector collections without managing clusters
 - [Unified observability in OpenSearch Service (Big Data Blog)](https://aws.amazon.com/blogs/big-data/unified-observability-in-amazon-opensearch-service-metrics-traces-and-ai-agent-debugging-in-a-single-interface/) — metrics, traces, and AI agent debugging together
 
 
 ### Amazon EMR
 
+- [EMR documentation](https://docs.aws.amazon.com/emr/) — managed Spark, Hive, Presto, and Hadoop on EC2, EKS, or serverless
 
-### Amazon QuickSight
+
+### Amazon Quick (formerly QuickSight)
 
 > Serverless BI + ML insights + GenAI dashboards.
 - [QuickSight Documentation](https://docs.aws.amazon.com/quick/)
 
+### AWS Lake Formation
+
+- [Lake Formation documentation](https://docs.aws.amazon.com/lake-formation/latest/dg/what-is-lake-formation.html) — fine-grained governance and sharing for data lakes
+
 ### Amazon DataZone
+
+- [DataZone documentation](https://docs.aws.amazon.com/datazone/) — data catalog, governance, and sharing across teams
 
 
 ### AWS Clean Rooms
+
+- [Clean Rooms documentation](https://docs.aws.amazon.com/clean-rooms/) — analyze combined datasets with partners without sharing raw data
 
 
 ### Data Pipelines & Lakes
@@ -824,6 +978,9 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 ### Kiro IDE
 
+- [Kiro](https://kiro.dev/) — AWS agentic IDE built around spec-driven development
+- [Kiro documentation](https://kiro.dev/docs/) — specs, hooks, steering, and MCP setup
+
 
 ### Other AI/ML Services
 
@@ -897,7 +1054,17 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 - [CodePipeline](https://aws.amazon.com/codepipeline/) · [CodeBuild](https://aws.amazon.com/codebuild/) · [CodeDeploy](https://aws.amazon.com/codedeploy/)
 
+### AWS CodeArtifact
+
+- [CodeArtifact documentation](https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html) — managed package repository for npm, PyPI, Maven, and more
+
+### AWS Fault Injection Service (FIS)
+
+- [FIS documentation](https://docs.aws.amazon.com/fis/latest/userguide/what-is.html) — managed chaos-engineering experiments
+
 ### GitHub Actions on AWS
+
+- [aws-actions/configure-aws-credentials](#notable-aws-built-repos-worth-bookmarking) — official action for OIDC-based AWS credentials
 
 
 ### CI/CD vendor engineering blogs
@@ -1142,9 +1309,10 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 
 ## Migration & Transfer
 
-### AWS Migration Hub & MAP
+### AWS Transform & MAP
 
-- [AWS Migration Hub](https://aws.amazon.com/transform/)
+- [AWS Transform](https://aws.amazon.com/transform/) — agentic AI for migrating and modernizing infrastructure, apps, and code
+- [AWS Transform documentation](https://docs.aws.amazon.com/transform/latest/userguide/what-is-service.html)
 - [Migration Acceleration Program (MAP)](https://aws.amazon.com/migration-acceleration-program/)
 
 ### AWS Application Migration Service (MGN) & DMS
@@ -1154,8 +1322,13 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 
 ### Migration Strategy
 
+- [AWS migration strategy (Prescriptive Guidance)](https://docs.aws.amazon.com/prescriptive-guidance/latest/strategy-migration/) — the 7 Rs and portfolio planning
+
 
 ### Disaster Recovery
+
+- [Disaster Recovery of Workloads on AWS](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-workloads-on-aws.html) — backup, pilot light, warm standby, active-active
+- [Elastic Disaster Recovery](#aws-elastic-disaster-recovery) — continuous replication and point-in-time recovery
 
 
 ### VMware → AWS
@@ -1175,11 +1348,17 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 
 ### AWS IoT Greengrass
 
+- [Greengrass documentation](https://docs.aws.amazon.com/greengrass/) — edge runtime for local compute, messaging, and ML on devices
+
 
 ### AWS IoT SiteWise
 
+- [IoT SiteWise documentation](https://docs.aws.amazon.com/iot-sitewise/) — collect and model industrial equipment data at scale
+
 
 ### AWS IoT TwinMaker
+
+- [IoT TwinMaker documentation](https://docs.aws.amazon.com/iot-twinmaker/) — build digital twins of real-world systems
 
 
 ### Architecture
@@ -1210,6 +1389,10 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 
 - [Amazon MQ](https://aws.amazon.com/amazon-mq/) — managed RabbitMQ + ActiveMQ
 
+### Amazon MWAA — Managed Workflows for Apache Airflow
+
+- [MWAA documentation](https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html) — managed Apache Airflow for pipeline orchestration
+
 ### AWS AppFlow
 
 - [AppFlow](https://aws.amazon.com/appflow/) — SaaS-to-AWS data sync
@@ -1223,6 +1406,10 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 > 🎯 **Building transactional email at scale?** Start with the [Email delivery playbook](use-cases/email-delivery.md) — full architecture (SES → SNS → Firehose → S3 → Athena), bounce/complaint handling, IP warming, cost model, and 18-item production checklist.
 
 - [SES Documentation](https://docs.aws.amazon.com/ses/)
+
+### AWS End User Messaging
+
+- [End User Messaging SMS documentation](https://docs.aws.amazon.com/sms-voice/latest/userguide/what-is-sms-mms.html) — A2P SMS, MMS, and voice; successor to Pinpoint SMS
 
 ### SES Migrations from Competitors
 
@@ -1249,6 +1436,22 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 ### AWS Config
 
 - [AWS Config](https://aws.amazon.com/config/) — resource inventory + compliance
+
+### AWS Systems Manager
+
+- [Systems Manager documentation](https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html) — patch, run commands, and manage nodes across environments
+
+### AWS Service Catalog
+
+- [Service Catalog documentation](https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html) — approved IT product catalogs for self-service provisioning
+
+### AWS License Manager
+
+- [License Manager documentation](https://docs.aws.amazon.com/license-manager/latest/userguide/license-manager.html) — track and enforce software license usage
+
+### Amazon Q Developer in chat applications
+
+- [Q Developer in chat apps documentation](https://docs.aws.amazon.com/chatbot/latest/adminguide/what-is.html) — AWS alerts and CLI in Slack, Teams, and Chime (formerly AWS Chatbot)
 
 ### Service Limits, Quotas & Throttling
 
