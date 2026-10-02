@@ -102,6 +102,8 @@ Match the row to what you need **today** — each path sends you to a different 
 > [!TIP]
 > All playbooks live under [`use-cases/`](use-cases/). To propose a new one, copy [`_template.md`](use-cases/_template.md), fill every section, then follow [Adding a use-case playbook](CONTRIBUTING.md#adding-a-use-case-playbook) before you open a PR (the link checker will run on your URLs).
 
+<a id="table-of-contents"></a>
+
 <details>
 <summary><strong>📑 Table of Contents</strong> — click to expand</summary>
 
@@ -923,7 +925,7 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 
 ### Data Pipelines & Lakes
 
-- [Building a data lake on S3 + Glue + Athena](#amazon-s3-simple-storage-service)
+- [Building a data lake on S3 + Glue + Athena](#amazon-s3--simple-storage-service)
 
 ---
 
@@ -1245,7 +1247,7 @@ See also: [Cost pitfalls — reserved capacity and Savings Plans](use-cases/cost
 - [Fargate capacity providers](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html) — includes Fargate Spot
 
 **Production Guides:**
-- [EC2 Spot Instance intelligent selection](#amazon-ec2--elastic-compute-cloud) — cost optimization for Spot workloads
+- [Attribute-based instance type selection](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html) — flexible instance pools for Spot capacity
 
 ### Storage optimization
 
@@ -1255,7 +1257,7 @@ See also: [Cost pitfalls — reserved capacity and Savings Plans](use-cases/cost
 - [EBS pricing](https://aws.amazon.com/ebs/pricing/)
 
 **Production Guides:**
-- [S3 storage costs aren't actually cheap](#amazon-s3--simple-storage-service) — real teardown
+- [Amazon S3 cost optimization](https://docs.aws.amazon.com/AmazonS3/latest/userguide/cost-optimization.html) — storage classes, lifecycle, and request cost levers
 
 See also: [Cost pitfalls — EBS gp2 vs gp3](use-cases/cost-pitfalls.md#ebs-gp2-vs-gp3-almost-free-win) · [File upload playbook — S3 lifecycle](use-cases/file-upload.md)
 
@@ -1267,9 +1269,9 @@ See also: [Cost pitfalls — EBS gp2 vs gp3](use-cases/cost-pitfalls.md#ebs-gp2-
 - [CloudFront pricing](https://aws.amazon.com/cloudfront/pricing/)
 
 **Production Guides:**
-- [NAT Gateway billing — idle cost alternatives](#nat-gateway) — bill teardown
+- [Reduce NAT gateway data transfer costs](https://repost.aws/knowledge-center/vpc-reduce-nat-gateway-transfer-costs) — AWS re:Post knowledge-center guide
 
-See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway) · [Cross-AZ data transfer](use-cases/cost-pitfalls.md#cross-az-data-transfer) · [Egress to internet](use-cases/cost-pitfalls.md#egress-to-internet)
+See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway) · [Cross-AZ data transfer](use-cases/cost-pitfalls.md#cross-az-data-transfer) · [Egress to internet](use-cases/cost-pitfalls.md#egress-to-internet) · [NAT Gateway vs VPC endpoint cost calculator](https://www.factualminds.com/tools/aws-nat-gateway-vs-vpc-endpoint-cost-calculator/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=network-cost)
 
 ### Container cost optimization
 
@@ -1278,13 +1280,13 @@ See also: [Cost pitfalls — NAT Gateway](use-cases/cost-pitfalls.md#nat-gateway
 - [ECS pricing](#amazon-ecs--elastic-container-service) · [Fargate pricing](#aws-fargate)
 
 **Production Guides:**
-- [Deploy EKS with Karpenter for cost-optimized autoscaling](#amazon-eks--elastic-kubernetes-service)
-- [Karpenter vs Cluster Autoscaler — EKS cost optimization](#amazon-eks--elastic-kubernetes-service)
+- [Getting started with Karpenter](https://karpenter.sh/docs/getting-started/getting-started-with-karpenter/) — deploy Karpenter on EKS for cost-aware node provisioning
+- [EKS best practices — Karpenter](https://docs.aws.amazon.com/eks/latest/best-practices/karpenter.html) — AWS guidance on Karpenter vs Cluster Autoscaler
 
 **Kubernetes cost & ops (vendor blogs):**
 - [Cast AI Blog](#amazon-eks--elastic-kubernetes-service) — Kubernetes cost optimization guidance
 
-See also: [Spot & interruptible compute](#spot--interruptible-compute) · [Fargate](#aws-fargate) · [Amazon ECS](#amazon-ecs--elastic-container-service) · [FinOps governance playbook](use-cases/finops-governance.md)
+See also: [Spot & interruptible compute](#spot--interruptible-compute) · [Fargate](#aws-fargate) · [Amazon ECS](#amazon-ecs--elastic-container-service) · [FinOps governance playbook](use-cases/finops-governance.md) · [EKS cost path optimizer](https://www.factualminds.com/tools/aws-eks-cost-path-optimizer/?utm_source=aws-open-guide&utm_medium=readme&utm_campaign=container-cost)
 
 ### Serverless cost optimization
 
@@ -1294,7 +1296,7 @@ See also: [Spot & interruptible compute](#spot--interruptible-compute) · [Farga
 - [API Gateway pricing](https://aws.amazon.com/api-gateway/pricing/)
 
 **Production Guides:**
-- [Lambda cost optimization — pay-per-request vs provisioned](#aws-lambda)
+- [Lambda provisioned concurrency](https://docs.aws.amazon.com/lambda/latest/dg/provisioned-concurrency.html) — when provisioned beats on-demand pricing
 
 See also: [Rightsizing](#rightsizing) · [Cost pitfalls — Lambda over-provisioned memory](use-cases/cost-pitfalls.md#lambda-over-provisioned-memory)
 
@@ -1327,7 +1329,7 @@ See also: [Multi-tenant SaaS playbook — cost attribution](use-cases/multi-tena
 
 ### Bill teardowns (real customer incidents)
 
-- [Bill teardown #2 — healthcare's NAT Gateway problem](#nat-gateway)
+- [The $1000 AWS mistake (Geocodio)](https://www.geocod.io/code-and-coordinates/2025-11-18-the-1000-aws-mistake) — S3 traffic through NAT Gateway without a VPC endpoint
 
 **OSS cost tools:**
 - [Infracost](https://www.infracost.io/) — Terraform cost diff in PRs
@@ -1570,17 +1572,17 @@ When you know what you need but not which AWS service to use. For interactive de
 
 ### Compute
 
-- [EC2 vs Lambda](#amazon-ec2-elastic-compute-cloud)
+- [EC2 vs Lambda](#amazon-ec2--elastic-compute-cloud)
 - [Lambda vs ECS Fargate](#aws-fargate)
 - [ECS vs EKS](#decision)
-- [Which AWS compute?](#amazon-ec2-elastic-compute-cloud)
+- [Which AWS compute?](#amazon-ec2--elastic-compute-cloud)
 - [M9g vs M8g — Graviton5 upgrade](#aws-graviton--arm-based-processors)
 - [M9g vs M9gd — local NVMe or EBS](#aws-graviton--arm-based-processors)
 - [Graviton vs x86 on EC2](#aws-graviton--arm-based-processors)
 
 ### Databases
 
-- [RDS vs Aurora](#amazon-rds-relational-database-service)
+- [RDS vs Aurora](#amazon-rds--relational-database-service)
 - [Aurora Serverless vs Aurora provisioned](#amazon-aurora)
 - [DynamoDB vs RDS](#amazon-dynamodb)
 - [Which AWS database?](#decision-guides)
@@ -1588,7 +1590,7 @@ When you know what you need but not which AWS service to use. For interactive de
 ### Networking & CDN
 
 - [CloudFront vs Cloudflare](#amazon-cloudfront)
-- [WAF vs Network Firewall](#aws-waf-web-application-firewall)
+- [WAF vs Network Firewall](#aws-waf--web-application-firewall)
 
 ### Security & Identity
 
@@ -1603,8 +1605,8 @@ When you know what you need but not which AWS service to use. For interactive de
 
 ### CI/CD
 
-- [CodePipeline vs GitHub Actions](#aws-codepipeline-codebuild-codedeploy)
-- [Terraform vs CDK — IaC decision guide](#aws-cdk-cloud-development-kit)
+- [CodePipeline vs GitHub Actions](#aws-codepipeline--codebuild--codedeploy)
+- [Terraform vs CDK — IaC decision guide](#aws-cdk--cloud-development-kit)
 - [Pulumi vs Terraform](#pulumi-on-aws) — official comparison
 - [Pulumi vs CDK](#pulumi-on-aws) — official comparison
 
@@ -1734,7 +1736,7 @@ Free, no-signup AWS planning calculators and assessments:
 ### Cost & Pricing
 
 - [AWS Lambda vs Container Cost Calculator](#aws-lambda)
-- [AWS RDS Max Connection Calculator](#amazon-rds-relational-database-service)
+- [AWS RDS Max Connection Calculator](#amazon-rds--relational-database-service)
 - [AWS Bedrock Token Cost Calculator](#cost-control-for-ai)
 
 ### Migration & Assessment
@@ -1758,30 +1760,30 @@ Plain-language definitions of common AWS terms:
 - [Amazon Bedrock](#amazon-bedrock)
 - [Amazon CloudWatch](#amazon-cloudwatch)
 - [Amazon DynamoDB](#amazon-dynamodb)
-- [Amazon EC2](#amazon-ec2-elastic-compute-cloud)
-- [Amazon EKS](#amazon-eks-elastic-kubernetes-service)
-- [Amazon RDS](#amazon-rds-relational-database-service)
+- [Amazon EC2](#amazon-ec2--elastic-compute-cloud)
+- [Amazon EKS](#amazon-eks--elastic-kubernetes-service)
+- [Amazon RDS](#amazon-rds--relational-database-service)
 - [Amazon Redshift](#amazon-redshift)
-- [Amazon S3](#amazon-s3-simple-storage-service)
-- [Amazon VPC](#amazon-vpc-virtual-private-cloud)
+- [Amazon S3](#amazon-s3--simple-storage-service)
+- [Amazon VPC](#amazon-vpc--virtual-private-cloud)
 - [AWS CloudTrail](#aws-cloudtrail)
 - [AWS Config Rules](#aws-config)
-- [AWS Control Tower](#aws-control-tower-landing-zone)
-- [AWS IAM](#aws-iam-identity-access-management)
-- [AWS KMS](#aws-kms-key-management-service)
+- [AWS Control Tower](#aws-control-tower--landing-zone)
+- [AWS IAM](#aws-iam--identity--access-management)
+- [AWS KMS](#aws-kms--key-management-service)
 - [AWS Lambda](#aws-lambda)
-- [AWS Landing Zone](#aws-control-tower-landing-zone)
+- [AWS Landing Zone](#aws-control-tower--landing-zone)
 - [AWS Organizations + SCPs](#aws-organizations)
-- [AWS Savings Plans](#savings-plans-reserved-instances)
+- [AWS Savings Plans](#commitment-discounts-savings-plans--reserved-instances)
 - [AWS Shared Responsibility Model](#foundations)
 - [AWS Step Functions](#aws-step-functions)
 - [FinOps](#finops-community)
 - [HIPAA-eligible AWS services](#hipaa)
 - [PCI DSS Cardholder Data Environment](#pci-dss)
 - [RAG pipeline](#amazon-bedrock)
-- [Reserved Instances vs Savings Plans](#savings-plans-reserved-instances)
+- [Reserved Instances vs Savings Plans](#commitment-discounts-savings-plans--reserved-instances)
 - [SOC 2 Type 2](#soc-2)
-- [VPC peering vs Transit Gateway](#amazon-vpc-virtual-private-cloud)
+- [VPC peering vs Transit Gateway](#amazon-vpc--virtual-private-cloud)
 - [Well-Architected Framework](#well-architected-framework)
 
 ---
@@ -1850,7 +1852,7 @@ See also: [Cognito for SaaS auth](#amazon-cognito) · [DynamoDB single-table for
 - [Static Stability Using Availability Zones](#foundations) — designing for failure
 - [Reliability Pillar](#well-architected-framework)
 - [DR strategies — pilot light / warm standby / multi-site](#disaster-recovery)
-- [Multi-region AWS without doubling costs](#strategy-playbooks)
+- [Multi-region AWS without doubling costs](#strategy--playbooks)
 
 **Official:**
 - [Plan for Disaster Recovery — Well-Architected Reliability Pillar](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/plan-for-disaster-recovery-dr.html) — RTO/RPO objectives and DR strategies
@@ -1866,14 +1868,14 @@ See also: [Cognito for SaaS auth](#amazon-cognito) · [DynamoDB single-table for
 
 ### Data lake & analytics
 
-- [Building a data lake on S3 + Glue + Athena](#amazon-s3-simple-storage-service)
-- [Build a serverless data pipeline — Glue + Athena](#data-pipelines-lakes)
+- [Building a data lake on S3 + Glue + Athena](#amazon-s3--simple-storage-service)
+- [Build a serverless data pipeline — Glue + Athena](#data-pipelines--lakes)
 - [Real-time pipeline — Kinesis + Lambda + DynamoDB](#amazon-kinesis)
 - [Glue 5 + Apache Iceberg — modern ETL](#aws-glue)
 
 **Official:**
-- [AWS Big Data Blog](#analytics-big-data) — analytics, streaming, and data-platform posts
-- [AWS Database Blog](#amazon-rds-relational-database-service) — relational and NoSQL operational patterns
+- [AWS Big Data Blog](#analytics--big-data) — analytics, streaming, and data-platform posts
+- [AWS Database Blog](#amazon-rds--relational-database-service) — relational and NoSQL operational patterns
 
 ### GenAI & RAG
 
@@ -1894,7 +1896,7 @@ See also: [Cognito for SaaS auth](#amazon-cognito) · [DynamoDB single-table for
 ### Migration
 
 - [Refactor / replatform / rearchitect](#migration-strategy)
-- [Migrate a monolith to ECS Fargate with zero downtime](#amazon-ecs-elastic-container-service)
+- [Migrate a monolith to ECS Fargate with zero downtime](#amazon-ecs--elastic-container-service)
 - [Migrate without cost surprises](#migration-strategy)
 
 **Official (AWS Architecture Blog):**
@@ -2153,7 +2155,7 @@ Common SaaS / OSS integrations on AWS:
 - [Datadog on AWS](#third-party)
 - [GitHub Actions on AWS](#github-actions-on-aws)
 - [Kubernetes on AWS EKS](#decision)
-- [Snowflake on AWS](#data-pipelines-lakes)
+- [Snowflake on AWS](#data-pipelines--lakes)
 - [Terraform on AWS](#terraform-on-aws)
 
 ---
@@ -2173,9 +2175,9 @@ Common SaaS / OSS integrations on AWS:
 
 ### Courses (paid)
 
-- [Pluralsight Cloud Guru](#learning-platforms-free-paid) — cert-focused video courses
+- [Pluralsight Cloud Guru](#learning-platforms-free--paid) — cert-focused video courses
 - [Stephane Maarek on Udemy](https://www.udemy.com/user/stephane-maarek/) — top-rated AWS cert prep
-- [Adrian Cantrill](#learning-platforms-free-paid) — deep-dive cert courses
+- [Adrian Cantrill](#learning-platforms-free--paid) — deep-dive cert courses
 
 ### YouTube Channels
 
@@ -2187,7 +2189,7 @@ Common SaaS / OSS integrations on AWS:
 
 ## Conferences & Events
 
-- [AWS re:Invent](#official-aws-learning-q-a-portals) — Las Vegas, annual (December)
+- [AWS re:Invent](#official-aws-learning--qa-portals) — Las Vegas, annual (December)
 - [AWS re:Invent security sessions](https://aws.amazon.com/events/reinvent/sessions/security-focus/) — security-focused sessions at re:Invent
 - [AWS Summits](https://aws.amazon.com/events/summits/) — regional, free
 - [AWS Community Days](https://aws.amazon.com/events/community-day/) — community-organized
@@ -2212,22 +2214,22 @@ Common SaaS / OSS integrations on AWS:
 
 **Performance & runtimes:**
 - [awslabs/llrt](https://github.com/awslabs/llrt) — low-latency JavaScript runtime for Lambda
-- [awslabs/mountpoint-s3](#amazon-s3-simple-storage-service) — high-throughput FUSE client for S3
+- [awslabs/mountpoint-s3](#amazon-s3--simple-storage-service) — high-throughput FUSE client for S3
 - [awslabs/aws-sdk-rust](https://github.com/awslabs/aws-sdk-rust) — official Rust SDK
 - [aws/karpenter-provider-aws](https://github.com/aws/karpenter-provider-aws) — node autoscaling for EKS
 
 **AI / agents / MCP:**
-- [awslabs/mcp](#aws-mcp-servers-awslabs-mcp) — official MCP servers (50+)
-- [awslabs/agent-plugins](#claude-code-agent-plugins-skills-for-aws) — Claude Code / Cursor / Q Developer plugins
+- [awslabs/mcp](#aws-mcp-servers--awslabsmcp) — official MCP servers (50+)
+- [awslabs/agent-plugins](#claude-code-agent-plugins--skills-for-aws) — Claude Code / Cursor / Q Developer plugins
 - [awslabs/agentcore-samples](#amazon-bedrock-agentcore) — production patterns for Bedrock AgentCore
 - [aws-samples/remote-swe-agents](#autonomous-coding-agents-on-aws) — autonomous Bedrock-powered coding agent (CDK, Slack, MCP)
 - [awslabs/generative-ai-atlas](https://github.com/awslabs/generative-ai-atlas) — GenAI architecture catalog
 
 **Best-practice references:**
 - [aws/aws-eks-best-practices](https://github.com/aws/aws-eks-best-practices) — published EKS guide
-- [aws-samples/aws-cdk-examples](#aws-cdk-cloud-development-kit) — CDK patterns in TS, Python, Java, Go, .NET
+- [aws-samples/aws-cdk-examples](#aws-cdk--cloud-development-kit) — CDK patterns in TS, Python, Java, Go, .NET
 - [aws-samples/aws-secure-environment-accelerator](https://github.com/aws-samples/aws-secure-environment-accelerator) — multi-account landing zone
-- [aws-samples/aws-cudos-framework-deployment](#managed-vs-diy-cost) — Cloud Intelligence Dashboards (CUR analytics)
+- [aws-samples/aws-cudos-framework-deployment](#analysis--visibility) — Cloud Intelligence Dashboards (CUR analytics)
 
 **Developer tooling:**
 - [aws/aws-cli](https://github.com/aws/aws-cli) — official CLI
@@ -2240,7 +2242,7 @@ Common SaaS / OSS integrations on AWS:
 - [open-guides/og-aws](https://github.com/open-guides/og-aws) — opinionated practitioner's guide (huge inspiration for this repo)
 - [dabit3/awesome-aws-amplify](https://github.com/dabit3/awesome-aws-amplify) — Amplify-focused
 - [iann0036/AWSConsoleRecorder](https://github.com/iann0036/AWSConsoleRecorder) — record console actions as IaC
-- [punkpeye/awesome-mcp-servers](#claude-code-agent-plugins-skills-for-aws) — cross-vendor MCP catalog (incl. AWS)
+- [punkpeye/awesome-mcp-servers](#claude-code-agent-plugins--skills-for-aws) — cross-vendor MCP catalog (incl. AWS)
 
 ---
 

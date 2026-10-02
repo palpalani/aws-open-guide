@@ -224,7 +224,7 @@ For cross-cutting AWS anti-patterns, see [`anti-patterns.md`](anti-patterns.md).
 
 **Decision guides:**
 - [Step Functions vs EventBridge](https://www.factualminds.com/compare/aws-step-functions-vs-eventbridge/) — orchestration vs routing
-- [Bedrock Agents vs Step Functions](https://www.factualminds.com/compare/aws-bedrock-agents-vs-step-functions/) — when each fits
+- [Event-driven microservices pattern](https://www.factualminds.com/patterns/event-driven-microservices/) — reference pattern on AWS
 
 **OSS tools:**
 - [aws-lambda-powertools-python](https://github.com/aws-powertools/powertools-lambda-python) — event source data classes for EventBridge

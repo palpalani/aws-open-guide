@@ -255,7 +255,7 @@ For cross-cutting AWS anti-patterns, see [`anti-patterns.md`](anti-patterns.md).
 
 **Decision guides:**
 - [Which AWS database](https://www.factualminds.com/decide/which-aws-database/) — for query-side store
-- [Step Functions vs EventBridge](https://www.factualminds.com/compare/aws-step-functions-vs-eventbridge/) — orchestration choices
+- [Lakehouse on AWS pattern](https://www.factualminds.com/patterns/lakehouse-on-aws/) — reference pattern for the cold path
 
 **OSS tools:**
 - [aws-kinesis-aggregation](https://github.com/awslabs/kinesis-aggregation) — Kinesis Producer Library aggregation
